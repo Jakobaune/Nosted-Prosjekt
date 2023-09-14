@@ -1,0 +1,30 @@
+C:\Users\mathi\source\repos\Nøsted Service Pro\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\mathi\source\repos\Nøsted Service Pro\bin\Debug\net7.0\appsettings.json
+C:\Users\mathi\source\repos\Nøsted Service Pro\bin\Debug\net7.0\Nøsted Service Pro.staticwebassets.runtime.json
+C:\Users\mathi\source\repos\Nøsted Service Pro\bin\Debug\net7.0\Nøsted Service Pro.exe
+C:\Users\mathi\source\repos\Nøsted Service Pro\bin\Debug\net7.0\Nøsted Service Pro.deps.json
+C:\Users\mathi\source\repos\Nøsted Service Pro\bin\Debug\net7.0\Nøsted Service Pro.runtimeconfig.json
+C:\Users\mathi\source\repos\Nøsted Service Pro\bin\Debug\net7.0\Nøsted Service Pro.dll
+C:\Users\mathi\source\repos\Nøsted Service Pro\bin\Debug\net7.0\Nøsted Service Pro.pdb
+C:\Users\mathi\source\repos\Nøsted Service Pro\obj\Debug\net7.0\Nøsted Service Pro.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mathi\source\repos\Nøsted Service Pro\obj\Debug\net7.0\Nøsted Service Pro.AssemblyInfoInputs.cache
+C:\Users\mathi\source\repos\Nøsted Service Pro\obj\Debug\net7.0\Nøsted Service Pro.AssemblyInfo.cs
+C:\Users\mathi\source\repos\Nøsted Service Pro\obj\Debug\net7.0\Nøsted Service Pro.csproj.CoreCompileInputs.cache
+C:\Users\mathi\source\repos\Nøsted Service Pro\obj\Debug\net7.0\Nøsted Service Pro.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\mathi\source\repos\Nøsted Service Pro\obj\Debug\net7.0\Nøsted Service Pro.RazorAssemblyInfo.cache
+C:\Users\mathi\source\repos\Nøsted Service Pro\obj\Debug\net7.0\Nøsted Service Pro.RazorAssemblyInfo.cs
+C:\Users\mathi\source\repos\Nøsted Service Pro\obj\Debug\net7.0\staticwebassets\msbuild.Nøsted Service Pro.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\mathi\source\repos\Nøsted Service Pro\obj\Debug\net7.0\staticwebassets\msbuild.build.Nøsted Service Pro.props
+C:\Users\mathi\source\repos\Nøsted Service Pro\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.Nøsted Service Pro.props
+C:\Users\mathi\source\repos\Nøsted Service Pro\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.Nøsted Service Pro.props
+C:\Users\mathi\source\repos\Nøsted Service Pro\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Users\mathi\source\repos\Nøsted Service Pro\obj\Debug\net7.0\staticwebassets.build.json
+C:\Users\mathi\source\repos\Nøsted Service Pro\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\mathi\source\repos\Nøsted Service Pro\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\mathi\source\repos\Nøsted Service Pro\obj\Debug\net7.0\scopedcss\bundle\Nøsted Service Pro.styles.css
+C:\Users\mathi\source\repos\Nøsted Service Pro\obj\Debug\net7.0\scopedcss\projectbundle\Nøsted Service Pro.bundle.scp.css
+C:\Users\mathi\source\repos\Nøsted Service Pro\obj\Debug\net7.0\Nøsted Service Pro.dll
+C:\Users\mathi\source\repos\Nøsted Service Pro\obj\Debug\net7.0\refint\Nøsted Service Pro.dll
+C:\Users\mathi\source\repos\Nøsted Service Pro\obj\Debug\net7.0\Nøsted Service Pro.pdb
+C:\Users\mathi\source\repos\Nøsted Service Pro\obj\Debug\net7.0\Nøsted Service Pro.genruntimeconfig.cache
+C:\Users\mathi\source\repos\Nøsted Service Pro\obj\Debug\net7.0\ref\Nøsted Service Pro.dll
