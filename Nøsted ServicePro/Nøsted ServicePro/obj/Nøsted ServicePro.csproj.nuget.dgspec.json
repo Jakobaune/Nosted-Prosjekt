@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/Users/bjornarhatlingskaden/Documents/UIA/IS-202/Projects/Nosted-Projekt/Nøsted ServicePro/Nøsted ServicePro/Nøsted ServicePro.csproj": {}
+    "C:\\Users\\mathi\\Documents\\testmappe\\Nosted-Prosjekt\\Nøsted ServicePro\\Nøsted ServicePro\\Nøsted ServicePro.csproj": {}
   },
   "projects": {
-    "/Users/bjornarhatlingskaden/Documents/UIA/IS-202/Projects/Nosted-Projekt/Nøsted ServicePro/Nøsted ServicePro/Nøsted ServicePro.csproj": {
+    "C:\\Users\\mathi\\Documents\\testmappe\\Nosted-Prosjekt\\Nøsted ServicePro\\Nøsted ServicePro\\Nøsted ServicePro.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/bjornarhatlingskaden/Documents/UIA/IS-202/Projects/Nosted-Projekt/Nøsted ServicePro/Nøsted ServicePro/Nøsted ServicePro.csproj",
+        "projectUniqueName": "C:\\Users\\mathi\\Documents\\testmappe\\Nosted-Prosjekt\\Nøsted ServicePro\\Nøsted ServicePro\\Nøsted ServicePro.csproj",
         "projectName": "Nøsted ServicePro",
-        "projectPath": "/Users/bjornarhatlingskaden/Documents/UIA/IS-202/Projects/Nosted-Projekt/Nøsted ServicePro/Nøsted ServicePro/Nøsted ServicePro.csproj",
-        "packagesPath": "/Users/bjornarhatlingskaden/.nuget/packages/",
-        "outputPath": "/Users/bjornarhatlingskaden/Documents/UIA/IS-202/Projects/Nosted-Projekt/Nøsted ServicePro/Nøsted ServicePro/obj/",
+        "projectPath": "C:\\Users\\mathi\\Documents\\testmappe\\Nosted-Prosjekt\\Nøsted ServicePro\\Nøsted ServicePro\\Nøsted ServicePro.csproj",
+        "packagesPath": "C:\\Users\\mathi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mathi\\Documents\\testmappe\\Nosted-Prosjekt\\Nøsted ServicePro\\Nøsted ServicePro\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/bjornarhatlingskaden/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\mathi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -56,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.400/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
