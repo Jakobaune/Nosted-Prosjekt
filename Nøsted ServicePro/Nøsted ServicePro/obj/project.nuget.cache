@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "tuSROjNvTvKm/Vr8BQgRdYBQ4U1CT9uxpx76LSjvRqVkwCXQhsOD6iDCNn5MdppuAUL/GMkpnGU1mgwaOdJSeg==",
+  "dgSpecHash": "bqYoWIFXhFJl8NcIr6y9Sx4s/vTZ4L3Hu7fsMvo3clQ1l+Px1y4/cRedow1e/z1fJgWz1nJiKoFg0z4MeGj6sA==",
   "success": true,
-  "projectFilePath": "/Users/bjornarhatlingskaden/Documents/UIA/IS-202/Projects/Nosted-Projekt/Nøsted ServicePro/Nøsted ServicePro/Nøsted ServicePro.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/Users/bjornarhatlingskaden/Documents/UIA/IS-202/Projects/Nosted-Prosjekt/Nøsted ServicePro/Nøsted ServicePro/Nøsted ServicePro.csproj",
+  "expectedPackageFiles": [
+    "/Users/bjornarhatlingskaden/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
