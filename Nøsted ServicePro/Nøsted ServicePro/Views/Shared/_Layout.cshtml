@@ -1,50 +1,107 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Nøsted_ServicePro</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Nøsted_ServicePro.styles.css" asp-append-version="true" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nøsted & Service Pro</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+        }
+
+        header {
+            background-color: #12181f;
+            color: #a1b6c1;
+            padding: 10px;
+            text-align: center;
+            z-index: 2;
+            width: 79.5%;
+            top: 0;
+            margin-left: 330px;
+        }
+
+        content-container {
+            display: flex; /* Use flexbox to create a flexible layout */
+            margin-top: 30px; /* Adjust margin to match header height */
+        }
+
+        sidebar {
+            background-color: #ccc;
+            padding: 40px;
+            width: 250px; /* Fixed width for the sidebar */
+            position: fixed;
+            height: 100%; /* Full height of the viewport */
+            text-align: center;
+            margin-top: 178px;
+        }
+
+        main {
+            padding: 20px;
+            flex: 1;
+            margin-left: 400px; /* Adjust the margin to match the sidebar width */
+            top: 0px;
+        }
+
+        h1 {
+            font-family: cursive;
+            font-weight: bold;
+            font-size: 40px;
+            overflow: auto;
+        }
+
+        p1 {
+            font-size: 30px;
+        }
+
+        p {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+    </style>
+
+    <!-- Additional styles or scripts specific to your application can go here -->
 </head>
 <body>
+
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Nøsted_ServicePro</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <h1>Nøsted & Service Pro</h1>
+        <p>Bilde?</p>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+    <sidebar>
+        <!-- Add content for the sidebar here -->
+        <p1>Sidebar Content</p1>
+
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Hjem</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="ServiceRegistrering" asp-action="Index">Registrer Service</a>
+        </li>
+
+    </sidebar>
+    <content-container>
+
+        <main>
+            <!-- Your page content goes here -->
             @RenderBody()
         </main>
-    </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - Nøsted_ServicePro - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
+    </content-container>
+
+    <footer>
+        <!-- Your footer content goes here -->
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+
+    <!-- Additional scripts specific to your application can go here -->
+
 </body>
 </html>
-

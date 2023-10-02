@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Nøsted_ServicePro.Models;
 
+
 namespace Nøsted_ServicePro.Controllers;
 
 public class HomeController : Controller

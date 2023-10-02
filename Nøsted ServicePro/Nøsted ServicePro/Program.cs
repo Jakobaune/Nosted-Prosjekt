@@ -20,9 +20,16 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+// Default route
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+// Custom route for RegistrereServiceController
+app.MapControllerRoute(
+    name: "registrereService",
+    pattern: "{area=}/{controller=ServiceRegistrering}/{action=IndexRS}/{id?}");
+
 
 app.Run();
 
