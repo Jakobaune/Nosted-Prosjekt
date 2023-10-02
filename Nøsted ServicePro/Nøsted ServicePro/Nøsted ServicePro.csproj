@@ -14,12 +14,4 @@
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
-  <ItemGroup>
-    <None Remove="Controllers\ServiceRegistrering\" />
-    <None Remove="Views\ServiceRegistrering\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controllers\ServiceRegistrering\" />
-    <Folder Include="Views\ServiceRegistrering\" />
-  </ItemGroup>
 </Project>

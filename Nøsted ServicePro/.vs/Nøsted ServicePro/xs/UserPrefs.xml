@@ -1,13 +1,23 @@
+<<<<<<< Updated upstream
 ﻿<Properties StartupConfiguration="{B8B7D05A-15D5-4A52-B1B9-A9D90568B792}|Default">
   <MonoDevelop.Ide.ItemProperties.Nøsted_220ServicePro FirstBuild="True" PreferredExecutionTarget="/Applications/Brave Browser.app" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workbench ActiveDocument="Nøsted ServicePro/Program.cs">
     <Files>
       <File FileName="Nøsted ServicePro/Program.cs" Line="1" Column="1" />
+=======
+﻿<Properties StartupConfiguration="{8506687A-AD90-40AE-B9F3-89157B237592}|https">
+  <MonoDevelop.Ide.ItemProperties.Nøsted_220ServicePro PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Nøsted ServicePro/Controllers/HomeController.cs">
+    <Files>
+      <File FileName="Nøsted ServicePro/Controllers/HomeController.cs" Line="33" Column="1" />
+>>>>>>> Stashed changes
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
+<<<<<<< Updated upstream
           <Node name="Nøsted ServicePro" expanded="True">
             <Node name="Nøsted ServicePro" expanded="True">
               <Node name="Controllers" expanded="True" />
@@ -15,14 +25,30 @@
               <Node name="Properties" expanded="True" />
               <Node name="Views" expanded="True" />
               <Node name="Program.cs" selected="True" />
+=======
+          <Node name="Nøsted ServicePro">
+            <Node name="Nøsted ServicePro" expanded="True">
+              <Node name="ConnectedServicesFolder" selected="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="ServiceRegistrering" expanded="True" />
+              </Node>
+>>>>>>> Stashed changes
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+<<<<<<< Updated upstream
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints />
   <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
   <MultiItemStartupConfigurations />
+=======
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+>>>>>>> Stashed changes
 </Properties>
