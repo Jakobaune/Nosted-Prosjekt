@@ -1,4 +1,7 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using Microsoft.AspNetCore;
+using Nøsted_ServicePro;
+
+var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -30,8 +33,13 @@ app.MapControllerRoute(
     name: "registrereService",
     pattern: "{area=}/{controller=ServiceRegistrering}/{action=IndexRS}/{id?}");
 
+WebHost.CreateDefaultBuilder(args)
+    .ConfigureKestrel(c => c.AddServerHeader = false)
+    .UseStartup<Startup>()
+    .Build();
+
+
 
 app.Run();
 
-//hei
 
