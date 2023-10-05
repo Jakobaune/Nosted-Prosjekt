@@ -1,0 +1,81 @@
+﻿@model ServiceOrdre
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<form asp-action="Index" method="post">
+    <div class="form-group">
+        <label asp-for="Kundenavn">Kundenavn</label>
+        <input asp-for="Kundenavn" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Kundeepost">Kundeepost</label>
+        <input asp-for="Kundeepost" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Kundetlf">Kundetlf</label>
+        <input asp-for="Kundetlf" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Produkttypevinsj">Produkttypevinsj</label>
+        <input asp-for="Produkttypevinsj" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ÅrsmodellVinsj">ÅrsmodellVinsj</label>
+        <input asp-for="ÅrsmodellVinsj" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Serienummervinsj">Serienummervinsj</label>
+        <input asp-for="Serienummervinsj" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Registreringsdato">Registreringsdato</label>
+        <input asp-for="Registreringsdato" type="date" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AvtaltKommentar">AvtaltKommentar</label>
+        <input asp-for="AvtaltKommentar" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="InternKommentar">InternKommentar</label>
+        <input asp-for="InternKommentar" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Problembeskrivelse">Problembeskrivelse</label>
+        <textarea asp-for="Problembeskrivelse" class="form-control"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ServiceType">ServiceType</label>
+        <input asp-for="ServiceType" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AvtaltleveringsDato">AvtaltleveringsDato</label>
+        <input asp-for="AvtaltleveringsDato" type="date" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Avtaltferdigstillingsdato">Avtaltferdigstillingsdato</label>
+        <input asp-for="Avtaltferdigstillingsdato" type="date" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ProduktmottattDato">ProduktmottattDato</label>
+        <input asp-for="ProduktmottattDato" type="date" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Bestill Service</button>
+</form>

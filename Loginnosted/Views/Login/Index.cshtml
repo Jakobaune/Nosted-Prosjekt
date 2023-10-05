@@ -1,0 +1,46 @@
+﻿@model Bruker
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<h4>Bruker</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="LagreData">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="BrukerNavn" class="control-label"></label>
+                <input asp-for="BrukerNavn" class="form-control" />
+                <span asp-validation-for="BrukerNavn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Epostadresse" class="control-label"></label>
+                <input asp-for="Epostadresse" class="form-control" />
+                <span asp-validation-for="Epostadresse" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rolle" class="control-label"></label>
+                <input asp-for="Rolle" class="form-control" />
+                <span asp-validation-for="Rolle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Passord" class="control-label"></label>
+                <input asp-for="Passord" class="form-control" />
+                <span asp-validation-for="Passord" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Lagre Data" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
