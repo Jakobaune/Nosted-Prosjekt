@@ -1,0 +1,110 @@
+﻿@model ServiceOrdre
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>ServiceOrdre</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OrdreID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OrdreID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Kundenavn)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Kundenavn)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Kundeepost)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Kundeepost)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Kundetlf)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Kundetlf)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Produkttypevinsj)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Produkttypevinsj)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ÅrsmodellVinsj)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ÅrsmodellVinsj)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Serienummervinsj)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Serienummervinsj)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Registreringsdato)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Registreringsdato)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AvtaltKommentar)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AvtaltKommentar)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.InternKommentar)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.InternKommentar)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Problembeskrivelse)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Problembeskrivelse)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ServiceType)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ServiceType)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AvtaltleveringsDato)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AvtaltleveringsDato)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Avtaltferdigstillingsdato)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Avtaltferdigstillingsdato)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ProduktmottattDato)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ProduktmottattDato)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.OrdreID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+    <a asp-action="Delete" asp-route-id="@Model?.OrdreID">Delete</a>
+
+</div>

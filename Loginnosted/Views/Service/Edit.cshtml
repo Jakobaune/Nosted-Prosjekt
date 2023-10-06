@@ -1,0 +1,99 @@
+﻿@model ServiceOrdre
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>ServiceOrdre</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="OrdreID" />
+            <div class="form-group">
+                <label asp-for="Kundenavn" class="control-label"></label>
+                <input asp-for="Kundenavn" class="form-control" />
+                <span asp-validation-for="Kundenavn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kundeepost" class="control-label"></label>
+                <input asp-for="Kundeepost" class="form-control" />
+                <span asp-validation-for="Kundeepost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kundetlf" class="control-label"></label>
+                <input asp-for="Kundetlf" class="form-control" />
+                <span asp-validation-for="Kundetlf" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Produkttypevinsj" class="control-label"></label>
+                <input asp-for="Produkttypevinsj" class="form-control" />
+                <span asp-validation-for="Produkttypevinsj" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ÅrsmodellVinsj" class="control-label"></label>
+                <input asp-for="ÅrsmodellVinsj" class="form-control" />
+                <span asp-validation-for="ÅrsmodellVinsj" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Serienummervinsj" class="control-label"></label>
+                <input asp-for="Serienummervinsj" class="form-control" />
+                <span asp-validation-for="Serienummervinsj" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Registreringsdato" class="control-label"></label>
+                <input asp-for="Registreringsdato" class="form-control" />
+                <span asp-validation-for="Registreringsdato" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AvtaltKommentar" class="control-label"></label>
+                <input asp-for="AvtaltKommentar" class="form-control" />
+                <span asp-validation-for="AvtaltKommentar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InternKommentar" class="control-label"></label>
+                <input asp-for="InternKommentar" class="form-control" />
+                <span asp-validation-for="InternKommentar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Problembeskrivelse" class="control-label"></label>
+                <input asp-for="Problembeskrivelse" class="form-control" />
+                <span asp-validation-for="Problembeskrivelse" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceType" class="control-label"></label>
+                <input asp-for="ServiceType" class="form-control" />
+                <span asp-validation-for="ServiceType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AvtaltleveringsDato" class="control-label"></label>
+                <input asp-for="AvtaltleveringsDato" class="form-control" />
+                <span asp-validation-for="AvtaltleveringsDato" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Avtaltferdigstillingsdato" class="control-label"></label>
+                <input asp-for="Avtaltferdigstillingsdato" class="form-control" />
+                <span asp-validation-for="Avtaltferdigstillingsdato" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProduktmottattDato" class="control-label"></label>
+                <input asp-for="ProduktmottattDato" class="form-control" />
+                <span asp-validation-for="ProduktmottattDato" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

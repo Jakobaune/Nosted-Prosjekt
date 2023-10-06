@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 public class ServiceOrdre
 {
@@ -11,14 +12,25 @@ public class ServiceOrdre
     public string Kundeepost { get; set; }
     public string Kundetlf { get; set; }
     public string Produkttypevinsj { get; set; }
-    public string ÅrsmodellVinsj { get; set; }
+    public int ÅrsmodellVinsj { get; set; }
     public string Serienummervinsj { get; set; }
+
+    [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
     public DateTime Registreringsdato { get; set; }
+
     public string AvtaltKommentar { get; set; }
     public string InternKommentar { get; set; }
     public string Problembeskrivelse { get; set; }
     public string ServiceType { get; set; }
+
+    [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
     public DateTime AvtaltleveringsDato { get; set; }
+
+    [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
     public DateTime Avtaltferdigstillingsdato { get; set; }
+
+    [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
     public DateTime ProduktmottattDato { get; set; }
+
+
 }

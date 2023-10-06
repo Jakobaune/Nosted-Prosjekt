@@ -1,7 +1,9 @@
 ﻿using Loginnosted.Data;
 using Loginnosted.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
+using System.Linq;
 
 public class ServiceController : Controller
 {
@@ -17,6 +19,42 @@ public class ServiceController : Controller
         return View(); // Vis skjemaet for å bestille service
     }
 
+    public IActionResult Arkiv()
+    {
+        var arkivData = _dbContext.service.ToList(); // Hent alle dataene fra databasen
+        return View(arkivData);
+    }
+
+    public IActionResult Edit(int id)
+    {
+        var serviceOrdre = _dbContext.service.Find(id);
+        if (serviceOrdre == null)
+        {
+            return NotFound();
+        }
+        return View(serviceOrdre);
+    }
+
+    public IActionResult Details(int id)
+    {
+        var serviceOrdre = _dbContext.service.Find(id);
+        if (serviceOrdre == null)
+        {
+            return NotFound();
+        }
+        return View(serviceOrdre);
+    }
+
+        public IActionResult Delete(int id)
+        {
+            var serviceOrdre = _dbContext.service.Find(id);
+            if (serviceOrdre == null)
+            {
+                return NotFound();
+            }
+            return View(serviceOrdre);
+        }
+
     [HttpPost]
     public IActionResult Index(ServiceOrdre serviceOrdre)
     {
@@ -24,23 +62,72 @@ public class ServiceController : Controller
         {
             try
             {
-                // Lagre dataene i databasen
                 _dbContext.service.Add(serviceOrdre);
                 _dbContext.SaveChanges();
-
-                // Gir bekreftelse
                 return Content("Data lagret vellykket!");
             }
             catch (Exception ex)
             {
-                // Håndter feil, for eksempel logg feilen
-                // Vis en feilsiden eller tilbake til hovedsiden
                 return Content($"Feil ved lagring av data. Feilmelding: {ex.Message}");
+            }
         }
-    }
-
-        // Hvis skjemaet ikke er gyldig, vis det samme skjemaet igjen med feilmeldinger
         return View();
     }
+
+    [HttpPost]
+    public IActionResult Edit(ServiceOrdre model)
+    {
+        if (ModelState.IsValid)
+        {
+            try
+            {
+                _dbContext.Entry(model).State = EntityState.Modified;
+                _dbContext.SaveChanges();
+                return RedirectToAction(nameof(Arkiv));
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!_dbContext.service.Any(e => e.OrdreID == model.OrdreID))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+        }
+        return View(model);
+    }
+
+    [HttpPost]
+    public IActionResult Delete(int id, bool confirm)
+    {
+
+    var serviceOrdre = _dbContext.service.Find(id);
+    if (serviceOrdre == null)
+    {
+        return NotFound();
+    }
+
+    try
+    {
+        _dbContext.service.Remove(serviceOrdre);
+        _dbContext.SaveChanges();
+        TempData["Message"] = "Skjemaet ble slettet vellykket!";
+    }
+    catch (Exception ex)
+    {
+        TempData["Error"] = $"Feil ved sletting av skjema: {ex.Message}";
+
+        // Legg til logging
+        Console.WriteLine($"Exception: {ex}");
+    }
+
+    // Endre retur til Index
+    return RedirectToAction(nameof(Index));
+}
+
+
 
 }
