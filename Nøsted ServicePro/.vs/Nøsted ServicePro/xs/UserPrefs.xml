@@ -1,4 +1,37 @@
 ﻿<Properties StartupConfiguration="{8506687A-AD90-40AE-B9F3-89157B237592}|https">
+  <MonoDevelop.Ide.ItemProperties.Nøsted_220ServicePro PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Nøsted_220ServicePro FirstBuild="True" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Nøsted ServicePro/Views/Home/Index.cshtml">
+    <Files>
+      <File FileName="Nøsted ServicePro/Views/Home/Index.cshtml" Line="8" Column="1" />
+      <File FileName="Nøsted ServicePro/Views/Shared/_Layout.cshtml" Line="15" Column="1" />
+      <File FileName="Nøsted ServicePro/wwwroot/css/site.css" Line="4" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Nøsted ServicePro" expanded="True">
+            <Node name="Nøsted ServicePro" expanded="True">
+              <Node name="Bilder" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True" />
+                <Node name="Shared" expanded="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True">
+                <Node name="css" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
 </Properties>

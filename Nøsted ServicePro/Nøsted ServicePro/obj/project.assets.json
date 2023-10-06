@@ -8,24 +8,25 @@
     "net7.0": []
   },
   "packageFolders": {
-    "/Users/bjornarhatlingskaden/.nuget/packages/": {}
+    "/Users/amadeushovden/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/bjornarhatlingskaden/Documents/UIA/IS-202/Projects/Nosted-Projekt/Nøsted ServicePro/Nøsted ServicePro/Nøsted ServicePro.csproj",
+      "projectUniqueName": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Nøsted ServicePro/Nøsted ServicePro/Nøsted ServicePro.csproj",
       "projectName": "Nøsted ServicePro",
-      "projectPath": "/Users/bjornarhatlingskaden/Documents/UIA/IS-202/Projects/Nosted-Projekt/Nøsted ServicePro/Nøsted ServicePro/Nøsted ServicePro.csproj",
-      "packagesPath": "/Users/bjornarhatlingskaden/.nuget/packages/",
-      "outputPath": "/Users/bjornarhatlingskaden/Documents/UIA/IS-202/Projects/Nosted-Projekt/Nøsted ServicePro/Nøsted ServicePro/obj/",
+      "projectPath": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Nøsted ServicePro/Nøsted ServicePro/Nøsted ServicePro.csproj",
+      "packagesPath": "/Users/amadeushovden/.nuget/packages/",
+      "outputPath": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Nøsted ServicePro/Nøsted ServicePro/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/bjornarhatlingskaden/.nuget/NuGet/NuGet.Config"
+        "/Users/amadeushovden/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "/usr/local/share/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

@@ -2,6 +2,10 @@
   font-size: 14px;
 }
 
+header {
+    background-color:rgb(12,23,34)
+}
+
 @media (min-width: 768px) {
   html {
     font-size: 16px;

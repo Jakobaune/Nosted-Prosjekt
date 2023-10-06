@@ -1,0 +1,11 @@
+/Users/amadeushovden/Documents/Nosted-Prosjekt/Nøsted ServicePro/bin/Debug/Nøsted ServicePro.deps.json
+/Users/amadeushovden/Documents/Nosted-Prosjekt/Nøsted ServicePro/bin/Debug/Nøsted ServicePro.runtimeconfig.json
+/Users/amadeushovden/Documents/Nosted-Prosjekt/Nøsted ServicePro/bin/Debug/appsettings.Development.json
+/Users/amadeushovden/Documents/Nosted-Prosjekt/Nøsted ServicePro/bin/Debug/appsettings.json
+/Users/amadeushovden/Documents/Nosted-Prosjekt/Nøsted ServicePro/bin/Debug/Nøsted ServicePro.staticwebassets.runtime.json
+/Users/amadeushovden/Documents/Nosted-Prosjekt/Nøsted ServicePro/bin/Debug/Nøsted ServicePro
+/Users/amadeushovden/Documents/Nosted-Prosjekt/Nøsted ServicePro/bin/Debug/Nøsted ServicePro.dll
+/Users/amadeushovden/Documents/Nosted-Prosjekt/Nøsted ServicePro/bin/Debug/Nøsted ServicePro.pdb
+/Users/amadeushovden/Documents/Nosted-Prosjekt/Nøsted ServicePro/obj/Debug/docker-compose.dcproj.AssemblyReference.cache
+/Users/amadeushovden/Documents/Nosted-Prosjekt/Nøsted ServicePro/obj/Debug/docker-compose.dcproj.CoreCompileInputs.cache
+/Users/amadeushovden/Documents/Nosted-Prosjekt/Nøsted ServicePro/obj/Debug/docker-compose.dcproj.CopyComplete
