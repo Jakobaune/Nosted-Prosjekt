@@ -16,10 +16,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\mathi\OneDrive\Skrivebord\NostedAS\Loginnosted
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/mathi/OneDrive/Skrivebord/NostedAS/Loginnosted/Views/Confirmation/Login/ConfirmationView.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZmlybWF0aW9uXExvZ2luXENvbmZpcm1hdGlvblZpZXcuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/mathi/OneDrive/Skrivebord/NostedAS/Loginnosted/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -32,8 +28,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mathi/OneDrive/Skrivebord/NostedAS/Loginnosted/Views/Login/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
+[C:/Users/mathi/OneDrive/Skrivebord/NostedAS/Loginnosted/Views/Login/RedigerBruker.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cUmVkaWdlckJydWtlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mathi/OneDrive/Skrivebord/NostedAS/Loginnosted/Views/Login/Registrering.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cUmVnaXN0cmVyaW5nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mathi/OneDrive/Skrivebord/NostedAS/Loginnosted/Views/Login/SlettBruker.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cU2xldHRCcnVrZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mathi/OneDrive/Skrivebord/NostedAS/Loginnosted/Views/Login/VisAlleBrukere.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cVmlzQWxsZUJydWtlcmUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/mathi/OneDrive/Skrivebord/NostedAS/Loginnosted/Views/Service/Arkiv.cshtml]

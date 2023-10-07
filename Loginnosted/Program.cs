@@ -17,6 +17,13 @@ builder.Services.AddDbContext<LoginnostedDbContext>(options =>
 
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -33,10 +40,11 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+
 // Oppdatert ruteoppsett for LoginController
 app.MapControllerRoute(
     name: "login",
-    pattern: "login/{action=Index}/{id?}",
+    pattern: "login/{action=Registrering}/{id?}",
     defaults: new { controller = "Login" });
 
 app.MapControllerRoute(
@@ -44,9 +52,13 @@ app.MapControllerRoute(
     pattern: "service/{action=Index}/{id?}",
     defaults: new { controller = "Service" });
 
+
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+
 
 
 

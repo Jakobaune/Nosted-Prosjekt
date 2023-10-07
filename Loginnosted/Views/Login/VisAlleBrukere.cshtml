@@ -1,0 +1,35 @@
+﻿@model List<Bruker>
+
+@{
+    ViewData["Title"] = "VisAlleBrukere";
+}
+
+<h1>Vis Alle Brukere</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>BrukerNavn</th>
+            <th>Epostadresse</th>
+            <th>Rolle</th>
+            <!-- Legg til flere kolonner etter behov -->
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var bruker in Model)
+        {
+            <tr>
+                <td>@bruker.BrukerNavn</td>
+                <td>@bruker.Epostadresse</td>
+                <td>@bruker.Rolle</td>
+                <!-- Legg til flere kolonner etter behov -->
+                <td>
+                    <a asp-action="RedigerBruker" asp-route-id="@bruker.BrukerId">Rediger</a> |
+                    <a asp-action="SlettBruker" asp-route-id="@bruker.BrukerId">Slett</a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>

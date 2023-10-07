@@ -1,17 +1,18 @@
 ﻿@model Bruker
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "RedigerBruker";
 }
 
-<h1>Index</h1>
+<h1>RedigerBrukere</h1>
 
 <h4>Bruker</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="LagreData">
+        <form asp-action="RedigerBruker">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="BrukerId" />
             <div class="form-group">
                 <label asp-for="BrukerNavn" class="control-label"></label>
                 <input asp-for="BrukerNavn" class="form-control" />
@@ -32,15 +33,18 @@
                 <input asp-for="Passord" class="form-control" />
                 <span asp-validation-for="Passord" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <input type="submit" value="Lagre Data" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
+<div>
+    <a asp-action="VisAlleBrukere">Tilbake til listen</a>
+</div>
+
 @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

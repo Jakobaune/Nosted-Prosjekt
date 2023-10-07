@@ -266,3 +266,4 @@ C:\Users\mathi\OneDrive\Skrivebord\NostedAS\Loginnosted\bin\Debug\net7.0\runtime
 C:\Users\mathi\OneDrive\Skrivebord\NostedAS\Loginnosted\bin\Debug\net7.0\MySql.EntityFrameworkCore.dll
 C:\Users\mathi\OneDrive\Skrivebord\NostedAS\Loginnosted\bin\Debug\net7.0\MySqlConnector.dll
 C:\Users\mathi\OneDrive\Skrivebord\NostedAS\Loginnosted\bin\Debug\net7.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\mathi\OneDrive\Skrivebord\NostedAS\Loginnosted\bin\Debug\net7.0\BCrypt.Net.dll

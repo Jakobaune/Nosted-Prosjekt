@@ -24,13 +24,12 @@ public class ServiceOrdre
     public string ServiceType { get; set; }
 
     [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-    public DateTime AvtaltleveringsDato { get; set; }
+    public DateOnly AvtaltleveringsDato { get; set; }
 
     [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-    public DateTime Avtaltferdigstillingsdato { get; set; }
+    public DateOnly Avtaltferdigstillingsdato { get; set; }
 
     [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-    public DateTime ProduktmottattDato { get; set; }
-
+    public DateOnly ProduktmottattDato { get; set; }
 
 }

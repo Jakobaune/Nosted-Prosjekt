@@ -120,7 +120,7 @@ public class ServiceController : Controller
     {
         TempData["Error"] = $"Feil ved sletting av skjema: {ex.Message}";
 
-        // Legg til logging
+        // Lagt til logging
         Console.WriteLine($"Exception: {ex}");
     }
 
