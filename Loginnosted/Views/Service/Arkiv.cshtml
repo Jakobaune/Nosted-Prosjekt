@@ -1,0 +1,122 @@
+﻿@model IEnumerable<ServiceOrdre>
+
+@{
+    ViewData["Title"] = "Arkiv";
+}
+
+<h1>Arkiv</h1>
+
+<p>
+    <a asp-action="Index">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Ordre ID")
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Kundenavn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kundeepost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kundetlf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Produkttypevinsj)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ÅrsmodellVinsj)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Serienummervinsj)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Registreringsdato)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AvtaltKommentar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InternKommentar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Problembeskrivelse)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AvtaltleveringsDato)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Avtaltferdigstillingsdato)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProduktmottattDato)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrdreID)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Kundenavn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Kundeepost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Kundetlf)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Produkttypevinsj)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ÅrsmodellVinsj)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Serienummervinsj)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Registreringsdato)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AvtaltKommentar)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InternKommentar)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Problembeskrivelse)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ServiceType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AvtaltleveringsDato)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Avtaltferdigstillingsdato)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProduktmottattDato)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-controller="Service" asp-route-id="@item.OrdreID">Edit</a> |
+                    <a asp-action="Details" asp-controller="Service" asp-route-id="@item.OrdreID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.OrdreID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
