@@ -1,8 +1,0 @@
-version: '3.4'
-
-services:
-  nstedservicepro:
-    image: ${DOCKER_REGISTRY-}nstedservicepro
-    build:
-      context: .
-      dockerfile: Nøsted ServicePro/Dockerfile

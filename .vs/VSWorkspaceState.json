@@ -4,8 +4,10 @@
     "\\Nøsted ServicePro",
     "\\Nøsted ServicePro\\Nøsted ServicePro",
     "\\Nøsted ServicePro\\Nøsted ServicePro\\Controllers",
-    "\\Nøsted ServicePro\\Nøsted ServicePro\\Controllers\\ServiceRegistrering"
+    "\\Nøsted ServicePro\\Nøsted ServicePro\\Controllers\\ServiceRegistrering",
+    "\\Nøsted ServicePro\\Nøsted ServicePro\\Views",
+    "\\Nøsted ServicePro\\Nøsted ServicePro\\Views\\ServiceRegistrering"
   ],
-  "SelectedNode": "\\Nøsted ServicePro\\Nøsted ServicePro\\Controllers\\ServiceRegistrering\\ServiceRegistreringController.cs",
-  "PreviewInSolutionExplorer": false
+  "SelectedNode": "\\Nøsted ServicePro\\Nøsted ServicePro\\Program.cs",
+  "PreviewInSolutionExplorer": true
 }
