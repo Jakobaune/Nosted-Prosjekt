@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\Nøsted ServicePro.props" />
-</Project>
