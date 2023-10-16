@@ -1,5 +1,4 @@
 html {
-  font-size: 14px;
 }
 
 @media (min-width: 768px) {
@@ -19,4 +18,12 @@ html {
 
 body {
   margin-bottom: 60px;
+}
+
+
+header {
+    background-color: #12181F;
+    height: 120px;
+    color: #A1B6C1;
+    padding: 30px;
 }

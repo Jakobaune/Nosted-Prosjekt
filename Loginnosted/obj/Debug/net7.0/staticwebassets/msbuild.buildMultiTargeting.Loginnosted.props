@@ -1,3 +1,3 @@
 ﻿<Project>
-  <Import Project="..\build\Loginnosted.props" />
+  <Import Project="../build/Loginnosted.props" />
 </Project>

@@ -1,0 +1,33 @@
+﻿<Properties StartupConfiguration="{739166EA-08A0-47D5-A2DB-085FBEC86EF5}|https">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.Loginnosted PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Shared/_Layout.cshtml">
+    <Files>
+      <File FileName="Views/Shared/_Layout.cshtml" Line="31" Column="15" />
+      <File FileName="wwwroot/css/site.css" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Loginnosted">
+            <Node name="Loginnosted">
+              <Node name="Views">
+                <Node name="Shared">
+                  <Node name="_Layout.cshtml" selected="True" />
+                </Node>
+              </Node>
+              <Node name="wwwroot" expanded="True">
+                <Node name="css" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+</Properties>

@@ -1,6 +1,10 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "Hash": "xZUnXIW6CbsNjVU3U+zFa1AMlw0gp++axM2sm+BAzPA=",
+=======
+  "Hash": "+nE4BgVncNKasYa8dzsna2VwZLwFSm4CnDkyVu6iGeo=",
+>>>>>>> 54a0c29919df6635436bb604ee32bce7ab8a3424
   "Source": "Loginnosted",
   "BasePath": "_content/Loginnosted",
   "Mode": "Default",
@@ -8,19 +12,19 @@
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [
     {
-      "Name": "Loginnosted\\wwwroot",
+      "Name": "Loginnosted/wwwroot",
       "Source": "Loginnosted",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\obj\\Debug\\net7.0\\scopedcss\\bundle\\Loginnosted.styles.css",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/obj/Debug/net7.0/scopedcss/bundle/Loginnosted.styles.css",
       "SourceId": "Loginnosted",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\obj\\Debug\\net7.0\\scopedcss\\bundle\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/obj/Debug/net7.0/scopedcss/bundle/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "Loginnosted.styles.css",
       "AssetKind": "All",
@@ -31,13 +35,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\obj\\Debug\\net7.0\\scopedcss\\bundle\\Loginnosted.styles.css"
+      "OriginalItemSpec": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/obj/Debug/net7.0/scopedcss/bundle/Loginnosted.styles.css"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Loginnosted.bundle.scp.css",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/obj/Debug/net7.0/scopedcss/projectbundle/Loginnosted.bundle.scp.css",
       "SourceId": "Loginnosted",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/obj/Debug/net7.0/scopedcss/projectbundle/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "Loginnosted.bundle.scp.css",
       "AssetKind": "All",
@@ -48,13 +52,30 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Loginnosted.bundle.scp.css"
+      "OriginalItemSpec": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/obj/Debug/net7.0/scopedcss/projectbundle/Loginnosted.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\css\\site.css",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/css/Bilder/OVERSIKT.jpg",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
+      "BasePath": "_content/Loginnosted",
+      "RelativePath": "css/Bilder/OVERSIKT.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/Bilder/OVERSIKT.jpg"
+    },
+    {
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/css/site.css",
+      "SourceId": "Loginnosted",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -65,13 +86,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\site.css"
+      "OriginalItemSpec": "wwwroot/css/site.css"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\favicon.ico",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/favicon.ico",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -82,13 +103,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\favicon.ico"
+      "OriginalItemSpec": "wwwroot/favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\js\\site.js",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/js/site.js",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -99,9 +120,10 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\site.js"
+      "OriginalItemSpec": "wwwroot/js/site.js"
     },
     {
+<<<<<<< HEAD
       "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
@@ -239,9 +261,12 @@
     },
     {
       "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+=======
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",
+>>>>>>> 54a0c29919df6635436bb604ee32bce7ab8a3424
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -252,13 +277,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -269,13 +294,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -286,13 +311,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -303,13 +328,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -320,13 +345,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -337,13 +362,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -354,13 +379,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -371,13 +396,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -388,13 +413,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -405,13 +430,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -422,13 +447,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -439,13 +464,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -456,13 +481,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -473,13 +498,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -490,13 +515,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -507,13 +532,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -524,13 +549,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -541,13 +566,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -558,13 +583,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -575,13 +600,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -592,13 +617,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -609,13 +634,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -626,13 +651,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -643,13 +668,153 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map"
     },
     {
+<<<<<<< HEAD
       "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+=======
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/css/bootstrap.css",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
+      "BasePath": "_content/Loginnosted",
+      "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap.css"
+    },
+    {
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map",
+      "SourceId": "Loginnosted",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
+      "BasePath": "_content/Loginnosted",
+      "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap.css.map"
+    },
+    {
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
+      "SourceId": "Loginnosted",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
+      "BasePath": "_content/Loginnosted",
+      "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap.min.css"
+    },
+    {
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map",
+      "SourceId": "Loginnosted",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
+      "BasePath": "_content/Loginnosted",
+      "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map"
+    },
+    {
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css",
+      "SourceId": "Loginnosted",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
+      "BasePath": "_content/Loginnosted",
+      "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css"
+    },
+    {
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map",
+      "SourceId": "Loginnosted",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
+      "BasePath": "_content/Loginnosted",
+      "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map"
+    },
+    {
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css",
+      "SourceId": "Loginnosted",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
+      "BasePath": "_content/Loginnosted",
+      "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css"
+    },
+    {
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
+      "SourceId": "Loginnosted",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
+      "BasePath": "_content/Loginnosted",
+      "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map"
+    },
+    {
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js",
+>>>>>>> 54a0c29919df6635436bb604ee32bce7ab8a3424
+      "SourceId": "Loginnosted",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -660,13 +825,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -677,13 +842,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -694,13 +859,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -711,13 +876,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -728,13 +893,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -745,13 +910,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -762,13 +927,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -779,13 +944,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/js/bootstrap.js",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -796,13 +961,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.js"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -813,13 +978,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.js.map"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -830,13 +995,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.min.js"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -847,13 +1012,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/bootstrap/LICENSE",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -864,13 +1029,17 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
+      "OriginalItemSpec": "wwwroot/lib/bootstrap/LICENSE"
     },
     {
+<<<<<<< HEAD
       "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+=======
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
+>>>>>>> 54a0c29919df6635436bb604ee32bce7ab8a3424
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -881,13 +1050,20 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
+<<<<<<< HEAD
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
       "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+=======
+      "OriginalItemSpec": "wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"
+    },
+    {
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
+>>>>>>> 54a0c29919df6635436bb604ee32bce7ab8a3424
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -898,13 +1074,20 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
+<<<<<<< HEAD
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
       "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+=======
+      "OriginalItemSpec": "wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt",
+>>>>>>> 54a0c29919df6635436bb604ee32bce7ab8a3424
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -915,6 +1098,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
+<<<<<<< HEAD
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
@@ -933,12 +1117,15 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
+=======
+      "OriginalItemSpec": "wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt"
+>>>>>>> 54a0c29919df6635436bb604ee32bce7ab8a3424
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/jquery-validation/dist/additional-methods.js",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -949,13 +1136,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
+      "OriginalItemSpec": "wwwroot/lib/jquery-validation/dist/additional-methods.js"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/jquery-validation/dist/additional-methods.min.js",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -966,13 +1153,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+      "OriginalItemSpec": "wwwroot/lib/jquery-validation/dist/additional-methods.min.js"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/jquery-validation/dist/jquery.validate.js",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -983,13 +1170,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
+      "OriginalItemSpec": "wwwroot/lib/jquery-validation/dist/jquery.validate.js"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -1000,13 +1187,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+      "OriginalItemSpec": "wwwroot/lib/jquery-validation/dist/jquery.validate.min.js"
     },
     {
-      "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/jquery-validation/LICENSE.md",
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -1017,13 +1204,17 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
+      "OriginalItemSpec": "wwwroot/lib/jquery-validation/LICENSE.md"
     },
     {
+<<<<<<< HEAD
       "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+=======
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/jquery/dist/jquery.js",
+>>>>>>> 54a0c29919df6635436bb604ee32bce7ab8a3424
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -1034,13 +1225,20 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
+<<<<<<< HEAD
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
       "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+=======
+      "OriginalItemSpec": "wwwroot/lib/jquery/dist/jquery.js"
+    },
+    {
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/jquery/dist/jquery.min.js",
+>>>>>>> 54a0c29919df6635436bb604ee32bce7ab8a3424
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -1051,13 +1249,20 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
+<<<<<<< HEAD
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
       "Identity": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+=======
+      "OriginalItemSpec": "wwwroot/lib/jquery/dist/jquery.min.js"
+    },
+    {
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/jquery/dist/jquery.min.map",
+>>>>>>> 54a0c29919df6635436bb604ee32bce7ab8a3424
       "SourceId": "Loginnosted",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\wwwroot\\",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
       "BasePath": "_content/Loginnosted",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
@@ -1068,7 +1273,28 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
+<<<<<<< HEAD
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+=======
+      "OriginalItemSpec": "wwwroot/lib/jquery/dist/jquery.min.map"
+    },
+    {
+      "Identity": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/lib/jquery/LICENSE.txt",
+      "SourceId": "Loginnosted",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/wwwroot/",
+      "BasePath": "_content/Loginnosted",
+      "RelativePath": "lib/jquery/LICENSE.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/lib/jquery/LICENSE.txt"
+>>>>>>> 54a0c29919df6635436bb604ee32bce7ab8a3424
     }
   ]
 }
