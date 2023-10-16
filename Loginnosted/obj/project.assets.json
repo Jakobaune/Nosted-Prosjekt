@@ -11732,25 +11732,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mathi\\.nuget\\packages\\": {}
+    "/Users/amadeushovden/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\Loginnosted.csproj",
+      "projectUniqueName": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/Loginnosted.csproj",
       "projectName": "Loginnosted",
-      "projectPath": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\Loginnosted.csproj",
-      "packagesPath": "C:\\Users\\mathi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Loginnosted\\obj\\",
+      "projectPath": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/Loginnosted.csproj",
+      "packagesPath": "/Users/amadeushovden/.nuget/packages/",
+      "outputPath": "/Users/amadeushovden/Documents/Nosted-Prosjekt/Loginnosted/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\mathi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/amadeushovden/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "/usr/local/share/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -11827,7 +11827,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.400/RuntimeIdentifierGraph.json"
       }
     }
   },
