@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Nøsted Service Pro</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Loginnosted.styles.css" asp-append-version="true" />
+</head>
+
+<body>
+
+    <header id="fiksaheader" class="d-flex flex-wrap align-items-center justify-content-between py-3 mb-4 border-bottom">
+
+        <!-- hele logoen, med riktig css og skal fungere som hjem knapp -->
+        <div class="col-md-3 mb-2 mb-md-0">
+            <a href="/" class="d-inline-flex flex-column align-items-center link-body-emphasis text-decoration-none">
+                <img src="~/css/Bilder/LOGO.jpg" alt="Logo" height="50px" class="mb-2">
+                <span style="font-size: 30px; color:#A1B6C1">Service Pro</span>
+            </a>
+        </div>
+
+        <!-- knappene i header, som tar bruker rundt på siden. Må fikse ikoner!! -->
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li class="nav-item me-3">
+                <a class="nav-link" asp-action="Oversikt" asp-controller="#">Oversikt</a>
+            </li>
+            <li class="nav-item me-3">
+                <a class="nav-link" asp-action="Index" asp-controller="Service">Registrere Service</a>
+            </li>
+            <li class="nav-item me-3">
+                <a class="nav-link" asp-action="Arkiv" asp-controller="Service">Servicehistorikk</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-action="VisAlleBrukere" asp-controller="Login">Brukere</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-action="VisSjekklisteMedStatus" asp-controller="Sjekkliste">Sjekkliste</a>
+            </li>
+        </ul>
+
+        <!-- Viser hvilke bruker som er logget inn. -->
+        <div class="col-md-4 d-flex justify-content-end">
+            <div>
+                <span class="me-2">Logget inn:</span>
+                <br />
+                <!-- navn og rolle må være dynamisk -->
+                <strong>User Name</strong> 
+                <br />
+                <strong style="color: #E06F06">(Rolle)</strong>
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - Nøsted& AS - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
