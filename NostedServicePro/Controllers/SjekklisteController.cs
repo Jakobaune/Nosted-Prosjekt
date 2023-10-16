@@ -55,19 +55,47 @@ public class SjekklisteController : Controller
         return View(sjekklisteMedStatus);
     }
 
+    public IActionResult VisSjekklisteForKunde(string kundeNavn)
+    {
+        var sjekklisteForKunde = _dbContext.Sjekkliste
+            .Include(s => s.SjekklisteElement) // Hent relaterte sjekklisteelementer
+            .Where(s => s.KundeNavn == kundeNavn)
+            .FirstOrDefault();
+
+        if (sjekklisteForKunde == null)
+        {
+            // Håndter når sjekklisten ikke finnes for det angitte kundenavnet
+            return NotFound($"Ingen sjekkliste funnet for kundenavn: {kundeNavn}");
+        }
+
+        return View("VisSjekkliste", sjekklisteForKunde);
+    }
+
+
+
     [HttpPost]
-    public IActionResult LeggTilSjekklisteElement(SjekklisteStatusViewModel viewModel)
+    public IActionResult LeggTilSjekklisteElement(SjekklisteStatusViewModel viewModel, string kundeNavn)
     {
         if (ModelState.IsValid)
         {
             try
             {
+                // Opprett en ny sjekkliste med kundenavnet
+                var nySjekkliste = new Sjekkliste
+                {
+                    KundeNavn = kundeNavn
+                };
+
+                _dbContext.Sjekkliste.Add(nySjekkliste);
+                _dbContext.SaveChanges();
+
                 foreach (var sjekkpunkt in viewModel.Sjekkpunkter)
                 {
                     var sjekklisteElement = new SjekklisteElement
                     {
                         Id = sjekkpunkt.Id,
-                        Status = sjekkpunkt.Status
+                        Status = sjekkpunkt.Status,
+                        SjekklisteId = nySjekkliste.Id // Knytt sjekklisteelementet til den nye sjekklisten
                     };
 
                     _dbContext.Entry(sjekklisteElement).Property(x => x.Status).IsModified = true;
@@ -83,10 +111,6 @@ public class SjekklisteController : Controller
         }
         return View(viewModel);
     }
-
-
-
-
 
 
 

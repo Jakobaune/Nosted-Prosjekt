@@ -1,10 +1,12 @@
-﻿@model List<string>
+﻿@model Loginnosted.Models.Sjekkliste
 
-<h1>Sjekkliste</h1>
+<h1>Sjekkliste for @Model.KundeNavn</h1>
 
 <ul>
-    @foreach (var sjekkpunkt in Model)
+    @foreach (var sjekklisteElement in Model.SjekklisteElement)
     {
-        <li>@sjekkpunkt</li>
+        <li>
+            <strong>@sjekklisteElement.Sjekkpunkt:</strong> @sjekklisteElement.Status
+        </li>
     }
 </ul>

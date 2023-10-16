@@ -1,3 +1,4 @@
+using Loginnosted;
 using Loginnosted.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -5,7 +6,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MySql.Data.MySqlClient;
-
+using Microsoft.AspNetCore.Server.Kestrel;
+using Microsoft.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -64,8 +66,10 @@ app.MapControllerRoute(
     defaults: new { controller = "Sjekkliste" });
 
 
-
-
+WebHost.CreateDefaultBuilder(args)
+    .ConfigureKestrel(c => c.AddServerHeader=false)
+    .UseStartup<Startup>()
+    .Build();
 
 
 app.Run();

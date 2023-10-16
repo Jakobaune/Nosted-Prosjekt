@@ -1,6 +1,11 @@
 ﻿@model Loginnosted.Models.SjekklisteStatusViewModel
 
 <form asp-action="LeggTilSjekklisteElement">
+    <div class="form-group">
+        <label for="kundeNavn">Kundenavn:</label>
+        <input type="text" id="kundeNavn" name="kundeNavn" class="form-control" />
+    </div>
+
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
     @for (int i = 0; i < Model.Sjekkpunkter.Count; i++)
