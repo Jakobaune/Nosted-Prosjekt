@@ -1,0 +1,25 @@
+﻿@model Loginnosted.Models.SjekklisteElement
+
+<h2>Rediger sjekklisteelement</h2>
+
+<form asp-action="RedigerSjekklisteElement" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="Sjekkpunkt" class="control-label"></label>
+        <input asp-for="Sjekkpunkt" class="form-control" />
+        <span asp-validation-for="Sjekkpunkt" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Status" class="control-label"></label>
+        <input asp-for="Status" class="form-control" />
+        <span asp-validation-for="Status" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Oppdater" class="btn btn-primary" />
+    </div>
+</form>

@@ -1,6 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Loginnosted.Models;
+using Microsoft.EntityFrameworkCore;
 using MySql.Data.MySqlClient;
-
 
 namespace Loginnosted.Data
 {
@@ -13,5 +13,8 @@ namespace Loginnosted.Data
         public DbSet<Bruker> Brukere { get; set; }
 
         public DbSet<ServiceOrdre> service { get; set; }
+
+        public DbSet<SjekklisteElement> SjekklisteElement { get; set; }
+
     }
 }

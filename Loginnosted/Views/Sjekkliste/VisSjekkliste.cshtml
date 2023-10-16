@@ -1,0 +1,10 @@
+﻿@model List<string>
+
+<h1>Sjekkliste</h1>
+
+<ul>
+    @foreach (var sjekkpunkt in Model)
+    {
+        <li>@sjekkpunkt</li>
+    }
+</ul>

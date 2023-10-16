@@ -58,6 +58,17 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+app.MapControllerRoute(
+    name: "sjekkliste",
+    pattern: "sjekkliste/{action=VisSjekklisteElement}/{id?}",
+    defaults: new { controller = "Sjekkliste" });
+
+app.MapControllerRoute(
+    name: "sjekkliste",
+    pattern: "sjekkliste/{action=VisSjekklisteMedStatus}/{id?}",
+    defaults: new { controller = "Sjekkliste" });
+
+
 
 
 
