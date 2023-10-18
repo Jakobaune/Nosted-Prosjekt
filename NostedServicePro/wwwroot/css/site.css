@@ -1,14 +1,5 @@
 html {
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    background-color: #12181F;
 }
 
 html {
@@ -17,8 +8,11 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+  margin-top:120px;
+  
 }
+
+
 
 
 header {
@@ -26,4 +20,31 @@ header {
     height: 120px;
     color: #A1B6C1;
     padding: 30px;
+    position:fixed;
+    
 }
+
+footer {
+    background-color: #12181F;
+    padding:10px;
+}
+
+#fiksaheader {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+#buthead {
+    background-color: #E06F06;
+    color: #A1B6C1;
+}
+
+.nav-link.btn {
+    width: 170px;
+    height: 70px;
+}
+
+.nav-link.btn:hover {
+        background-color: #E06F06; /* Change background color on hover */
+ }

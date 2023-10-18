@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Loginnosted.styles.css" asp-append-version="true" />
+    <script src="https://kit.fontawesome.com/ce9b37f466.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -14,7 +15,7 @@
     <header id="fiksaheader" class="d-flex flex-wrap align-items-center justify-content-between py-3 mb-4 border-bottom">
 
         <!-- hele logoen, med riktig css og skal fungere som hjem knapp -->
-        <div class="col-md-3 mb-2 mb-md-0">
+        <div class="col-md- mb-2 mb-md-0">
             <a href="/" class="d-inline-flex flex-column align-items-center link-body-emphasis text-decoration-none">
                 <img src="~/css/Bilder/LOGO.jpg" alt="Logo" height="50px" class="mb-2">
                 <span style="font-size: 30px; color:#A1B6C1">Service Pro</span>
@@ -22,26 +23,55 @@
         </div>
 
         <!-- knappene i header, som tar bruker rundt på siden. Må fikse ikoner!! -->
+       
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-            <li class="nav-item me-3">
-                <a class="nav-link" asp-action="Oversikt" asp-controller="#">Oversikt</a>
+
+            <li class="nav-item me-4">
+                <a class="nav-link btn" style="color: #A1B6C1" asp-action="Index" asp-controller="Home">
+                    <i class="fa-solid fa-house fa-lg" style="color: #A1B6C1" width="50px"></i>
+                    <br />
+                    Oversikt
+                </a>
             </li>
-            <li class="nav-item me-3">
-                <a class="nav-link" asp-action="Index" asp-controller="Service">Registrere Service</a>
+
+            <li class="nav-item me-4">
+                <a class="nav-link btn" style="color: #A1B6C1" asp-action="Index" asp-controller="Service">
+                    <i class="fa-solid fa-pen-to-square fa-lg" style="color: #A1B6C1" width="50px"></i>
+                    <br />
+                    Registrere Service
+                </a>
             </li>
-            <li class="nav-item me-3">
-                <a class="nav-link" asp-action="Arkiv" asp-controller="Service">Servicehistorikk</a>
+
+            <li class="nav-item me-4">
+                <a class="nav-link btn" style="color: #A1B6C1" asp-action="VisSjekklisteMedStatus" asp-controller="Sjekkliste">
+                    <i class="fa-solid fa-pen-to-square fa-lg" style="color: #A1B6C1" width="50px"></i>
+                    <br />
+                    Sjekkliste
+                </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" asp-action="VisAlleBrukere" asp-controller="Login">Brukere</a>
+
+            <li class="nav-item me-4">
+                <a class="nav-link btn" style="color: #A1B6C1" asp-action="Arkiv" asp-controller="Servicehistorikk">
+                    <i class="fa-solid fa-clock fa-lg" style="color: #A1B6C1" width="50px"></i>
+                    <br />
+                    Servicehistorikk
+                </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" asp-action="VisSjekklisteMedStatus" asp-controller="Sjekkliste">Sjekkliste</a>
+
+            <li class="nav-item me-4">
+                <a class="nav-link btn" style="color: #A1B6C1" asp-action="VisAlleBrukere" asp-controller="Login">
+                    <i class="fa-solid fa-user fa-lg" style="color: #A1B6C1" width="50px"></i>
+                    <br />
+                    Brukere
+                </a>
             </li>
+
+
         </ul>
 
+
         <!-- Viser hvilke bruker som er logget inn. -->
-        <div class="col-md-4 d-flex justify-content-end">
+        <div>
             <div>
                 <span class="me-2">Logget inn:</span>
                 <br />
@@ -65,12 +95,15 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2023 - Nøsted& AS - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <img src="~/css/Bilder/logoicon.jpg" height="50px" class="mb-2">
+            &copy; 2023 - Nøsted& AS - <a asp-area="" asp-controller="Oversikt" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+
 </body>
 </html>
