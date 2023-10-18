@@ -9,6 +9,7 @@ html {
 
 body {
   margin-top:120px;
+  min-height: 100vh;
   
 }
 
@@ -26,8 +27,13 @@ header {
 
 footer {
     background-color: #12181F;
-    padding:10px;
+    padding: 10px;
+    position: fixed;
+    bottom: -50px; /* Start utenfor synlighet */
+    width: 100%;
+    transition: bottom 0.3s; /* Legg til en overgang for jevn animasjon */
 }
+
 
 #fiksaheader {
     position: fixed;
