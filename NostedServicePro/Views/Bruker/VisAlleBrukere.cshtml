@@ -4,32 +4,72 @@
     ViewData["Title"] = "VisAlleBrukere";
 }
 
-<h1>Vis Alle Brukere</h1>
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>BrukerNavn</th>
-            <th>Epostadresse</th>
-            <th>Rolle</th>
-            <!-- Legg til flere kolonner etter behov -->
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var bruker in Model)
-        {
-            <tr>
-                <td>@bruker.BrukerNavn</td>
-                <td>@bruker.Epostadresse</td>
-                <td>@bruker.Rolle</td>
-                <!-- Legg til flere kolonner etter behov -->
-                <td>
-                    <a asp-action="RedigerBruker" asp-route-id="@bruker.BrukerId">Rediger</a> |
-                    <a asp-action="SlettBruker" asp-route-id="@bruker.BrukerId">Slett</a>
-                </td>
-
-            </tr>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            text-align: center;
         }
-    </tbody>
-</table>
+
+        .success-message {
+            color: white;
+            background-color: green;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var melding = "@ViewData["Melding"]";
+
+            if (melding) {
+                alert(melding);
+            }
+        });
+    </script>
+</head>
+<body>
+
+    @if (!string.IsNullOrEmpty(ViewData["BrukerNavn"] as string))
+    {
+        <div class="success-message">
+            Lagring av @ViewData["BrukerNavn"] vellykket!
+        </div>
+    }
+
+    <h1>Vis Alle Brukere</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>BrukerNavn</th>
+                <th>Epostadresse</th>
+                <th>Rolle</th>
+                <!-- Legg til flere kolonner etter behov -->
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var bruker in Model)
+            {
+                <tr>
+                    <td>@bruker.BrukerNavn</td>
+                    <td>@bruker.Epostadresse</td>
+                    <td>@bruker.Rolle</td>
+                    <!-- Legg til flere kolonner etter behov -->
+                    <td>
+                        <a asp-action="RedigerBruker" asp-route-id="@bruker.BrukerId">Rediger</a> |
+                        <form asp-action="SlettBruker" asp-route-id="@bruker.BrukerId" method="post" onsubmit="return confirm('Er du sikker på at du vil slette denne brukeren?');">
+                            <button type="submit" class="btn btn-danger">Slett</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</body>
+</html>

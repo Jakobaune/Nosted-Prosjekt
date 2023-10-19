@@ -14,9 +14,18 @@ public class BrukerController : Controller
 
     public IActionResult VisAlleBrukere()
     {
+        // Hent TempData-melding hvis den finnes
+        var brukerNavn = TempData["BrukerNavn"] as string;
+
         var brukere = _dbContext.Brukere.ToList(); // Hent alle brukere fra databasen
+
+        // Legg til brukerNavn i ViewData
+        ViewData["BrukerNavn"] = brukerNavn;
+
         return View("VisAlleBrukere", brukere);
     }
+
+
 
 
     public IActionResult Registrering()
@@ -24,6 +33,11 @@ public class BrukerController : Controller
         return View(); // Vis skjemaet
     }
 
+    public IActionResult RedigerBruker(int id)
+    {
+        var bruker = _dbContext.Brukere.Find(id);
+        return View(bruker);
+    }
 
     public IActionResult SlettBruker(int id)
     {
@@ -38,13 +52,6 @@ public class BrukerController : Controller
         return RedirectToAction("VisAlleBrukere");
     }
 
-    public IActionResult RedigerBruker(int id)
-    {
-        var bruker = _dbContext.Brukere.Find(id);
-        return View(bruker);
-    }
-
-    [HttpPost]
     [HttpPost]
     public IActionResult RedigerBruker(Bruker bruker)
     {
@@ -70,20 +77,21 @@ public class BrukerController : Controller
                 // Lagre endringene
                 _dbContext.SaveChanges();
 
+                // Legg til TempData-melding
+                TempData["BrukerNavn"] = eksisterendeBruker.BrukerNavn;
+
                 return RedirectToAction("VisAlleBrukere");
             }
             catch (Exception ex)
             {
                 // Håndter feil, for eksempel logg feilen
-                return Content("Feil ved lagring av endringer.");
+                TempData["Feilmelding"] = "Feil ved lagring av endringer.";
             }
         }
 
         // Hvis skjemaet ikke er gyldig, vis det samme skjemaet igjen med feilmeldinger
         return View(bruker);
     }
-
-
 
 
     [HttpPost]
@@ -97,18 +105,17 @@ public class BrukerController : Controller
                 _dbContext.Brukere.Add(bruker);
                 _dbContext.SaveChanges();
 
-                // Ingen omdirigering, du kan håndtere det på en annen måte om nødvendig
-                return Content("Data lagret vellykket!");
+                // Legg til en TempData-melding
+                TempData["BrukerNavn"] = bruker.BrukerNavn;
             }
             catch (Exception ex)
             {
                 // Håndter feil, for eksempel logg feilen
-                return Content("Feil ved lagring av data.");
+                TempData["Feilmelding"] = "Feil ved lagring av data.";
             }
         }
 
-        // Hvis skjemaet ikke er gyldig, vis det samme skjemaet igjen med feilmeldinger
-        return View();
+        // Omdiriger til "VisAlleBrukere"
+        return RedirectToAction("VisAlleBrukere");
     }
-
 }

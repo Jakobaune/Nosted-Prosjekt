@@ -1,12 +1,30 @@
 ﻿@model Loginnosted.Models.Sjekkliste
 
-<h1>Sjekkliste for @Model.KundeNavn</h1>
+<h1>Søk etter sjekkliste</h1>
 
-<ul>
-    @foreach (var sjekklisteElement in Model.SjekklisteElement)
-    {
-        <li>
-            <strong>@sjekklisteElement.Sjekkpunkt:</strong> @sjekklisteElement.Status
-        </li>
-    }
-</ul>
+<form action="/Sjekkliste/VisSjekklisteForKunde" method="post">
+    <input type="text" name="KundeNavn" placeholder="Kundenavn">
+    <input type="submit" value="Søk">
+</form>
+
+@if (Model != null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Kundenavn</th>
+                <th>Sjekkliste</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var sjekkliste in Model)
+            {
+                <tr>
+                    <td>@sjekkliste.KundeNavn</td>
+                    <td>@sjekkliste.SjekklisteElement.Count</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+

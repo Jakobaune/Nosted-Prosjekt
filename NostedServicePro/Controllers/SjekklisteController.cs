@@ -57,19 +57,17 @@ public class SjekklisteController : Controller
 
     public IActionResult VisSjekklisteForKunde(string kundeNavn)
     {
-        var sjekklisteForKunde = _dbContext.Sjekkliste
-            .Include(s => s.SjekklisteElement) // Hent relaterte sjekklisteelementer
+        // Hent alle sjekklistene som tilhører kundenavnet
+        var sjekklister = _dbContext.Sjekkliste
             .Where(s => s.KundeNavn == kundeNavn)
-            .FirstOrDefault();
+            .ToList();
 
-        if (sjekklisteForKunde == null)
-        {
-            // Håndter når sjekklisten ikke finnes for det angitte kundenavnet
-            return NotFound($"Ingen sjekkliste funnet for kundenavn: {kundeNavn}");
-        }
-
-        return View("VisSjekkliste", sjekklisteForKunde);
+        // Returner sjekklistene
+        return View(sjekklister[0]);
     }
+
+
+
 
 
 
