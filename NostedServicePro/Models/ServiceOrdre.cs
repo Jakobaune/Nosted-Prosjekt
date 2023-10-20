@@ -3,8 +3,6 @@ using System.ComponentModel.DataAnnotations;
 
 public class ServiceOrdre
 {
-    // Auto-genereres av databasen
-
     [Key]
     public int OrdreID { get; set; }
 
@@ -15,7 +13,8 @@ public class ServiceOrdre
     public int ÅrsmodellVinsj { get; set; }
     public string Serienummervinsj { get; set; }
 
-    [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+    [Display(Name = "Registreringsdato")]
+    [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd HH:mm:ss}", ApplyFormatInEditMode = true)]
     public DateTime Registreringsdato { get; set; }
 
     public string AvtaltKommentar { get; set; }
@@ -23,13 +22,15 @@ public class ServiceOrdre
     public string Problembeskrivelse { get; set; }
     public string ServiceType { get; set; }
 
+    [Display(Name = "Avtalt leveringsdato")]
     [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-    public DateOnly AvtaltleveringsDato { get; set; }
+    public DateTime AvtaltleveringsDato { get; set; }
 
+    [Display(Name = "Avtalt ferdigstillingsdato")]
     [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-    public DateOnly Avtaltferdigstillingsdato { get; set; }
+    public DateTime Avtaltferdigstillingsdato { get; set; }
 
+    [Display(Name = "Produktmottatt dato")]
     [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-    public DateOnly ProduktmottattDato { get; set; }
-
+    public DateTime ProduktmottattDato { get; set; }
 }
