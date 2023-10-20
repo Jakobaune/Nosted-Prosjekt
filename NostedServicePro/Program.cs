@@ -62,7 +62,7 @@ app.MapControllerRoute(
 
 app.MapControllerRoute(
     name: "sjekkliste",
-    pattern: "sjekkliste/{action=VisSjekklisteElement}/{id?}",
+    pattern: "sjekkliste/{action=Sjekking}/{id?}",
     defaults: new { controller = "Sjekkliste" });
 
 
