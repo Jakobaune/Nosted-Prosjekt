@@ -1,0 +1,72 @@
+﻿
+@model List<Sjekkliste>
+
+@{
+    ViewData["Title"] = "Sjekkliste Liste";
+}
+
+<h1>Sjekkliste Liste</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Clutch Lameller</th>
+            <th>Bremser</th>
+            <th>Lager Trommel</th>
+            <th>PTOO</th>
+            <th>kjedestrammer</th>
+            <th>Wire</th>
+            <th>Plnonlager</th>
+            <th>KilleHjul</th>
+            <th>HydraulikkSylinder</th>
+            <th>SlangerSkader</th>
+            <th>TestHydraulikkblokk</th>
+            <th>SkiftOljeTank</th>
+            <th>Ringsy</th>
+            <th>Ringsy</th>
+            <th>Ringsy</th>
+            <th>Ringsy</th>
+            <th>Ringsy</th>
+            <th>Ringsy</th>
+            <th>Ringsy</th>
+            <th>Ringsy</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var sjekkliste in Model)
+        {
+            <tr>
+                <td>@sjekkliste.Id</td>
+                <td>@sjekkliste.ClutchLameller</td>
+                <td>@sjekkliste.Bremser</td>
+                <td>@sjekkliste.LagerTrommel</td>
+                <td>@sjekkliste.PTOOpplagring</td>
+                <td>@sjekkliste.Kjedestrammer</td>
+                <td>@sjekkliste.Wire</td>
+                <td>@sjekkliste.PlnlonLager</td>
+                <td>@sjekkliste.KilleKjedehjul</td>
+                <td>@sjekkliste.HydraulikkSylinderLekkasje</td>
+                <td>@sjekkliste.SlangerSkaderLekkasje</td>
+                <td>@sjekkliste.TestHydraulikkblokk</td>
+                <td>@sjekkliste.SkiftOljeTank</td>
+                <td>@sjekkliste.SkiftOljeGirboks</td>
+                <td>@sjekkliste.RingsyllingerSkiftTelnlnger</td>
+                <td>@sjekkliste.BremsesylingerSkiftTelninger</td>
+                <td>@sjekkliste.LedningsnettVinsj</td>
+                <td>@sjekkliste.SjekkTestRadio</td>
+                <td>@sjekkliste.SjekkTestKnappekasse</td>
+                <td>@sjekkliste.XXBar</td>
+                <td>@sjekkliste.TestVinsjAlleFunksjoner</td>
+                <td>@sjekkliste.TrekkraftKn</td>
+                <td>@sjekkliste.BremsekraftKn</td>
+                
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    <a asp-action="Sjekking">Back to List</a>
+</div>

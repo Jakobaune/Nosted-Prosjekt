@@ -14,15 +14,19 @@ namespace DinProsjekt.Controllers
             _context = context;
         }
 
+        public IActionResult SjekklisteListe()
+        {
+            var sjekklister = _context.Sjekkliste.ToList();
+            return View(sjekklister);
+        }
+
+
         // Viser listen over sjekklister
         public IActionResult Sjekking()
         {
-
-            var sjekklister = _context.Sjekkliste.ToList(); // Hent sjekklister fra databasen
-            var førsteSjekkliste = sjekklister.FirstOrDefault(); // Velg den første sjekklisten (eller en annen etter dine behov)
-            return View(førsteSjekkliste);
+            var sjekklister = _context.Sjekkliste.ToList();
+            return View(sjekklister);
         }
-
 
         // Viser detaljer for en spesifikk sjekkliste
         public IActionResult Details(int? id)
