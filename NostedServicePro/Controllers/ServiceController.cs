@@ -14,7 +14,7 @@ public class ServiceController : Controller
         _dbContext = dbContext;
     }
 
-    public IActionResult Index()
+    public IActionResult Registrer()
     {
         return View(); // Vis skjemaet for å bestille service
     }
@@ -56,7 +56,7 @@ public class ServiceController : Controller
         }
 
     [HttpPost]
-    public IActionResult Index(ServiceOrdre serviceOrdre)
+    public IActionResult Registrer(ServiceOrdre serviceOrdre)
     {
         if (ModelState.IsValid)
         {
@@ -64,15 +64,20 @@ public class ServiceController : Controller
             {
                 _dbContext.service.Add(serviceOrdre);
                 _dbContext.SaveChanges();
-                return Content("Data lagret vellykket!");
+
+                TempData["Message"] = $"Serviceordre #{serviceOrdre.OrdreID} laget vellykket!";
+                return RedirectToAction(nameof(Arkiv));
             }
             catch (Exception ex)
             {
-                return Content($"Feil ved lagring av data. Feilmelding: {ex.Message}");
+                TempData["Error"] = $"Feil ved lagring av data. Feilmelding: {ex.Message}";
             }
         }
+
         return View();
     }
+
+
 
     [HttpPost]
     public IActionResult Edit(ServiceOrdre model)
@@ -83,6 +88,8 @@ public class ServiceController : Controller
             {
                 _dbContext.Entry(model).State = EntityState.Modified;
                 _dbContext.SaveChanges();
+
+                TempData["Message"] = $"Serviceordre #{model.OrdreID} endret vellykket!";
                 return RedirectToAction(nameof(Arkiv));
             }
             catch (DbUpdateConcurrencyException)
@@ -124,8 +131,8 @@ public class ServiceController : Controller
         Console.WriteLine($"Exception: {ex}");
     }
 
-    // Endre retur til Index
-    return RedirectToAction(nameof(Index));
+    // Endre retur til arkiv
+    return RedirectToAction(nameof(Arkiv));
 }
 
 

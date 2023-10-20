@@ -1,7 +1,7 @@
 ﻿@model ServiceOrdre
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Registrer";
 }
 
 @if (!string.IsNullOrEmpty(TempData["Message"]?.ToString()))
@@ -11,36 +11,40 @@
     </div>
 }
 
+<div>
+    <h2>Registrer ny serviceordre</h2>
+    <p><italic>Fyll ut info om kunden</italic></p>
+</div>
 
 
-<form asp-action="Index" method="post">
+<form asp-action="Registrer" method="post">
     <div class="form-group">
-        <label asp-for="Kundenavn">Kundenavn</label>
+        <label asp-for="Kundenavn">Navn på kunden</label>
         <input asp-for="Kundenavn" class="form-control" />
     </div>
 
     <div class="form-group">
-        <label asp-for="Kundeepost">Kundeepost</label>
+        <label asp-for="Kundeepost">Epost</label>
         <input asp-for="Kundeepost" class="form-control" />
     </div>
 
     <div class="form-group">
-        <label asp-for="Kundetlf">Kundetlf</label>
+        <label asp-for="Kundetlf">Tlfnummer</label>
         <input asp-for="Kundetlf" class="form-control" />
     </div>
 
     <div class="form-group">
-        <label asp-for="Produkttypevinsj">Produkttypevinsj</label>
+        <label asp-for="Produkttypevinsj">Vinsj type</label>
         <input asp-for="Produkttypevinsj" class="form-control" />
     </div>
 
     <div class="form-group">
-        <label asp-for="ÅrsmodellVinsj">ÅrsmodellVinsj</label>
+        <label asp-for="ÅrsmodellVinsj">Årsmodell på vinsj</label>
         <input asp-for="ÅrsmodellVinsj" class="form-control" />
     </div>
 
     <div class="form-group">
-        <label asp-for="Serienummervinsj">Serienummervinsj</label>
+        <label asp-for="Serienummervinsj">Serienummer</label>
         <input asp-for="Serienummervinsj" class="form-control" />
     </div>
 
@@ -50,12 +54,12 @@
     </div>
 
     <div class="form-group">
-        <label asp-for="AvtaltKommentar">AvtaltKommentar</label>
+        <label asp-for="AvtaltKommentar">Spesifikke avtaler med kunde</label>
         <input asp-for="AvtaltKommentar" class="form-control" />
     </div>
 
     <div class="form-group">
-        <label asp-for="InternKommentar">InternKommentar</label>
+        <label asp-for="InternKommentar">Internkommentar</label>
         <input asp-for="InternKommentar" class="form-control" />
     </div>
 
@@ -65,24 +69,24 @@
     </div>
 
     <div class="form-group">
-        <label asp-for="ServiceType">ServiceType</label>
+        <label asp-for="ServiceType">Type service</label>
         <input asp-for="ServiceType" class="form-control" />
     </div>
 
     <div class="form-group">
-        <label asp-for="AvtaltleveringsDato">AvtaltleveringsDato</label>
+        <label asp-for="AvtaltleveringsDato">Når skal vinsjen leveres til service?</label>
         <input asp-for="AvtaltleveringsDato" type="date" class="form-control" />
     </div>
 
     <div class="form-group">
-        <label asp-for="Avtaltferdigstillingsdato">Avtaltferdigstillingsdato</label>
+        <label asp-for="Avtaltferdigstillingsdato">Når skal vinsjen være ferdig?</label>
         <input asp-for="Avtaltferdigstillingsdato" type="date" class="form-control" />
     </div>
 
     <div class="form-group">
-        <label asp-for="ProduktmottattDato">ProduktmottattDato</label>
+        <label asp-for="ProduktmottattDato">Når ble vinsjen mottatt?</label>
         <input asp-for="ProduktmottattDato" type="date" class="form-control" />
     </div>
 
-    <button type="submit" class="btn btn-primary">Bestill Service</button>
+    <button type="submit" class="btn btn-primary">Lag serviceordre</button>
 </form>

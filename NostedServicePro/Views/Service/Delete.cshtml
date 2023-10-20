@@ -115,14 +115,10 @@ else if (!string.IsNullOrEmpty(TempData["Error"]?.ToString()))
     <form method="post" asp-controller="Service" asp-action="Delete">
         <input type="hidden" asp-for="OrdreID" />
         <label>
-            <input type="checkbox" name="confirm" required /> Confirm deletion
+            <input type="checkbox" name="confirm" required /> Bekreft sletting
         </label>
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="submit" value="Slett" class="btn btn-danger" /> |
+        <a asp-action="Arkiv">Tilbake til historikk</a>
     </form>
-
-
-
-
 
 </div>

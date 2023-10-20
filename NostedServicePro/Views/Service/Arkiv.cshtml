@@ -4,10 +4,21 @@
     ViewData["Title"] = "Arkiv";
 }
 
+@{
+    var message = TempData["Message"] as string;
+}
+
+@if (!string.IsNullOrEmpty(message))
+{
+    <div class="alert alert-success" role="alert">
+        @message
+    </div>
+}
+
 <h1>Arkiv</h1>
 
 <p>
-    <a asp-action="Index">Create New</a>
+    <a asp-action="Registrer">Lag ny serviceordre </a>
 </p>
 <table class="table">
     <thead>
@@ -26,38 +37,9 @@
                 @Html.DisplayNameFor(model => model.Kundetlf)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Produkttypevinsj)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ÅrsmodellVinsj)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Serienummervinsj)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Registreringsdato)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.AvtaltKommentar)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.InternKommentar)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Problembeskrivelse)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ServiceType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AvtaltleveringsDato)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Avtaltferdigstillingsdato)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProduktmottattDato)
-            </th>
             <th></th>
         </tr>
     </thead>
@@ -79,42 +61,12 @@
                     @Html.DisplayFor(modelItem => item.Kundetlf)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Produkttypevinsj)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ÅrsmodellVinsj)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Serienummervinsj)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.Registreringsdato)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.AvtaltKommentar)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.InternKommentar)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Problembeskrivelse)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ServiceType)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.AvtaltleveringsDato)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Avtaltferdigstillingsdato)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ProduktmottattDato)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-controller="Service" asp-route-id="@item.OrdreID">Edit</a> |
-                    <a asp-action="Details" asp-controller="Service" asp-route-id="@item.OrdreID">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.OrdreID">Delete</a>
+                    <a asp-action="Edit" asp-controller="Service" asp-route-id="@item.OrdreID">Rediger</a> |
+                    <a asp-action="Details" asp-controller="Service" asp-route-id="@item.OrdreID">Detaljer</a> |
+                    <a asp-action="Delete" asp-route-id="@item.OrdreID">Slett</a>
                 </td>
             </tr>
         }
