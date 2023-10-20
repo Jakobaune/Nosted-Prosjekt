@@ -19,11 +19,24 @@ public class ServiceController : Controller
         return View(); // Vis skjemaet for å bestille service
     }
 
-    public IActionResult Arkiv()
+    public IActionResult Arkiv(string search)
     {
-        var arkivData = _dbContext.service.ToList(); // Hent alle dataene fra databasen
-        return View(arkivData);
+        var arkivData = _dbContext.service.AsQueryable();
+
+        if (!string.IsNullOrEmpty(search))
+        {
+            arkivData = arkivData.Where(item =>
+                item.Kundenavn.Contains(search) ||
+                item.OrdreID.ToString().Contains(search) ||
+                item.Kundeepost.Contains(search) ||
+                item.Kundetlf.Contains(search)
+            );
+        }
+
+        var searchResult = arkivData.ToList();
+        return View(searchResult);
     }
+
 
     public IActionResult Edit(int id)
     {
