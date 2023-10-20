@@ -13,6 +13,7 @@ namespace DinProsjekt.Controllers
         {
             _context = context;
         }
+<<<<<<< HEAD
         public IActionResult SjekklisteListe()
         {
             var sjekklister = _context.Sjekkliste.ToList();
@@ -29,6 +30,19 @@ namespace DinProsjekt.Controllers
 
 
 
+=======
+
+        // Viser listen over sjekklister
+        public IActionResult Sjekking()
+        {
+
+            var sjekklister = _context.Sjekkliste.ToList(); // Hent sjekklister fra databasen
+            var førsteSjekkliste = sjekklister.FirstOrDefault(); // Velg den første sjekklisten (eller en annen etter dine behov)
+            return View(førsteSjekkliste);
+        }
+
+
+>>>>>>> 32d7d8e881f512787c0efbca2629c50b859a25d7
         // Viser detaljer for en spesifikk sjekkliste
         public IActionResult Details(int? id)
         {
