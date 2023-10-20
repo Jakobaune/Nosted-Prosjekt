@@ -62,6 +62,9 @@ public class ServiceController : Controller
         {
             try
             {
+                // Sett registreringsdato til nåværende dato og klokkeslett
+                serviceOrdre.Registreringsdato = DateTime.Now;
+
                 _dbContext.service.Add(serviceOrdre);
                 _dbContext.SaveChanges();
 
