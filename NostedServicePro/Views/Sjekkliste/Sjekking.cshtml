@@ -10,118 +10,225 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Sjekking">
+        <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
             <div class="form-group">
                 <label asp-for="ClutchLameller" class="control-label"></label>
-                <select asp-for="ClutchLameller" class="form-control"></select>
+                <select asp-for="ClutchLameller" class="form-control">
+                    <option value="OK">OK</option>
+                    <option value="BørSkiftes">Bør skiftes</option>
+                    <option value="Defekt">Defekt</option>
+                </select>
                 <span asp-validation-for="ClutchLameller" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="Bremser" class="control-label"></label>
-                <select asp-for="Bremser" class="form-control"></select>
+                <select asp-for="Bremser" class="form-control">
+                    <option value="OK">OK</option>
+                    <option value="BørSkiftes">Bør skiftes</option>
+                    <option value="Defekt">Defekt</option>
+                </select>
                 <span asp-validation-for="Bremser" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="LagerTrommel" class="control-label"></label>
-                <select asp-for="LagerTrommel" class="form-control"></select>
+                <select asp-for="LagerTrommel" class="form-control">
+                    <option value="OK">OK</option>
+                    <option value="BørSkiftes">Bør skiftes</option>
+                    <option value="Defekt">Defekt</option>
+                </select>
                 <span asp-validation-for="LagerTrommel" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="PTOOpplagring" class="control-label"></label>
-                <select asp-for="PTOOpplagring" class="form-control"></select>
+                <select asp-for="PTOOpplagring" class="form-control">
+                    <option value="OK">OK</option>
+                    <option value="BørSkiftes">Bør skiftes</option>
+                    <option value="Defekt">Defekt</option>
+                </select>
                 <span asp-validation-for="PTOOpplagring" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
             </div>
             <div class="form-group">
                 <label asp-for="Kjedestrammer" class="control-label"></label>
-                <select asp-for="Kjedestrammer" class="form-control"></select>
+                <select asp-for="Kjedestrammer" class="form-control">
+                    <option value="OK">OK</option>
+                    <option value="BørSkiftes">Bør skiftes</option>
+                    <option value="Defekt">Defekt</option>
+                </select>
                 <span asp-validation-for="Kjedestrammer" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Wire" class="control-label"></label>
-                <select asp-for="Wire" class="form-control"></select>
+                <select asp-for="Wire" class="form-control">
+                    <option value="OK">OK</option>
+                    <option value="BørSkiftes">Bør skiftes</option>
+                    <option value="Defekt">Defekt</option>
+                </select>
                 <span asp-validation-for="Wire" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="PlnlonLager" class="control-label"></label>
-                <select asp-for="PlnlonLager" class="form-control"></select>
+                <select asp-for="PlnlonLager" class="form-control">
+                    <option value="OK">OK</option>
+                    <option value="BørSkiftes">Bør skiftes</option>
+                    <option value="Defekt">Defekt</option>
+                </select>
                 <span asp-validation-for="PlnlonLager" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="KilleKjedehjul" class="control-label"></label>
-                <select asp-for="KilleKjedehjul" class="form-control"></select>
+                <select asp-for="KilleKjedehjul" class="form-control">
+                    <option value="OK">OK</option>
+                    <option value="BørSkiftes">Bør skiftes</option>
+                    <option value="Defekt">Defekt</option>
+                </select>
                 <span asp-validation-for="KilleKjedehjul" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="HydraulikkSylinderLekkasje" class="control-label"></label>
-                <select asp-for="HydraulikkSylinderLekkasje" class="form-control"></select>
+                <select asp-for="HydraulikkSylinderLekkasje" class="form-control">
+                    <option value="OK">OK</option>
+                    <option value="BørSkiftes">Bør skiftes</option>
+                    <option value="Defekt">Defekt</option>
+                </select>
                 <span asp-validation-for="HydraulikkSylinderLekkasje" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="SlangerSkaderLekkasje" class="control-label"></label>
-                <select asp-for="SlangerSkaderLekkasje" class="form-control"></select>
+                <select asp-for="SlangerSkaderLekkasje" class="form-control">
+                    <option value="OK">OK</option>
+                    <option value="BørSkiftes">Bør skiftes</option>
+                    <option value="Defekt">Defekt</option>
+                </select>
                 <span asp-validation-for="SlangerSkaderLekkasje" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="TestHydraulikkblokk" class="control-label"></label>
-                <select asp-for="TestHydraulikkblokk" class="form-control"></select>
+                <select asp-for="TestHydraulikkblokk" class="form-control">
+                    <option value="OK">OK</option>
+                    <option value="BørSkiftes">Bør skiftes</option>
+                    <option value="Defekt">Defekt</option>
+                </select>
                 <span asp-validation-for="TestHydraulikkblokk" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="SkiftOljeTank" class="control-label"></label>
-                <select asp-for="SkiftOljeTank" class="form-control"></select>
+                <select asp-for="SkiftOljeTank" class="form-control">
+                    <option value="OK">OK</option>
+                    <option value="BørSkiftes">Bør skiftes</option>
+                    <option value="Defekt">Defekt</option>
+                </select>
                 <span asp-validation-for="SkiftOljeTank" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="SkiftOljeGirboks" class="control-label"></label>
-                <select asp-for="SkiftOljeGirboks" class="form-control"></select>
+                <select asp-for="SkiftOljeGirboks" class="form-control">
+                    <option value="OK">OK</option>
+                    <option value="BørSkiftes">Bør skiftes</option>
+                    <option value="Defekt">Defekt</option>
+                </select>
                 <span asp-validation-for="SkiftOljeGirboks" class="text-danger"></span>
             </div>
+
+
             <div class="form-group">
                 <label asp-for="RingsyllingerSkiftTelnlnger" class="control-label"></label>
-                <select asp-for="RingsyllingerSkiftTelnlnger" class="form-control"></select>
+                <select asp-for="RingsyllingerSkiftTelnlnger" class="form-control">
+                    <option value="OK">OK</option>
+                    <option value="BørSkiftes">Bør skiftes</option>
+                    <option value="Defekt">Defekt</option>
+                </select>
                 <span asp-validation-for="RingsyllingerSkiftTelnlnger" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="BremsesylingerSkiftTelninger" class="control-label"></label>
-                <select asp-for="BremsesylingerSkiftTelninger" class="form-control"></select>
+                <select asp-for="BremsesylingerSkiftTelninger" class="form-control">
+                    <option value="OK">OK</option>
+                    <option value="BørSkiftes">Bør skiftes</option>
+                    <option value="Defekt">Defekt</option>
+                </select>
                 <span asp-validation-for="BremsesylingerSkiftTelninger" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="LedningsnettVinsj" class="control-label"></label>
-                <select asp-for="LedningsnettVinsj" class="form-control"></select>
+                <select asp-for="LedningsnettVinsj" class="form-control">
+                    <option value="OK">OK</option>
+                    <option value="BørSkiftes">Bør skiftes</option>
+                    <option value="Defekt">Defekt</option>
+                </select>
                 <span asp-validation-for="LedningsnettVinsj" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="SjekkTestRadio" class="control-label"></label>
-                <select asp-for="SjekkTestRadio" class="form-control"></select>
+                <select asp-for="SjekkTestRadio" class="form-control">
+                    <option value="OK">OK</option>
+                    <option value="BørSkiftes">Bør skiftes</option>
+                    <option value="Defekt">Defekt</option>
+                </select>
+
+                <div class="form-group">
+                    <label asp-for="SjekkTestKnappekasse" class="control-label"></label>
+                    <select asp-for="SjekkTestKnappekasse" class="form-control">
+                        <option value="OK">OK</option>
+                        <option value="BørSkiftes">Bør skiftes</option>
+                        <option value="Defekt">Defekt</option>
+                    </select>
+                    <span asp-validation-for="SjekkTestKnappekasse" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="XXBar" class="control-label"></label>
+                    <select asp-for="XXBar" class="form-control">
+                        <option value="OK">OK</option>
+                        <option value="BørSkiftes">Bør skiftes</option>
+                        <option value="Defekt">Defekt</option>
+                    </select>
+                    <span asp-validation-for="XXBar" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="TestVinsjAlleFunksjoner" class="control-label"></label>
+                    <select asp-for="TestVinsjAlleFunksjoner" class="form-control">
+                        <option value="OK">OK</option>
+                        <option value="BørSkiftes">Bør skiftes</option>
+                        <option value="Defekt">Defekt</option>
+                    </select>
+                    <span asp-validation-for="TestVinsjAlleFunksjoner" class="text-danger"></span>
+                </div>
                 <span asp-validation-for="SjekkTestRadio" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="SjekkTestKnappekasse" class="control-label"></label>
-                <select asp-for="SjekkTestKnappekasse" class="form-control"></select>
-                <span asp-validation-for="SjekkTestKnappekasse" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="XXBar" class="control-label"></label>
-                <select asp-for="XXBar" class="form-control"></select>
-                <span asp-validation-for="XXBar" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TestVinsjAlleFunksjoner" class="control-label"></label>
-                <select asp-for="TestVinsjAlleFunksjoner" class="form-control"></select>
-                <span asp-validation-for="TestVinsjAlleFunksjoner" class="text-danger"></span>
-            </div>
+
+
             <div class="form-group">
                 <label asp-for="TrekkraftKn" class="control-label"></label>
-                <select asp-for="TrekkraftKn" class="form-control"></select>
+                <select asp-for="TrekkraftKn" class="form-control">
+                    <option value="OK">OK</option>
+                    <option value="BørSkiftes">Bør skiftes</option>
+                    <option value="Defekt">Defekt</option>
+                </select>
                 <span asp-validation-for="TrekkraftKn" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="BremsekraftKn" class="control-label"></label>
-                <select asp-for="BremsekraftKn" class="form-control"></select>
+                <select asp-for="BremsekraftKn" class="form-control">
+                    <option value="OK">OK</option>
+                    <option value="BørSkiftes">Bør skiftes</option>
+                    <option value="Defekt">Defekt</option>
+                </select>
                 <span asp-validation-for="BremsekraftKn" class="text-danger"></span>
             </div>
+
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
@@ -134,5 +241,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
