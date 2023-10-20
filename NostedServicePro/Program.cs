@@ -45,13 +45,13 @@ app.UseAuthorization();
 
 // Oppdatert ruteoppsett for LoginController
 app.MapControllerRoute(
-    name: "login",
-    pattern: "login/{action=Registrering}/{id?}",
+    name: "Bruker",
+    pattern: "bruker/{action=Registrering}/{id?}",
     defaults: new { controller = "Bruker" });
 
 app.MapControllerRoute(
     name: "service",
-    pattern: "service/{action=Index}/{id?}",
+    pattern: "service/{action=Registrer}/{id?}",
     defaults: new { controller = "Service" });
 
 
