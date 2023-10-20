@@ -1,0 +1,17 @@
+/Users/jakobaune/Downloads/Nosted-Prosjekt/NostedServicePro/bin/Debug/NostedServicePro.deps.json
+/Users/jakobaune/Downloads/Nosted-Prosjekt/NostedServicePro/bin/Debug/NostedServicePro.runtimeconfig.json
+/Users/jakobaune/Downloads/Nosted-Prosjekt/NostedServicePro/bin/Debug/appsettings.Development.json
+/Users/jakobaune/Downloads/Nosted-Prosjekt/NostedServicePro/bin/Debug/appsettings.json
+/Users/jakobaune/Downloads/Nosted-Prosjekt/NostedServicePro/bin/Debug/NostedServicePro.staticwebassets.runtime.json
+/Users/jakobaune/Downloads/Nosted-Prosjekt/NostedServicePro/bin/Debug/NostedServicePro
+/Users/jakobaune/Downloads/Nosted-Prosjekt/NostedServicePro/bin/Debug/NostedServicePro.dll
+/Users/jakobaune/Downloads/Nosted-Prosjekt/NostedServicePro/bin/Debug/Microsoft.EntityFrameworkCore.dll
+/Users/jakobaune/Downloads/Nosted-Prosjekt/NostedServicePro/bin/Debug/Microsoft.EntityFrameworkCore.Relational.dll
+/Users/jakobaune/Downloads/Nosted-Prosjekt/NostedServicePro/bin/Debug/BCrypt.Net.dll
+/Users/jakobaune/Downloads/Nosted-Prosjekt/NostedServicePro/bin/Debug/Pomelo.EntityFrameworkCore.MySql.dll
+/Users/jakobaune/Downloads/Nosted-Prosjekt/NostedServicePro/bin/Debug/Microsoft.EntityFrameworkCore.Abstractions.dll
+/Users/jakobaune/Downloads/Nosted-Prosjekt/NostedServicePro/bin/Debug/MySqlConnector.dll
+/Users/jakobaune/Downloads/Nosted-Prosjekt/NostedServicePro/bin/Debug/NostedServicePro.pdb
+/Users/jakobaune/Downloads/Nosted-Prosjekt/NostedServicePro/obj/Debug/docker-compose.dcproj.AssemblyReference.cache
+/Users/jakobaune/Downloads/Nosted-Prosjekt/NostedServicePro/obj/Debug/docker-compose.dcproj.CoreCompileInputs.cache
+/Users/jakobaune/Downloads/Nosted-Prosjekt/NostedServicePro/obj/Debug/docker-compose.dcproj.CopyComplete
