@@ -18,7 +18,7 @@
 <h1>Arkiv</h1>
 
 <p>
-    <a asp-action="Registrer">Lag ny serviceordre </a>
+    <a asp-action="Registrer">Lag ny serviceordre</a>
 </p>
 <table class="table">
     <thead>
@@ -26,7 +26,6 @@
             <th>
                 @Html.DisplayName("Ordre ID")
             </th>
-
             <th>
                 @Html.DisplayNameFor(model => model.Kundenavn)
             </th>
@@ -39,7 +38,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.Registreringsdato)
             </th>
-            <th>
             <th></th>
         </tr>
     </thead>
@@ -50,7 +48,6 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.OrdreID)
                 </td>
-
                 <td>
                     @Html.DisplayFor(modelItem => item.Kundenavn)
                 </td>
@@ -61,7 +58,7 @@
                     @Html.DisplayFor(modelItem => item.Kundetlf)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Registreringsdato)
+                    @item.Registreringsdato.ToString("yyyy-MM-dd")
                 </td>
                 <td>
                     <a asp-action="Edit" asp-controller="Service" asp-route-id="@item.OrdreID">Rediger</a> |
