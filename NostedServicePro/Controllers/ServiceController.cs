@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
+using System.Linq.Expressions;
 
 public class ServiceController : Controller
 {
@@ -19,10 +20,16 @@ public class ServiceController : Controller
         return View(); // Vis skjemaet for å bestille service
     }
 
-    public IActionResult Arkiv(string search)
+    public IActionResult Arkiv(string search, string sortOrder)
     {
+        ViewData["IdSortParm"] = string.IsNullOrEmpty(sortOrder) ? "id_desc" : "";
+        ViewData["NameSortParm"] = sortOrder == "name" ? "name_desc" : "name";
+        ViewData["EmailSortParm"] = sortOrder == "email" ? "email_desc" : "email";
+        ViewData["DateSortParm"] = sortOrder == "date" ? "date_desc" : "date";
+
         var arkivData = _dbContext.service.AsQueryable();
 
+        // Filtrering basert på søk
         if (!string.IsNullOrEmpty(search))
         {
             arkivData = arkivData.Where(item =>
@@ -33,9 +40,57 @@ public class ServiceController : Controller
             );
         }
 
+        // Sortering
+        switch (sortOrder)
+        {
+            case "id_desc":
+                arkivData = arkivData.OrderByDescending(item => item.OrdreID);
+                break;
+            case "name":
+                arkivData = arkivData.OrderBy(item => item.Kundenavn);
+                break;
+            case "name_desc":
+                arkivData = arkivData.OrderByDescending(item => item.Kundenavn);
+                break;
+            case "email":
+                arkivData = arkivData.OrderBy(item => item.Kundeepost);
+                break;
+            case "email_desc":
+                arkivData = arkivData.OrderByDescending(item => item.Kundeepost);
+                break;
+            case "date":
+                arkivData = arkivData.OrderBy(item => item.Registreringsdato);
+                break;
+            case "date_desc":
+                arkivData = arkivData.OrderByDescending(item => item.Registreringsdato);
+                break;
+            default:
+                arkivData = arkivData.OrderBy(item => item.OrdreID);
+                break;
+        }
+
         var searchResult = arkivData.ToList();
         return View(searchResult);
     }
+
+
+    private Expression<Func<ServiceOrdre, object>> GetSortExpression(string currentSort)
+    {
+        switch (currentSort)
+        {
+            case "id":
+                return item => item.OrdreID;
+            case "name":
+                return item => item.Kundenavn;
+            case "email":
+                return item => item.Kundeepost;
+            case "date":
+                return item => item.Registreringsdato;
+            default:
+                return item => item.OrdreID;
+        }
+    }
+
 
 
     public IActionResult Edit(int id)
