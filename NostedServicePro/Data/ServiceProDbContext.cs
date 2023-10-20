@@ -12,6 +12,7 @@ namespace Loginnosted.Data
 
         public DbSet<Bruker> Brukere { get; set; }
         public DbSet<ServiceOrdre> service { get; set; }
+        public DbSet<Sjekkliste> Sjekkliste { get; set; } // Legg til Sjekkliste DbSet
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
