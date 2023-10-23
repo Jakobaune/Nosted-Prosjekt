@@ -12,3 +12,31 @@ body {
     min-height: 100vh;
     padding-bottom: 100px;
 }
+
+h2 {
+    color: #12181F;
+}
+
+a {
+    color: #E06F06;
+}
+    a:hover {
+        color: #A1B6C1;
+    }
+
+
+.btn-primary {
+    background-color: #E06F06;
+    border-color: #E06F06;
+}
+
+    .btn-primary:hover {
+        background-color: #12181F;
+        color: #A1B6C1;
+        border-color: #12181F;
+    }
+
+.form-control:hover {
+    box-shadow: 0 1px 10px #E06F06;
+}
+                    
