@@ -13,11 +13,13 @@
 
 <div>
     <h2>Registrer ny serviceordre</h2>
-    <p><italic>Fyll ut info om kunden</italic></p>
+    <p><em>Fyll ut info om kunden</em></p>
 </div>
 
+       @using (Html.BeginForm("Registrer", "Service"))
+    {
+    @Html.AntiForgeryToken()
 
-<form asp-action="Registrer" method="post">
     <div class="form-group">
         <label asp-for="Kundenavn">Navn på kunden</label>
         <input asp-for="Kundenavn" class="form-control" />
@@ -83,4 +85,4 @@
     </div>
 
     <button type="submit" class="btn btn-primary">Lag serviceordre</button>
-</form>
+}

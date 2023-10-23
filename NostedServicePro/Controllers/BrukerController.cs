@@ -27,7 +27,6 @@ public class BrukerController : Controller
 
 
 
-
     public IActionResult Registrering()
     {
         return View(); // Vis skjemaet
@@ -53,6 +52,7 @@ public class BrukerController : Controller
     }
 
     [HttpPost]
+    [ValidateAntiForgeryToken]
     public IActionResult RedigerBruker(Bruker bruker)
     {
         if (ModelState.IsValid)
@@ -95,6 +95,7 @@ public class BrukerController : Controller
 
 
     [HttpPost]
+    [ValidateAntiForgeryToken]
     public IActionResult LagreData(Bruker bruker)
     {
         if (ModelState.IsValid)
