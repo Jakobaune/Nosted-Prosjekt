@@ -53,6 +53,7 @@ public class BrukerController : Controller
     }
 
     [HttpPost]
+    [ValidateAntiForgeryToken]
     public IActionResult RedigerBruker(Bruker bruker)
     {
         if (ModelState.IsValid)
@@ -95,6 +96,7 @@ public class BrukerController : Controller
 
 
     [HttpPost]
+    [ValidateAntiForgeryToken]
     public IActionResult LagreData(Bruker bruker)
     {
         if (ModelState.IsValid)

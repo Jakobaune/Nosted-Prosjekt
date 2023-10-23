@@ -124,6 +124,7 @@ public class ServiceController : Controller
         }
 
     [HttpPost]
+    [ValidateAntiForgeryToken]
     public IActionResult Registrer(ServiceOrdre serviceOrdre)
     {
         if (ModelState.IsValid)
@@ -152,6 +153,7 @@ public class ServiceController : Controller
 
 
     [HttpPost]
+    [ValidateAntiForgeryToken]
     public IActionResult Edit(ServiceOrdre model)
     {
         if (ModelState.IsValid)
@@ -180,6 +182,7 @@ public class ServiceController : Controller
     }
 
     [HttpPost]
+    [ValidateAntiForgeryToken]
     public IActionResult Delete(int id, bool confirm)
     {
 
