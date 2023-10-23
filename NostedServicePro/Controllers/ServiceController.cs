@@ -191,7 +191,6 @@ public class ServiceController : Controller
     {
         return NotFound();
     }
-
     try
     {
         _dbContext.service.Remove(serviceOrdre);

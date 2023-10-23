@@ -27,7 +27,6 @@ public class BrukerController : Controller
 
 
 
-
     public IActionResult Registrering()
     {
         return View(); // Vis skjemaet

@@ -135,6 +135,7 @@ namespace DinProsjekt.Controllers
             return View(sjekkliste);
         }
 
+
         // Sletter en eksisterende sjekkliste fra databasen
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

@@ -10,7 +10,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-                  @using (Html.BeginForm("Create", "Sjekkliste"))
+                  @using (Html.BeginForm("Create" , "Sjekkliste"))
 {
     @Html.AntiForgeryToken()
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
