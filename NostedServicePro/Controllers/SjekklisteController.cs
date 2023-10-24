@@ -24,11 +24,15 @@ namespace DinProsjekt.Controllers
         // Viser listen over sjekklister
         public IActionResult Sjekking()
         {
-
             var sjekklister = _context.Sjekkliste.ToList(); // Hent sjekklister fra databasen
             var førsteSjekkliste = sjekklister.FirstOrDefault(); // Velg den første sjekklisten (eller en annen etter dine behov)
+
+            // Nullstill førsteSjekkliste-variabelen
+            førsteSjekkliste = null;
+
             return View(førsteSjekkliste);
         }
+
 
 
         // Viser detaljer for en spesifikk sjekkliste
