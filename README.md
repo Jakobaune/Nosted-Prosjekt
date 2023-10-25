@@ -1,3 +1,3 @@
 # Nosted-Projekt
 
-#### Hei fra AMA
+#### Gruppe 16 Nøsted
