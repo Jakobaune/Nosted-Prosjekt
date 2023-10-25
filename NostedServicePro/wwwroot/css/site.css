@@ -16,12 +16,36 @@
         flex-direction: column;
         align-items:center;
     }
-   
 
 }
 
 @media (min-width: 1411px) {
     #menu-toggle {
+        display: none;
+    }
+}
+
+@media (max-width: 800px) {
+    .nav {
+        display: none;
+    }
+
+    #menu-toggle {
+        position: absolute;
+        right: 20px;
+        margin-top: 22px;
+    }
+
+    .navbar-collapse {
+        display: none;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+     
+    #logget-inn {
         display: none;
     }
 }
