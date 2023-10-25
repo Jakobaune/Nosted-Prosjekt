@@ -4,9 +4,10 @@
     }
 
     #menu-toggle {
-        position: fixed;
-        margin-left: -18px;
-        margin-top: 60px;
+        position: fixed !important;
+        margin-left: -18px !important;
+        margin-top: 60px !important;
+        display: block !important;
     }
 
     .navbar-collapse {
