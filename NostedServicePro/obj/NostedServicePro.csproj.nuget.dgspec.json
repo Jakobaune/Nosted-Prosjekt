@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/jakobaune/Downloads/Nosted-Prosjekt/NostedServicePro/NostedServicePro.csproj": {}
+    "/Users/jakobaune/Documents/Nosted-Prosjekt/NostedServicePro/NostedServicePro.csproj": {}
   },
   "projects": {
-    "/Users/jakobaune/Downloads/Nosted-Prosjekt/NostedServicePro/NostedServicePro.csproj": {
+    "/Users/jakobaune/Documents/Nosted-Prosjekt/NostedServicePro/NostedServicePro.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/jakobaune/Downloads/Nosted-Prosjekt/NostedServicePro/NostedServicePro.csproj",
+        "projectUniqueName": "/Users/jakobaune/Documents/Nosted-Prosjekt/NostedServicePro/NostedServicePro.csproj",
         "projectName": "NostedServicePro",
-        "projectPath": "/Users/jakobaune/Downloads/Nosted-Prosjekt/NostedServicePro/NostedServicePro.csproj",
+        "projectPath": "/Users/jakobaune/Documents/Nosted-Prosjekt/NostedServicePro/NostedServicePro.csproj",
         "packagesPath": "/Users/jakobaune/.nuget/packages/",
-        "outputPath": "/Users/jakobaune/Downloads/Nosted-Prosjekt/NostedServicePro/obj/",
+        "outputPath": "/Users/jakobaune/Documents/Nosted-Prosjekt/NostedServicePro/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/jakobaune/.nuget/NuGet/NuGet.Config"

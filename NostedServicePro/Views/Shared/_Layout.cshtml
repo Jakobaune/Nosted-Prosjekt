@@ -34,8 +34,12 @@
         #fiksaheader {
             position: fixed;
             top: 0;
+            left: 50%;
+            transform: translateX(-50%);
             width: 100%;
             z-index: 1000;
+        }
+
         }
 
         #buthead {
@@ -138,13 +142,16 @@
                     Brukere
                 </a>
             </li>
-
+            
 
         </ul>
 
-        <button id="menu-toggle" class="btn btn-primary d-lg-none" data-bs-target="#navbarNav">
+        <button id="menu-toggle" class="btn btn-primary d-lg-block" data-bs-target="#navbarNav">
             <i class="fas fa-bars"></i>
         </button>
+
+
+
 
         <div id="menu-hover" class="menu-hover">
             <a class="hei" asp-action="Index" asp-controller="Home">Oversikt</a>
