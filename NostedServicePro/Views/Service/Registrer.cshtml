@@ -16,8 +16,8 @@
     <p><em>Fyll ut info om kunden</em></p>
 </div>
 
-       @using (Html.BeginForm("Registrer", "Service"))
-    {
+@using (Html.BeginForm("Registrer", "Service"))
+{
     @Html.AntiForgeryToken()
 
     <div class="form-group">

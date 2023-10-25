@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Loginnosted.styles.css" asp-append-version="true" />
     <script src="https://kit.fontawesome.com/ce9b37f466.js" crossorigin="anonymous"></script>
+   
 
 
     <style>
@@ -51,6 +52,31 @@
                 background-color: #E06F06; /* Change background color on hover */
             }
 
+
+
+         .menu-hover{
+            display: none;
+            position: absolute;
+            margin-top:390px;
+            margin-left:-30px;
+            background-color: #12181F;
+            padding: 20px;
+            z-index: 1000;
+            max-height:300px;
+        }
+
+        .menu-hover a {
+            color: #E06F06;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            font-size:25px;
+        }
+
+            .menu-hover a:hover {
+                color: #A1B6C1;
+            }
+
     </style>
 
 
@@ -70,7 +96,7 @@
         </div>
 
         <!-- knappene i header, som tar bruker rundt på siden. Må fikse ikoner!!! -->
-       
+
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
 
             <li class="nav-item me-4">
@@ -90,10 +116,10 @@
             </li>
 
             <li class="nav-item me-4">
-                <a class="nav-link btn" style="color: #A1B6C1" asp-action="SjekklisteListe" asp-controller="Sjekkliste">
+                <a class="nav-link btn" style="color: #A1B6C1" asp-action="ServiceOversikt" asp-controller="Service">
                     <i class="fa-solid fa-pen-to-square fa-lg" style="color: #A1B6C1" width="50px"></i>
                     <br />
-                    Sjekkliste
+                    ServiceOversikt
                 </a>
             </li>
 
@@ -116,6 +142,18 @@
 
         </ul>
 
+        <button id="menu-toggle" class="btn btn-primary d-lg-none" data-bs-target="#navbarNav">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div id="menu-hover" class="menu-hover">
+            <a class="hei" asp-action="Index" asp-controller="Home">Oversikt</a>
+            <a class="hei" asp-action="Registrer" asp-controller="Service">Registrere Service</a>
+            <a class="hei" asp-action="SjekklisteListe" asp-controller="Sjekkliste">Sjekkliste</a>
+            <a class="hei" asp-action="Arkiv" asp-controller="Service">Servicehistorikk</a>
+            <a class="hei" asp-action="VisAlleBrukere" asp-controller="Bruker">Brukere</a>
+        </div>
+
 
         <!-- Viser hvilke bruker som er logget inn. -->
         <div>
@@ -123,7 +161,7 @@
                 <span class="me-2">Logget inn:</span>
                 <br />
                 <!-- navn og rolle må være dynamisk -->
-                <strong>User Name</strong> 
+                <strong>User Name</strong>
                 <br />
                 <strong style="color: #E06F06">(Rolle)</strong>
             </div>
@@ -176,6 +214,22 @@
             }
 
             window.addEventListener("scroll", updateFooterVisibility);
+
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // ... (existing code)
+
+            const menuToggle = document.getElementById('menu-toggle');
+            const menuHover = document.getElementById('menu-hover');
+
+            menuToggle.addEventListener('click', () => {
+                if (menuHover.style.display === 'block') {
+                    menuHover.style.display = 'none';
+                } else {
+                    menuHover.style.display = 'block';
+                }
+            });
         });
     </script>
 </body>

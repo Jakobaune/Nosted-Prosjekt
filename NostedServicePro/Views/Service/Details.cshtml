@@ -5,105 +5,276 @@
 }
 <h1>Details</h1>
 
-<div>
-    <h4>ServiceOrdre</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h4>ServiceOrdre</h4>
+            <hr />
+            <dl class="row">
+        <dt class="col-sm-3">
             @Html.DisplayNameFor(model => model.OrdreID)
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-sm-9">
             @Html.DisplayFor(model => model.OrdreID)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class = "col-sm-3">
             @Html.DisplayNameFor(model => model.Kundenavn)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col-sm-9">
             @Html.DisplayFor(model => model.Kundenavn)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class = "col-sm-3">
             @Html.DisplayNameFor(model => model.Kundeepost)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col-sm-9">
             @Html.DisplayFor(model => model.Kundeepost)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class = "col-sm-3">
             @Html.DisplayNameFor(model => model.Kundetlf)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col-sm-9">
             @Html.DisplayFor(model => model.Kundetlf)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class = "col-sm-3">
             @Html.DisplayNameFor(model => model.Produkttypevinsj)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col-sm-9">
             @Html.DisplayFor(model => model.Produkttypevinsj)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class = "col-sm-3">
             @Html.DisplayNameFor(model => model.ÅrsmodellVinsj)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col-sm-9">
             @Html.DisplayFor(model => model.ÅrsmodellVinsj)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class = "col-sm-3">
             @Html.DisplayNameFor(model => model.Serienummervinsj)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col-sm-9">
             @Html.DisplayFor(model => model.Serienummervinsj)
         </dd>
-        <dt class="col-sm-2">
+        <dt class="col-sm-3">
             @Html.DisplayNameFor(model => model.Registreringsdato)
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-sm-9">
             @Html.DisplayFor(model => model.Registreringsdato)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class = "col-sm-3">
             @Html.DisplayNameFor(model => model.AvtaltKommentar)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col-sm-9">
             @Html.DisplayFor(model => model.AvtaltKommentar)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class = "col-sm-3">
             @Html.DisplayNameFor(model => model.InternKommentar)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col-sm-9">
             @Html.DisplayFor(model => model.InternKommentar)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class = "col-sm-3">
             @Html.DisplayNameFor(model => model.Problembeskrivelse)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col-sm-9">
             @Html.DisplayFor(model => model.Problembeskrivelse)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class = "col-sm-3">
             @Html.DisplayNameFor(model => model.ServiceType)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col-sm-9">
             @Html.DisplayFor(model => model.ServiceType)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class = "col-sm-3">
             @Html.DisplayNameFor(model => model.AvtaltleveringsDato)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col-sm-9">
             @Html.DisplayFor(model => model.AvtaltleveringsDato)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class = "col-sm-3">
             @Html.DisplayNameFor(model => model.Avtaltferdigstillingsdato)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col-sm-9">
             @Html.DisplayFor(model => model.Avtaltferdigstillingsdato)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class = "col-sm-3">
             @Html.DisplayNameFor(model => model.ProduktmottattDato)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class = "col-sm-9">
             @Html.DisplayFor(model => model.ProduktmottattDato)
         </dd>
-    </dl>
-</div>
+        </dl>
+        </div>
+        <div class="col-md-6">
+            <h4>Sjekkliste</h4>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-5">
+                    ClutchLameller
+                </dt>
+                <dd class="col-sm-7"(Model.ClutchLameller)">
+                    @Model.ClutchLameller
+                </dd>
+
+                <dt class="col-sm-5">
+                    Bremser
+                </dt>
+                <dd class="col-sm-7" (Model.Bremser)">
+                    @Model.Bremser
+                </dd>
+
+                <dt class="col-sm-5">
+                    LagerTrommel
+                </dt>
+                <dd class="col-sm-7"(Model.LagerTrommel)">
+                    @Model.LagerTrommel
+                </dd>
+
+                <dt class="col-sm-5">
+                    PTOOpplagring
+                </dt>
+                <dd class="col-sm-7"(Model.PTOOpplagring)">
+                    @Model.PTOOpplagring
+                </dd>
+
+                <dt class="col-sm-5">
+                    Kjedestrammer
+                </dt>
+                <dd class="col-sm-7"(Model.Kjedestrammer)">
+                    @Model.Kjedestrammer
+                </dd>
+
+                <dt class="col-sm-5">
+                    Wire
+                </dt>
+                <dd class="col-sm-7"(Model.Wire)">
+                    @Model.Wire
+                </dd>
+
+                <dt class="col-sm-5">
+                    PlnlonLager
+                </dt>
+                <dd class="col-sm-7"(Model.PlnlonLager)">
+                    @Model.PlnlonLager
+                </dd>
+
+                <dt class="col-sm-5">
+                    KilleKjedehjul
+                </dt>
+                <dd class="col-sm-7"(Model.KilleKjedehjul)">
+                    @Model.KilleKjedehjul
+                </dd>
+
+                <dt class="col-sm-5">
+                    HydraulikkSylinderLekkasje
+                </dt>
+                <dd class="col-sm-7"(Model.HydraulikkSylinderLekkasje)">
+                    @Model.HydraulikkSylinderLekkasje
+                </dd>
+
+                <dt class="col-sm-5">
+                    SlangerSkaderLekkasje
+                </dt>
+                <dd class="col-sm-7"(Model.SlangerSkaderLekkasje)">
+                    @Model.SlangerSkaderLekkasje
+                </dd>
+
+                <dt class="col-sm-5">
+                    TestHydraulikkblokk
+                </dt>
+                <dd class="col-sm-7" (Model.TestHydraulikkblokk)">
+                    @Model.TestHydraulikkblokk
+                </dd>
+
+                <dt class="col-sm-5">
+                    SkiftOljeTank
+                </dt>
+                <dd class="col-sm-7"(Model.SkiftOljeTank)">
+                    @Model.SkiftOljeTank
+                </dd>
+
+                <dt class="col-sm-5">
+                    SkiftOljeGirboks
+                </dt>
+                <dd class="col-sm-7"(Model.SkiftOljeGirboks)">
+                    @Model.SkiftOljeGirboks
+                </dd>
+
+                <dt class="col-sm-5">
+                    RingsyllingerSkiftTelnlnger
+                </dt>
+                <dd class="col-sm-7"(Model.RingsyllingerSkiftTelnlnger)">
+                    @Model.RingsyllingerSkiftTelnlnger
+                </dd>
+
+                <dt class="col-sm-5">
+                    BremsesylingerSkiftTelninger
+                </dt>
+                <dd class="col-sm-7"(Model.BremsesylingerSkiftTelninger)">
+                    @Model.BremsesylingerSkiftTelninger
+                </dd>
+
+                <dt class="col-sm-5">
+                    LedningsnettVinsj
+                </dt>
+                <dd class="col-sm-7"(Model.LedningsnettVinsj)">
+                    @Model.LedningsnettVinsj
+                </dd>
+
+                <dt class="col-sm-5">
+                    SjekkTestRadio
+                </dt>
+                <dd class="col-sm-7"(Model.SjekkTestRadio)">
+                    @Model.SjekkTestRadio
+                </dd>
+
+                <dt class="col-sm-5">
+                    SjekkTestKnappekasse
+                </dt>
+                <dd class="col-sm-7"(Model.SjekkTestKnappekasse)">
+                    @Model.SjekkTestKnappekasse
+                </dd>
+
+                <dt class="col-sm-5">
+                    XXBar
+                </dt>
+                <dd class="col-sm-7" (Model.XXBar)">
+                    @Model.XXBar
+                </dd>
+
+                <dt class="col-sm-5">
+                    TestVinsjAlleFunksjoner
+                </dt>
+                <dd class="col-sm-7" (Model.TestVinsjAlleFunksjoner)">
+                    @Model.TestVinsjAlleFunksjoner
+                </dd>
+
+                <dt class="col-sm-5">
+                    TrekkraftKn
+                </dt>
+                <dd class="col-sm-7" (Model.TrekkraftKn)">
+                    @Model.TrekkraftKn
+                </dd>
+
+                <dt class="col-sm-5">
+                    BremsekraftKn
+                </dt>
+                <dd class="col-sm-7" (Model.BremsekraftKn)">
+                    @Model.BremsekraftKn
+                </dd>
+            </dl>
+        </div>
+
+        </div>
+    </div>
+
+
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.OrdreID">Rediger</a> |
     <a asp-action="Arkiv">Tilbake til historikkt</a> |
     <a asp-action="Delete" asp-route-id="@Model?.OrdreID">Slett</a>
 
 </div>
+
+
+
+
+

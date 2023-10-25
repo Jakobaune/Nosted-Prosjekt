@@ -41,10 +41,6 @@ namespace Loginnosted.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Salt")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
                     b.HasKey("BrukerId");
 
                     b.ToTable("Brukere");
@@ -60,13 +56,41 @@ namespace Loginnosted.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<DateOnly>("Avtaltferdigstillingsdato")
-                        .HasColumnType("date");
+                    b.Property<DateTime>("Avtaltferdigstillingsdato")
+                        .HasColumnType("datetime(6)");
 
-                    b.Property<DateOnly>("AvtaltleveringsDato")
-                        .HasColumnType("date");
+                    b.Property<DateTime>("AvtaltleveringsDato")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("BremsekraftKn")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Bremser")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("BremsesylingerSkiftTelninger")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("ClutchLameller")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("HydraulikkSylinderLekkasje")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<string>("InternKommentar")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("KilleKjedehjul")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Kjedestrammer")
                         .IsRequired()
                         .HasColumnType("longtext");
 
@@ -82,12 +106,28 @@ namespace Loginnosted.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<string>("LagerTrommel")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("LedningsnettVinsj")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("PTOOpplagring")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("PlnlonLager")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Problembeskrivelse")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<DateOnly>("ProduktmottattDato")
-                        .HasColumnType("date");
+                    b.Property<DateTime>("ProduktmottattDato")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("Produkttypevinsj")
                         .IsRequired()
@@ -96,11 +136,55 @@ namespace Loginnosted.Migrations
                     b.Property<DateTime>("Registreringsdato")
                         .HasColumnType("datetime(6)");
 
+                    b.Property<string>("RingsyllingerSkiftTelnlnger")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Serienummervinsj")
                         .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("ServiceType")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("SjekkTestKnappekasse")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("SjekkTestRadio")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("SkiftOljeGirboks")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("SkiftOljeTank")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("SlangerSkaderLekkasje")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("TestHydraulikkblokk")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("TestVinsjAlleFunksjoner")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("TrekkraftKn")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Wire")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("XXBar")
                         .IsRequired()
                         .HasColumnType("longtext");
 
