@@ -2,9 +2,10 @@
 
 <h2>Serviceordre Oversikt</h2>
 
-@foreach (var serviceordre in Model)
+@foreach (var serviceordre in Model.Where(s => !s.ErSjekklisteFullført))
 {
     <div>
+        <!-- Visningsdetaljer for serviceordren -->
         <p>Ordre ID: @serviceordre.OrdreID</p>
         <p>Kundenavn: @serviceordre.Kundenavn</p>
         <p>E-post: @serviceordre.Kundeepost</p>
@@ -14,3 +15,4 @@
         <a asp-controller="Service" asp-action="RegistrerSjekkliste" asp-route-ordreID="@serviceordre.OrdreID">Start sjekkliste</a>
     </div>
 }
+

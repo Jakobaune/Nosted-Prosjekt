@@ -122,6 +122,9 @@ public class ServiceController : Controller
                     // Oppdater sjekkpunktene og andre felter
                     _dbContext.Entry(existingOrdre).CurrentValues.SetValues(model);
 
+                    // Marker sjekklisten som fullført
+                    existingOrdre.ErSjekklisteFullført = true;
+
                     _dbContext.SaveChanges();
 
                     return RedirectToAction("Arkiv");
@@ -135,6 +138,7 @@ public class ServiceController : Controller
 
         return View(model);
     }
+
 
 
 
