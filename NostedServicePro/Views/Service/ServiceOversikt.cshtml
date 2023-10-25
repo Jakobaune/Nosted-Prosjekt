@@ -2,17 +2,20 @@
 
 <h2>Serviceordre Oversikt</h2>
 
-@foreach (var serviceordre in Model.Where(s => !s.ErSjekklisteFullført))
-{
-    <div>
-        <!-- Visningsdetaljer for serviceordren -->
-        <p>Ordre ID: @serviceordre.OrdreID</p>
-        <p>Kundenavn: @serviceordre.Kundenavn</p>
-        <p>E-post: @serviceordre.Kundeepost</p>
-        <p>Telefonnummer: @serviceordre.Kundetlf</p>
-        <!-- Andre visningsdetaljer for serviceordren -->
-
-        <a asp-controller="Service" asp-action="RegistrerSjekkliste" asp-route-ordreID="@serviceordre.OrdreID">Start sjekkliste</a>
-    </div>
-}
-
+<div class="row">
+    @foreach (var serviceordre in Model.Where(s => !s.ErSjekklisteFullført))
+    {
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <!-- Visningsdetaljer for serviceordren -->
+                    <p>Ordre ID: @serviceordre.OrdreID</p>
+                    <p>Kundenavn: @serviceordre.Kundenavn</p>
+                    <p>E-post: @serviceordre.Kundeepost</p>
+                    <p>Telefonnummer: @serviceordre.Kundetlf</p>
+                    <a class="btn btn-primary" asp-controller="Service" asp-action="RegistrerSjekkliste" asp-route-ordreID="@serviceordre.OrdreID">Start sjekkliste</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
