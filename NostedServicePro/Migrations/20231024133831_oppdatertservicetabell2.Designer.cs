@@ -3,6 +3,7 @@ using System;
 using Loginnosted.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Loginnosted.Migrations
 {
     [DbContext(typeof(ServiceProDbContex))]
-    partial class LoginnostedDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231024133831_oppdatertservicetabell2")]
+    partial class oppdatertservicetabell2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

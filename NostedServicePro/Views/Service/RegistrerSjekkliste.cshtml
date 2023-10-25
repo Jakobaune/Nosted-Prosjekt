@@ -1,18 +1,30 @@
-﻿@model Sjekkliste
+﻿@model ServiceOrdre
 
 @{
     ViewData["Title"] = "Sjekking";
 }
-
-<h1>Sjekking</h1>
-
 <h4>Sjekkliste</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-                  @using (Html.BeginForm("Create" , "Sjekkliste"))
-{
-    @Html.AntiForgeryToken()
+        @using (Html.BeginForm("RegistrerSjekkliste", "Service", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            @Html.HiddenFor(model => model.Kundenavn)
+            @Html.HiddenFor(model => model.Kundeepost)
+            @Html.HiddenFor(model => model.Kundetlf)
+            @Html.HiddenFor(model => model.Produkttypevinsj)
+            @Html.HiddenFor(model => model.ÅrsmodellVinsj)
+            @Html.HiddenFor(model => model.Serienummervinsj)
+            @Html.HiddenFor(model => model.AvtaltKommentar)
+            @Html.HiddenFor(model => model.InternKommentar)
+            @Html.HiddenFor(model => model.Problembeskrivelse)
+            @Html.HiddenFor(model => model.ServiceType)
+            @Html.HiddenFor(model => model.AvtaltleveringsDato)
+            @Html.HiddenFor(model => model.Avtaltferdigstillingsdato)
+            @Html.HiddenFor(model => model.ProduktmottattDato)
+            <input type="hidden" asp-for="OrdreID" />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
             <div class="form-group">
@@ -232,18 +244,8 @@
 
 
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Lagre sjekkliste" class="btn btn-primary" />
             </div>
-}
+        }
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-}

@@ -3,6 +3,7 @@ using Loginnosted.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Linq.Expressions;
 
@@ -14,11 +15,19 @@ public class ServiceController : Controller
     {
         _dbContext = dbContext;
     }
-
-    public IActionResult Registrer()
+    public IActionResult StartSjekkliste(int ordreID)
     {
-        return View(); // Vis skjemaet for å bestille service
+        TempData["OrdreID"] = ordreID;
+        return RedirectToAction("RegistrerSjekkliste");
     }
+    public IActionResult ServiceOversikt()
+    {
+        var serviceordreListe = _dbContext.service.ToList();
+
+        return View(serviceordreListe);
+    }
+
+
 
     public IActionResult Arkiv(string search, string sortOrder)
     {
@@ -73,6 +82,63 @@ public class ServiceController : Controller
         return View(searchResult);
     }
 
+    [HttpGet]
+    public IActionResult Registrer()
+    {
+        return View(); // Vis skjemaet for å bestille service
+    }
+    [HttpGet]
+    public IActionResult RegistrerSjekkliste(int ordreId)
+    {
+        var sjekkliste = _dbContext.service.FirstOrDefault(s => s.OrdreID == ordreId);
+
+        if (sjekkliste == null)
+        {
+            // Opprett ny ServiceOrdre hvis den ikke finnes
+            sjekkliste = new ServiceOrdre { OrdreID = ordreId };
+            _dbContext.service.Add(sjekkliste);
+            _dbContext.SaveChanges();
+        }
+
+        return View(sjekkliste);
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public IActionResult RegistrerSjekkliste(ServiceOrdre model)
+    {
+        try
+        {
+            Console.WriteLine($"OrdreID received: {model.OrdreID}");
+
+            if (ModelState.IsValid)
+            {
+                // Hent eksisterende serviceordre fra databasen
+                var existingOrdre = _dbContext.service
+                    .FirstOrDefault(ordre => ordre.OrdreID == model.OrdreID);
+
+                if (existingOrdre != null)
+                {
+                    // Oppdater sjekkpunktene og andre felter
+                    _dbContext.Entry(existingOrdre).CurrentValues.SetValues(model);
+
+                    _dbContext.SaveChanges();
+
+                    return RedirectToAction("Arkiv");
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Feil ved lagring av sjekkliste: {ex.Message}");
+        }
+
+        return View(model);
+    }
+
+
+
+
 
     private Expression<Func<ServiceOrdre, object>> GetSortExpression(string currentSort)
     {
@@ -90,8 +156,6 @@ public class ServiceController : Controller
                 return item => item.OrdreID;
         }
     }
-
-
 
     public IActionResult Edit(int id)
     {
@@ -113,15 +177,15 @@ public class ServiceController : Controller
         return View(serviceOrdre);
     }
 
-        public IActionResult Delete(int id)
+    public IActionResult Delete(int id)
+    {
+        var serviceOrdre = _dbContext.service.Find(id);
+        if (serviceOrdre == null)
         {
-            var serviceOrdre = _dbContext.service.Find(id);
-            if (serviceOrdre == null)
-            {
-                return NotFound();
-            }
-            return View(serviceOrdre);
+            return NotFound();
         }
+        return View(serviceOrdre);
+    }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
@@ -129,24 +193,14 @@ public class ServiceController : Controller
     {
         if (ModelState.IsValid)
         {
-            try
-            {
-                // Sett registreringsdato til nåværende dato og klokkeslett
-                serviceOrdre.Registreringsdato = DateTime.Now;
+            serviceOrdre.Registreringsdato = DateTime.Now;
+            _dbContext.Add(serviceOrdre);
+            _dbContext.SaveChanges();
 
-                _dbContext.service.Add(serviceOrdre);
-                _dbContext.SaveChanges();
-
-                TempData["Message"] = $"Serviceordre #{serviceOrdre.OrdreID} laget vellykket!";
-                return RedirectToAction(nameof(Arkiv));
-            }
-            catch (Exception ex)
-            {
-                TempData["Error"] = $"Feil ved lagring av data. Feilmelding: {ex.Message}";
-            }
+            return RedirectToAction("RegistrerSjekkliste", new { ordreID = serviceOrdre.OrdreID });
         }
 
-        return View();
+        return View(serviceOrdre);
     }
 
 
@@ -185,30 +239,26 @@ public class ServiceController : Controller
     [ValidateAntiForgeryToken]
     public IActionResult Delete(int id, bool confirm)
     {
+        var serviceOrdre = _dbContext.service.Find(id);
+        if (serviceOrdre == null)
+        {
+            return NotFound();
+        }
+        try
+        {
+            _dbContext.service.Remove(serviceOrdre);
+            _dbContext.SaveChanges();
+            TempData["Message"] = "Skjemaet ble slettet vellykket!";
+        }
+        catch (Exception ex)
+        {
+            TempData["Error"] = $"Feil ved sletting av skjema: {ex.Message}";
 
-    var serviceOrdre = _dbContext.service.Find(id);
-    if (serviceOrdre == null)
-    {
-        return NotFound();
+            // Lagt til logging
+            Console.WriteLine($"Exception: {ex}");
+        }
+
+        // Endre retur til arkiv
+        return RedirectToAction(nameof(Arkiv));
     }
-    try
-    {
-        _dbContext.service.Remove(serviceOrdre);
-        _dbContext.SaveChanges();
-        TempData["Message"] = "Skjemaet ble slettet vellykket!";
-    }
-    catch (Exception ex)
-    {
-        TempData["Error"] = $"Feil ved sletting av skjema: {ex.Message}";
-
-        // Lagt til logging
-        Console.WriteLine($"Exception: {ex}");
-    }
-
-    // Endre retur til arkiv
-    return RedirectToAction(nameof(Arkiv));
-}
-
-
-
 }

@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace NostedServicePro.Views.Sjekkliste
+namespace NostedServicePro.Views.Service
 {
-    public class SjekklisteListeModel : PageModel
+    public class ServiceOversiktModel : PageModel
     {
         public void OnGet()
         {
