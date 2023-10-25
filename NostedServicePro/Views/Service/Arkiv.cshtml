@@ -1,0 +1,109 @@
+﻿@model IEnumerable<ServiceOrdre>
+
+@{
+    ViewData["Title"] = "Arkiv";
+}
+
+@section scripts {
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI/t1H1aWVegQZH75Z5l/4sC9U8U5bEuRVHfRJGQ=" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("th.sortable").on("click", function () {
+                var sortOrder = $(this).data("sort-order");
+                sortOrder = sortOrder === "asc" ? "desc" : "asc";
+                var sortBy = $(this).data("sort-by");
+                window.location.href = "?sortOrder=" + sortOrder + "&sortField=" + sortBy;
+            });
+
+            // Fjern indikatorpiler fra alle kolonner
+            $("th.sortable").each(function () {
+                $(this).find(".sort-indicator").remove();
+            });
+
+            // Legg til indikatorpil basert på gjeldende sortering
+            var sortOrder = "@ViewData["IdSortParm"]";
+            var sortBy = "OrdreID"; // Sett standard kolonne for sortering
+            var arrow = sortOrder === "asc" ? "<i class='fas fa-caret-up'></i>" : sortOrder === "desc" ? "<i class='fas fa-caret-down'></i>" : "";
+            $("th.sortable[data-sort-by='" + sortBy + "']").append("<span class='sort-indicator'>" + arrow + "</span>");
+        });
+    </script>
+}
+
+
+
+@{
+    var message = TempData["Message"] as string;
+}
+
+@if (!string.IsNullOrEmpty(message))
+{
+    <div class="alert alert-success" role="alert">
+        @message
+    </div>
+}
+
+<h1>Arkiv</h1>
+
+<p>
+    <a asp-action="Registrer">Lag ny serviceordre</a>
+</p>
+
+<!-- Søkefelt -->
+<form asp-action="Arkiv" asp-controller="Service" method="get">
+    <div class="form-group">
+        <label for="searchInput">Søk:</label>
+        <input type="text" class="form-control" id="searchInput" name="search" placeholder="Søk etter navn, ID, epost eller telefonnummer">
+    </div>
+    <button type="submit" class="btn btn-primary">Søk</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th class="sortable" data-sort-by="OrdreID" data-sort-order="@ViewData["IdSortParm"]">
+                <a asp-action="Arkiv" asp-controller="Service" asp-route-sortOrder="@ViewData["IdSortParm"]">Ordre ID</a>
+            </th>
+            <th class="sortable" data-sort-by="Kundenavn" data-sort-order="@ViewData["NameSortParm"]">
+                <a asp-action="Arkiv" asp-controller="Service" asp-route-sortOrder="@ViewData["NameSortParm"]">Kundenavn</a>
+            </th>
+            <th class="sortable" data-sort-by="Kundeepost" data-sort-order="@ViewData["EmailSortParm"]">
+                <a asp-action="Arkiv" asp-controller="Service" asp-route-sortOrder="@ViewData["EmailSortParm"]">Kundeepost</a>
+            </th>
+            <th class="sortable" data-sort-by="Kundetlf" data-sort-order="@ViewData["PhoneSortParm"]">
+                <a asp-action="Arkiv" asp-controller="Service" asp-route-sortOrder="@ViewData["PhoneSortParm"]">Kundetlf</a>
+            </th>
+            <th class="sortable" data-sort-by="Registreringsdato" data-sort-order="@ViewData["DateSortParm"]">
+                <a asp-action="Arkiv" asp-controller="Service" asp-route-sortOrder="@ViewData["DateSortParm"]">Registreringsdato</a>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrdreID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Kundenavn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Kundeepost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Kundetlf)
+                </td>
+                <td>
+                    @item.Registreringsdato.ToString("yyyy-MM-dd")
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-controller="Service" asp-route-id="@item.OrdreID">Rediger</a> |
+                    <a asp-action="Details" asp-controller="Service" asp-route-id="@item.OrdreID">Detaljer</a> |
+                    <a asp-action="Delete" asp-route-id="@item.OrdreID">Slett</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

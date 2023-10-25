@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Nøsted Service Pro</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Loginnosted.styles.css" asp-append-version="true" />
+    <script src="https://kit.fontawesome.com/ce9b37f466.js" crossorigin="anonymous"></script>
+
+
+    <style>
+
+        header {
+            background-color: #12181F;
+            height: 120px;
+            color: #A1B6C1;
+            padding: 30px;
+            position: fixed;
+        }
+
+        footer {
+            background-color: #12181F;
+            padding: 10px;
+            position: fixed;
+            bottom: -90px; /* Start utenfor synlighet */
+            width: 100%;
+            transition: bottom 0.3s; /* Legg til en overgang for jevn animasjon */
+        }
+
+
+        #fiksaheader {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        #buthead {
+            background-color: #E06F06;
+            color: #A1B6C1;
+        }
+
+        .nav-link.btn {
+            width: 170px;
+            height: 70px;
+        }
+
+            .nav-link.btn:hover {
+                background-color: #E06F06; /* Change background color on hover */
+            }
+
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <header id="fiksaheader" class="d-flex flex-wrap align-items-center justify-content-between py-3 mb-4 border-bottom">
+
+        <!-- hele logoen, med riktig css og skal fungere som hjem knapp -->
+        <div class="col-md- mb-2 mb-md-0">
+            <a href="/" class="d-inline-flex flex-column align-items-center link-body-emphasis text-decoration-none">
+                <img src="~/css/Bilder/LOGO.jpg" alt="Logo" height="50px" class="mb-2">
+                <span style="font-size: 30px; color:#A1B6C1">Service Pro</span>
+            </a>
+        </div>
+
+        <!-- knappene i header, som tar bruker rundt på siden. Må fikse ikoner!!! -->
+       
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+
+            <li class="nav-item me-4">
+                <a class="nav-link btn" style="color: #A1B6C1" asp-action="Index" asp-controller="Home">
+                    <i class="fa-solid fa-house fa-lg" style="color: #A1B6C1" width="50px"></i>
+                    <br />
+                    Oversikt
+                </a>
+            </li>
+
+            <li class="nav-item me-4">
+                <a class="nav-link btn" style="color: #A1B6C1" asp-action="Registrer" asp-controller="Service">
+                    <i class="fa-solid fa-pen-to-square fa-lg" style="color: #A1B6C1" width="50px"></i>
+                    <br />
+                    Registrere Service
+                </a>
+            </li>
+
+            <li class="nav-item me-4">
+                <a class="nav-link btn" style="color: #A1B6C1" asp-action="ServiceOversikt" asp-controller="Service">
+                    <i class="fa-solid fa-pen-to-square fa-lg" style="color: #A1B6C1" width="50px"></i>
+                    <br />
+                    ServiceOversikt
+                </a>
+            </li>
+
+            <li class="nav-item me-4">
+                <a class="nav-link btn" style="color: #A1B6C1" asp-action="Arkiv" asp-controller="Service">
+                    <i class="fa-solid fa-clock fa-lg" style="color: #A1B6C1" width="50px"></i>
+                    <br />
+                    Servicehistorikk
+                </a>
+            </li>
+
+            <li class="nav-item me-4">
+                <a class="nav-link btn" style="color: #A1B6C1" asp-action="VisAlleBrukere" asp-controller="Bruker">
+                    <i class="fa-solid fa-user fa-lg" style="color: #A1B6C1" width="50px"></i>
+                    <br />
+                    Brukere
+                </a>
+            </li>
+
+
+        </ul>
+
+
+        <!-- Viser hvilke bruker som er logget inn. -->
+        <div>
+            <div>
+                <span class="me-2">Logget inn:</span>
+                <br />
+                <!-- navn og rolle må være dynamisk -->
+                <strong>User Name</strong> 
+                <br />
+                <strong style="color: #E06F06">(Rolle)</strong>
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            <img src="~/css/Bilder/logoicon.jpg" height="50px" class="mb-2">
+            &copy; 2023 - Nøsted& AS - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            function isUserNearBottom() {
+                var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                var windowHeight = window.innerHeight;
+                var bodyHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+
+                // Juster denne terskelverdien for å kontrollere hvor nær bunnen brukeren må være
+                var threshold = 50;
+
+                return scrollTop > bodyHeight - windowHeight - threshold;
+            }
+
+            function updateFooterVisibility() {
+                var footer = document.querySelector('footer');
+
+                if (isUserNearBottom()) {
+                    footer.style.bottom = '0';
+                } else {
+                    footer.style.bottom = '-' + footer.offsetHeight + 'px';
+                }
+            }
+
+            window.addEventListener("scroll", updateFooterVisibility);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+﻿@model Bruker
+
+@{
+    ViewData["Title"] = "SlettBruker";
+}
+
+<h1>SlettBruker</h1>
+
+<h3>Are you sure you want to delete this user?</h3>
+<div>
+    <h4>Bruker</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BrukerNavn)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BrukerNavn)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Epostadresse)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Epostadresse)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Rolle)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Rolle)
+        </dd>
+    </dl>
+
+    @if (!string.IsNullOrEmpty(ViewData["SlettingSuccessMelding"] as string))
+    {
+        <div class="success-message">
+            Bruker slettet vellykket: @ViewData["SlettingSuccessMelding"]
+        </div>
+    }
+
+    @if (!string.IsNullOrEmpty(ViewBag.TestMelding))
+    {
+        <div class="alert alert-info">@ViewBag.TestMelding</div>
+    }
+
+    <script>
+        function confirmDelete() {
+            var result = confirm("Are you sure you want to delete this user?");
+            if (result) {
+                // Hvis brukeren bekrefter, send sletteforespørselen
+                document.forms["deleteForm"].submit();
+            }
+        }
+    </script>
+
+    <form asp-action="SlettBruker" method="post" name="deleteForm">
+        <input type="hidden" asp-for="BrukerId" />
+        <!-- Legg til en onclick hendelse for å vise bekreftelsesmeldingen -->
+        <input type="button" value="Delete" class="btn btn-danger" onclick="confirmDelete()" /> |
+        <a asp-action="VisAlleBrukere">Tilbake til listen</a>
+    </form>
+</div>
