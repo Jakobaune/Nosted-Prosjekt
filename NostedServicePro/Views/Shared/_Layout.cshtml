@@ -57,8 +57,9 @@
          .menu-hover{
             display: none;
             position: absolute;
-            margin-top:390px;
-            margin-left:-30px;
+            margin-top: 390px;
+            margin-left: 100px;
+            right: 0px;
             background-color: #12181F;
             padding: 20px;
             z-index: 1000;
@@ -76,6 +77,10 @@
             .menu-hover a:hover {
                 color: #A1B6C1;
             }
+
+        .menu-toggle {
+            display: block;
+        }
 
     </style>
 
@@ -142,8 +147,8 @@
 
         </ul>
 
-        <button id="menu-toggle" class="btn btn-primary d-lg-none" data-bs-target="#navbarNav">
-            <i class="fas fa-bars"></i>
+        <button id="menu-toggle" class="btn btn-primary" data-bs-target="#navbarNav">
+            <i class="fas fa-bars custom-icon"></i>
         </button>
 
         <div id="menu-hover" class="menu-hover">
@@ -157,7 +162,7 @@
 
         <!-- Viser hvilke bruker som er logget inn. -->
         <div>
-            <div>
+            <div id="logget-inn">
                 <span class="me-2">Logget inn:</span>
                 <br />
                 <!-- navn og rolle må være dynamisk -->

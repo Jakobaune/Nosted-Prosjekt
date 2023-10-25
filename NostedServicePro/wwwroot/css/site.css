@@ -1,26 +1,30 @@
-@media (max-width: 1350px) {
+@media (max-width: 1410px) {
     .nav {
         display: none;
     }
 
     #menu-toggle {
-        position: fixed;
-        margin-left: -18px;
-        margin-top: 60px;
+        position: absolute;
+        right: 150px;
+        margin-top: 22px;
     }
 
     .navbar-collapse {
-        display: block;
+        display: none;
     }
     .row {
         flex-direction: column;
         align-items:center;
     }
-
-    
+   
 
 }
 
+@media (min-width: 1411px) {
+    #menu-toggle {
+        display: none;
+    }
+}
 
 html {
     background-color: #12181F;
@@ -51,15 +55,21 @@ a {
 
 
 .btn-primary {
-    background-color: #E06F06;
-    border-color: #E06F06;
+    background-color: #12181f;
+    color: #A1B6C1;
+    border-color: #12181f;
+    width: 75px; 
+    height: 75px; 
 }
 
     .btn-primary:hover {
         background-color: #12181F;
         color: #A1B6C1;
-        border-color: #12181F;
+        border-color: #9cb7c2;
     }
+.custom-icon {
+    font-size: 50px; /* Adjust the size as needed */
+}
 
 .form-control:hover {
     box-shadow: 0 1px 10px #E06F06;

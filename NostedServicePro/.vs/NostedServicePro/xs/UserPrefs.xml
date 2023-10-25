@@ -1,36 +1,42 @@
-﻿<Properties StartupConfiguration="{A247EECF-486A-4801-87FE-090540DCE9F5}|Default">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints />
+﻿<Properties StartupConfiguration="{739166EA-08A0-47D5-A2DB-085FBEC86EF5}|https">
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.NostedServicePro PreferredExecutionTarget="/Applications/Brave Browser.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/ServiceController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="wwwroot/css/site.css">
     <Files>
       <File FileName="Migrations/20231007110845_InitialCreate.cs" />
       <File FileName="Migrations/20231006111243_UpdateServiceOrdre.cs" />
-      <File FileName="Migrations/LoginnostedDbContextModelSnapshot.cs" Line="1" Column="1" />
-      <File FileName="Program.cs" Line="75" Column="1" />
-      <File FileName="Dockerfile" Line="1" Column="1" />
-      <File FileName="appsettings.json" Line="10" Column="90" />
-      <File FileName="Controllers/ServiceController.cs" Line="24" Column="1" />
+      <File FileName="Migrations/LoginnostedDbContextModelSnapshot.cs" />
+      <File FileName="Program.cs" />
+      <File FileName="Dockerfile" />
+      <File FileName="appsettings.json" />
+      <File FileName="Controllers/ServiceController.cs" />
+      <File FileName="Views/Shared/_Layout.cshtml" Line="1" Column="1" />
+      <File FileName="wwwroot/css/site.css" Line="10" Column="6" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="NostedServicePro">
             <Node name="NostedServicePro">
-              <Node name="Controllers" expanded="True">
-                <Node name="ServiceController.cs" selected="True" />
-              </Node>
               <Node name="Migrations" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Shared" expanded="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True">
+                <Node name="css" expanded="True">
+                  <Node name="site.css" selected="True" />
+                </Node>
+              </Node>
             </Node>
           </Node>
         </State>
       </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
-      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
