@@ -169,13 +169,16 @@ public class ServiceController : Controller
 
     public IActionResult Details(int id)
     {
-        var serviceOrdre = _dbContext.service.Find(id);
+        var serviceOrdre = _dbContext.service.FirstOrDefault(s => s.OrdreID == id);
+
         if (serviceOrdre == null)
         {
             return NotFound();
         }
+
         return View(serviceOrdre);
     }
+
 
     public IActionResult Delete(int id)
     {
