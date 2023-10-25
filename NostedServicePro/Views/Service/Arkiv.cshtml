@@ -58,52 +58,54 @@
     <button type="submit" class="btn btn-primary">Søk</button>
 </form>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th class="sortable" data-sort-by="OrdreID" data-sort-order="@ViewData["IdSortParm"]">
-                <a asp-action="Arkiv" asp-controller="Service" asp-route-sortOrder="@ViewData["IdSortParm"]">Ordre ID</a>
-            </th>
-            <th class="sortable" data-sort-by="Kundenavn" data-sort-order="@ViewData["NameSortParm"]">
-                <a asp-action="Arkiv" asp-controller="Service" asp-route-sortOrder="@ViewData["NameSortParm"]">Kundenavn</a>
-            </th>
-            <th class="sortable" data-sort-by="Kundeepost" data-sort-order="@ViewData["EmailSortParm"]">
-                <a asp-action="Arkiv" asp-controller="Service" asp-route-sortOrder="@ViewData["EmailSortParm"]">Kundeepost</a>
-            </th>
-            <th class="sortable" data-sort-by="Kundetlf" data-sort-order="@ViewData["PhoneSortParm"]">
-                <a asp-action="Arkiv" asp-controller="Service" asp-route-sortOrder="@ViewData["PhoneSortParm"]">Kundetlf</a>
-            </th>
-            <th class="sortable" data-sort-by="Registreringsdato" data-sort-order="@ViewData["DateSortParm"]">
-                <a asp-action="Arkiv" asp-controller="Service" asp-route-sortOrder="@ViewData["DateSortParm"]">Registreringsdato</a>
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+<div class="table-responsive">
+    <table class="table">
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.OrdreID)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Kundenavn)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Kundeepost)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Kundetlf)
-                </td>
-                <td>
-                    @item.Registreringsdato.ToString("yyyy-MM-dd")
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-controller="Service" asp-route-id="@item.OrdreID">Rediger</a> |
-                    <a asp-action="Details" asp-controller="Service" asp-route-id="@item.OrdreID">Detaljer</a> |
-                    <a asp-action="Delete" asp-route-id="@item.OrdreID">Slett</a>
-                </td>
+                <th class="sortable" data-sort-by="OrdreID" data-sort-order="@ViewData["IdSortParm"]">
+                    <a asp-action="Arkiv" asp-controller="Service" asp-route-sortOrder="@ViewData["IdSortParm"]">Ordre ID</a>
+                </th>
+                <th class="sortable" data-sort-by="Kundenavn" data-sort-order="@ViewData["NameSortParm"]">
+                    <a asp-action="Arkiv" asp-controller="Service" asp-route-sortOrder="@ViewData["NameSortParm"]">Kundenavn</a>
+                </th>
+                <th class="sortable" data-sort-by="Kundeepost" data-sort-order="@ViewData["EmailSortParm"]">
+                    <a asp-action="Arkiv" asp-controller="Service" asp-route-sortOrder="@ViewData["EmailSortParm"]">Kundeepost</a>
+                </th>
+                <th class="sortable" data-sort-by="Kundetlf" data-sort-order="@ViewData["PhoneSortParm"]">
+                    <a asp-action="Arkiv" asp-controller="Service" asp-route-sortOrder="@ViewData["PhoneSortParm"]">Kundetlf</a>
+                </th>
+                <th class="sortable" data-sort-by="Registreringsdato" data-sort-order="@ViewData["DateSortParm"]">
+                    <a asp-action="Arkiv" asp-controller="Service" asp-route-sortOrder="@ViewData["DateSortParm"]">Registreringsdato</a>
+                </th>
+                <th></th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrdreID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Kundenavn)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Kundeepost)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Kundetlf)
+                    </td>
+                    <td>
+                        @item.Registreringsdato.ToString("yyyy-MM-dd")
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-controller="Service" asp-route-id="@item.OrdreID">Rediger</a> |
+                        <a asp-action="Details" asp-controller="Service" asp-route-id="@item.OrdreID">Detaljer</a> |
+                        <a asp-action="Delete" asp-route-id="@item.OrdreID">Slett</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
