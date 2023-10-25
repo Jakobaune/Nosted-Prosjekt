@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Loginnosted.styles.css" asp-append-version="true" />
     <script src="https://kit.fontawesome.com/ce9b37f466.js" crossorigin="anonymous"></script>
-   
+  
+
 
 
     <style>
@@ -54,29 +55,28 @@
 
 
 
-         .menu-hover{
+        .menu-hover {
             display: none;
             position: absolute;
-            margin-top:390px;
-            margin-left:-30px;
+            margin-top: 390px;
+            margin-left: -30px;
             background-color: #12181F;
             padding: 20px;
             z-index: 1000;
-            max-height:300px;
+            max-height: 300px;
         }
 
-        .menu-hover a {
-            color: #E06F06;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 10px;
-            font-size:25px;
-        }
-
-            .menu-hover a:hover {
-                color: #A1B6C1;
+            .menu-hover a {
+                color: #E06F06;
+                text-decoration: none;
+                display: block;
+                margin-bottom: 10px;
+                font-size: 25px;
             }
 
+                .menu-hover a:hover {
+                    color: #A1B6C1;
+                }
     </style>
 
 
@@ -149,7 +149,7 @@
         <div id="menu-hover" class="menu-hover">
             <a class="hei" asp-action="Index" asp-controller="Home">Oversikt</a>
             <a class="hei" asp-action="Registrer" asp-controller="Service">Registrere Service</a>
-            <a class="hei" asp-action="SjekklisteListe" asp-controller="Sjekkliste">Sjekkliste</a>
+            <a class="hei" asp-action="ServiceOversikt" asp-controller="Service">Service Oversikt</a>
             <a class="hei" asp-action="Arkiv" asp-controller="Service">Servicehistorikk</a>
             <a class="hei" asp-action="VisAlleBrukere" asp-controller="Bruker">Brukere</a>
         </div>
