@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<ServiceOrdre>
+
+@{
     ViewData["Title"] = "Oversikt";
 }
 
@@ -6,24 +8,47 @@
     <div class="row">
         <div class="col-md-6">
             <div>
-                <h2 class="display-6 text-center">Vinsjer</h2>
-                <p>
-                    ordre id #5665
-                    <br />
-                    ordre id #5665
-                    <br />
-                    ordre id #5665
-                    <br />
-                    ordre id #5665
-                </p>
+                <h2 class="display-6 text-center">Uferdige Serviceordre</h2>
+                <p class="text-center">Antall uferdige serviceordre: @Model.Count(s => !s.ErSjekklisteFullført)</p>
+
+                <div class="row">
+                    @for (int i = 0; i < 10 && i < Model.Count; i++)
+                    {
+                        var serviceOrdre = Model[i];
+                        <div class="col-md-6">
+                            <a href="@Url.Action("Details", "Service", new { id = serviceOrdre.OrdreID })">
+                                <div class="service-box">
+                                    <!-- Visningsdetaljer for serviceordren -->
+                                    <p>Ordre ID: @serviceOrdre.OrdreID</p>
+                                    <!-- Andre visningsdetaljer for serviceordren -->
+                                </div>
+                            </a>
+                        </div>
+                    }
+                </div>
             </div>
         </div>
         <div class="col-md-6">
             <div>
                 <h2 class="display-6 text-center">Kalender</h2>
                 <iframe src="https://calendar.google.com/calendar/embed?height=500&wkst=1&bgcolor=%23A79B8E&ctz=Europe%2FOslo&title=N%C3%B8sted%20Service%20Kalender&src=OWU0NGU2NTNlZDEyNDIyYjMwMzE1YzY0YTBiOTAwZmQxY2FlODgyNjVjYmZkMDA2ODBjZTVjNzFhN2JjYTIyY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23795548"
-                        style="border:solid 1px #777" width="100%" height="500px" frameborder="0" scrolling="no"></iframe>
+                    style="border:solid 1px #777" width="100%" height="500px" frameborder="0" scrolling="no"></iframe>
             </div>
         </div>
     </div>
 </div>
+
+<style>
+    .service-box {
+        border: 1px solid #000;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    /* Sett opp kolonnene for mindre skjermer (mobilvisning) */
+    @@media (max-width: 767px) {
+        .col-md-6 {
+            width: 100%;
+        }
+    }
+</style>
