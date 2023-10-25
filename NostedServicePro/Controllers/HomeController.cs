@@ -1,32 +1,41 @@
-﻿using Loginnosted.Models;
+﻿using Loginnosted.Data;
+using Loginnosted.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace Loginnosted.Controllers
+public class HomeController : Controller
 {
-    public class HomeController : Controller
+    private readonly ServiceProDbContex _dbContext;
+    private readonly ILogger<HomeController> _logger;
+
+    public HomeController(ServiceProDbContex dbContext, ILogger<HomeController> logger)
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        _dbContext = dbContext;
+        _logger = logger;
+    }
+    public IActionResult Index()
+    {
+        try
         {
-            _logger = logger;
+            var uferdigeServiceOrdre = _dbContext.service.Where(ordre => !ordre.ErSjekklisteFullført).ToList();
+            return View(uferdigeServiceOrdre);
         }
-
-        public IActionResult Index()
+        catch (Exception ex)
         {
-            return View();
+            // Logg eller håndter feilen på en passende måte
+            return View("Error"); // Vis feilsiden
         }
+    }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+    public IActionResult Privacy()
+    {
+        return View();
+    }
+
+    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+    public IActionResult Error()
+    {
+        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 }
