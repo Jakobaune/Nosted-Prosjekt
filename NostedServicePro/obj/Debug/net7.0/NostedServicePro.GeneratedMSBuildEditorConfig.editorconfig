@@ -9,81 +9,81 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = NostedServicePro
 build_property.RootNamespace = NostedServicePro
-build_property.ProjectDir = /Users/amadeushovden/Documents/Nosted-Prosjekt/NostedServicePro/
+build_property.ProjectDir = C:\Users\mathi\OneDrive\Skrivebord\NostedAS\Nosted-Prosjekt\NostedServicePro\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /Users/amadeushovden/Documents/Nosted-Prosjekt/NostedServicePro
+build_property.MSBuildProjectDirectory = C:\Users\mathi\OneDrive\Skrivebord\NostedAS\Nosted-Prosjekt\NostedServicePro
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/amadeushovden/Documents/Nosted-Prosjekt/NostedServicePro/Views/Bruker/RedigerBruker.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQnJ1a2VyL1JlZGlnZXJCcnVrZXIuY3NodG1s
+[C:/Users/mathi/OneDrive/Skrivebord/NostedAS/Nosted-Prosjekt/NostedServicePro/Views/Bruker/RedigerBruker.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJ1a2VyXFJlZGlnZXJCcnVrZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/amadeushovden/Documents/Nosted-Prosjekt/NostedServicePro/Views/Bruker/Registrering.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQnJ1a2VyL1JlZ2lzdHJlcmluZy5jc2h0bWw=
+[C:/Users/mathi/OneDrive/Skrivebord/NostedAS/Nosted-Prosjekt/NostedServicePro/Views/Bruker/Registrering.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJ1a2VyXFJlZ2lzdHJlcmluZy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/amadeushovden/Documents/Nosted-Prosjekt/NostedServicePro/Views/Bruker/SlettBruker.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQnJ1a2VyL1NsZXR0QnJ1a2VyLmNzaHRtbA==
+[C:/Users/mathi/OneDrive/Skrivebord/NostedAS/Nosted-Prosjekt/NostedServicePro/Views/Bruker/SlettBruker.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJ1a2VyXFNsZXR0QnJ1a2VyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/amadeushovden/Documents/Nosted-Prosjekt/NostedServicePro/Views/Bruker/VisAlleBrukere.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQnJ1a2VyL1Zpc0FsbGVCcnVrZXJlLmNzaHRtbA==
+[C:/Users/mathi/OneDrive/Skrivebord/NostedAS/Nosted-Prosjekt/NostedServicePro/Views/Bruker/VisAlleBrukere.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJ1a2VyXFZpc0FsbGVCcnVrZXJlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/amadeushovden/Documents/Nosted-Prosjekt/NostedServicePro/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+[C:/Users/mathi/OneDrive/Skrivebord/NostedAS/Nosted-Prosjekt/NostedServicePro/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/amadeushovden/Documents/Nosted-Prosjekt/NostedServicePro/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
+[C:/Users/mathi/OneDrive/Skrivebord/NostedAS/Nosted-Prosjekt/NostedServicePro/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/amadeushovden/Documents/Nosted-Prosjekt/NostedServicePro/Views/Service/Arkiv.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2VydmljZS9Bcmtpdi5jc2h0bWw=
+[C:/Users/mathi/OneDrive/Skrivebord/NostedAS/Nosted-Prosjekt/NostedServicePro/Views/Service/Arkiv.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVxBcmtpdi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/amadeushovden/Documents/Nosted-Prosjekt/NostedServicePro/Views/Service/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2VydmljZS9EZWxldGUuY3NodG1s
+[C:/Users/mathi/OneDrive/Skrivebord/NostedAS/Nosted-Prosjekt/NostedServicePro/Views/Service/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/amadeushovden/Documents/Nosted-Prosjekt/NostedServicePro/Views/Service/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2VydmljZS9EZXRhaWxzLmNzaHRtbA==
+[C:/Users/mathi/OneDrive/Skrivebord/NostedAS/Nosted-Prosjekt/NostedServicePro/Views/Service/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/amadeushovden/Documents/Nosted-Prosjekt/NostedServicePro/Views/Service/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2VydmljZS9FZGl0LmNzaHRtbA==
+[C:/Users/mathi/OneDrive/Skrivebord/NostedAS/Nosted-Prosjekt/NostedServicePro/Views/Service/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/amadeushovden/Documents/Nosted-Prosjekt/NostedServicePro/Views/Service/Registrer.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2VydmljZS9SZWdpc3RyZXIuY3NodG1s
+[C:/Users/mathi/OneDrive/Skrivebord/NostedAS/Nosted-Prosjekt/NostedServicePro/Views/Service/Registrer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVxSZWdpc3RyZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/amadeushovden/Documents/Nosted-Prosjekt/NostedServicePro/Views/Service/RegistrerSjekkliste.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2VydmljZS9SZWdpc3RyZXJTamVra2xpc3RlLmNzaHRtbA==
+[C:/Users/mathi/OneDrive/Skrivebord/NostedAS/Nosted-Prosjekt/NostedServicePro/Views/Service/RegistrerSjekkliste.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVxSZWdpc3RyZXJTamVra2xpc3RlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/amadeushovden/Documents/Nosted-Prosjekt/NostedServicePro/Views/Service/ServiceOversikt.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2VydmljZS9TZXJ2aWNlT3ZlcnNpa3QuY3NodG1s
+[C:/Users/mathi/OneDrive/Skrivebord/NostedAS/Nosted-Prosjekt/NostedServicePro/Views/Service/ServiceOversikt.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVxTZXJ2aWNlT3ZlcnNpa3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/amadeushovden/Documents/Nosted-Prosjekt/NostedServicePro/Views/Shared/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+[C:/Users/mathi/OneDrive/Skrivebord/NostedAS/Nosted-Prosjekt/NostedServicePro/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/amadeushovden/Documents/Nosted-Prosjekt/NostedServicePro/Views/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+[C:/Users/mathi/OneDrive/Skrivebord/NostedAS/Nosted-Prosjekt/NostedServicePro/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/amadeushovden/Documents/Nosted-Prosjekt/NostedServicePro/Views/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[C:/Users/mathi/OneDrive/Skrivebord/NostedAS/Nosted-Prosjekt/NostedServicePro/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/amadeushovden/Documents/Nosted-Prosjekt/NostedServicePro/Views/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+[C:/Users/mathi/OneDrive/Skrivebord/NostedAS/Nosted-Prosjekt/NostedServicePro/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/amadeushovden/Documents/Nosted-Prosjekt/NostedServicePro/Views/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-bvhv24dzyb
+[C:/Users/mathi/OneDrive/Skrivebord/NostedAS/Nosted-Prosjekt/NostedServicePro/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-gudp0qr59y
