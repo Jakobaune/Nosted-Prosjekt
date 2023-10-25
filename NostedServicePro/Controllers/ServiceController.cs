@@ -82,6 +82,7 @@ public class ServiceController : Controller
         return View(searchResult);
     }
 
+
     [HttpGet]
     public IActionResult Registrer()
     {
