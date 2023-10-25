@@ -1,25 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "/Users/jakobaune/Downloads/Nosted-Prosjekt/NostedServicePro/NostedServicePro.csproj": {}
+    "/Users/amadeushovden/Documents/Nosted-Prosjekt/NostedServicePro/NostedServicePro.csproj": {}
   },
   "projects": {
-    "/Users/jakobaune/Downloads/Nosted-Prosjekt/NostedServicePro/NostedServicePro.csproj": {
+    "/Users/amadeushovden/Documents/Nosted-Prosjekt/NostedServicePro/NostedServicePro.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/jakobaune/Downloads/Nosted-Prosjekt/NostedServicePro/NostedServicePro.csproj",
+        "projectUniqueName": "/Users/amadeushovden/Documents/Nosted-Prosjekt/NostedServicePro/NostedServicePro.csproj",
         "projectName": "NostedServicePro",
-        "projectPath": "/Users/jakobaune/Downloads/Nosted-Prosjekt/NostedServicePro/NostedServicePro.csproj",
-        "packagesPath": "/Users/jakobaune/.nuget/packages/",
-        "outputPath": "/Users/jakobaune/Downloads/Nosted-Prosjekt/NostedServicePro/obj/",
+        "projectPath": "/Users/amadeushovden/Documents/Nosted-Prosjekt/NostedServicePro/NostedServicePro.csproj",
+        "packagesPath": "/Users/amadeushovden/.nuget/packages/",
+        "outputPath": "/Users/amadeushovden/Documents/Nosted-Prosjekt/NostedServicePro/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/jakobaune/.nuget/NuGet/NuGet.Config"
+          "/Users/amadeushovden/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

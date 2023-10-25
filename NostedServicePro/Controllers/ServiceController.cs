@@ -200,7 +200,7 @@ public class ServiceController : Controller
             _dbContext.Add(serviceOrdre);
             _dbContext.SaveChanges();
 
-            return RedirectToAction("RegistrerSjekkliste", new { ordreID = serviceOrdre.OrdreID });
+            return RedirectToAction("Arkiv");
         }
 
         return View(serviceOrdre);
