@@ -9,9 +9,7 @@
     <div class="alert alert-success" role="alert">
         @TempData["Message"]
     </div>
-}
-<!-- Vis feilmelding ved feil under sletting -->
-else if (!string.IsNullOrEmpty(TempData["Error"]?.ToString()))
+} else if (!string.IsNullOrEmpty(TempData["Error"]?.ToString()))
 {
     <div class="alert alert-danger" role="alert">
         @TempData["Error"]
