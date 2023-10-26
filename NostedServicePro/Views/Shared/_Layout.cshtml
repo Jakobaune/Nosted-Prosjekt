@@ -1,32 +1,23 @@
 ﻿<!DOCTYPE html>
-<html lang="nb">
+<html lang="en">
 <head>
-
-    <!-- Metainformasjon -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Nøsted Service Pro</title>
-
-
-    <!-- CSS-stiler, inkludert Bootstrap og tilpassede stiler -->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Loginnosted.styles.css" asp-append-version="true" />
-
-
-    <!-- Font Awesome ikonbibliotek -->
     <script src="https://kit.fontawesome.com/ce9b37f466.js" crossorigin="anonymous"></script>
 
 
 
-    <!-- Egendefinerte stiler for denne siden -->
     <style>
 
         header {
             background-color: #12181F;
             height: 120px;
             color: #A1B6C1;
-            padding: 20px;
+            padding: 30px;
             position: fixed;
         }
 
@@ -67,7 +58,8 @@
             display: none;
             position: absolute;
             margin-top: 390px;
-            margin-left: -30px;
+            margin-left: 100px;
+            right: 0px;
             background-color: #12181F;
             padding: 20px;
             z-index: 1000;
@@ -85,6 +77,10 @@
                 .menu-hover a:hover {
                     color: #A1B6C1;
                 }
+
+        .menu-toggle {
+            display: block;
+        }
     </style>
 
 
@@ -93,8 +89,6 @@
 
 <body>
 
-
-    <!-- Header-seksjon -->
     <header id="fiksaheader" class="d-flex flex-wrap align-items-center justify-content-between py-3 mb-4 border-bottom">
 
         <!-- hele logoen, med riktig css og skal fungere som hjem knapp -->
@@ -109,31 +103,31 @@
 
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
 
-            <li class="nav-item">
+            <li class="nav-item me-4">
                 <a class="nav-link btn" style="color: #A1B6C1" asp-action="Index" asp-controller="Home">
                     <i class="fa-solid fa-house fa-lg" style="color: #A1B6C1" width="50px"></i>
                     <br />
-                    Hjem
+                    Oversikt
                 </a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item me-4">
                 <a class="nav-link btn" style="color: #A1B6C1" asp-action="Registrer" asp-controller="Service">
                     <i class="fa-solid fa-pen-to-square fa-lg" style="color: #A1B6C1" width="50px"></i>
                     <br />
-                    Opprett Service
+                    Registrere Service
                 </a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item me-4">
                 <a class="nav-link btn" style="color: #A1B6C1" asp-action="ServiceOversikt" asp-controller="Service">
                     <i class="fa-solid fa-pen-to-square fa-lg" style="color: #A1B6C1" width="50px"></i>
                     <br />
-                    Oversikt Ordre
+                    ServiceOversikt
                 </a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item me-4">
                 <a class="nav-link btn" style="color: #A1B6C1" asp-action="Arkiv" asp-controller="Service">
                     <i class="fa-solid fa-clock fa-lg" style="color: #A1B6C1" width="50px"></i>
                     <br />
@@ -141,7 +135,7 @@
                 </a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item me-4">
                 <a class="nav-link btn" style="color: #A1B6C1" asp-action="VisAlleBrukere" asp-controller="Bruker">
                     <i class="fa-solid fa-user fa-lg" style="color: #A1B6C1" width="50px"></i>
                     <br />
@@ -152,46 +146,42 @@
 
         </ul>
 
-
-        <!-- Mobilmenyknapp -->
-        <button id="menu-toggle" class="btn btn-primary d-lg-none" data-bs-target="#navbarNav">
-            <i class="fas fa-bars"></i>
+        <button id="menu-toggle" class="btn btn-primary" data-bs-target="#navbarNav">
+            <i class="fas fa-bars custom-icon"></i>
         </button>
 
         <div id="menu-hover" class="menu-hover">
-            <a class="hei" asp-action="Index" asp-controller="Home">Hjem</a>
-            <a class="hei" asp-action="Registrer" asp-controller="Service">Opprett service</a>
-            <a class="hei" asp-action="ServiceOversikt" asp-controller="Service">Oversikt ordre</a>
+            <a class="hei" asp-action="Index" asp-controller="Home">Oversikt</a>
+            <a class="hei" asp-action="Registrer" asp-controller="Service">Registrere Service</a>
+            <a class="hei" asp-action="SjekklisteListe" asp-controller="Sjekkliste">Sjekkliste</a>
             <a class="hei" asp-action="Arkiv" asp-controller="Service">Servicehistorikk</a>
             <a class="hei" asp-action="VisAlleBrukere" asp-controller="Bruker">Brukere</a>
         </div>
 
 
         <!-- Viser hvilke bruker som er logget inn. -->
-        <div>
-            <div>
-                <span class="me-2">Logget inn:</span>
-                <br />
-                <!-- navn og rolle må være dynamisk -->
-                <strong>User Name</strong>
-                <br />
-                <strong style="color: #E06F06">(Rolle)</strong>
-            </div>
-
+        <div id="logget-inn">
+            <span class="me-2">Logget inn:</span>
+            <br />
+            <!-- navn og rolle må være dynamisk -->
+            <strong>User Name</strong>
+            <br />
+            <strong style="color: #E06F06">(Rolle)</strong>
         </div>
+
+
+
 
     </header>
 
 
-    <!-- Hovedinnhold -->
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-
-    <!-- Footer-seksjon -->
     <footer class="border-top footer text-muted">
         <div class="container">
             <img src="~/css/Bilder/logoicon.jpg" height="50px" class="mb-2">
@@ -199,18 +189,12 @@
         </div>
     </footer>
 
-
-    <!-- JavaScript-biblioteker og egendefinert skript -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 
-
-    <!-- Egendefinerte skript for sideinteraksjon -->
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
+    <script>document.addEventListener("DOMContentLoaded", function () {
             function isUserNearBottom() {
                 var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
                 var windowHeight = window.innerHeight;
@@ -237,6 +221,7 @@
         });
 
         document.addEventListener("DOMContentLoaded", function () {
+            // ... (existing code)
 
             const menuToggle = document.getElementById('menu-toggle');
             const menuHover = document.getElementById('menu-hover');
@@ -248,7 +233,7 @@
                     menuHover.style.display = 'block';
                 }
             });
-        });
-    </script>
+        });</script>
 </body>
 </html>
+
