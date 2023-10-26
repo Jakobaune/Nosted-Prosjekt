@@ -3,10 +3,11 @@
 @{
     ViewData["Title"] = "Arkiv";
 }
-
+<!-- Inkludering av nødvendige JavaScript-biblioteker -->
 @section scripts {
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI/t1H1aWVegQZH75Z5l/4sC9U8U5bEuRVHfRJGQ=" crossorigin="anonymous"></script>
 
+    <!-- JavaScript-skript for håndtering av sortering -->
     <script>
         $(document).ready(function () {
             $("th.sortable").on("click", function () {
@@ -31,20 +32,21 @@
 }
 
 
-
+<!-- Meldinger fra TempData -->
 @{
     var message = TempData["Message"] as string;
 }
-
+<!-- Vis suksessmelding hvis tilgjengelig -->
 @if (!string.IsNullOrEmpty(message))
 {
     <div class="alert alert-success" role="alert">
         @message
     </div>
 }
-
+<!-- Overskrift for arkivsiden -->
 <h1>Arkiv</h1>
 
+<!-- Lenke for å opprette ny serviceordre -->
 <p>
     <a asp-action="Registrer">Lag ny serviceordre</a>
 </p>
@@ -58,9 +60,12 @@
     <button type="submit" class="btn btn-primary">Søk</button>
 </form>
 
+
+<!-- Tabell for visning av serviceordre -->
 <div class="table-responsive">
     <table class="table">
         <thead>
+            <!-- Kolonner for sortering -->
             <tr>
                 <th class="sortable" data-sort-by="OrdreID" data-sort-order="@ViewData["IdSortParm"]">
                     <a asp-action="Arkiv" asp-controller="Service" asp-route-sortOrder="@ViewData["IdSortParm"]">Ordre ID</a>
@@ -81,9 +86,11 @@
             </tr>
         </thead>
         <tbody>
+            <!-- Gjennomgang av serviceordre for visning i tabellen -->
             @foreach (var item in Model)
             {
                 <tr>
+                    <!-- Visning av serviceordre-detaljer -->
                     <td>
                         @Html.DisplayFor(modelItem => item.OrdreID)
                     </td>
@@ -100,6 +107,7 @@
                         @item.Registreringsdato.ToString("yyyy-MM-dd")
                     </td>
                     <td>
+                        <!-- Lenker for redigering, detaljer og sletting av serviceordre -->
                         <a asp-action="Edit" asp-controller="Service" asp-route-id="@item.OrdreID">Rediger</a> |
                         <a asp-action="Details" asp-controller="Service" asp-route-id="@item.OrdreID">Detaljer</a> |
                         <a asp-action="Delete" asp-route-id="@item.OrdreID">Slett</a>

@@ -11,6 +11,7 @@ public class ServiceController : Controller
 {
     private readonly ServiceProDbContex _dbContext;
 
+    // Konstruktør som injiserer databasekontekst
     public ServiceController(ServiceProDbContex dbContext)
     {
         _dbContext = dbContext;
@@ -28,7 +29,7 @@ public class ServiceController : Controller
     }
 
 
-
+    // Viser arkiv med filtrering og sortering
     public IActionResult Arkiv(string search, string sortOrder)
     {
         ViewData["IdSortParm"] = string.IsNullOrEmpty(sortOrder) ? "id_desc" : "";
@@ -82,12 +83,34 @@ public class ServiceController : Controller
         return View(searchResult);
     }
 
+    // Hjelpemetode for å få sortering basert på attributt
+    private Expression<Func<ServiceOrdre, object>> GetSortExpression(string currentSort)
+    {
+        switch (currentSort)
+        {
+            case "id":
+                return item => item.OrdreID;
+            case "name":
+                return item => item.Kundenavn;
+            case "email":
+                return item => item.Kundeepost;
+            case "date":
+                return item => item.Registreringsdato;
+            default:
+                return item => item.OrdreID;
+        }
+    }
 
+
+    // Viser skjemaet for å registrere en ny serviceordre
     [HttpGet]
     public IActionResult Registrer()
     {
-        return View(); // Vis skjemaet for å bestille service
+        return View();
     }
+
+
+    // Viser skjemaet for å registrere sjekkliste for en eksisterende serviceordre
     [HttpGet]
     public IActionResult RegistrerSjekkliste(int ordreId)
     {
@@ -104,6 +127,8 @@ public class ServiceController : Controller
         return View(sjekkliste);
     }
 
+
+    // Behandler postforespørsel for å registrere sjekkliste
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult RegistrerSjekkliste(ServiceOrdre model)
@@ -141,37 +166,18 @@ public class ServiceController : Controller
     }
 
 
-
-
-
-
-    private Expression<Func<ServiceOrdre, object>> GetSortExpression(string currentSort)
-    {
-        switch (currentSort)
-        {
-            case "id":
-                return item => item.OrdreID;
-            case "name":
-                return item => item.Kundenavn;
-            case "email":
-                return item => item.Kundeepost;
-            case "date":
-                return item => item.Registreringsdato;
-            default:
-                return item => item.OrdreID;
-        }
-    }
-
+    // Viser redigeringsskjema for en serviceordre
     public IActionResult Edit(int id)
     {
-        var serviceOrdre = _dbContext.service.Find(id);
+        var serviceOrdre = _dbContext.service.Find(id); //Henter frem fra DB
         if (serviceOrdre == null)
         {
             return NotFound();
         }
-        return View(serviceOrdre);
+        return View(serviceOrdre); //Viser edit siden
     }
 
+    // Viser detaljer for en serviceordre
     public IActionResult Details(int id)
     {
         var serviceOrdre = _dbContext.service.FirstOrDefault(s => s.OrdreID == id);
@@ -184,7 +190,7 @@ public class ServiceController : Controller
         return View(serviceOrdre);
     }
 
-
+    // Viser slettingsskjema for en serviceordre
     public IActionResult Delete(int id)
     {
         var serviceOrdre = _dbContext.service.Find(id);
@@ -195,15 +201,17 @@ public class ServiceController : Controller
         return View(serviceOrdre);
     }
 
+
+    // Behandler postforespørsel for å registrere en ny serviceordre
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult Registrer(ServiceOrdre serviceOrdre)
     {
         if (ModelState.IsValid)
         {
-            serviceOrdre.Registreringsdato = DateTime.Now;
+            serviceOrdre.Registreringsdato = DateTime.Now; //Dato med klokkeslett sendes inn basert på enheten de blir sendt inn fra
             _dbContext.Add(serviceOrdre);
-            _dbContext.SaveChanges();
+            _dbContext.SaveChanges(); //Lagrer endringene
 
             return RedirectToAction("Arkiv");
         }
@@ -213,7 +221,7 @@ public class ServiceController : Controller
 
 
 
-
+    // Behandler postforespørsel for å redigere en serviceordre
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult Edit(ServiceOrdre model)
@@ -243,6 +251,8 @@ public class ServiceController : Controller
         return View(model);
     }
 
+
+    // Behandler postforespørsel for å slette en serviceordre
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult Delete(int id, bool confirm)

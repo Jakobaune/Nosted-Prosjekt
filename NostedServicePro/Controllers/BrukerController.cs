@@ -32,11 +32,13 @@ public class BrukerController : Controller
         return View(); // Vis skjemaet
     }
 
+    //Metode osm henter frem brukere fra DB)
     public IActionResult RedigerBruker(int id)
     {
         var bruker = _dbContext.Brukere.Find(id);
         return View(bruker);
     }
+
 
     public IActionResult SlettBruker(int id)
     {
@@ -44,13 +46,17 @@ public class BrukerController : Controller
 
         if (bruker != null)
         {
-            _dbContext.Brukere.Remove(bruker);
+            _dbContext.Brukere.Remove(bruker); //Fletter brukeren basert på ID
             _dbContext.SaveChanges();
         }
 
-        return RedirectToAction("VisAlleBrukere");
+        return RedirectToAction("VisAlleBrukere"); //Returnerer til vis alle brukere view
     }
 
+
+
+
+    //Metode for å redigere brukere
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult RedigerBruker(Bruker bruker)
@@ -84,7 +90,7 @@ public class BrukerController : Controller
             }
             catch (Exception ex)
             {
-                // Håndter feil, for eksempel logg feilen
+                // Håndter feil, for eksempel logging 
                 TempData["Feilmelding"] = "Feil ved lagring av endringer.";
             }
         }

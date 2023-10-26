@@ -1,17 +1,25 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <!-- Metainformasjon -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Nøsted Service Pro</title>
+
+
+    <!-- CSS-stiler, inkludert Bootstrap og tilpassede stiler -->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Loginnosted.styles.css" asp-append-version="true" />
+
+
+    <!-- Font Awesome ikonbibliotek -->
     <script src="https://kit.fontawesome.com/ce9b37f466.js" crossorigin="anonymous"></script>
-  
 
 
 
+    <!-- Egendefinerte stiler for denne siden -->
     <style>
 
         header {
@@ -85,6 +93,8 @@
 
 <body>
 
+
+    <!-- Header-seksjon -->
     <header id="fiksaheader" class="d-flex flex-wrap align-items-center justify-content-between py-3 mb-4 border-bottom">
 
         <!-- hele logoen, med riktig css og skal fungere som hjem knapp -->
@@ -142,6 +152,8 @@
 
         </ul>
 
+
+        <!-- Mobilmenyknapp -->
         <button id="menu-toggle" class="btn btn-primary d-lg-none" data-bs-target="#navbarNav">
             <i class="fas fa-bars"></i>
         </button>
@@ -171,13 +183,15 @@
     </header>
 
 
-
+    <!-- Hovedinnhold -->
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
+
+    <!-- Footer-seksjon -->
     <footer class="border-top footer text-muted">
         <div class="container">
             <img src="~/css/Bilder/logoicon.jpg" height="50px" class="mb-2">
@@ -185,10 +199,15 @@
         </div>
     </footer>
 
+
+    <!-- JavaScript-biblioteker og egendefinert skript -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+
+
+    <!-- Egendefinerte skript for sideinteraksjon -->
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -218,7 +237,6 @@
         });
 
         document.addEventListener("DOMContentLoaded", function () {
-            // ... (existing code)
 
             const menuToggle = document.getElementById('menu-toggle');
             const menuHover = document.getElementById('menu-hover');

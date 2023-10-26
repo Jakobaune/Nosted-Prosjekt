@@ -3,19 +3,24 @@
 @{
     ViewData["Title"] = "Sjekking";
 }
+
+<!-- Overskrift og tittel for sjekklistesiden -->
 <h4>Sjekkliste</h4>
 <hr />
+<!-- HTML-skjema for å registrere sjekkliste, sender data til "RegistrerSjekkliste" i "Service" -kontrolleren -->
 <div class="row">
     <div class="col-md-4">
         @using (Html.BeginForm("RegistrerSjekkliste", "Service", FormMethod.Post))
         {
             @Html.AntiForgeryToken()
 
+            <!-- Skjulte felt for å overføre serviceordreinformasjon -->
             @Html.HiddenFor(model => model.Kundenavn)
             @Html.HiddenFor(model => model.Kundeepost)
             @Html.HiddenFor(model => model.Kundetlf)
             @Html.HiddenFor(model => model.Produkttypevinsj)
             @Html.HiddenFor(model => model.ÅrsmodellVinsj)
+            @Html.HiddenFor(model => model.Registreringsdato)
             @Html.HiddenFor(model => model.Serienummervinsj)
             @Html.HiddenFor(model => model.AvtaltKommentar)
             @Html.HiddenFor(model => model.InternKommentar)
@@ -27,6 +32,7 @@
             <input type="hidden" asp-for="OrdreID" />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
+            <!-- Dropdowns for ulike sjekkliste-elementer med tilhørende valg -->
             <div class="form-group">
                 <label asp-for="ClutchLameller" class="control-label"></label>
                 <select asp-for="ClutchLameller" class="form-control">
@@ -242,7 +248,7 @@
                 <span asp-validation-for="BremsekraftKn" class="text-danger"></span>
             </div>
 
-
+            <!-- Knapp for å sende skjemaet og lagre sjekklisten -->
             <div class="form-group">
                 <input type="submit" value="Lagre sjekkliste" class="btn btn-primary" />
             </div>

@@ -3,19 +3,26 @@
 @{
     ViewData["Title"] = "Edit";
 }
-
+<!-- Overskrift for redigeringssiden -->
 <h1>Redgiger</h1>
 
+<!-- Underskrift for ServiceOrdre-seksjon -->
 <h4>ServiceOrdre</h4>
 <hr />
+<!-- Oppretter et HTML-skjema for redigering med en kolonne for input-feltene -->
 <div class="row">
     <div class="col-md-4">
         @using (Html.BeginForm("Edit", "Service"))
 {
     @Html.AntiForgeryToken()
-
+            <!-- Valideringsoppsummering for modellen, vises som rød tekst ved valideringsfeil -->
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!-- Skjult felt for OrdreID -->
             <input type="hidden" asp-for="OrdreID" />
+
+            <!-- Gjennomgang av hver attributt i ServiceOrdre og oppretter input-felt -->
+            <!-- Disse feltene lar brukeren redigere verdier -->
             <div class="form-group">
                 <label asp-for="Kundenavn" class="control-label"></label>
                 <input asp-for="Kundenavn" class="form-control" />
@@ -86,17 +93,18 @@
                 <input asp-for="ProduktmottattDato" class="form-control" />
                 <span asp-validation-for="ProduktmottattDato" class="text-danger"></span>
             </div>
+            <!-- Knapp for å lagre endringer -->
             <div class="form-group">
                 <input type="submit" value="Lagre endringer" class="btn btn-primary" />
             </div>
         }
     </div>
 </div>
-
+<!-- Lenke for å gå tilbake til historikksiden -->
 <div>
     <a asp-action="Arkiv">Tilbake til historikk</a>
 </div>
-
+<!-- Inkluderer scripts for validering -->
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

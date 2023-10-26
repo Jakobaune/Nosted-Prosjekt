@@ -3,14 +3,21 @@
 @{
     ViewData["Title"] = "Details";
 }
-<h1>Details</h1>
 
+<!-- Overskrift for detaljsiden -->
+<h1>Detaljer</h1>
+
+<!-- Container for å organisere layout -->
 <div class="container">
+    <!-- To kolonner for å vise serviceordre-detaljer og sjekkliste -->
     <div class="row">
         <div class="col-md-6">
+            <!-- Overskrift og horisontal linje for serviceordre-detaljer -->
             <h4>ServiceOrdre</h4>
             <hr />
+            <!-- Definisjonslister for å vise detaljer i par (attributt og verdi) -->
             <dl class="row">
+                <!-- Gjennomgang av serviceordre-attributter -->
         <dt class="col-sm-3">
             @Html.DisplayNameFor(model => model.OrdreID)
         </dt>
@@ -104,9 +111,12 @@
         </dl>
         </div>
         <div class="col-md-6">
+            <!-- Overskrift og horisontal linje for sjekkliste -->
             <h4>Sjekkliste</h4>
             <hr />
+                        <!-- Definisjonslister for å vise sjekkliste-elementer -->
             <dl class="row">
+                <!-- Gjennomgang av sjekkliste-elementer -->
                 <dt class="col-sm-5">
                     ClutchLameller
                 </dt>
@@ -266,7 +276,7 @@
         </div>
     </div>
 
-
+<!-- Handlinger som Rediger, Tilbake til historikk, og Slett -->
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.OrdreID">Rediger</a> |
     <a asp-action="Arkiv">Tilbake til historikkt</a> |

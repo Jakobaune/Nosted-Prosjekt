@@ -4,18 +4,20 @@
     ViewData["Title"] = "Registrer";
 }
 
+<!-- Viser en melding hvis det er en suksess- eller feilmelding -->
 @if (!string.IsNullOrEmpty(TempData["Message"]?.ToString()))
 {
     <div class="alert alert-success" role="alert">
         @TempData["Message"]
     </div>
 }
-
+<!-- Overskrift og informasjon for registreringssiden -->
 <div>
     <h2>Registrer ny serviceordre</h2>
     <p><em>Fyll ut info om kunden</em></p>
 </div>
 
+<!-- HTML-skjema for registrering, sender data til "Registrer" i "Service" -kontrolleren -->
 @using (Html.BeginForm("Registrer", "Service"))
 {
     @Html.AntiForgeryToken()
@@ -84,5 +86,7 @@
         <input asp-for="ProduktmottattDato" type="date" class="form-control" />
     </div>
     <br />
+
+    <!-- Knapp for å sende skjemaet og lagre en ny serviceordre -->
     <button type="submit" class="btn btn-primary">Lag serviceordre</button>
 }

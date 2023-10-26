@@ -3,13 +3,14 @@
 @{
     ViewData["Title"] = "Delete";
 }
-
+<!-- Vis melding ved vellykket sletting -->
 @if (!string.IsNullOrEmpty(TempData["Message"]?.ToString()))
 {
     <div class="alert alert-success" role="alert">
         @TempData["Message"]
     </div>
 }
+<!-- Vis feilmelding ved feil under sletting -->
 else if (!string.IsNullOrEmpty(TempData["Error"]?.ToString()))
 {
     <div class="alert alert-danger" role="alert">
@@ -18,14 +19,17 @@ else if (!string.IsNullOrEmpty(TempData["Error"]?.ToString()))
 }
 
 
+<!-- Overskrift for slettingssiden -->
 
-<h1>Delete</h1>
+<h1>Slett</h1>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Er du sikker på du vil slette denne?</h3>
+<!-- Visning av serviceordre-detaljer -->
 <div>
     <h4>ServiceOrdre</h4>
     <hr />
     <dl class="row">
+        <!-- Gjennomgang av serviceordre-attributter -->
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Kundenavn)
         </dt>
@@ -111,12 +115,14 @@ else if (!string.IsNullOrEmpty(TempData["Error"]?.ToString()))
             @Html.DisplayFor(model => model.ProduktmottattDato)
         </dd>
     </dl>
-
+    <!-- Slettingsskjema -->
     <form method="post" asp-controller="Service" asp-action="Delete">
         <input type="hidden" asp-for="OrdreID" />
+        <!-- Bekreftelsescheckbox -->
         <label>
             <input type="checkbox" name="confirm" required /> Bekreft sletting
         </label>
+                <!-- Slett-knapp og tilbake-knapp -->
         <input type="submit" value="Slett" class="btn btn-danger" /> |
         <a asp-action="Arkiv">Tilbake til historikk</a>
     </form>

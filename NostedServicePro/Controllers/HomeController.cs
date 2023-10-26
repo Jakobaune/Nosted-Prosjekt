@@ -17,12 +17,12 @@ public class HomeController : Controller
     {
         try
         {
-            var uferdigeServiceOrdre = _dbContext.service.Where(ordre => !ordre.ErSjekklisteFullført).ToList();
+            var uferdigeServiceOrdre = _dbContext.service.Where(ordre => !ordre.ErSjekklisteFullført).ToList(); //omgjør data i DB til liste for de elementene som er == 0
             return View(uferdigeServiceOrdre);
         }
         catch (Exception ex)
         {
-            // Logg eller håndter feilen på en passende måte
+            
             return View("Error"); // Vis feilsiden
         }
     }
