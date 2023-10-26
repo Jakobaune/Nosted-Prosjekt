@@ -6,6 +6,7 @@ using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Runtime.Intrinsics.X86;
 
 public class ServiceController : Controller
 {
@@ -82,6 +83,7 @@ public class ServiceController : Controller
         return View(searchResult);
     }
 
+
     [HttpGet]
     public IActionResult Registrer()
     {
@@ -105,8 +107,9 @@ public class ServiceController : Controller
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public IActionResult RegistrerSjekkliste(ServiceOrdre model)
+    public IActionResult FerdigstillSjekkliste(ServiceOrdre model)
     {
+     
         try
         {
             Console.WriteLine($"OrdreID received: {model.OrdreID}");
@@ -122,6 +125,9 @@ public class ServiceController : Controller
                     // Oppdater sjekkpunktene og andre felter
                     _dbContext.Entry(existingOrdre).CurrentValues.SetValues(model);
 
+                    // Marker sjekklisten som fullført
+                    existingOrdre.ErSjekklisteFullført = true;
+
                     _dbContext.SaveChanges();
 
                     return RedirectToAction("Arkiv");
@@ -135,6 +141,9 @@ public class ServiceController : Controller
 
         return View(model);
     }
+
+
+
 
 
 
@@ -169,13 +178,16 @@ public class ServiceController : Controller
 
     public IActionResult Details(int id)
     {
-        var serviceOrdre = _dbContext.service.Find(id);
+        var serviceOrdre = _dbContext.service.FirstOrDefault(s => s.OrdreID == id);
+
         if (serviceOrdre == null)
         {
             return NotFound();
         }
+
         return View(serviceOrdre);
     }
+
 
     public IActionResult Delete(int id)
     {
@@ -197,7 +209,7 @@ public class ServiceController : Controller
             _dbContext.Add(serviceOrdre);
             _dbContext.SaveChanges();
 
-            return RedirectToAction("RegistrerSjekkliste", new { ordreID = serviceOrdre.OrdreID });
+            return RedirectToAction("Arkiv");
         }
 
         return View(serviceOrdre);
@@ -261,4 +273,6 @@ public class ServiceController : Controller
         // Endre retur til arkiv
         return RedirectToAction(nameof(Arkiv));
     }
+
+
 }

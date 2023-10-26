@@ -70,4 +70,9 @@ public class ServiceOrdre
     public String? TestVinsjAlleFunksjoner { get; set; }
     public String? TrekkraftKn { get; set; }
     public String? BremsekraftKn { get; set; }
+    public bool ErMekaniskFullført { get; set; }
+    public bool ErHydrauliskFullført { get; set; }
+    public bool ErElektroFullført { get; set; }
+    public bool ErTestFullført { get; set; }
+    public bool ErSjekklisteFullført { get; set; }
 }
