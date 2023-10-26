@@ -79,11 +79,8 @@ a {
 
 
 .btn-primary {
-    background-color: #12181f;
-    color: #A1B6C1;
-    border-color: #12181f;
-    width: 75px;
-    height: 75px;
+    background-color: #e16f07;
+    border-color: #e16f07;
 }
 
     .btn-primary:hover {
@@ -93,7 +90,7 @@ a {
     }
 
 .custom-icon {
-    font-size: 50px; /* Adjust the size as needed */
+    font-size: 50px; 
 }
 
 .menu-hover {
