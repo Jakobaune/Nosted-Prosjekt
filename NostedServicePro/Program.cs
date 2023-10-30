@@ -1,5 +1,5 @@
 using Loginnosted;
-using Loginnosted.Data;
+using NostedServicePro.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -13,7 +13,7 @@ using Microsoft.AspNetCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Endret tilkoblingsstrengen
-var connectionString = "Server=localhost;Database=nosteddb;User=root;Password=nosted123;Port=3306;SslMode=none;";
+var connectionString = "Server=localhost;Database=nosteddb;User=root;Password=nosted123;Port=3307;SslMode=none;";
 
 // Legg til DbContext med MySQL-databasekontekst
 builder.Services.AddDbContext<ServiceProDbContex>(options =>

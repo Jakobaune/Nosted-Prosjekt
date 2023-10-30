@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Loginnosted.Data;
-using Loginnosted.Models;
+using NostedServicePro.Data;
+using NostedServicePro.Models;
 using System;
 
 public class BrukerController : Controller

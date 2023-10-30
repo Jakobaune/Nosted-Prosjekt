@@ -1,8 +1,8 @@
-﻿using Loginnosted.Models;
+﻿using NostedServicePro.Models;
 using Microsoft.EntityFrameworkCore;
 using MySql.Data.MySqlClient;
 
-namespace Loginnosted.Data
+namespace NostedServicePro.Data
 {
     public class ServiceProDbContex : DbContext
     {

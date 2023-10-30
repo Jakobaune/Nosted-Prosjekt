@@ -1,0 +1,23 @@
+﻿@model NostedServicePro.MVC.Models.Account.LoginViewModel
+@{
+    ViewBag.Title = "Logg Inn";
+}
+
+<h2>Logg Inn</h2>
+
+@using (Html.BeginForm("Login", "Account", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Email)
+        @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Password)
+        @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Logg Inn</button>
+}
