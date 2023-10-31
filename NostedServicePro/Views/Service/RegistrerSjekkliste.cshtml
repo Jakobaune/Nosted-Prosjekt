@@ -3,7 +3,15 @@
 @{
     ViewData["Title"] = "Sjekking";
 }
-
+<style>
+    .section-header {
+        margin-top: 20px; /* Adjust the value as needed */
+    }
+    .form-group-button {
+        margin-top: 20px;
+    }
+    
+</style>
 <!-- Overskrift og tittel for sjekklistesiden -->
 <h4>Sjekkliste</h4>
 <hr />
@@ -33,6 +41,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
             <!-- Dropdowns for ulike sjekkliste-elementer med tilhørende valg -->
+    <h5 class="section-header">Mekanisk</h5>
             <div class="form-group">
                 <label asp-for="ClutchLameller" class="control-label">Sjekk clutch lameller for slitasje</label>
                 <select asp-for="ClutchLameller" class="form-control">
@@ -111,6 +120,7 @@
                 </select>
                 <span asp-validation-for="KilleKjedehjul" class="text-danger"></span>
             </div>
+            <h5 class="section-header">Hydraulisk</h5>
             <div class="form-group">
                 <label asp-for="HydraulikkSylinderLekkasje" class="control-label">Sjekk hydraulikk sylinder for lekkasje</label>
                 <select asp-for="HydraulikkSylinderLekkasje" class="form-control">
@@ -178,6 +188,7 @@
                 </select>
                 <span asp-validation-for="BremsesylingerSkiftTelninger" class="text-danger"></span>
             </div>
+            <h5 class="section-header">Elektro</h5>
             <div class="form-group">
                 <label asp-for="LedningsnettVinsj" class="control-label">Sjekk ledningsnett på vinsj</label>
                 <select asp-for="LedningsnettVinsj" class="form-control">
@@ -205,7 +216,7 @@
                     </select>
                     <span asp-validation-for="SjekkTestKnappekasse" class="text-danger"></span>
                 </div>
-
+                <h5 class="section-header">Funksjonstesting</h5>
                 <div class="form-group">
                     <label asp-for="XXBar" class="control-label">XX-Bar</label>
                     <select asp-for="XXBar" class="form-control">
@@ -249,7 +260,7 @@
             </div>
 
             <!-- Knapp for å sende skjemaet og lagre sjekklisten -->
-            <div class="form-group">
+            <div class="form-group form-group-button">
                 <input type="submit" value="Lagre sjekkliste" class="btn btn-primary" />
             </div>
         }
