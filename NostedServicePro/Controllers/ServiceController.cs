@@ -131,8 +131,10 @@ public class ServiceController : Controller
     // Behandler postforespørsel for å registrere sjekkliste
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public IActionResult RegistrerSjekkliste(ServiceOrdre model)
+    public IActionResult RegistrerSjekkliste(ServiceOrdre model, string action)
     {
+        bool completeChecklist = (action == "Fullfør sjekkliste");
+
         try
         {
             Console.WriteLine($"OrdreID received: {model.OrdreID}");
@@ -148,8 +150,11 @@ public class ServiceController : Controller
                     // Oppdater sjekkpunktene og andre felter
                     _dbContext.Entry(existingOrdre).CurrentValues.SetValues(model);
 
-                    // Marker sjekklisten som fullført
-                    existingOrdre.ErSjekklisteFullført = true;
+                    // Marker sjekklisten som fullført hvis "Fullfør Sjekkliste" ble trykket
+                    if (completeChecklist)
+                    {
+                        existingOrdre.ErSjekklisteFullført = true;
+                    }
 
                     _dbContext.SaveChanges();
 

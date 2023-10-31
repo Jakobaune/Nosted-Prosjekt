@@ -41,7 +41,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
             <!-- Dropdowns for ulike sjekkliste-elementer med tilhørende valg -->
-    <h5 class="section-header">Mekanisk</h5>
+            <h5 class="section-header">Mekanisk</h5>
             <div class="form-group">
                 <label asp-for="ClutchLameller" class="control-label">Sjekk clutch lameller for slitasje</label>
                 <select asp-for="ClutchLameller" class="form-control">
@@ -261,7 +261,11 @@
 
             <!-- Knapp for å sende skjemaet og lagre sjekklisten -->
             <div class="form-group form-group-button">
-                <input type="submit" value="Lagre sjekkliste" class="btn btn-primary" />
+                <input type="submit" name="action" value="Lagre sjekkliste" class="btn btn-primary" />
+            </div>
+
+            <div class="form-group form-group-button">
+                <input type="submit" name="action" value="Fullfør sjekkliste" class="btn btn-primary" />
             </div>
         }
     </div>
