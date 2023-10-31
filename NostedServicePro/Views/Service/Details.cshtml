@@ -3,7 +3,11 @@
 @{
     ViewData["Title"] = "Details";
 }
-
+<style>
+    .section-header {
+        margin-top: 20px; /* Adjust the value as needed */
+    }
+</style>
 <!-- Overskrift for detaljsiden -->
 <h1>Detaljer</h1>
 
@@ -117,10 +121,13 @@
                         <!-- Definisjonslister for å vise sjekkliste-elementer -->
             <dl class="row">
                 <!-- Gjennomgang av sjekkliste-elementer -->
+
+                <h5 class="section-header">Mekanisk</h5>
+
                 <dt class="col-sm-5">
                     Sjekk clutch lameller for slitasje
                 </dt>
-                <dd class="col-sm-7"(Model.ClutchLameller)">
+                <dd class="col-sm-7" (Model.ClutchLameller)">
                     @Model.ClutchLameller
                 </dd>
 
@@ -134,56 +141,58 @@
                 <dt class="col-sm-5">
                     Sjekk lager for trommel
                 </dt>
-                <dd class="col-sm-7"(Model.LagerTrommel)">
+                <dd class="col-sm-7" (Model.LagerTrommel)">
                     @Model.LagerTrommel
                 </dd>
 
                 <dt class="col-sm-5">
                     Sjekk PTO og opplagring
                 </dt>
-                <dd class="col-sm-7"(Model.PTOOpplagring)">
+                <dd class="col-sm-7" (Model.PTOOpplagring)">
                     @Model.PTOOpplagring
                 </dd>
 
                 <dt class="col-sm-5">
                     Sjekk kjedestrammer
                 </dt>
-                <dd class="col-sm-7"(Model.Kjedestrammer)">
+                <dd class="col-sm-7" (Model.Kjedestrammer)">
                     @Model.Kjedestrammer
                 </dd>
 
                 <dt class="col-sm-5">
                     Sjekk wire
                 </dt>
-                <dd class="col-sm-7"(Model.Wire)">
+                <dd class="col-sm-7" (Model.Wire)">
                     @Model.Wire
                 </dd>
 
                 <dt class="col-sm-5">
                     Sjekk pinion lager
                 </dt>
-                <dd class="col-sm-7"(Model.PlnlonLager)">
+                <dd class="col-sm-7" (Model.PlnlonLager)">
                     @Model.PlnlonLager
                 </dd>
 
                 <dt class="col-sm-5">
                     Sjekk kile på kjedehjul
                 </dt>
-                <dd class="col-sm-7"(Model.KilleKjedehjul)">
+                <dd class="col-sm-7" (Model.KilleKjedehjul)">
                     @Model.KilleKjedehjul
                 </dd>
+
+                <h5 class="section-header">Hydraulisk</h5>
 
                 <dt class="col-sm-5">
                     Sjekk hydraulikk sylinder for lekkasje
                 </dt>
-                <dd class="col-sm-7"(Model.HydraulikkSylinderLekkasje)">
+                <dd class="col-sm-7" (Model.HydraulikkSylinderLekkasje)">
                     @Model.HydraulikkSylinderLekkasje
                 </dd>
 
                 <dt class="col-sm-5">
                     Sjekk slanger for skader og lekkasje
                 </dt>
-                <dd class="col-sm-7"(Model.SlangerSkaderLekkasje)">
+                <dd class="col-sm-7" (Model.SlangerSkaderLekkasje)">
                     @Model.SlangerSkaderLekkasje
                 </dd>
 
@@ -197,51 +206,55 @@
                 <dt class="col-sm-5">
                     Skift olje i tank
                 </dt>
-                <dd class="col-sm-7"(Model.SkiftOljeTank)">
+                <dd class="col-sm-7" (Model.SkiftOljeTank)">
                     @Model.SkiftOljeTank
                 </dd>
 
                 <dt class="col-sm-5">
                     Skift olje på girboks
                 </dt>
-                <dd class="col-sm-7"(Model.SkiftOljeGirboks)">
+                <dd class="col-sm-7" (Model.SkiftOljeGirboks)">
                     @Model.SkiftOljeGirboks
                 </dd>
 
                 <dt class="col-sm-5">
                     Sjekk Ringsylinder åpne og skift tetninger
                 </dt>
-                <dd class="col-sm-7"(Model.RingsyllingerSkiftTelnlnger)">
+                <dd class="col-sm-7" (Model.RingsyllingerSkiftTelnlnger)">
                     @Model.RingsyllingerSkiftTelnlnger
                 </dd>
 
                 <dt class="col-sm-5">
                     Sjekk Bingsylinder åpne og skift tetninger
                 </dt>
-                <dd class="col-sm-7"(Model.BremsesylingerSkiftTelninger)">
+                <dd class="col-sm-7" (Model.BremsesylingerSkiftTelninger)">
                     @Model.BremsesylingerSkiftTelninger
                 </dd>
+
+                <h5 class="section-header">Elektro</h5>
 
                 <dt class="col-sm-5">
                     Sjekk ledningsnett på vinsj
                 </dt>
-                <dd class="col-sm-7"(Model.LedningsnettVinsj)">
+                <dd class="col-sm-7" (Model.LedningsnettVinsj)">
                     @Model.LedningsnettVinsj
                 </dd>
 
                 <dt class="col-sm-5">
                     Sjekk og test radio
                 </dt>
-                <dd class="col-sm-7"(Model.SjekkTestRadio)">
+                <dd class="col-sm-7" (Model.SjekkTestRadio)">
                     @Model.SjekkTestRadio
                 </dd>
 
                 <dt class="col-sm-5">
-                    Sjekkog test knappekasse
+                    Sjekk og test knappekasse
                 </dt>
-                <dd class="col-sm-7"(Model.SjekkTestKnappekasse)">
+                <dd class="col-sm-7" (Model.SjekkTestKnappekasse)">
                     @Model.SjekkTestKnappekasse
                 </dd>
+
+                <h5 class="section-header">Funksjonstesting</h5>
 
                 <dt class="col-sm-5">
                     XX-Bar
@@ -283,8 +296,3 @@
     <a asp-action="Delete" asp-route-id="@Model?.OrdreID">Slett</a>
 
 </div>
-
-
-
-
-
