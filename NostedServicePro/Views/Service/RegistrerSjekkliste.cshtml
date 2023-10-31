@@ -216,46 +216,32 @@
                     </select>
                     <span asp-validation-for="SjekkTestKnappekasse" class="text-danger"></span>
                 </div>
+
                 <h5 class="section-header">Funksjonstesting</h5>
                 <div class="form-group">
                     <label asp-for="XXBar" class="control-label">XX-Bar</label>
-                    <select asp-for="XXBar" class="form-control">
-                        <option value="OK">OK</option>
-                        <option value="Bør Skiftes">Bør skiftes</option>
-                        <option value="Defekt">Defekt</option>
-                    </select>
+                    <input asp-for="XXBar" class="form-control" />
                     <span asp-validation-for="XXBar" class="text-danger"></span>
                 </div>
 
+
                 <div class="form-group">
                     <label asp-for="TestVinsjAlleFunksjoner" class="control-label">Test vinsj og kjør alle funksjoner</label>
-                    <select asp-for="TestVinsjAlleFunksjoner" class="form-control">
-                        <option value="OK">OK</option>
-                        <option value="Bør Skiftes">Bør skiftes</option>
-                        <option value="Defekt">Defekt</option>
-                    </select>
+                    <input asp-for="TestVinsjAlleFunksjoner" class="form-control" />
                     <span asp-validation-for="TestVinsjAlleFunksjoner" class="text-danger"></span>
                 </div>
                 <span asp-validation-for="SjekkTestRadio" class="text-danger"></span>
             </div>
 
-
             <div class="form-group">
                 <label asp-for="TrekkraftKn" class="control-label">Trekkraft KN</label>
-                <select asp-for="TrekkraftKn" class="form-control">
-                    <option value="OK">OK</option>
-                    <option value="Bør Skiftes">Bør skiftes</option>
-                    <option value="Defekt">Defekt</option>
-                </select>
+                <input asp-for="TrekkraftKn" class="form-control" />
                 <span asp-validation-for="TrekkraftKn" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="BremsekraftKn" class="control-label">Bremsekraft KN</label>
-                <select asp-for="BremsekraftKn" class="form-control">
-                    <option value="OK">OK</option>
-                    <option value="Bør Skiftes">Bør skiftes</option>
-                    <option value="Defekt">Defekt</option>
-                </select>
+                <input asp-for="BremsekraftKn" class="form-control" />
                 <span asp-validation-for="BremsekraftKn" class="text-danger"></span>
             </div>
 
