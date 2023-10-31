@@ -10,9 +10,9 @@
         <!-- Kolonne for uferdige serviceordre -->
         <div class="col-md-6">
             <div>
-                <h2 class="display-6 text-center">Uferdige Serviceordre</h2>
+                <h2 class="display-6 text-center">Aktive serviceordre</h2>
                 <!-- Vis antall uferdige serviceordre -->
-                <p class="text-center">Antall uferdige serviceordre: @Model.Count(s => !s.ErSjekklisteFullført)</p>
+                <p class="text-center">Antall aktive serviceordre: @Model.Count(s => !s.ErSjekklisteFullført)</p>
 
                 <!-- Loop gjennom de første 10 uferdige serviceordrene (hvis tilgjengelig) -->
                 <div class="row">
