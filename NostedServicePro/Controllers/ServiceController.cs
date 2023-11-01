@@ -144,6 +144,7 @@ public class ServiceController : Controller
                 // Hent eksisterende serviceordre fra databasen
                 var existingOrdre = _dbContext.service
                     .FirstOrDefault(ordre => ordre.OrdreID == model.OrdreID);
+                existingOrdre.Registreringsdato = DateTime.Now; //Dato med klokkeslett sendes inn basert på enheten de blir sendt inn fra
 
                 if (existingOrdre != null)
                 {
