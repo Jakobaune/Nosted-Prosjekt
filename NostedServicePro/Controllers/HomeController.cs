@@ -1,6 +1,7 @@
 ﻿using Loginnosted.Data;
 using Loginnosted.Models;
 using Microsoft.AspNetCore.Mvc;
+using Loginnosted.Models;
 using System.Diagnostics;
 
 public class HomeController : Controller
@@ -22,7 +23,7 @@ public class HomeController : Controller
         }
         catch (Exception ex)
         {
-            
+
             return View("Error"); // Vis feilsiden
         }
     }

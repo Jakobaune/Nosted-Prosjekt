@@ -1,12 +1,14 @@
 ﻿using Loginnosted.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using MySql.Data.MySqlClient;
 
 namespace Loginnosted.Data
 {
-    public class ServiceProDbContex : DbContext
+    public class ServiceProDbContex : IdentityDbContext<IdentityUser>
     {
-        public ServiceProDbContex(DbContextOptions<ServiceProDbContex> options) : base(options)
+        public ServiceProDbContex(DbContextOptions<ServiceProDbContex> options)
+            : base(options)
         {
         }
 
@@ -21,4 +23,3 @@ namespace Loginnosted.Data
         }
     }
 }
-
