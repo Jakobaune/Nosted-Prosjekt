@@ -70,5 +70,9 @@ public class ServiceOrdre
     public String? TestVinsjAlleFunksjoner { get; set; }
     public String? TrekkraftKn { get; set; }
     public String? BremsekraftKn { get; set; }
+
+    public Double? Arbeidstimer { get; set; }
+
+    public String? Kommentar { get; set; }
     public bool ErSjekklisteFullført { get; set; }
 }
