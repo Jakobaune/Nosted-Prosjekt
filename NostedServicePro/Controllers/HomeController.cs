@@ -3,7 +3,9 @@ using Loginnosted.Models;
 using Microsoft.AspNetCore.Mvc;
 using Loginnosted.Models;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Authorization;
 
+[Authorize]
 public class HomeController : Controller
 {
     private readonly ServiceProDbContex _dbContext;

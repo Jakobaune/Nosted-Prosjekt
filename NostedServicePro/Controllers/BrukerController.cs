@@ -2,7 +2,9 @@
 using Loginnosted.Data;
 using Loginnosted.Models;
 using System;
+using Microsoft.AspNetCore.Authorization;
 
+[Authorize]
 public class BrukerController : Controller
 {
     private readonly ServiceProDbContex _dbContext;

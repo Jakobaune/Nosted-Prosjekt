@@ -14,7 +14,7 @@ using System;
 var builder = WebApplication.CreateBuilder(args);
 
 // Endret tilkoblingsstrengen
-var connectionString = "Server=10.228.4.74;Database=nosteddb;User=root;Password=nosted123;Port=3306;SslMode=none;";
+var connectionString = "Server=10.228.5.96;Database=nosteddb;User=root;Password=nosted123;Port=3306;SslMode=none;";
 
 // Legg til DbContext med MySQL-databasekontekst
 builder.Services.AddDbContext<ServiceProDbContex>(options =>
@@ -75,7 +75,7 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 app.MapRazorPages();
 
-// Opprett Kestrel-server med tilpasset konfigurasjon for å fjerne Server-headeren
+// Opprett Kestrel-server med tilpasset konfigurasjon    for å fjerne Server-headeren
 WebHost.CreateDefaultBuilder(args)
     .ConfigureKestrel(c => c.AddServerHeader = false)
     .UseStartup<Startup>()
