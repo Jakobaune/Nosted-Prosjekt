@@ -7,6 +7,11 @@ namespace Loginnosted.Models.Account;
 
 public class RegisterViewModel
 {
+
+    [Required]
+    [Display(Name = "UserName")]
+    public string UserName { get; set; }
+
     [Required]
     [EmailAddress]
     [Display(Name = "Email")]

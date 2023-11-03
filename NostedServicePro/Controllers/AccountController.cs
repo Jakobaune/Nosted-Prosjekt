@@ -92,7 +92,7 @@ namespace Loginnosted.Controllers
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
-                var user = new IdentityUser { UserName = model.Email, Email = model.Email, EmailConfirmed = true, LockoutEnabled = false, LockoutEnd = null };
+                var user = new IdentityUser { UserName = model.UserName, Email = model.Email, EmailConfirmed = true, LockoutEnabled = false, LockoutEnd = null };
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

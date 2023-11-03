@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿/*
+
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Loginnosted.Entities
 {
@@ -10,3 +12,4 @@ namespace Loginnosted.Entities
         public string Email { get; set; }
     }
 }
+*/

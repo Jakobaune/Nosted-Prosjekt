@@ -10,6 +10,15 @@
     <h4>Create a new account.</h4>
     <hr />
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class ="form-group">
+        <label asp-for="UserName" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="UserName" class="form-control" />
+            <span asp-validation-for="UserName" class="text-dagnger"></span>
+        </div>
+    </div>
+
+
     <div class="form-group">
         <label asp-for="Email" class="col-md-2 control-label"></label>
         <div class="col-md-10">
