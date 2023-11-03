@@ -3,6 +3,7 @@ using Loginnosted.Data;
 using Loginnosted.Models;
 using System;
 using Microsoft.AspNetCore.Authorization;
+using Loginnosted.Models.Account;
 
 [Authorize]
 public class BrukerController : Controller
@@ -19,7 +20,7 @@ public class BrukerController : Controller
         // Hent TempData-melding hvis den finnes
         var brukerNavn = TempData["BrukerNavn"] as string;
 
-        var brukere = _dbContext.Brukere.ToList(); // Hent alle brukere fra databasen
+        var brukere = _dbContext.Users.ToList();
 
         // Legg til brukerNavn i ViewData
         ViewData["BrukerNavn"] = brukerNavn;

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Loginnosted.Models.Account;
 
 namespace Loginnosted.Data
 {
@@ -11,7 +12,7 @@ namespace Loginnosted.Data
             : base(options)
         {
         }
-
+        public DbSet<Users> Users { get; set; }
         public DbSet<Bruker> Brukere { get; set; }
         public DbSet<ServiceOrdre> service { get; set; }
 
@@ -19,7 +20,8 @@ namespace Loginnosted.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            // Legg til eventuelle konfigurasjoner for modellene her
+            modelBuilder.Entity<Users>().ToTable("aspnetusers");
+
         }
     }
 }

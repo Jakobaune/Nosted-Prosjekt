@@ -1,4 +1,5 @@
-﻿@model List<Bruker>
+﻿@model List<Loginnosted.Models.Account.Users>
+
 
 @{
     ViewData["Title"] = "VisAlleBrukere";
@@ -55,18 +56,17 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var bruker in Model)
+            @foreach (var user in Model)
             {
                 <tr>
-                    <td>@bruker.BrukerNavn</td>
-                    <td>@bruker.Epostadresse</td>
-                    <td>@bruker.Rolle</td>
+                    <td>@user.UserName</td>
+                    <td>@user.NormalizedEmail</td>
+                    <td>@user.PhoneNumber</td>
+
                     <!-- Legg til flere kolonner etter behov -->
+                    
                     <td>
-                        <a asp-action="RedigerBruker" asp-route-id="@bruker.BrukerId">Rediger</a> |
-                        <form asp-action="SlettBruker" asp-route-id="@bruker.BrukerId" method="post" onsubmit="return confirm('Er du sikker på at du vil slette denne brukeren?');">
-                            <button type="submit" class="btn btn-danger">Slett</button>
-                        </form>
+                        
                     </td>
                 </tr>
             }
