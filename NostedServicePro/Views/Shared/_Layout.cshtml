@@ -48,7 +48,7 @@
         }
 
         .nav-link.btn {
-            width: 170px;
+            width: 150px;
             height: 70px;
         }
 
@@ -107,27 +107,6 @@
 </head>
 
 <body>
-
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-        <div class="container-fluid">
-            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">NostedServicePro</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                    </li>
-                </ul>
-                <partial name="_LoginPartial" />
-            </div>
-        </div>
-    </nav>
 
     <header id="fiksaheader" class="d-flex flex-wrap align-items-center justify-content-between py-3 mb-4 border-bottom">
 
@@ -193,20 +172,18 @@
         <div id="menu-hover" class="menu-hover">
             <a class="hei" asp-action="Index" asp-controller="Home">Hjem</a>
             <a class="hei" asp-action="Registrer" asp-controller="Service">Opprett Service</a>
-            <a class="hei" asp-action="ServiceOversikt" asp-controller="Service">Oversikt Ordre</a>
+            <a class="hei" asp-action="ServiceOversikt" asp-controller="Service">Aktive ordre</a>
             <a class="hei" asp-action="Arkiv" asp-controller="Service">Servicehistorikk</a>
             <a class="hei" asp-action="VisAlleBrukere" asp-controller="Bruker">Brukere</a>
+            <a class="hei" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">@User.Identity?.Name</a>
+            
         </div>
 
 
         <!-- Viser hvilke bruker som er logget inn. -->
         <div id="logget-inn">
-            <span class="me-2">Logget inn:</span>
-            <br />
-            <!-- navn og rolle må være dynamisk -->
-            <strong>User Name</strong>
-            <br />
-            <strong style="color: #E06F06">(Rolle)</strong>
+            <strong>Logget inn:</strong>
+            <partial name="_LoginPartial" />
         </div>
 
 
@@ -274,7 +251,8 @@
                     menuHover.style.display = 'block';
                 }
             });
-        });</script>
+        });
+    </script>
 </body>
 </html>
 

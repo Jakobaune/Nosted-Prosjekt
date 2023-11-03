@@ -14,20 +14,20 @@ using System;
 var builder = WebApplication.CreateBuilder(args);
 
 // Endret tilkoblingsstrengen
-var connectionString = "Server=10.228.5.96;Database=nosteddb;User=root;Password=nosted123;Port=3306;SslMode=none;";
+var connectionString = "Server=localhost;Database=nosteddb;User=root;Password=nosted123;Port=3306;SslMode=none;";
 
 // Legg til DbContext med MySQL-databasekontekst
 builder.Services.AddDbContext<ServiceProDbContex>(options =>
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
-// Legg til støtte for Identity-tjenester
+// Legg til stï¿½tte for Identity-tjenester
 builder.Services.AddDefaultIdentity<IdentityUser>()
     .AddEntityFrameworkStores<ServiceProDbContex>();
 
-// Legg til støtte for kontrollere med visninger
+// Legg til stï¿½tte for kontrollere med visninger
 builder.Services.AddControllersWithViews();
 
-// Legg til støtte for sesjoner med en timeout på 30 minutter
+// Legg til stï¿½tte for sesjoner med en timeout pï¿½ 30 minutter
 builder.Services.AddSession(options =>
 {
     options.IdleTimeout = TimeSpan.FromMinutes(30);
@@ -38,7 +38,7 @@ builder.Services.AddSession(options =>
 // Bygg webapplikasjonen
 var app = builder.Build();
 
-// Konfigurer HTTP-forespørselspipelinen
+// Konfigurer HTTP-forespï¿½rselspipelinen
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -75,11 +75,11 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 app.MapRazorPages();
 
-// Opprett Kestrel-server med tilpasset konfigurasjon    for å fjerne Server-headeren
+// Opprett Kestrel-server med tilpasset konfigurasjon    for ï¿½ fjerne Server-headeren
 WebHost.CreateDefaultBuilder(args)
     .ConfigureKestrel(c => c.AddServerHeader = false)
     .UseStartup<Startup>()
     .Build();
 
-// Kjør webapplikasjonen
+// Kjï¿½r webapplikasjonen
 app.Run();

@@ -1,14 +1,9 @@
-@media (max-width: 1410px) {
+@media (max-width: 1200px) {
     .nav {
         display: none;
     }
 
-    #menu-toggle {
-        position: absolute;
-        right: 150px;
-        margin-top: 22px;
-    }
-
+    
     .navbar-collapse {
         display: none;
     }
@@ -17,9 +12,12 @@
         flex-direction: column;
         align-items: center;
     }
+    #logget-inn {
+        display: none;
+    }
 }
 
-@media (min-width: 1411px) {
+@media (min-width: 1201px) {
     #menu-toggle {
         display: none;
     }
