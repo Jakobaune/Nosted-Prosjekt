@@ -1,6 +1,5 @@
 ﻿@model List<Loginnosted.Models.Account.Users>
 
-
 @{
     ViewData["Title"] = "VisAlleBrukere";
 }
@@ -10,7 +9,6 @@
 <head>
     <title>@ViewData["Title"]</title>
     <style>
-
         .success-message {
             text-align: center;
             color: white;
@@ -18,6 +16,16 @@
             padding: 10px;
             margin-bottom: 15px;
             border-radius: 5px;
+        }
+
+        /* Responsiv tabellstil */
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        /* Søkefeltstil */
+        .search-bar {
+            margin-bottom: 15px;
         }
     </style>
     <script>
@@ -39,39 +47,50 @@
         </div>
     }
 
-    <h1>Vis Alle Brukere</h1>
-    <div>
-        <a asp-action="Register" asp-controller="Account" class="btn btn-primary">Lag ny bruker</a>
-    </div>
+    <h1>Nøsted Brukere</h1>
+    <!-- Registrer knapp -->
+    <a asp-action="Register" asp-controller="Account" style="font-weight: bold; border: 1px solid #e16f07; border-radius: 5px; padding: 5px 10px; text-decoration: none; ">Lag ny bruker</a>
+    <br />
 
+    <!-- Søkefelt -->
+    <form asp-action="Register" asp-controller="Account" method="get">
+        <div class="form-group">
+            <label for="searchInput"></label>
+            <input type="text" class="form-control" id="searchInput" name="search" placeholder="Søk etter brukernavn, epostadresse eller rolle">
+        </div>
+        <br />
+        <button type="submit" class="btn btn-primary">Søk</button>
+    </form>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>BrukerNavn</th>
-                <th>Epostadresse</th>
-                <th>Rolle</th>
-                <!-- Legg til flere kolonner etter behov -->
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var user in Model)
-            {
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
                 <tr>
-                    <td>@user.UserName</td>
-                    <td>@user.NormalizedEmail</td>
-                    <td>@user.PhoneNumber</td>
-
-                    <!-- Legg til flere kolonner etter behov -->
-                    
-                    <td>
-                        
-                    </td>
+                    <th class="sortable" data-sort-by="UserName">
+                        <a href="?sortField=UserName">BrukerNavn</a>
+                    </th>
+                    <th class="sortable" data-sort-by="Email">
+                        <a href="?sortField=Email">Epostadresse</a>
+                    </th>
+                    <th class="sortable" data-sort-by="PhoneNumber">
+                        <a href="?sortField=PhoneNumber">Rolle</a>
+                    </th>
+                    <!-- Legg til flere overskriftskolonner etter behov -->
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (var user in Model)
+                {
+                    <tr>
+                        <td>@user.UserName</td>
+                        <td>@user.NormalizedEmail</td>
+                        <td>@user.PhoneNumber</td>
+                        <!-- Legg til flere kolonner etter behov -->
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 
 </body>
 </html>

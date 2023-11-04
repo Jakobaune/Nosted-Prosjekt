@@ -14,7 +14,7 @@ using System;
 var builder = WebApplication.CreateBuilder(args);
 
 // Endret tilkoblingsstrengen
-var connectionString = "Server=10.228.2.164;Database=nosteddb;User=root;Password=nosted123;Port=3306;SslMode=none;";
+var connectionString = "Server=localhost;Database=nosteddb;User=root;Password=nosted123;Port=3306;SslMode=none;";
 
 // Legg til DbContext med MySQL-databasekontekst
 builder.Services.AddDbContext<ServiceProDbContex>(options =>

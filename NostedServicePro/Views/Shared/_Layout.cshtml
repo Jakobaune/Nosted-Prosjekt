@@ -13,97 +13,6 @@
     <link rel="stylesheet" href="~/Loginnosted.styles.css" asp-append-version="true" />
     <script src="https://kit.fontawesome.com/ce9b37f466.js" crossorigin="anonymous"></script>
 
-
-
-    <style>
-
-        header {
-            background-color: #12181F;
-            height: 120px;
-            color: #A1B6C1;
-            padding: 30px;
-            position: fixed;
-        }
-
-        footer {
-            background-color: #12181F;
-            padding: 10px;
-            position: fixed;
-            bottom: -90px; /* Start utenfor synlighet */
-            width: 100%;
-            transition: bottom 0.3s; /* Legg til en overgang for jevn animasjon */
-        }
-
-
-        #fiksaheader {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-
-        #buthead {
-            background-color: #E06F06;
-            color: #A1B6C1;
-        }
-
-        .nav-link.btn {
-            width: 150px;
-            height: 70px;
-        }
-
-            .nav-link.btn:hover {
-                background-color: #E06F06; /* Change background color on hover */
-            }
-
-
-
-        .menu-hover {
-            display: none;
-            position: absolute;
-            margin-top: 390px;
-            margin-left: 100px;
-            right: 0px;
-            background-color: #12181F;
-            padding: 20px;
-            z-index: 1000;
-            max-height: 300px;
-        }
-
-            .menu-hover a {
-                color: #E06F06;
-                text-decoration: none;
-                display: block;
-                margin-bottom: 10px;
-                font-size: 25px;
-            }
-
-                .menu-hover a:hover {
-                    color: #A1B6C1;
-                }
-
-        .menu-toggle {
-            display: block;
-        }
-
-        .hamburgermeny {
-            width: 75px;
-            height: 75px;
-        }
-
-        .custom-icon {
-            color: #9cb7c2;
-        }
-
-        .hamburgermeny:hover {
-            background-color: #12181F;
-            color: #A1B6C1;
-            border-color: #9cb7c2;
-        }
-    </style>
-
-
-
 </head>
 
 <body>
@@ -112,13 +21,13 @@
 
         <!-- hele logoen, med riktig css og skal fungere som hjem knapp -->
         <div class="col-md- mb-2 mb-md-0">
-            <a href="/" class="d-inline-flex flex-column align-items-center link-body-emphasis text-decoration-none">
+            <a class="d-inline-flex flex-column align-items-center link-body-emphasis text-decoration-none" asp-action="Index" asp-controller="Home">
                 <img src="~/css/Bilder/LOGO.jpg" alt="Logo" height="50px" class="mb-2">
                 <span style="font-size: 30px; color:#A1B6C1">Service Pro</span>
             </a>
         </div>
 
-        <!-- knappene i header, som tar bruker rundt på siden. Må fikse ikoner!!! -->
+        <!-- knappene i header, som tar bruker rundt på siden. -->
 
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
 
@@ -175,8 +84,14 @@
             <a class="hei" asp-action="ServiceOversikt" asp-controller="Service">Aktive ordre</a>
             <a class="hei" asp-action="Arkiv" asp-controller="Service">Servicehistorikk</a>
             <a class="hei" asp-action="VisAlleBrukere" asp-controller="Bruker">Brukere</a>
-            <a class="hei" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">@User.Identity?.Name</a>
-            
+
+            <a class="fa-solid fa-user" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">  @User.Identity?.Name</a>
+            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout"
+                  asp-route-returnUrl="/Account/Login"
+                  onsubmit="return confirmLogout();">
+                <button type="submit" class="btn btn-primary">Logg ut</button>
+            </form>
+
         </div>
 
 
@@ -185,9 +100,6 @@
             <strong>Logget inn:</strong>
             <partial name="_LoginPartial" />
         </div>
-
-
-
 
     </header>
 
@@ -252,6 +164,8 @@
                 }
             });
         });
+
+
     </script>
 </body>
 </html>

@@ -2,17 +2,6 @@
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
 
-<style>
-    .nav-link {
-        color: #E06F06; /* Set your desired orange color here */
-    }
-
-        /* Optional: Change link color on hover */
-        .nav-link:hover {
-            color:#A1B6C1; /* Set a darker shade of orange for hover effect */
-        }
-</style>
-
 <ul class="navbar-nav">
     @if (SignInManager.IsSignedIn(User))
     {
@@ -20,9 +9,10 @@
             <a class="nav-link" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">@User.Identity?.Name</a>
         </li>
         <li class="nav-item">
-            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })"
+            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout"
+                  asp-route-returnUrl="/Account/Login"
                   onsubmit="return confirmLogout();">
-                <button type="submit" class="btn btn-link">Logg ut</button>
+                <button type="submit" class="btn btn-primary">Logg ut</button>
             </form>
         </li>
     }
@@ -42,4 +32,4 @@
     function confirmLogout() {
         var result = confirm("Vil du logge ut av: @User.Identity?.Name ?");
         return result;
-    }</script>
+    } </script>
