@@ -3,7 +3,7 @@
 
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace Loginnosted.Models.Account;
+namespace NostedServicePro.Models.Account;
 
 public class SendCodeViewModel
 {

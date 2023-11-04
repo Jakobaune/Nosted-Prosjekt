@@ -1,5 +1,5 @@
-﻿using Loginnosted.Data;
-using Loginnosted.Models;
+﻿using NostedServicePro.Data;
+using NostedServicePro.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

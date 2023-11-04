@@ -1,5 +1,5 @@
-using Loginnosted;
-using Loginnosted.Data;
+using NostedServicePro;
+using NostedServicePro.Data;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

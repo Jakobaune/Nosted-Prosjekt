@@ -3,7 +3,7 @@
 
 using System.ComponentModel.DataAnnotations;
 
-namespace Loginnosted.Models.Account;
+namespace NostedServicePro.Models.Account;
 
 public class ResetPasswordViewModel
 {

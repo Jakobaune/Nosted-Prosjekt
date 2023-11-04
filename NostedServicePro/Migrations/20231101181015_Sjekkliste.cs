@@ -5,7 +5,7 @@
 namespace NostedServicePro.Migrations
 {
     /// <inheritdoc />
-    public partial class HeiSan : Migration
+    public partial class Sjekkliste : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

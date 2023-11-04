@@ -2,7 +2,7 @@
 @using Microsoft.AspNetCore.Http
 @using Microsoft.AspNetCore.Authentication
 @using Microsoft.AspNetCore.Identity
-@using Loginnosted.Models.Account
+@using NostedServicePro.Models.Account
 @model LoginViewModel
 @inject SignInManager<IdentityUser> SignInManager
 
@@ -14,7 +14,7 @@
     <title>@ViewData["Title"] Nøsted Service Pro</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Loginnosted.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/NostedServicePro.styles.css" asp-append-version="true" />
     @{
         ViewData["Title"] = "Logg in";
         Layout = null;

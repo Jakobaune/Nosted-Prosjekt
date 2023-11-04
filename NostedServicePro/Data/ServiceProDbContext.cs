@@ -1,10 +1,10 @@
-﻿using Loginnosted.Models;
+﻿using NostedServicePro.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Loginnosted.Models.Account;
+using NostedServicePro.Models.Account;
 
-namespace Loginnosted.Data
+namespace NostedServicePro.Data
 {
     public class ServiceProDbContex : IdentityDbContext<IdentityUser>
     {

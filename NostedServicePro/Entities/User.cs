@@ -2,7 +2,7 @@
 
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Loginnosted.Entities
+namespace NostedServicePro.Entities
 {
     [Table("Users")]
     public class UserEntity

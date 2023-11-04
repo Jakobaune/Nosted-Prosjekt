@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Loginnosted.Migrations
+namespace NostedServicePro.Migrations
 {
     /// <inheritdoc />
     public partial class oppdatertservicetabell : Migration

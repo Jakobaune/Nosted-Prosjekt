@@ -4,10 +4,10 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Security.Claims;
-using Loginnosted.Models.Account;
+using NostedServicePro.Models.Account;
 
 
-namespace Loginnosted.Controllers
+namespace NostedServicePro.Controllers
 {
     public class AccountController : Controller
     {

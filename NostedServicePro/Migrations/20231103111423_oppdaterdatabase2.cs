@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace Loginnosted.Migrations
+namespace NostedServicePro.Migrations
 {
     /// <inheritdoc />
     public partial class oppdaterdatabase2 : Migration

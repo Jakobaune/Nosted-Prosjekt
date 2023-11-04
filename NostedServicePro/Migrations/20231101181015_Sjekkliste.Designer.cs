@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace NostedServicePro.Migrations
 {
     [DbContext(typeof(ServiceProDbContex))]
-    [Migration("20231007110845_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20231101181015_Sjekkliste")]
+    partial class Sjekkliste
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -44,10 +44,6 @@ namespace NostedServicePro.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Salt")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
                     b.HasKey("BrukerId");
 
                     b.ToTable("Brukere");
@@ -59,18 +55,48 @@ namespace NostedServicePro.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<double?>("Arbeidstimer")
+                        .HasColumnType("double");
+
                     b.Property<string>("AvtaltKommentar")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<DateOnly>("Avtaltferdigstillingsdato")
-                        .HasColumnType("date");
+                    b.Property<DateTime>("Avtaltferdigstillingsdato")
+                        .HasColumnType("datetime(6)");
 
-                    b.Property<DateOnly>("AvtaltleveringsDato")
-                        .HasColumnType("date");
+                    b.Property<DateTime>("AvtaltleveringsDato")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("BremsekraftKn")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Bremser")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("BremsesylingerSkiftTelninger")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("ClutchLameller")
+                        .HasColumnType("longtext");
+
+                    b.Property<bool>("ErSjekklisteFullført")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("HydraulikkSylinderLekkasje")
+                        .HasColumnType("longtext");
 
                     b.Property<string>("InternKommentar")
                         .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("KilleKjedehjul")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Kjedestrammer")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Kommentar")
                         .HasColumnType("longtext");
 
                     b.Property<string>("Kundeepost")
@@ -85,12 +111,24 @@ namespace NostedServicePro.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<string>("LagerTrommel")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("LedningsnettVinsj")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("PTOOpplagring")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("PlnlonLager")
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Problembeskrivelse")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<DateOnly>("ProduktmottattDato")
-                        .HasColumnType("date");
+                    b.Property<DateTime>("ProduktmottattDato")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("Produkttypevinsj")
                         .IsRequired()
@@ -99,12 +137,45 @@ namespace NostedServicePro.Migrations
                     b.Property<DateTime>("Registreringsdato")
                         .HasColumnType("datetime(6)");
 
+                    b.Property<string>("RingsyllingerSkiftTelnlnger")
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Serienummervinsj")
                         .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("ServiceType")
                         .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("SjekkTestKnappekasse")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("SjekkTestRadio")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("SkiftOljeGirboks")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("SkiftOljeTank")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("SlangerSkaderLekkasje")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("TestHydraulikkblokk")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("TestVinsjAlleFunksjoner")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("TrekkraftKn")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Wire")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("XXBar")
                         .HasColumnType("longtext");
 
                     b.Property<int>("ÅrsmodellVinsj")

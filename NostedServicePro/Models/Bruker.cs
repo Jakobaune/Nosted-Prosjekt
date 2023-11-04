@@ -1,4 +1,4 @@
-﻿using Loginnosted.Models;
+﻿using NostedServicePro.Models;
 
 // Modellklasse som representerer en bruker i systemet
 public class Bruker

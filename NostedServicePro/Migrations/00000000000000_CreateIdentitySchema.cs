@@ -1,10 +1,10 @@
-﻿using Loginnosted.Data;
+﻿using NostedServicePro.Data;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 
-namespace Loginnosted.Data
+namespace NostedServicePro.Data
 {
     [DbContext(typeof(ServiceProDbContex))]
     partial class CreateIdentitySchema : Migration

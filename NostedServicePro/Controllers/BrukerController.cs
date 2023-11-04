@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Loginnosted.Data;
-using Loginnosted.Models;
+using NostedServicePro.Data;
+using NostedServicePro.Models;
 using System;
 using Microsoft.AspNetCore.Authorization;
-using Loginnosted.Models.Account;
+using NostedServicePro.Models.Account;
 
 [Authorize]
 public class BrukerController : Controller
