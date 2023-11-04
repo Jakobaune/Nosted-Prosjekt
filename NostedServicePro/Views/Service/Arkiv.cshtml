@@ -55,7 +55,7 @@
 <form asp-action="Arkiv" asp-controller="Service" method="get">
     <div class="form-group">
         <label for="searchInput">Søk:</label>
-        <input type="text" class="form-control" id="searchInput" name="search" placeholder="Søk etter navn, ID, epost eller telefonnummer">
+        <input type="text" class="form-control" id="searchInput" name="search" placeholder="Søk etter navn, ID, epost eller telefonnummer" value="@ViewData["SearchTerm"]">
     </div>
     <button type="submit" class="btn btn-primary">Søk</button>
 </form>
