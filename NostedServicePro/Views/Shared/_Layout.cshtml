@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Loginnosted.styles.css" asp-append-version="true" />
     <script src="https://kit.fontawesome.com/ce9b37f466.js" crossorigin="anonymous"></script>
+    <script src="~/js/Layout.js" asp-append-version="true"></script>
 
 </head>
 
@@ -123,50 +124,7 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            function isUserNearBottom() {
-                var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-                var windowHeight = window.innerHeight;
-                var bodyHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
-
-                // Juster denne terskelverdien for å kontrollere hvor nær bunnen brukeren må være
-                var threshold = 50;
-
-                return scrollTop > bodyHeight - windowHeight - threshold;
-            }
-
-            function updateFooterVisibility() {
-                var footer = document.querySelector('footer');
-
-                if (isUserNearBottom()) {
-                    footer.style.bottom = '0';
-                } else {
-                    footer.style.bottom = '-' + footer.offsetHeight + 'px';
-                }
-            }
-
-            window.addEventListener("scroll", updateFooterVisibility);
-
-        });
-
-        document.addEventListener("DOMContentLoaded", function () {
-
-
-            const menuToggle = document.getElementById('menu-toggle');
-            const menuHover = document.getElementById('menu-hover');
-
-            menuToggle.addEventListener('click', () => {
-                if (menuHover.style.display === 'block') {
-                    menuHover.style.display = 'none';
-                } else {
-                    menuHover.style.display = 'block';
-                }
-            });
-        });
-
-
-    </script>
+  
 </body>
 </html>
 
