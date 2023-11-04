@@ -44,19 +44,19 @@
     </div>
 }
 <!-- Overskrift for arkivsiden -->
-<h1>Arkiv</h1>
+<h1>Servicehistorikk</h1>
 
 <!-- Lenke for å opprette ny serviceordre -->
-<p>
-    <a asp-action="Registrer">Lag ny serviceordre</a>
-</p>
+    <a asp-action="Registrer" style="font-weight: bold; border: 1px solid #e16f07; border-radius: 5px; padding: 5px 10px; text-decoration: none; ">Lag ny serviceordre</a>
+
 
 <!-- Søkefelt -->
 <form asp-action="Arkiv" asp-controller="Service" method="get">
     <div class="form-group">
-        <label for="searchInput">Søk:</label>
+        <label for="searchInput"></label>
         <input type="text" class="form-control" id="searchInput" name="search" placeholder="Søk etter navn, ID, epost eller telefonnummer">
     </div>
+    <br />
     <button type="submit" class="btn btn-primary">Søk</button>
 </form>
 

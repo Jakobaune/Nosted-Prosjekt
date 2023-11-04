@@ -1,9 +1,12 @@
+/*Standar css for at siden skal være responsive, hovedsakelig headeren*/
+
 @media (max-width: 1200px) {
+
     .nav {
         display: none;
     }
 
-    
+
     .navbar-collapse {
         display: none;
     }
@@ -12,6 +15,7 @@
         flex-direction: column;
         align-items: center;
     }
+
     #logget-inn {
         display: none;
     }
@@ -48,6 +52,7 @@
     }
 }
 
+/*Standard css for alt på siden, skrift, knapper*/
 html {
     background-color: #12181F;
 }
@@ -88,7 +93,7 @@ a {
     }
 
 .custom-icon {
-    font-size: 50px; 
+    font-size: 50px;
 }
 
 .menu-hover {
@@ -98,3 +103,112 @@ a {
 .form-control:hover {
     box-shadow: 0 1px 10px #E06F06;
 }
+
+/*Css for kun headeren og footeren, kun til _layout.cshtml siden*/
+header {
+    background-color: #12181F;
+    height: 120px;
+    color: #A1B6C1;
+    padding: 30px;
+    position: fixed;
+}
+
+footer {
+    background-color: #12181F;
+    padding: 10px;
+    position: fixed;
+    bottom: -90px; /* Start utenfor synlighet */
+    width: 100%;
+    transition: bottom 0.3s; /* Legg til en overgang for jevn animasjon */
+}
+
+
+#fiksaheader {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+#buthead {
+    background-color: #E06F06;
+    color: #A1B6C1;
+}
+
+.nav-link.btn {
+    width: 150px;
+    height: 70px;
+}
+
+    .nav-link.btn:hover {
+        background-color: #E06F06; /* Change background color on hover */
+    }
+
+.menu-hover {
+    display: none;
+    position: absolute;
+    margin-top: 468px;
+    margin-left: 100px;
+    right: 0px;
+    background-color: #12181F;
+    padding: 20px;
+    z-index: 1000;
+    max-height: 400px;
+}
+
+    .menu-hover a {
+        color: #E06F06;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 10px;
+        font-size: 25px;
+    }
+
+        .menu-hover a:hover {
+            color: #A1B6C1;
+        }
+
+.menu-toggle {
+    display: block;
+}
+
+.hamburgermeny {
+    width: 75px;
+    height: 75px;
+}
+
+.custom-icon {
+    color: #9cb7c2;
+}
+
+.hamburgermeny:hover {
+    background-color: #12181F;
+    color: #A1B6C1;
+    border-color: #9cb7c2;
+}
+
+
+
+/*css til start login*/
+#loginBody {
+    color: #A1B6C1;
+    background-color: #12181F;
+    height: 100%;
+    overflow: hidden;
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+   
+}
+
+/* alle nav-links holder samme stil, med nøsted farger*/
+.nav-link {
+    color: #E06F06; /* Set your desired orange color here */
+}
+
+    /* Optional: Change link color on hover */
+    .nav-link:hover {
+        color: #A1B6C1; /* Set a darker shade of orange for hover effect */
+    }
