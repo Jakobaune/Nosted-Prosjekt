@@ -1,0 +1,66 @@
+﻿.section-header {
+    margin-top: 20px; /* Adjust the value as needed */
+}
+
+.checkbox-group {
+    margin-left: 25%;
+    margin-right: 25%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+.form-check {
+    flex-direction: row;
+    align-items: center;
+    display: inline-block;
+}
+
+.large-checkbox .form-check-input {
+    width: 30px; /* Adjust the width as needed */
+    height: 30px; /* Adjust the height as needed */
+}
+
+.control-label {
+    font-size: 30px;
+    text-align: center;
+}
+
+.bold-label {
+    font-weight: bold;
+}
+
+.label-with-line {
+    display: flex;
+    align-items: center;
+}
+
+.label-line {
+    flex-grow: 1;
+    border: none;
+    border-top: 1px solid #000; /* Customize the line color and style as needed */
+    margin-left: 10px; /* Adjust the margin to control the extra width */
+}
+
+.custom-radio-button {
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #12181f;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    user-select: none;
+    color: #9cb7c2;
+}
+
+    /* Style for the selected custom radio button */
+    .custom-radio-button input[type="radio"]:checked + label {
+        background-color: #e16f07; /* Change the background color when selected */
+        color: #12181f; /* Change the text color when selected */
+    }
+
+    /* Hide the actual radio input */
+    .custom-radio-button input[type="radio"] {
+        display: none;
+    }
