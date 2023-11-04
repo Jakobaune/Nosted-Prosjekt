@@ -9,10 +9,6 @@
         margin-top: 22px;
     }
 
-    .navbar-collapse {
-        display: none;
-    }
-
     .row {
         flex-direction: column;
         align-items: center;
@@ -100,3 +96,8 @@ a {
 .form-control:hover {
     box-shadow: 0 1px 10px #E06F06;
 }
+
+
+
+
+

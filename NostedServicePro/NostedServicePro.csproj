@@ -31,9 +31,13 @@
   <ItemGroup>
     <Content Remove="wwwroot\css\Bilder\" />
     <Content Remove="wwwroot\css\Bilder\LOGO.jpg" />
+    <Content Remove="wwwroot\css\RegistrerSjekkliste.css" />
+    <Content Remove="wwwroot\css\PrintPage.css" />
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\css\Bilder\LOGO.jpg" />
+    <None Include="wwwroot\css\RegistrerSjekkliste.css" />
+    <None Include="wwwroot\css\PrintPage.css" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="wwwroot\css\Bilder\" />

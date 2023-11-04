@@ -1,0 +1,87 @@
+﻿@model ServiceOrdre
+
+@{
+    ViewData["Title"] = "Print";
+}
+<link rel="stylesheet" href="~/css/PrintPage.css"/>
+<div id="printoverskrift">
+    <h1>Serviceskjema - OrdreID @Html.DisplayFor(model => model.OrdreID)</h1>
+</div>
+<body>
+    
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">Serviceskjema #@Html.DisplayFor(model => model.OrdreID)</th>
+                    <th class="right-cell" colspan="2">Nøsted Service Pro©</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>OrdreID</th>
+                    <td>@Html.DisplayFor(model => model.OrdreID)</td>
+                    <th>Kundenavn</th>
+                    <td>@Html.DisplayFor(model => model.Kundenavn)</td>
+                </tr>
+                <tr>
+                    <th>Kundens epost</th>
+                    <td>@Html.DisplayFor(model => model.Kundeepost)</td>
+                    <th>Kundens tlfnr</th>
+                    <td>@Html.DisplayFor(model => model.Kundetlf)</td>
+                </tr>
+                <tr>
+                    <th>Produkttype vinsj</th>
+                    <td>@Html.DisplayFor(model => model.Produkttypevinsj)</td>
+                    <th>Årsmodell vinsj</th>
+                    <td>@Html.DisplayFor(model => model.ÅrsmodellVinsj)</td>
+                </tr>
+                <tr>
+                    <th>Serienummer vinsj</th>
+                    <td>@Html.DisplayFor(model => model.Serienummervinsj)</td>
+                    <th>Registrert dato service</th>
+                    <td>@Html.DisplayFor(model => model.Registreringsdato)</td>
+                </tr>
+                <tr>
+                    <th colspan="4">Hva er avtalt med kunden?</th>
+                </tr>
+                <tr>
+                    <td class="text-cell" colspan="4">@Html.DisplayFor(model => model.AvtaltKommentar)</td>
+                </tr>
+                <tr>
+                    <th colspan="4">Hva spesifikt er problemet?</th>
+                </tr>
+                <tr>
+                    <td class="text-cell" colspan="4">@Html.DisplayFor(model => model.Problembeskrivelse)</td>
+                </tr>
+                <tr>
+                    <th colspan="4">Arbeidskommentar fra mekaniker</th>
+                </tr>
+                <tr>
+                    <td class="text-cell"colspan="4">@Html.DisplayFor(model => model.Kommentar)</td>
+                </tr>
+                <tr>
+                    <th>Arbeidstimer</th>
+                    <td>@Html.DisplayFor(model => model.Arbeidstimer)</td>
+                    <th>Mekaniker</th>
+                    <td>Navn på mekaniker</td>
+                </tr>
+                <tr>
+                    <th>Signatur</th>
+                    <td style="font-style: italic;">signature</td>
+                </tr>
+                <!-- Add similar rows for other attributes -->
+            </tbody>
+        </table>
+    </div>
+    <div>  
+</div>
+
+<button class="btn btn-primary" id="print">Skriv ut/lagre serviceskjema</button>
+
+<script>const printBtn = document.getElementById('print');
+        printBtn.addEventListener('click', function () {
+            print();
+        })
+</script>
+</body>
