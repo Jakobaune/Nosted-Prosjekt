@@ -98,3 +98,9 @@ a {
 .form-control:hover {
     box-shadow: 0 1px 10px #E06F06;
 }
+
+#loginBody {
+    color: #A1B6C1;
+    background-color: #12181F;
+    max-height: 300px;
+}
