@@ -1,0 +1,21 @@
+﻿@model List<Microsoft.AspNetCore.Identity.IdentityUser>
+
+
+<h2>Remove Role</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label for="userId">Select User</label>
+        <select class="form-control" name="userId" id="userId">
+            @foreach (var user in Model)
+            {
+                <option value="@user.Id">@user.UserName</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="roleName">Select Role</label>
+        <input class="form-control" type="text" name="roleName" id="roleName" />
+    </div>
+    <button type="submit" class="btn btn-danger">Remove Role</button>
+</form>

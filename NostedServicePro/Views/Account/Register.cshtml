@@ -40,6 +40,19 @@
             <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
         </div>
     </div>
+    <div class="form-group">
+        <label asp-for="SelectedRole" class="col-md-2 control-label">Select Role</label>
+        <div class="col-md-10">
+            <label class="radio-inline">
+                <input type="radio" asp-for="SelectedRole" value="Mekaniker" /> Mekaniker
+            </label>
+            <label class="radio-inline">
+                <input type="radio" asp-for="SelectedRole" value="Admin" /> Admin
+            </label>
+            <span asp-validation-for="SelectedRole" class="text-danger"></span>
+        </div>
+    </div>
+
     <br />
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">

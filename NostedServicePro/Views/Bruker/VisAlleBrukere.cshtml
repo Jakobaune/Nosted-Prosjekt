@@ -1,13 +1,9 @@
-﻿@model List<NostedServicePro.Models.Account.Users>
-
-@{
-    ViewData["Title"] = "VisAlleBrukere";
-}
+﻿@page
+@model List<Microsoft.AspNetCore.Identity.IdentityUser>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>@ViewData["Title"]</title>
     <style>
         .success-message {
             text-align: center;
@@ -27,69 +23,45 @@
         .search-bar {
             margin-bottom: 15px;
         }
-    </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var melding = "@ViewData["Melding"]";
 
-            if (melding) {
-                alert(melding);
+        /* Legg til stil for knapper */
+        .button-container {
+            margin-top: 15px;
+        }
+
+            .button-container button {
+                margin-right: 10px;
             }
-        });
-    </script>
+    </style>
 </head>
 <body>
-
-    @if (!string.IsNullOrEmpty(ViewData["BrukerNavn"] as string))
-    {
-        <div class="success-message">
-            Lagring av @ViewData["BrukerNavn"] vellykket!
-        </div>
-    }
-
     <h1>Nøsted Brukere</h1>
-    <!-- Registrer knapp -->
-    <a asp-action="Register" asp-controller="Account" style="font-weight: bold; border: 1px solid #e16f07; border-radius: 5px; padding: 5px 10px; text-decoration: none; ">Lag ny bruker</a>
-    <br />
-
-    <!-- Søkefelt -->
-    <form asp-action="Register" asp-controller="Account" method="get">
-        <div class="form-group">
-            <label for="searchInput"></label>
-            <input type="text" class="form-control" id="searchInput" name="search" placeholder="Søk etter brukernavn, epostadresse eller rolle">
-        </div>
-        <br />
-        <button type="submit" class="btn btn-primary">Søk</button>
-    </form>
 
     <div class="table-responsive">
         <table class="table">
             <thead>
                 <tr>
-                    <th class="sortable" data-sort-by="UserName">
-                        <a href="?sortField=UserName">BrukerNavn</a>
-                    </th>
-                    <th class="sortable" data-sort-by="Email">
-                        <a href="?sortField=Email">Epostadresse</a>
-                    </th>
-                    <th class="sortable" data-sort-by="PhoneNumber">
-                        <a href="?sortField=PhoneNumber">Rolle</a>
-                    </th>
+                    <th>BrukerNavn</th>
+                    <th>Epostadresse</th>
                     <!-- Legg til flere overskriftskolonner etter behov -->
                 </tr>
             </thead>
             <tbody>
-                @foreach (var user in Model)
-                {
-                    <tr>
-                        <td>@user.UserName</td>
-                        <td>@user.NormalizedEmail</td>
-                        <td>@user.PhoneNumber</td>
-                        <!-- Legg til flere kolonner etter behov -->
-                    </tr>
-                }
+                <!-- Loop gjennom brukere og vis dem her -->
             </tbody>
         </table>
+    </div>
+
+ 
+    
+        <p>Det er ingen brukere tilgjengelige.</p>
+    
+
+    <!-- Legg til knapper -->
+    <div class="button-container">
+        <a class="btn btn-primary" href="/Role/AssignRole">Tilordne Rolle</a>
+        <a class="btn btn-primary" href="/Role/Index">Rolleside</a>
+        <a class="btn btn-primary" href="/Role/RemoveRole">Fjern Rolle</a>
     </div>
 
 </body>

@@ -57,6 +57,7 @@
 		<None Include="wwwroot\css\Bilder\LOGO.jpg" />
 	</ItemGroup>
 	<ItemGroup>
+		<Folder Include="Migrations\" />
 		<Folder Include="wwwroot\css\Bilder\" />
 	</ItemGroup>
 </Project>

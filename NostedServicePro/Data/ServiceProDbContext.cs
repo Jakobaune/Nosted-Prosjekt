@@ -12,7 +12,6 @@ namespace NostedServicePro.Data
             : base(options)
         {
         }
-        public DbSet<Users> Users { get; set; }
         public DbSet<Bruker> Brukere { get; set; }
         public DbSet<ServiceOrdre> service { get; set; }
 
@@ -20,7 +19,6 @@ namespace NostedServicePro.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Users>().ToTable("aspnetusers");
 
         }
     }
