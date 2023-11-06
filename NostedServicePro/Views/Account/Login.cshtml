@@ -1,0 +1,76 @@
+﻿@using System.Collections.Generic
+@using Microsoft.AspNetCore.Http
+@using Microsoft.AspNetCore.Authentication
+@using Microsoft.AspNetCore.Identity
+@using NostedServicePro.Models.Account
+@model LoginViewModel
+@inject SignInManager<IdentityUser> SignInManager
+
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] Nøsted Service Pro</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/NostedServicePro.styles.css" asp-append-version="true" />
+    @{
+        ViewData["Title"] = "Logg in";
+        Layout = null;
+    }
+
+</head>
+
+<body id="loginBody">
+
+    <div class="login">
+
+        <section>
+            <form asp-controller="Account" asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal" role="form">
+
+                
+                <img src="~/css/Bilder/LOGO.jpg" alt="Logo" height="50px">
+                <span style="font-size: 25px; color:#A1B6C1">Service Pro</span>
+
+                <hr />
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="UserName" class="control-label">Brukernavn</label>
+                    <div>
+                        <input asp-for="UserName" class="form-control" />
+                        <span asp-validation-for="UserName" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <br />
+
+                <div class="form-group">
+                    <label asp-for="Password" class="control-label">Passord</label>
+                    <div>
+                        <input asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <br />
+
+                <div class="form-group">
+                    <div>
+                        <button type="submit" class="btn btn-primary">Logg inn</button>
+                    </div>
+                </div>
+
+            </form>
+        </section>
+    </div>
+</body>
+
+
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
+</html>

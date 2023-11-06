@@ -1,15 +1,10 @@
-﻿@model List<Bruker>
-
-@{
-    ViewData["Title"] = "VisAlleBrukere";
-}
+﻿@page
+@model List<Microsoft.AspNetCore.Identity.IdentityUser>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>@ViewData["Title"]</title>
     <style>
-
         .success-message {
             text-align: center;
             color: white;
@@ -18,60 +13,57 @@
             margin-bottom: 15px;
             border-radius: 5px;
         }
-    </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var melding = "@ViewData["Melding"]";
 
-            if (melding) {
-                alert(melding);
+        /* Responsiv tabellstil */
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        /* Søkefeltstil */
+        .search-bar {
+            margin-bottom: 15px;
+        }
+
+        /* Legg til stil for knapper */
+        .button-container {
+            margin-top: 15px;
+        }
+
+            .button-container button {
+                margin-right: 10px;
             }
-        });
-    </script>
+    </style>
 </head>
 <body>
+    <h1>Nøsted Brukere</h1>
 
-    @if (!string.IsNullOrEmpty(ViewData["BrukerNavn"] as string))
-    {
-        <div class="success-message">
-            Lagring av @ViewData["BrukerNavn"] vellykket!
-        </div>
-    }
-
-    <h1>Vis Alle Brukere</h1>
-    <div>
-        <a asp-action="Registrering" asp-controller="Bruker" class="btn btn-primary">Lag ny bruker</a>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>BrukerNavn</th>
+                    <th>Epostadresse</th>
+                    <!-- Legg til flere overskriftskolonner etter behov -->
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Loop gjennom brukere og vis dem her -->
+            </tbody>
+        </table>
     </div>
 
+ 
+    
+        <p>Det er ingen brukere tilgjengelige.</p>
+    
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>BrukerNavn</th>
-                <th>Epostadresse</th>
-                <th>Rolle</th>
-                <!-- Legg til flere kolonner etter behov -->
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var bruker in Model)
-            {
-                <tr>
-                    <td>@bruker.BrukerNavn</td>
-                    <td>@bruker.Epostadresse</td>
-                    <td>@bruker.Rolle</td>
-                    <!-- Legg til flere kolonner etter behov -->
-                    <td>
-                        <a asp-action="RedigerBruker" asp-route-id="@bruker.BrukerId">Rediger</a> |
-                        <form asp-action="SlettBruker" asp-route-id="@bruker.BrukerId" method="post" onsubmit="return confirm('Er du sikker på at du vil slette denne brukeren?');">
-                            <button type="submit" class="btn btn-danger">Slett</button>
-                        </form>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+    <!-- Legg til knapper -->
+    <div class="button-container">
+        <a class="btn btn-primary" href="/Role/AssignRole">Tilordne Rolle</a>
+        <a class="btn btn-primary" href="/Role/Index">Rolleside</a>
+        <a class="btn btn-primary" href="/Role/RemoveRole">Fjern Rolle</a>
+        <a class="btn btn-primary" href="/Account/Register">Registrer Bruker</a>
+    </div>
 
 </body>
 </html>

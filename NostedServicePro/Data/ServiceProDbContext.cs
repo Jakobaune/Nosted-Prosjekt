@@ -1,15 +1,17 @@
-﻿using Loginnosted.Models;
+﻿using NostedServicePro.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using MySql.Data.MySqlClient;
+using NostedServicePro.Models.Account;
 
-namespace Loginnosted.Data
+namespace NostedServicePro.Data
 {
-    public class ServiceProDbContex : DbContext
+    public class ServiceProDbContex : IdentityDbContext<IdentityUser>
     {
-        public ServiceProDbContex(DbContextOptions<ServiceProDbContex> options) : base(options)
+        public ServiceProDbContex(DbContextOptions<ServiceProDbContex> options)
+            : base(options)
         {
         }
-
         public DbSet<Bruker> Brukere { get; set; }
         public DbSet<ServiceOrdre> service { get; set; }
 
@@ -17,8 +19,7 @@ namespace Loginnosted.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            // Legg til eventuelle konfigurasjoner for modellene her
+
         }
     }
 }
-

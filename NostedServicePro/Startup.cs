@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
 
-namespace Loginnosted
+namespace NostedServicePro
 {
     public class Startup
     {

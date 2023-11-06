@@ -1,4 +1,4 @@
-namespace Loginnosted.Models
+namespace NostedServicePro.Models
 {
     public class ErrorViewModel
     {
