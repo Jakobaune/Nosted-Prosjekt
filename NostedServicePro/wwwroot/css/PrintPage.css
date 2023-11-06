@@ -1,33 +1,33 @@
 ﻿@media print {
-    #print {
-        display: none;
-    }
-
-    @page {
-        margin: 0;
-    }
-
-    #menu-toggle {
-        display: none;
-    }
+    /* Logo to display on printed page */
 
     footer {
         display: none;
     }
 
-    #logget-inn {
+    #print {
         display: none;
     }
 
     #printoverskrift {
-        display: none; 
+        display: none;
+    }
+
+    .hidden-logo {
+        display: block !important;
+    }
+
+    @page {
+        margin: 0;
     }
 }
 
+
 .table-container {
     display: flex;
-    justify-content: center;
+    justify-content: center; /*Tabellformattering*/
 }
+
 
 table {
     margin-top: 10px;
@@ -56,10 +56,11 @@ tr td:last-child {
 }
 
 .text-cell {
-    height: 150px;
+    height: 80px;
     vertical-align: top;
 }
 
 .right-cell {
     text-align: right;
 }
+

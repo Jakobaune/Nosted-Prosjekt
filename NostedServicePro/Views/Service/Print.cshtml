@@ -3,12 +3,39 @@
 @{
     ViewData["Title"] = "Print";
 }
-<link rel="stylesheet" href="~/css/PrintPage.css"/>
-<div id="printoverskrift">
-    <h1>Serviceskjema - OrdreID @Html.DisplayFor(model => model.OrdreID)</h1>
-</div>
-<body>
+
+<link rel="stylesheet" href="~/css/PrintPage.css" />
+
+<style>
+    @@media print {
+        #fiksaheader {
+            display: none !important;
+        }
+
+        .hidden-logo {
+            display: block !important;
+            /* Add any styling for the logo, e.g., width, height, margin, etc. */
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    }
+    .hidden-logo {
+        display: none; /*Gjem logoen*/
+    }
+
     
+</style>
+
+<body>
+    <div class="hidden-logo">
+        <img src="~/css/Bilder/LOGO.jpg" alt="Print Logo" height="50px" class="mb-2" style="margin-top: 20px;">
+    </div>
+    <div id="printoverskrift" style="margin-top: 20px;">
+        <h1>Serviceskjema - OrdreID @Html.DisplayFor(model => model.OrdreID)</h1>
+    </div>
     <div class="table-container">
         <table>
             <thead>
@@ -39,7 +66,7 @@
                 <tr>
                     <th>Serienummer vinsj</th>
                     <td>@Html.DisplayFor(model => model.Serienummervinsj)</td>
-                    <th>Registrert dato service</th>
+                    <th>Service registrert dato</th>
                     <td>@Html.DisplayFor(model => model.Registreringsdato)</td>
                 </tr>
                 <tr>
@@ -58,7 +85,7 @@
                     <th colspan="4">Arbeidskommentar fra mekaniker</th>
                 </tr>
                 <tr>
-                    <td class="text-cell"colspan="4">@Html.DisplayFor(model => model.Kommentar)</td>
+                    <td class="text-cell" colspan="4">@Html.DisplayFor(model => model.Kommentar)</td>
                 </tr>
                 <tr>
                     <th>Arbeidstimer</th>
@@ -68,20 +95,19 @@
                 </tr>
                 <tr>
                     <th>Signatur</th>
-                    <td style="font-style: italic;">signature</td>
+                    <td colspan="3" style="font-style: italic;">signature</td>
                 </tr>
                 <!-- Add similar rows for other attributes -->
             </tbody>
         </table>
     </div>
-    <div>  
-</div>
+    <div>
+    </div>
+    <br />
+    <button class="btn btn-primary" id="print">Skriv ut/lagre serviceskjema</button>
 
-<button class="btn btn-primary" id="print">Skriv ut/lagre serviceskjema</button>
-
-<script>const printBtn = document.getElementById('print');
+    <script>const printBtn = document.getElementById('print');
         printBtn.addEventListener('click', function () {
             print();
-        })
-</script>
+        })</script>
 </body>
