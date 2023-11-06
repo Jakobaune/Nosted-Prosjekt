@@ -1,5 +1,4 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
-
 	<PropertyGroup>
 		<TargetFramework>net7.0</TargetFramework>
 		<Nullable>enable</Nullable>
@@ -47,17 +46,19 @@
 		<PackageReference Include="MySql.EntityFrameworkCore" Version="7.0.5" />
 		<PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="7.0.0" />
 	</ItemGroup>
-
-	<ItemGroup>
-		<Content Remove="wwwroot\css\Bilder\" />
-		<Content Remove="wwwroot\css\Bilder\LOGO.jpg" />
-	</ItemGroup>
-	<ItemGroup>
-		<None Include="Areas\Identity\Pages\_ViewStart.cshtml" />
-		<None Include="wwwroot\css\Bilder\LOGO.jpg" />
-	</ItemGroup>
-	<ItemGroup>
-		<Folder Include="Migrations\" />
-		<Folder Include="wwwroot\css\Bilder\" />
-	</ItemGroup>
+  
+  <ItemGroup>
+    <Content Remove="wwwroot\css\Bilder\" />
+    <Content Remove="wwwroot\css\Bilder\LOGO.jpg" />
+    <Content Remove="wwwroot\css\RegistrerSjekkliste.css" />
+    <Content Remove="wwwroot\css\PrintPage.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\css\Bilder\LOGO.jpg" />
+    <None Include="wwwroot\css\RegistrerSjekkliste.css" />
+    <None Include="wwwroot\css\PrintPage.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\css\Bilder\" />
+  </ItemGroup>
 </Project>
