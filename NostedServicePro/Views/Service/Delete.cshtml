@@ -19,13 +19,11 @@
 
 <!-- Overskrift for slettingssiden -->
 
-<h1>Slett</h1>
-
-<h3>Er du sikker på du vil slette denne?</h3>
+<h3>Er du sikker på du vil slette denne serviceordren?</h3>
+<hr />
+<h4>@Html.DisplayNameFor(model => model.OrdreID) #<em>@Html.DisplayFor(model => model.OrdreID)</em></h4>
 <!-- Visning av serviceordre-detaljer -->
 <div>
-    <h4>ServiceOrdre</h4>
-    <hr />
     <dl class="row">
         <!-- Gjennomgang av serviceordre-attributter -->
         <dt class="col-sm-2">

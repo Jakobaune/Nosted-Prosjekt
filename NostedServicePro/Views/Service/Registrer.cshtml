@@ -14,6 +14,7 @@
 <!-- Overskrift og informasjon for registreringssiden -->
 <div>
     <h2>Opprett Ny Serviceordre</h2>
+    <hr />
     <p><em>Fyll ut info om kunden</em></p>
 </div>
 
@@ -23,69 +24,76 @@
     @Html.AntiForgeryToken()
 
     <div class="form-group">
-        <label asp-for="Kundenavn">Navn på kunden</label>
+        <strong><label asp-for="Kundenavn">Navn på kunden:</label></strong>
         <input asp-for="Kundenavn" class="form-control" />
     </div>
 
     <div class="form-group">
-        <label asp-for="Kundeepost">Epost</label>
+        <strong><label asp-for="Kundeepost">E-post:</label></strong>
         <input asp-for="Kundeepost" class="form-control" />
     </div>
 
     <div class="form-group">
-        <label asp-for="Kundetlf">Tlfnummer</label>
+        <strong><label asp-for="Kundetlf">Tlf-nummer:</label></strong>
         <input asp-for="Kundetlf" class="form-control" />
     </div>
 
     <div class="form-group">
-        <label asp-for="Produkttypevinsj">Vinsj type</label>
+        <strong><label asp-for="Produkttypevinsj">Vinsj-Type:</label></strong>
         <input asp-for="Produkttypevinsj" class="form-control" />
     </div>
 
     <div class="form-group">
-        <label asp-for="ÅrsmodellVinsj">Årsmodell på vinsj</label>
+        <strong><label asp-for="ÅrsmodellVinsj">Årsmodell:</label></strong>
         <input asp-for="ÅrsmodellVinsj" class="form-control" />
     </div>
 
     <div class="form-group">
-        <label asp-for="Serienummervinsj">Serienummer</label>
+        <strong><label asp-for="Serienummervinsj">Serienummer:</label></strong>
         <input asp-for="Serienummervinsj" class="form-control" />
     </div>
+
     <div class="form-group">
-        <label asp-for="AvtaltKommentar">Spesifikke avtaler med kunde</label>
+        <strong><label asp-for="AvtaltKommentar">Spesifikke avtaler med kunden:</label></strong>
         <input asp-for="AvtaltKommentar" class="form-control" />
     </div>
 
     <div class="form-group">
-        <label asp-for="InternKommentar">Internkommentar</label>
+        <strong><label asp-for="InternKommentar">Internkommentar:</label></strong>
         <input asp-for="InternKommentar" class="form-control" />
     </div>
 
     <div class="form-group">
-        <label asp-for="Problembeskrivelse">Problembeskrivelse</label>
+        <strong><label asp-for="Problembeskrivelse">Problembeskrivelse:</label></strong>
         <textarea asp-for="Problembeskrivelse" class="form-control"></textarea>
     </div>
 
     <div class="form-group">
-        <label asp-for="ServiceType">Type service</label>
+        <strong><label asp-for="ServiceType">Type service:</label></strong>
         <input asp-for="ServiceType" class="form-control" />
     </div>
 
     <div class="form-group">
-        <label asp-for="AvtaltleveringsDato">Når skal vinsjen leveres til service?</label>
+        <strong><label asp-for="AvtaltleveringsDato">Når skal vinsjen leveres til service?</label></strong>
         <input asp-for="AvtaltleveringsDato" type="date" class="form-control" />
     </div>
 
     <div class="form-group">
-        <label asp-for="Avtaltferdigstillingsdato">Når skal vinsjen være ferdig?</label>
+        <strong><label asp-for="Avtaltferdigstillingsdato">Når skal vinsjen være ferdig?</label></strong>
         <input asp-for="Avtaltferdigstillingsdato" type="date" class="form-control" />
     </div>
 
+    /*
     <div class="form-group">
         <label asp-for="ProduktmottattDato">Når ble vinsjen mottatt?</label>
         <input asp-for="ProduktmottattDato" type="date" class="form-control" />
     </div>
+    */
     <br />
+
+    <div>
+        <p><em>Husk å legge til "Produktmottat Dato" senere!<p><em>
+    </div>
 
     <!-- Knapp for å sende skjemaet og lagre en ny serviceordre -->
     <button type="submit" class="btn btn-primary">Lag serviceordre</button>

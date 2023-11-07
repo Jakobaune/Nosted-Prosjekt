@@ -2,6 +2,7 @@
 
 <!-- Modellen for denne visningen er en liste av ServiceOrdre-objekter -->
 <h2>Aktive Ordre:</h2>
+<hr />
 
 <!-- En rad som inneholder kort for hver serviceordre som ikke har fullført sjekklisten -->
 <div class="row">
@@ -13,10 +14,10 @@
             <div class="card mb-3">
                 <div class="card-body">
                     <!-- Visningsdetaljer for serviceordren -->
-                    <p>Ordre ID: @serviceordre.OrdreID</p>
-                    <p>Kundenavn: @serviceordre.Kundenavn</p>
-                    <p>E-post: @serviceordre.Kundeepost</p>
-                    <p>Telefonnummer: @serviceordre.Kundetlf</p>
+                    <p><strong>Ordre ID: @serviceordre.OrdreID</strong></p>
+                    <p>Kundenavn:<em> @serviceordre.Kundenavn </em></p>
+                    <p>E-post:<em> @serviceordre.Kundeepost </em></p>
+                    <p>Telefonnummer:<em> @serviceordre.Kundetlf </em></p>
 
                     <!-- Knapp for å starte sjekkliste, koblet til "RegistrerSjekkliste" i "Service"-kontrolleren -->
                     <a class="btn btn-primary" asp-controller="Service" asp-action="RegistrerSjekkliste" asp-route-ordreID="@serviceordre.OrdreID">Start sjekkliste</a>
