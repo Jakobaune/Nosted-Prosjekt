@@ -64,14 +64,17 @@
                 </a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link btn" style="color: #A1B6C1" asp-action="VisAlleBrukere" asp-controller="Bruker">
-                    <i class="fa-solid fa-user fa-lg" style="color: #A1B6C1" width="50px"></i>
-                    <br />
-                    Brukere
-                </a>
-            </li>
-
+            <!-- kun admin har tilgang til denne siden -->
+            @if (User.IsInRole("Admin"))
+            {
+                <li class="nav-item">
+                    <a class="nav-link btn" style="color: #A1B6C1" asp-action="VisAlleBrukere" asp-controller="Bruker">
+                        <i class="fa-solid fa-user fa-lg" style="color: #A1B6C1" width="50px"></i>
+                        <br />
+                        Brukere
+                    </a>
+                </li>
+            }
 
         </ul>
 
@@ -84,7 +87,12 @@
             <a class="hei" asp-action="Registrer" asp-controller="Service">Opprett Service</a>
             <a class="hei" asp-action="ServiceOversikt" asp-controller="Service">Aktive ordre</a>
             <a class="hei" asp-action="Arkiv" asp-controller="Service">Servicehistorikk</a>
-            <a class="hei" asp-action="VisAlleBrukere" asp-controller="Bruker">Brukere</a>
+
+            <!-- kun admin har tilgang til denne siden -->
+            @if (User.IsInRole("Admin"))
+            {
+                <a class="hei" asp-action="VisAlleBrukere" asp-controller="Bruker">Brukere</a>
+            }
 
             <a class="fa-solid fa-user" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">  @User.Identity?.Name</a>
             <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout"

@@ -147,6 +147,7 @@ footer {
     padding: 20px;
     z-index: 1000;
     max-height: 400px;
+    height:350px;
 }
 
     .menu-hover a {

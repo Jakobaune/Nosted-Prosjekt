@@ -234,6 +234,7 @@ public class ServiceController : Controller
             _dbContext.Add(serviceOrdre);
             _dbContext.SaveChanges(); //Lagrer endringene
 
+            TempData["Message"] = $"Serviceordre #{serviceOrdre.OrdreID} Registrert vellykket!";
             return RedirectToAction("Arkiv");
         }
 
