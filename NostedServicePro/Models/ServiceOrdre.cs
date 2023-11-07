@@ -9,15 +9,21 @@ public class ServiceOrdre
     [Required]
     public string Kundenavn { get; set; }
     [Required]
+    [RegularExpression(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$", ErrorMessage = "E-postadressen må inneholde en '@' og ha riktig format.")]
     public string Kundeepost { get; set; }
     [Required]
+    
+    [RegularExpression(@"^\d{8}$", ErrorMessage = "Telefonnummeret må bestå av 8 siffer.")]
     public string Kundetlf { get; set; }
     [Required]
     public string Produkttypevinsj { get; set; }
     [Required]
     public int ÅrsmodellVinsj { get; set; }
     [Required]
+   
+    [RegularExpression("^[0-9]*$", ErrorMessage = "Serienummeret må bestå av tall.")]
     public string Serienummervinsj { get; set; }
+
     [Required]
     [Display(Name = "Registreringsdato")]
     [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd HH:mm:ss}", ApplyFormatInEditMode = true)]
@@ -33,18 +39,20 @@ public class ServiceOrdre
     [Required]
     [Display(Name = "Avtalt leveringsdato")]
     [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+    [FutureDate(ErrorMessage = "Datoen kan ikke være tidligere enn dagens dato.")]
     public DateTime AvtaltleveringsDato { get; set; }
 
     [Required]
     [Display(Name = "Avtalt ferdigstillingsdato")]
     [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+    [FutureDate(ErrorMessage = "Datoen kan ikke være tidligere enn dagens dato.")]
     public DateTime Avtaltferdigstillingsdato { get; set; }
 
     [Required]
     [Display(Name = "Produktmottatt dato")]
     [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+    [FutureDate(ErrorMessage = "Datoen kan ikke være tidligere enn dagens dato.")]
     public DateTime ProduktmottattDato { get; set; }
-
 
     //Sjekkliste under
 
