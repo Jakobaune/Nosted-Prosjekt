@@ -54,8 +54,10 @@
 <!-- Søkefelt -->
 <form asp-action="Arkiv" asp-controller="Service" method="get">
     <div class="form-group">
+      
         <label for="searchInput"></label>
-        <input type="text" class="form-control" id="searchInput" name="search" placeholder="Søk etter navn, ID, epost eller serienummer">
+        <input type="text" class="form-control" id="searchInput" name="search" placeholder="Søk etter navn, ID, epost eller serienummer" value="@ViewData["SearchTerm"]">
+
     </div>
     <br />
     <button type="submit" class="btn btn-primary">Søk</button>
@@ -105,6 +107,7 @@
                         <!-- Lenker for redigering, detaljer og sletting av serviceordre -->
                         <a asp-action="Edit" asp-controller="Service" asp-route-id="@item.OrdreID"> | Rediger </a>
                         <a asp-action="Details" asp-controller="Service" asp-route-id="@item.OrdreID"> | Detaljer | </a> 
+                        <a asp-action="Print" asp-route-id="@item.OrdreID"> Utskrift | </a>
                         <a asp-action="Delete" asp-route-id="@item.OrdreID"> Slett | </a>
                     </td>
                 </tr>

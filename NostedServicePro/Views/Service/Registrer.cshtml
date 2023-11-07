@@ -36,7 +36,9 @@
     <div class="form-group">
         <strong><label asp-for="Kundetlf">Tlf-nummer:</label></strong>
         <input asp-for="Kundetlf" class="form-control" />
+        @Html.ValidationMessageFor(model => model.Kundetlf, "", new { @class = "text-danger" })
     </div>
+
 
     <div class="form-group">
         <strong><label asp-for="Produkttypevinsj">Vinsj-Type:</label></strong>
@@ -51,6 +53,7 @@
     <div class="form-group">
         <strong><label asp-for="Serienummervinsj">Serienummer:</label></strong>
         <input asp-for="Serienummervinsj" class="form-control" />
+        @Html.ValidationMessageFor(model => model.Serienummervinsj, "", new { @class = "text-danger" })
     </div>
 
     <div class="form-group">
@@ -72,23 +75,25 @@
         <strong><label asp-for="ServiceType">Type service:</label></strong>
         <input asp-for="ServiceType" class="form-control" />
     </div>
-
     <div class="form-group">
         <strong><label asp-for="AvtaltleveringsDato">Når skal vinsjen leveres til service?</label></strong>
         <input asp-for="AvtaltleveringsDato" type="date" class="form-control" />
+        @Html.ValidationMessageFor(model => model.AvtaltleveringsDato, "", new { @class = "text-danger" })
     </div>
 
     <div class="form-group">
         <strong><label asp-for="Avtaltferdigstillingsdato">Når skal vinsjen være ferdig?</label></strong>
         <input asp-for="Avtaltferdigstillingsdato" type="date" class="form-control" />
+        @Html.ValidationMessageFor(model => model.Avtaltferdigstillingsdato, "", new { @class = "text-danger" })
     </div>
 
     /*
     <div class="form-group">
         <label asp-for="ProduktmottattDato">Når ble vinsjen mottatt?</label>
         <input asp-for="ProduktmottattDato" type="date" class="form-control" />
+        @Html.ValidationMessageFor(model => model.ProduktmottattDato, "", new { @class = "text-danger" })
     </div>
-    */
+
     <br />
 
     <div>

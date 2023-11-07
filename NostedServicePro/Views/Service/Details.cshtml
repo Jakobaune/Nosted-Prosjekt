@@ -3,11 +3,7 @@
 @{
     ViewData["Title"] = "Details";
 }
-<style>
-    .section-header {
-        margin-top: 20px; /* Adjust the value as needed */
-    }
-</style>
+
 <!-- Overskrift for detaljsiden -->
 <h1>Detaljer</h1>
 
@@ -22,289 +18,307 @@
             <!-- Definisjonslister for å vise detaljer i par (attributt og verdi) -->
             <dl class="row">
                 <!-- Gjennomgang av serviceordre-attributter -->
-        <dt class="col-sm-3">
-            @Html.DisplayNameFor(model => model.OrdreID)
-        </dt>
-        <dd class="col-sm-9">
-            @Html.DisplayFor(model => model.OrdreID)
-        </dd>
-        <dt class = "col-sm-3">
-            @Html.DisplayNameFor(model => model.Kundenavn)
-        </dt>
-        <dd class = "col-sm-9">
-            @Html.DisplayFor(model => model.Kundenavn)
-        </dd>
-        <dt class = "col-sm-3">
-            @Html.DisplayNameFor(model => model.Kundeepost)
-        </dt>
-        <dd class = "col-sm-9">
-            @Html.DisplayFor(model => model.Kundeepost)
-        </dd>
-        <dt class = "col-sm-3">
-            @Html.DisplayNameFor(model => model.Kundetlf)
-        </dt>
-        <dd class = "col-sm-9">
-            @Html.DisplayFor(model => model.Kundetlf)
-        </dd>
-        <dt class = "col-sm-3">
-            @Html.DisplayNameFor(model => model.Produkttypevinsj)
-        </dt>
-        <dd class = "col-sm-9">
-            @Html.DisplayFor(model => model.Produkttypevinsj)
-        </dd>
-        <dt class = "col-sm-3">
-            @Html.DisplayNameFor(model => model.ÅrsmodellVinsj)
-        </dt>
-        <dd class = "col-sm-9">
-            @Html.DisplayFor(model => model.ÅrsmodellVinsj)
-        </dd>
-        <dt class = "col-sm-3">
-            @Html.DisplayNameFor(model => model.Serienummervinsj)
-        </dt>
-        <dd class = "col-sm-9">
-            @Html.DisplayFor(model => model.Serienummervinsj)
-        </dd>
-        <dt class="col-sm-3">
-            @Html.DisplayNameFor(model => model.Registreringsdato)
-        </dt>
-        <dd class="col-sm-9">
-            @Html.DisplayFor(model => model.Registreringsdato)
-        </dd>
-        <dt class = "col-sm-3">
-            @Html.DisplayNameFor(model => model.AvtaltKommentar)
-        </dt>
-        <dd class = "col-sm-9">
-            @Html.DisplayFor(model => model.AvtaltKommentar)
-        </dd>
-        <dt class = "col-sm-3">
-            @Html.DisplayNameFor(model => model.InternKommentar)
-        </dt>
-        <dd class = "col-sm-9">
-            @Html.DisplayFor(model => model.InternKommentar)
-        </dd>
-        <dt class = "col-sm-3">
-            @Html.DisplayNameFor(model => model.Problembeskrivelse)
-        </dt>
-        <dd class = "col-sm-9">
-            @Html.DisplayFor(model => model.Problembeskrivelse)
-        </dd>
-        <dt class = "col-sm-3">
-            @Html.DisplayNameFor(model => model.ServiceType)
-        </dt>
-        <dd class = "col-sm-9">
-            @Html.DisplayFor(model => model.ServiceType)
-        </dd>
-        <dt class = "col-sm-3">
-            @Html.DisplayNameFor(model => model.AvtaltleveringsDato)
-        </dt>
-        <dd class = "col-sm-9">
-            @Html.DisplayFor(model => model.AvtaltleveringsDato)
-        </dd>
-        <dt class = "col-sm-3">
-            @Html.DisplayNameFor(model => model.Avtaltferdigstillingsdato)
-        </dt>
-        <dd class = "col-sm-9">
-            @Html.DisplayFor(model => model.Avtaltferdigstillingsdato)
-        </dd>
-        <dt class = "col-sm-3">
-            @Html.DisplayNameFor(model => model.ProduktmottattDato)
-        </dt>
-        <dd class = "col-sm-9">
-            @Html.DisplayFor(model => model.ProduktmottattDato)
-        </dd>
-        </dl>
+                <dt class="col-sm-5">
+                    @Html.DisplayNameFor(model => model.OrdreID)
+                </dt>
+                <dd class="col-sm-7">
+                    @Html.DisplayFor(model => model.OrdreID)
+                </dd>
+                <hr />
+                <dt class="col-sm-5">
+                    @Html.DisplayNameFor(model => model.Kundenavn)
+                </dt>
+                <dd class="col-sm-7">
+                    @Html.DisplayFor(model => model.Kundenavn)
+                </dd>
+                <hr />
+                <dt class="col-sm-5">
+                    @Html.DisplayNameFor(model => model.Kundeepost)
+                </dt>
+                <dd class="col-sm-7">
+                    @Html.DisplayFor(model => model.Kundeepost)
+                </dd>
+                <hr />
+                <dt class="col-sm-5">
+                    @Html.DisplayNameFor(model => model.Kundetlf)
+                </dt>
+                <dd class="col-sm-7">
+                    @Html.DisplayFor(model => model.Kundetlf)
+                </dd>
+                <hr />
+                <dt class="col-sm-5">
+                    @Html.DisplayNameFor(model => model.Produkttypevinsj)
+                </dt>
+                <dd class="col-sm-7">
+                    @Html.DisplayFor(model => model.Produkttypevinsj)
+                </dd>
+                <hr />
+                <dt class="col-sm-5">
+                    @Html.DisplayNameFor(model => model.ÅrsmodellVinsj)
+                </dt>
+                <dd class="col-sm-7">
+                    @Html.DisplayFor(model => model.ÅrsmodellVinsj)
+                </dd>
+                <hr />
+                <dt class="col-sm-5">
+                    @Html.DisplayNameFor(model => model.Serienummervinsj)
+                </dt>
+                <dd class="col-sm-7">
+                    @Html.DisplayFor(model => model.Serienummervinsj)
+                </dd>
+                <hr />
+                <dt class="col-sm-5">
+                    @Html.DisplayNameFor(model => model.Registreringsdato)
+                </dt>
+                <dd class="col-sm-7">
+                    @Html.DisplayFor(model => model.Registreringsdato)
+                </dd>
+                <hr />
+                <dt class="col-sm-5">
+                    @Html.DisplayNameFor(model => model.AvtaltKommentar)
+                </dt>
+                <dd class="col-sm-7">
+                    @Html.DisplayFor(model => model.AvtaltKommentar)
+                </dd>
+                <hr />
+                <dt class="col-sm-5">
+                    @Html.DisplayNameFor(model => model.InternKommentar)
+                </dt>
+                <dd class="col-sm-7">
+                    @Html.DisplayFor(model => model.InternKommentar)
+                </dd>
+                <hr />
+                <dt class="col-sm-5">
+                    @Html.DisplayNameFor(model => model.Problembeskrivelse)
+                </dt>
+                <dd class="col-sm-7">
+                    @Html.DisplayFor(model => model.Problembeskrivelse)
+                </dd>
+                <hr />
+                <dt class="col-sm-5">
+                    @Html.DisplayNameFor(model => model.ServiceType)
+                </dt>
+                <dd class="col-sm-7">
+                    @Html.DisplayFor(model => model.ServiceType)
+                </dd>
+                <hr />
+                <dt class="col-sm-5">
+                    @Html.DisplayNameFor(model => model.AvtaltleveringsDato)
+                </dt>
+                <dd class="col-sm-7">
+                    @Html.DisplayFor(model => model.AvtaltleveringsDato)
+                </dd>
+                <hr />
+                <dt class="col-sm-5">
+                    @Html.DisplayNameFor(model => model.Avtaltferdigstillingsdato)
+                </dt>
+                <dd class="col-sm-7">
+                    @Html.DisplayFor(model => model.Avtaltferdigstillingsdato)
+                </dd>
+                <hr />
+                <dt class="col-sm-5">
+                    @Html.DisplayNameFor(model => model.ProduktmottattDato)
+                </dt>
+                <dd class="col-sm-7">
+                    @Html.DisplayFor(model => model.ProduktmottattDato)
+                </dd>
+            </dl>
         </div>
-        <div class="col-md-6">
+        
+        <div class="col-6">
             <!-- Overskrift og horisontal linje for sjekkliste -->
             <h4>Sjekkliste</h4>
             <hr />
-                        <!-- Definisjonslister for å vise sjekkliste-elementer -->
+            <!-- Definisjonslister for å vise sjekkliste-elementer -->
             <dl class="row">
                 <!-- Gjennomgang av sjekkliste-elementer -->
 
                 <h5 class="section-header">Mekanisk</h5>
-
-                <dt class="col-sm-5">
+                <hr />
+                <dt class="col-sm-7">
                     Sjekk clutch lameller for slitasje
                 </dt>
-                <dd class="col-sm-7" (Model.ClutchLameller)">
+                <dd class="col-sm-5" (Model.ClutchLameller)">
                     @Model.ClutchLameller
                 </dd>
-
-                <dt class="col-sm-5">
+                <hr />
+                <dt class="col-sm-7">
                     Sjekk bremser. Bånd/Pal
                 </dt>
-                <dd class="col-sm-7" (Model.Bremser)">
+                <dd class="col-sm-5" (Model.Bremser)">
                     @Model.Bremser
                 </dd>
-
-                <dt class="col-sm-5">
+                <hr />
+                <dt class="col-sm-7">
                     Sjekk lager for trommel
                 </dt>
-                <dd class="col-sm-7" (Model.LagerTrommel)">
+                <dd class="col-sm-5" (Model.LagerTrommel)">
                     @Model.LagerTrommel
                 </dd>
-
-                <dt class="col-sm-5">
+                <hr />
+                <dt class="col-sm-7">
                     Sjekk PTO og opplagring
                 </dt>
-                <dd class="col-sm-7" (Model.PTOOpplagring)">
+                <dd class="col-sm-5" (Model.PTOOpplagring)">
                     @Model.PTOOpplagring
                 </dd>
-
-                <dt class="col-sm-5">
+                <hr />
+                <dt class="col-sm-7">
                     Sjekk kjedestrammer
                 </dt>
-                <dd class="col-sm-7" (Model.Kjedestrammer)">
+                <dd class="col-sm-5" (Model.Kjedestrammer)">
                     @Model.Kjedestrammer
                 </dd>
-
-                <dt class="col-sm-5">
+                <hr />
+                <dt class="col-sm-7">
                     Sjekk wire
                 </dt>
-                <dd class="col-sm-7" (Model.Wire)">
+                <dd class="col-sm-5" (Model.Wire)">
                     @Model.Wire
                 </dd>
-
-                <dt class="col-sm-5">
+                <hr />
+                <dt class="col-sm-7">
                     Sjekk pinion lager
                 </dt>
-                <dd class="col-sm-7" (Model.PlnlonLager)">
+                <dd class="col-sm-5" (Model.PlnlonLager)">
                     @Model.PlnlonLager
                 </dd>
-
-                <dt class="col-sm-5">
+                <hr />
+                <dt class="col-sm-7">
                     Sjekk kile på kjedehjul
                 </dt>
-                <dd class="col-sm-7" (Model.KilleKjedehjul)">
+                <dd class="col-sm-5" (Model.KilleKjedehjul)">
                     @Model.KilleKjedehjul
                 </dd>
-
+                <hr />
                 <h5 class="section-header">Hydraulisk</h5>
-
-                <dt class="col-sm-5">
+                <hr />
+                <dt class="col-sm-7">
                     Sjekk hydraulikk sylinder for lekkasje
                 </dt>
-                <dd class="col-sm-7" (Model.HydraulikkSylinderLekkasje)">
+                <dd class="col-sm-5" (Model.HydraulikkSylinderLekkasje)">
                     @Model.HydraulikkSylinderLekkasje
                 </dd>
-
-                <dt class="col-sm-5">
+                <hr />
+                <dt class="col-sm-7">
                     Sjekk slanger for skader og lekkasje
                 </dt>
-                <dd class="col-sm-7" (Model.SlangerSkaderLekkasje)">
+                <dd class="col-sm-5" (Model.SlangerSkaderLekkasje)">
                     @Model.SlangerSkaderLekkasje
                 </dd>
-
-                <dt class="col-sm-5">
+                <hr />
+                <dt class="col-sm-7">
                     Test hydraulikkblokk i testbenk
                 </dt>
-                <dd class="col-sm-7" (Model.TestHydraulikkblokk)">
+                <dd class="col-sm-5" (Model.TestHydraulikkblokk)">
                     @Model.TestHydraulikkblokk
                 </dd>
-
-                <dt class="col-sm-5">
+                <hr />
+                <dt class="col-sm-7">
                     Skift olje i tank
                 </dt>
-                <dd class="col-sm-7" (Model.SkiftOljeTank)">
+                <dd class="col-sm-5" (Model.SkiftOljeTank)">
                     @Model.SkiftOljeTank
                 </dd>
-
-                <dt class="col-sm-5">
+                <hr />
+                <dt class="col-sm-7">
                     Skift olje på girboks
                 </dt>
-                <dd class="col-sm-7" (Model.SkiftOljeGirboks)">
+                <dd class="col-sm-5" (Model.SkiftOljeGirboks)">
                     @Model.SkiftOljeGirboks
                 </dd>
-
-                <dt class="col-sm-5">
+                <hr />
+                <dt class="col-sm-7">
                     Sjekk Ringsylinder åpne og skift tetninger
                 </dt>
-                <dd class="col-sm-7" (Model.RingsyllingerSkiftTelnlnger)">
+                <dd class="col-sm-5" (Model.RingsyllingerSkiftTelnlnger)">
                     @Model.RingsyllingerSkiftTelnlnger
                 </dd>
-
-                <dt class="col-sm-5">
+                <hr />
+                <dt class="col-sm-7">
                     Sjekk Bingsylinder åpne og skift tetninger
                 </dt>
-                <dd class="col-sm-7" (Model.BremsesylingerSkiftTelninger)">
+                <dd class="col-sm-5" (Model.BremsesylingerSkiftTelninger)">
                     @Model.BremsesylingerSkiftTelninger
                 </dd>
-
+                <hr />
                 <h5 class="section-header">Elektro</h5>
-
-                <dt class="col-sm-5">
+                <hr />
+                <dt class="col-sm-7">
                     Sjekk ledningsnett på vinsj
                 </dt>
-                <dd class="col-sm-7" (Model.LedningsnettVinsj)">
+                <dd class="col-sm-5" (Model.LedningsnettVinsj)">
                     @Model.LedningsnettVinsj
                 </dd>
-
-                <dt class="col-sm-5">
+                <hr />
+                <dt class="col-sm-7">
                     Sjekk og test radio
                 </dt>
-                <dd class="col-sm-7" (Model.SjekkTestRadio)">
+                <dd class="col-sm-5" (Model.SjekkTestRadio)">
                     @Model.SjekkTestRadio
                 </dd>
-
-                <dt class="col-sm-5">
+                <hr />
+                <dt class="col-sm-7">
                     Sjekk og test knappekasse
                 </dt>
-                <dd class="col-sm-7" (Model.SjekkTestKnappekasse)">
+                <dd class="col-sm-5" (Model.SjekkTestKnappekasse)">
                     @Model.SjekkTestKnappekasse
                 </dd>
-
+                <hr />
                 <h5 class="section-header">Funksjonstesting</h5>
 
-                <dt class="col-sm-5">
+                <dt class="col-sm-7">
                     XX-Bar
                 </dt>
-                <dd class="col-sm-7" (Model.XXBar)">
+                <dd class="col-sm-5" (Model.XXBar)">
                     @Model.XXBar
                 </dd>
-
-                <dt class="col-sm-5">
+                <hr />
+                <dt class="col-sm-7" style="margin-top: 5px;">
                     Test vinsj og kjør alle funksjoner
                 </dt>
-                <dd class="col-sm-7" (Model.TestVinsjAlleFunksjoner)">
+                <dd class="col-sm-5" style="margin-top: 5px;" (Model.TestVinsjAlleFunksjoner)">
                     @Model.TestVinsjAlleFunksjoner
                 </dd>
-
-                <dt class="col-sm-5">
+                <hr />
+                <dt class="col-sm-7" style="margin-top: 5px;">
                     Trekkraft KN
                 </dt>
-                <dd class="col-sm-7" (Model.TrekkraftKn)">
+                <dd class="col-sm-5" style="margin-top: 5px;" (Model.TrekkraftKn)">
                     @Model.TrekkraftKn
                 </dd>
-
-                <dt class="col-sm-5">
+                <hr />
+                <dt class="col-sm-7" style="margin-top: 5px;">
                     Bremsekraft KN
                 </dt>
-                <dd class="col-sm-7" (Model.BremsekraftKn)">
+                <dd class="col-sm-5" style="margin-top: 5px;" (Model.BremsekraftKn)">
                     @Model.BremsekraftKn
                 </dd>
-                <dt class="col-sm-5">
+                <hr />
+                <dt class="col-sm-7" style="margin-top: 5px;">
                     Arbeidstimer
                 </dt>
-                <dd class="col-sm-7" (Model.Arbeidstimer)">
+                <dd class="col-sm-5" style="margin-top: 5px;" (Model.Arbeidstimer)">
                     @Model.Arbeidstimer
                 </dd>
-                <dt class="col-sm-5">
+                <hr />
+                <dt class="col-sm-7" style="margin-top: 5px;">
                     Kommentar fra mekaniker
                 </dt>
-                <dd class="col-sm-7" (Model.Kommentar)">
+                <dd class="col-sm-5" style="margin-top: 5px;" (Model.Kommentar)">
                     @Model.Kommentar
                 </dd>
-            </dl>
-        </div>
-         
+
+</div>
+
         </div>
     </div>
 
 <!-- Handlinger som Rediger, Tilbake til historikk, og Slett -->
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.OrdreID">REDIGER</a> |
-    <a asp-action="Arkiv">TIL HISTORIKK</a> |
-    <a asp-action="Delete" asp-route-id="@Model?.OrdreID">SLETT</a>
+    <a asp-action="Edit" asp-route-id="@Model?.OrdreID">Rediger</a> |
+    <a asp-action="Arkiv">Til Historikk</a> |
+    <a asp-action="Print" asp-route-id="@Model?.OrdreID">Utskriftbar Side</a> |
+    <a asp-action="Delete" asp-route-id="@Model?.OrdreID">Slett</a>
 
 </div>

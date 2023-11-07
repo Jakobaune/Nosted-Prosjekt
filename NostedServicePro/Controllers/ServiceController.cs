@@ -35,6 +35,7 @@ public class ServiceController : Controller
     // Viser arkiv med filtrering og sortering
     public IActionResult Arkiv(string search, string sortOrder)
     {
+        ViewData["SearchTerm"] = search;  // Lagre søkeordet i ViewData
         ViewData["IdSortParm"] = string.IsNullOrEmpty(sortOrder) ? "id_desc" : "";
         ViewData["NameSortParm"] = sortOrder == "name" ? "name_desc" : "name";
         ViewData["EmailSortParm"] = sortOrder == "email" ? "email_desc" : "email";
@@ -210,6 +211,17 @@ public class ServiceController : Controller
         return View(serviceOrdre);
     }
 
+    public IActionResult Print(int id)
+    {
+        var serviceOrdre = _dbContext.service.FirstOrDefault(s => s.OrdreID == id);
+
+        if (serviceOrdre == null)
+        {
+            return NotFound();
+        }
+
+        return View(serviceOrdre);
+    }
 
     // Behandler postforespørsel for å registrere en ny serviceordre
     [HttpPost]

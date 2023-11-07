@@ -1,0 +1,66 @@
+﻿@media print {
+    /* Logo to display on printed page */
+
+    footer {
+        display: none;
+    }
+
+    #print {
+        display: none;
+    }
+
+    #printoverskrift {
+        display: none;
+    }
+
+    .hidden-logo {
+        display: block !important;
+    }
+
+    @page {
+        margin: 0;
+    }
+}
+
+
+.table-container {
+    display: flex;
+    justify-content: center; /*Tabellformattering*/
+}
+
+
+table {
+    margin-top: 10px;
+    width: 21cm; /* Set the table width to match A4 paper width (210mm) */
+    border-collapse: collapse;
+    page-break-after: auto; /* Force a page break after the table for printing */
+}
+
+table, th, td {
+    border: 1px solid #000;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    width: 25%; /* Set each column to 50% width for equal distribution */
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Add a rule to remove the right border of the last cell in each row */
+tr td:last-child {
+    border-right: none;
+}
+
+.text-cell {
+    height: 80px;
+    vertical-align: top;
+}
+
+.right-cell {
+    text-align: right;
+}
+
