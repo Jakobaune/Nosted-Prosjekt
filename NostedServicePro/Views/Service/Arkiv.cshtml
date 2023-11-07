@@ -44,7 +44,8 @@
     </div>
 }
 <!-- Overskrift for arkivsiden -->
-<h1>Servicehistorikk</h1>
+<h2>Servicehistorikk</h2>
+<hr />
 
 <!-- Lenke for å opprette ny serviceordre -->
     <a asp-action="Registrer" style="font-weight: bold; border: 1px solid #e16f07; border-radius: 5px; padding: 5px 10px; text-decoration: none; ">Lag ny serviceordre</a>
@@ -53,8 +54,10 @@
 <!-- Søkefelt -->
 <form asp-action="Arkiv" asp-controller="Service" method="get">
     <div class="form-group">
-        <label for="searchInput">Søk:</label>
-        <input type="text" class="form-control" id="searchInput" name="search" placeholder="Søk etter navn, ID, epost eller telefonnummer" value="@ViewData["SearchTerm"]">
+      
+        <label for="searchInput"></label>
+        <input type="text" class="form-control" id="searchInput" name="search" placeholder="Søk etter navn, ID, epost eller serienummer" value="@ViewData["SearchTerm"]">
+
     </div>
     <br />
     <button type="submit" class="btn btn-primary">Søk</button>
@@ -68,16 +71,13 @@
             <!-- Kolonner for sortering -->
             <tr>
                 <th class="sortable" data-sort-by="OrdreID" data-sort-order="@ViewData["IdSortParm"]">
-                    <a asp-action="Arkiv" asp-controller="Service" asp-route-sortOrder="@ViewData["IdSortParm"]">Ordre ID</a>
+                    <a asp-action="Arkiv" asp-controller="Service" asp-route-sortOrder="@ViewData["IdSortParm"]">Ordre ID#</a>
                 </th>
                 <th class="sortable" data-sort-by="Kundenavn" data-sort-order="@ViewData["NameSortParm"]">
                     <a asp-action="Arkiv" asp-controller="Service" asp-route-sortOrder="@ViewData["NameSortParm"]">Kundenavn</a>
                 </th>
-                <th class="sortable" data-sort-by="Kundeepost" data-sort-order="@ViewData["EmailSortParm"]">
-                    <a asp-action="Arkiv" asp-controller="Service" asp-route-sortOrder="@ViewData["EmailSortParm"]">Kundeepost</a>
-                </th>
                 <th class="sortable" data-sort-by="Kundetlf" data-sort-order="@ViewData["PhoneSortParm"]">
-                    <a asp-action="Arkiv" asp-controller="Service" asp-route-sortOrder="@ViewData["PhoneSortParm"]">Kundetlf</a>
+                    <a asp-action="Arkiv" asp-controller="Service" asp-route-sortOrder="@ViewData["PhoneSortParm"]">Kundetelefon</a>
                 </th>
                 <th class="sortable" data-sort-by="Registreringsdato" data-sort-order="@ViewData["DateSortParm"]">
                     <a asp-action="Arkiv" asp-controller="Service" asp-route-sortOrder="@ViewData["DateSortParm"]">Registreringsdato</a>
@@ -98,9 +98,6 @@
                         @Html.DisplayFor(modelItem => item.Kundenavn)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Kundeepost)
-                    </td>
-                    <td>
                         @Html.DisplayFor(modelItem => item.Kundetlf)
                     </td>
                     <td>
@@ -108,10 +105,10 @@
                     </td>
                     <td>
                         <!-- Lenker for redigering, detaljer og sletting av serviceordre -->
-                        <a asp-action="Edit" asp-controller="Service" asp-route-id="@item.OrdreID">Rediger</a> |
-                        <a asp-action="Details" asp-controller="Service" asp-route-id="@item.OrdreID">Detaljer</a> |
-                        <a asp-action="Print" asp-route-id="@item.OrdreID">Utskrift</a> |
-                        <a asp-action="Delete" asp-route-id="@item.OrdreID">Slett</a>
+                        <a asp-action="Edit" asp-controller="Service" asp-route-id="@item.OrdreID"> | Rediger </a>
+                        <a asp-action="Details" asp-controller="Service" asp-route-id="@item.OrdreID"> | Detaljer | </a> 
+                        <a asp-action="Print" asp-route-id="@item.OrdreID"> Utskrift | </a>
+                        <a asp-action="Delete" asp-route-id="@item.OrdreID"> Slett | </a>
                     </td>
                 </tr>
             }

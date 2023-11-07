@@ -51,9 +51,6 @@
 /*Standard css for alt på siden, skrift, knapper*/
 html {
     background-color: #12181F;
-}
-
-html {
     position: relative;
     min-height: 100%;
 }
@@ -184,8 +181,23 @@ footer {
 }
 
 
+/*styles til oversikt siden*/
+.service-box {
+    border: 1px solid #12181F;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+}
+    .service-box:hover {
+        box-shadow: 2px 2px 5px 5px #E06F06;
+    }
 
-/*css til start login*/
+/* Sett opp kolonnene for mindre skjermer (mobilvisning) */
+
+
+
+/*css t
+    il start login*/
 #loginBody {
     color: #A1B6C1;
     background-color: #12181F;
