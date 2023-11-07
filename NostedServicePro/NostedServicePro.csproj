@@ -59,6 +59,7 @@
     <None Include="wwwroot\css\PrintPage.css" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Data\NewFolder\" />
     <Folder Include="wwwroot\css\Bilder\" />
   </ItemGroup>
 </Project>
