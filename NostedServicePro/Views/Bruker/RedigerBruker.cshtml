@@ -1,90 +1,37 @@
-﻿@model Bruker
+﻿@model EditUserViewModel
 
 @{
-    ViewData["Title"] = "RedigerBruker";
+    ViewData["Title"] = "Rediger Bruker";
 }
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>@ViewData["Title"]</title>
-    <style>
+<h2>Rediger Bruker</h2>
+<hr />
 
-        .success-message {
-            text-align: center;
-            color: white;
-            background-color: green;
-            padding: 10px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-        }
-    </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var melding = "@ViewData["Melding"]";
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="RedigerBruker" method="post">
+            <input type="hidden" asp-for="UserId" />
 
-            if (melding) {
-                alert(melding);
-            }
-        });
-    </script>
-</head>
-<body>
+            <div class="form-group">
+                <label asp-for="UserName"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
 
-    <h1>Rediger Bruker</h1>
+            <div class="form-group">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
 
-    @if (!string.IsNullOrEmpty(ViewData["BrukerNavn"] as string))
-    {
-        <div class="success-message">
-            Endringer for @ViewData["BrukerNavn"] lagret vellykket!
-        </div>
-    }
+            <div class="form-group">
+                <label asp-for="SelectedRoles"></label>
+                <select asp-for="SelectedRoles" asp-items="@(new SelectList(ViewBag.AllRoles))" class="form-control" multiple></select>
+                <span asp-validation-for="SelectedRoles" class="text-danger"></span>
+            </div>
 
-
-    <div class="row">
-        <div class="col-md-4">
-            @using (Html.BeginForm("RedigerBruker", "Bruker"))
-            {
-                @Html.AntiForgeryToken()
-
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <input type="hidden" asp-for="BrukerId" />
-                <div class="form-group">
-                    <label asp-for="BrukerNavn" class="control-label"></label>
-                    <input asp-for="BrukerNavn" class="form-control" />
-                    <span asp-validation-for="BrukerNavn" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Epostadresse" class="control-label"></label>
-                    <input asp-for="Epostadresse" class="form-control" />
-                    <span asp-validation-for="Epostadresse" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Rolle" class="control-label"></label>
-                    <input asp-for="Rolle" class="form-control" />
-                    <span asp-validation-for="Rolle" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Passord" class="control-label"></label>
-                    <input asp-for="Passord" class="form-control" />
-                    <span asp-validation-for="Passord" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Save" class="btn btn-primary" />
-                </div>
-            }
-        </div>
+            <button type="submit" class="btn btn-primary">Oppdater Bruker</button>
+            <a asp-action="VisAlleBrukere" class="btn btn-secondary">Tilbake til Liste</a>
+        </form>
     </div>
-
-    <div>
-        <a asp-action="VisAlleBrukere">Tilbake til listen</a>
-    </div>
-
-    @section Scripts {
-        @{
-            await Html.RenderPartialAsync("_ValidationScriptsPartial");
-        }
-    }
-
-</body>
-</html>
+</div>
