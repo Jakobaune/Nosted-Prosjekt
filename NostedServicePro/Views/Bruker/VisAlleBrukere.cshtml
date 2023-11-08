@@ -1,77 +1,38 @@
-﻿@page
-@model List<Microsoft.AspNetCore.Identity.IdentityUser>
+﻿@using Microsoft.AspNetCore.Identity
 
-<!DOCTYPE html>
-<html>
-<head>
-    <style>
-        .success-message {
-            text-align: center;
-            color: white;
-            background-color: green;
-            padding: 10px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-        }
+@model List<BrukerMedRollerViewModel>
 
-        /* Responsiv tabellstil */
-        .table-responsive {
-            overflow-x: auto;
-        }
+@{
+    ViewData["Title"] = "Vis Alle Brukere";
+}
 
-        /* Søkefeltstil */
-        .search-bar {
-            margin-bottom: 15px;
-        }
+<h2>Vis Alle Brukere</h2>
+<hr />
 
-        /* Legg til stil for knapper */
-        .button-container {
-            margin-top: 15px;
-        }
+<div class="table-responsive">
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>BrukerNavn</th>
+                <th>Epostadresse</th>
+                <th>Roller</th>
+                <th>Handlinger</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var bruker in Model)
+            {
 
-            .button-container button {
-                margin-right: 10px;
-            }
-    </style>
-</head>
-<body>
-    <!-- Viser en melding hvis det er en suksess- eller feilmelding -->
-    @if (!string.IsNullOrEmpty(TempData["Message"]?.ToString()))
-    {
-        <div class="alert alert-success" role="alert">
-            @TempData["Message"]
-        </div>
-    }
-    <h2>Nøsted Brukere</h2>
-    <hr />
-
-    <div class="table-responsive">
-        <table class="table">
-            <thead>
                 <tr>
-                    <th>BrukerNavn</th>
-                    <th>Epostadresse</th>
-                    <!-- Legg til flere overskriftskolonner etter behov -->
+                    <td>@bruker.UserName</td>
+                    <td>@bruker.Email</td>
+                    <td>@string.Join(", ", bruker.Roller)</td>
+                    <td>
+                        <a asp-action="RedigerBruker" asp-route-userId="@bruker.UserId">Rediger</a> |
+                        <a asp-action="SlettBruker" asp-route-userId="@bruker.UserId">Slett</a>
+                    </td>
                 </tr>
-            </thead>
-            <tbody>
-                <!-- Loop gjennom brukere og vis dem her -->
-            </tbody>
-        </table>
-    </div>
-
-
-
-    <p>Det er ingen brukere tilgjengelige.</p>
-
-
-    <!-- Legg til knapper -->
-    <div class="button-container">
-        <a class="btn btn-primary" href="/Role/AssignRole">Tilordne Rolle</a>
-        <a class="btn btn-primary" href="/Role/Index">Rolleside</a>
-        <a class="btn btn-primary" href="/Role/RemoveRole">Fjern Rolle</a>
-        <a class="btn btn-primary" href="/Account/Register">Registrer Bruker</a>
-    </div>
-
-</body>
-</html>
+            }
+        </tbody>
+    </table>
+</div>
