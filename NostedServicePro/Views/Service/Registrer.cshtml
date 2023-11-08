@@ -23,26 +23,28 @@
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-group">
-        <strong><label asp-for="Kundenavn">Navn på kunden:</label></strong>
-        <input asp-for="Kundenavn" class="form-control" />
-    </div>
+<div class="form-group">
+    <strong><label asp-for="Kundenavn">Navn på kunden:</label></strong>
+    <input asp-for="Kundenavn" class="form-control" />
+    @Html.ValidationMessageFor(model => model.Kundenavn, "", new { @class = "text-danger" })
+</div>
 
     <div class="form-group">
         <strong><label asp-for="Kundeepost">E-post:</label></strong>
         <input asp-for="Kundeepost" class="form-control" />
+        @Html.ValidationMessageFor(model => model.Kundeepost, "", new { @class = "text-danger" })
     </div>
 
     <div class="form-group">
         <strong><label asp-for="Kundetlf">Tlf-nummer:</label></strong>
         <input asp-for="Kundetlf" class="form-control" />
-        @Html.ValidationMessageFor(model => model.Kundetlf, "", new { @class = "text-danger" })
     </div>
 
 
     <div class="form-group">
         <strong><label asp-for="Produkttypevinsj">Vinsj-Type:</label></strong>
         <input asp-for="Produkttypevinsj" class="form-control" />
+        @Html.ValidationMessageFor(model => model.Produkttypevinsj, "", new { @class = "text-danger" })
     </div>
 
     <div class="form-group">
@@ -58,22 +60,22 @@
     <div class="form-group">
         <strong><label asp-for="Serienummervinsj">Serienummer:</label></strong>
         <input asp-for="Serienummervinsj" class="form-control" />
-        @Html.ValidationMessageFor(model => model.Serienummervinsj, "", new { @class = "text-danger" })
     </div>
 
     <div class="form-group">
         <strong><label asp-for="AvtaltKommentar">Spesifikke avtaler med kunden:</label></strong>
-        <input asp-for="AvtaltKommentar" class="form-control" />
+        <textarea asp-for="AvtaltKommentar" class="form-control"></textarea>
     </div>
 
     <div class="form-group">
         <strong><label asp-for="InternKommentar">Internkommentar:</label></strong>
-        <input asp-for="InternKommentar" class="form-control" />
+        <textarea asp-for="InternKommentar" class="form-control"></textarea>
     </div>
 
     <div class="form-group">
         <strong><label asp-for="Problembeskrivelse">Problembeskrivelse:</label></strong>
         <textarea asp-for="Problembeskrivelse" class="form-control"></textarea>
+        @Html.ValidationMessageFor(model => model.Problembeskrivelse, "", new { @class = "text-danger" })
     </div>
 
     <div class="form-group">
@@ -86,6 +88,7 @@
             <option value="reparasjon">Reparasjon</option>
             <option value="annet">Annet</option>
         </select>
+        @Html.ValidationMessageFor(model => model.ServiceType, "", new { @class = "text-danger" })
     </div>
 
     <div class="form-group">

@@ -8,6 +8,13 @@
 <link rel="stylesheet" href="~/css/RegistrerSjekkliste.css" />
 <!-- Overskrift og tittel for sjekklistesiden -->
 
+@if (!string.IsNullOrEmpty(TempData["Message"]?.ToString()))
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["Message"]
+    </div>
+}
+
 <h2>Sjekkliste</h2>
 <hr />
 
@@ -512,7 +519,7 @@
 
 
 
-            
+
             <div class="form-group">
                 <label asp-for="TrekkraftKn" class="control-label">Trekkraft KN</label>
                 <div class="col-1">
@@ -521,7 +528,7 @@
                 </div>
             </div>
 
-            
+
             <div class="form-group">
                 <label asp-for="BremsekraftKn" class="control-label">Bremsekraft KN</label>
                 <div class="col-1">
@@ -530,7 +537,7 @@
                 </div>
             </div>
 
-            
+
             <div class="form-group">
                 <label asp-for="Arbeidstimer" class="control-label">Arbeidstimer</label>
                 <div class="col-1">
