@@ -33,17 +33,23 @@
                     <p>E-post:<em> @serviceordre.Kundeepost </em></p>
                     <p>Telefonnummer:<em> @serviceordre.Kundetlf </em></p>
 
-                    <!-- Knapp for å starte sjekkliste, koblet til "RegistrerSjekkliste" i "Service"-kontrolleren -->
-                    <a class="btn btn-primary" asp-controller="Service" asp-action="RegistrerSjekkliste" asp-route-ordreID="@serviceordre.OrdreID">Start sjekkliste</a>
+                    <!-- Knappene inni separate div-elementer for side-by-side display med mellomrom -->
+                    <div class="d-flex justify-content-between">
+                        <!-- Knapp for å starte sjekkliste, koblet til "RegistrerSjekkliste" i "Service"-kontrolleren -->
+                        <div class="mr-2">
+                            <a class="btn btn-primary" asp-controller="Service" asp-action="RegistrerSjekkliste" asp-route-ordreID="@serviceordre.OrdreID">Start sjekkliste</a>
+                        </div>
 
-                    <!-- Legg til knapp for å registrere mottatt -->
-                    <form asp-controller="Service" asp-action="RegistrerMottatt" method="post">
-                        <input type="hidden" name="id" value="@serviceordre.OrdreID" />
-                        <button type="submit" class="btn btn-success">Registrer mottatt</button>
-                    </form>
+                        <!-- Legg til knapp for å registrere mottatt -->
+                        <div>
+                            <form asp-controller="Service" asp-action="RegistrerMottatt" method="post">
+                                <input type="hidden" name="id" value="@serviceordre.OrdreID" />
+                                <button type="submit" class="btn btn-success">Registrer mottatt</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     }
-
 </div>

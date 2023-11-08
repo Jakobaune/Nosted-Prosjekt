@@ -85,6 +85,18 @@ a {
         border-color: #9cb7c2;
     }
 
+.btn-success {
+    background-color: #12181F;
+    border-color: #12181F;
+   color: #A1B6C1;
+}
+
+    .btn-success:hover {
+        background-color: #e16f07;
+        border-color: #e16f07;
+    }
+
+
 .custom-icon {
     font-size: 50px;
 }
