@@ -35,6 +35,13 @@
     </style>
 </head>
 <body>
+    <!-- Viser en melding hvis det er en suksess- eller feilmelding -->
+    @if (!string.IsNullOrEmpty(TempData["Message"]?.ToString()))
+    {
+        <div class="alert alert-success" role="alert">
+            @TempData["Message"]
+        </div>
+    }
     <h2>Nøsted Brukere</h2>
     <hr />
 
@@ -53,10 +60,10 @@
         </table>
     </div>
 
- 
-    
-        <p>Det er ingen brukere tilgjengelige.</p>
-    
+
+
+    <p>Det er ingen brukere tilgjengelige.</p>
+
 
     <!-- Legg til knapper -->
     <div class="button-container">

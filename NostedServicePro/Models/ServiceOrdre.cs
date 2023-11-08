@@ -6,51 +6,53 @@ public class ServiceOrdre
     [Key]
     public int OrdreID { get; set; }
 
-    [Required]
+    [Required(ErrorMessage = "Kundenavn er obligatorisk.")]
     public string Kundenavn { get; set; }
-    [Required]
-    [RegularExpression(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$", ErrorMessage = "E-postadressen må inneholde en '@' og ha riktig format.")]
+
+    [Required(ErrorMessage = "E-postadressen er obligatorisk og må ha riktig format.")]
+    [RegularExpression(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$")]
     public string Kundeepost { get; set; }
-    [Required]
+
     
-    [RegularExpression(@"^\d{8}$", ErrorMessage = "Telefonnummeret må bestå av 8 siffer.")]
     public string Kundetlf { get; set; }
-    [Required]
+
+    [Required(ErrorMessage = "Produkttypevinsj er obligatorisk.")]
     public string Produkttypevinsj { get; set; }
-    [Required]
+
     public int ÅrsmodellVinsj { get; set; }
-    [Required]
-   
-    [RegularExpression("^[0-9]*$", ErrorMessage = "Serienummeret må bestå av tall.")]
+
     public string Serienummervinsj { get; set; }
 
     [Required]
     [Display(Name = "Registreringsdato")]
     [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd HH:mm:ss}", ApplyFormatInEditMode = true)]
     public DateTime Registreringsdato { get; set; }
-    [Required]
+
     public string AvtaltKommentar { get; set; }
-    [Required]
+
     public string InternKommentar { get; set; }
-    [Required]
+
+    [Required(ErrorMessage = "Problembeskrivelse er obligatorisk.")]
     public string Problembeskrivelse { get; set; }
-    [Required]
+
+    [Required(ErrorMessage = "ServiceType er obligatorisk.")]
     public string ServiceType { get; set; }
-    [Required]
+
+    [Required(ErrorMessage = "Avtalt leveringsdato er obligatorisk.")]
     [Display(Name = "Avtalt leveringsdato")]
     [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-    [FutureDate(ErrorMessage = "Datoen kan ikke være tidligere enn dagens dato.")]
+    [FutureDate(ErrorMessage = "Avtalt leveringsdato kan ikke være tidligere enn dagens dato.")]
     public DateTime AvtaltleveringsDato { get; set; }
 
-    [Required]
+    [Required(ErrorMessage = "Avtalt ferdigstillingsdato er obligatorisk.")]
     [Display(Name = "Avtalt ferdigstillingsdato")]
     [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-    [FutureDate(ErrorMessage = "Datoen kan ikke være tidligere enn dagens dato.")]
+    [FutureDate(ErrorMessage = "Avtalt ferdigstillingsdato kan ikke være tidligere enn dagens dato.")]
     public DateTime Avtaltferdigstillingsdato { get; set; }
 
     [Display(Name = "Produktmottatt dato")]
     [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-    [FutureDate(ErrorMessage = "Datoen kan ikke være tidligere enn dagens dato.")]
+    [FutureDate(ErrorMessage = "Produktmottatt dato kan ikke være tidligere enn dagens dato.")]
     public DateTime? ProduktmottattDato { get; set; }
 
     //Sjekkliste under

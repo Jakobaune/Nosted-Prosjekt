@@ -195,6 +195,10 @@ public class ServiceController : Controller
                         existingOrdre.ErSjekklisteFullført = true;
                         TempData["Message"] = $"Sjekkliste fullført for serviceordre #{model.OrdreID}!";
                     }
+                    else
+                    {
+                        TempData["Message"] = $"Sjekkliste lagret for serviceordre #{model.OrdreID}!";
+                    }
 
                     existingOrdre.Registreringsdato = DateTime.Now;
 
