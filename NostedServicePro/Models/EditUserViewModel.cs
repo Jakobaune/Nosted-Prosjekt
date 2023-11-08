@@ -17,7 +17,7 @@ public class EditUserViewModel
     [Display(Name = "Nåværende roller")]
     public List<string> CurrentRoles { get; set; }
 
-    [Display(Name = "Velg roller")]
+    [Display(Name = "Velg roller")] 
     public List<string> SelectedRoles { get; set; }
 
     [Display(Name = "Alle roller")]
