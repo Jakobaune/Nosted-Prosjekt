@@ -48,11 +48,10 @@ public class ServiceOrdre
     [FutureDate(ErrorMessage = "Datoen kan ikke være tidligere enn dagens dato.")]
     public DateTime Avtaltferdigstillingsdato { get; set; }
 
-    [Required]
     [Display(Name = "Produktmottatt dato")]
     [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
     [FutureDate(ErrorMessage = "Datoen kan ikke være tidligere enn dagens dato.")]
-    public DateTime ProduktmottattDato { get; set; }
+    public DateTime? ProduktmottattDato { get; set; }
 
     //Sjekkliste under
 
