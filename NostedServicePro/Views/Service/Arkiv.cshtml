@@ -106,10 +106,14 @@
                     <td>
                         <!-- Lenker for redigering, detaljer og sletting av serviceordre -->
                         <a asp-action="Edit" asp-controller="Service" asp-route-id="@item.OrdreID"> | Rediger </a>
-                        <a asp-action="Details" asp-controller="Service" asp-route-id="@item.OrdreID"> | Detaljer | </a> 
+                        <a asp-action="Details" asp-controller="Service" asp-route-id="@item.OrdreID"> | Detaljer | </a>
                         <a asp-action="Print" asp-route-id="@item.OrdreID"> Utskrift | </a>
-                        <a asp-action="Delete" asp-route-id="@item.OrdreID"> Slett | </a>
-                    </td>
+                        <!-- kun admin har tilgang til denne siden -->
+                        @if (User.IsInRole("Admin"))
+                            {
+                            <a asp-action="Delete" asp-route-id="@item.OrdreID"> Slett | </a>
+                            }
+                        </td>
                 </tr>
             }
         </tbody>

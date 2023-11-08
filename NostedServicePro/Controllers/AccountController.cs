@@ -102,6 +102,8 @@ namespace NostedServicePro.Controllers
 
                     _logger.LogInformation(3, "User created a new account with password.");
 
+                    TempData["Message"] = "Brukeren er registrert vellykket!";
+
                     return RedirectToAction("VisAlleBrukere", "Bruker");
                 }
                 AddErrors(result);
