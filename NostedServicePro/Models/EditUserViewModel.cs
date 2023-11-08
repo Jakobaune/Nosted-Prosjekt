@@ -19,4 +19,7 @@ public class EditUserViewModel
 
     [Display(Name = "Velg roller")]
     public List<string> SelectedRoles { get; set; }
+
+    [Display(Name = "Alle roller")]
+    public List<string> AllRoles { get; set; }
 }

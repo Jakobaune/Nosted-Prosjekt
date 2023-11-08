@@ -1,9 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using NostedServicePro.Data;
 using NostedServicePro.Models;
-using NostedServicePro.Models.Account;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -11,10 +12,20 @@ using System.Threading.Tasks;
 public class BrukerController : Controller
 {
     private readonly UserManager<IdentityUser> _userManager;
+    private readonly RoleManager<IdentityRole> _roleManager;
+    private readonly ILogger<BrukerController> _logger;
+    private readonly ServiceProDbContex _context; // Legg til dette hvis nødvendig
 
-    public BrukerController(UserManager<IdentityUser> userManager)
+    public BrukerController(
+        UserManager<IdentityUser> userManager,
+        RoleManager<IdentityRole> roleManager,
+        ILogger<BrukerController> logger,
+        ServiceProDbContex context) // Legg til dette hvis nødvendig
     {
         _userManager = userManager;
+        _roleManager = roleManager;
+        _logger = logger;
+        _context = context; // Legg til dette hvis nødvendig
     }
 
     public async Task<IActionResult> VisAlleBrukere()
@@ -39,7 +50,6 @@ public class BrukerController : Controller
         return View(brukerMedRollerList);
     }
 
-
     [HttpGet]
     public async Task<IActionResult> RedigerBruker(string userId)
     {
@@ -51,7 +61,17 @@ public class BrukerController : Controller
         }
 
         var userRoles = await _userManager.GetRolesAsync(user);
-        var model = new EditUserViewModel { UserId = userId, UserName = user.UserName, Email = user.Email, CurrentRoles = userRoles.ToList() };
+        var allRoles = await _roleManager.Roles.Select(role => role.Name).ToListAsync();
+
+        var model = new EditUserViewModel
+        {
+            UserId = userId,
+            UserName = user.UserName,
+            Email = user.Email,
+            CurrentRoles = userRoles.ToList(),
+            SelectedRoles = userRoles.ToList(), // Sett opprinnelige roller som valgte roller
+            AllRoles = allRoles.ToList()
+        };
 
         return View(model);
     }
@@ -72,25 +92,49 @@ public class BrukerController : Controller
             user.UserName = model.UserName;
             user.Email = model.Email;
 
-            var result = await _userManager.UpdateAsync(user);
-
-            if (result.Succeeded)
+            using (var transaction = await _context.Database.BeginTransactionAsync())
             {
-                // Fjern eksisterende roller og legg til de nye basert på brukerens valg
-                var existingRoles = await _userManager.GetRolesAsync(user);
-                await _userManager.RemoveFromRolesAsync(user, existingRoles);
-                await _userManager.AddToRolesAsync(user, model.SelectedRoles);
+                try
+                {
+                    var result = await _userManager.UpdateAsync(user);
 
-                TempData["Message"] = "Brukeren er oppdatert vellykket!";
+                    if (result.Succeeded)
+                    {
+                        // Fjern eksisterende roller og legg til de nye basert på brukerens valg
+                        var existingRoles = await _userManager.GetRolesAsync(user);
+                        await _userManager.RemoveFromRolesAsync(user, existingRoles);
+                        await _userManager.AddToRolesAsync(user, model.SelectedRoles);
 
-                return RedirectToAction("VisAlleBrukere");
+                        TempData["Message"] = "Brukeren er oppdatert vellykket!";
+
+                        await transaction.CommitAsync();
+
+                        return RedirectToAction("VisAlleBrukere");
+                    }
+
+                    AddErrors(result);
+                    TempData["ErrorMessage"] = "Feil ved oppdatering av brukeren. Vennligst prøv igjen.";
+                }
+                catch (Exception ex)
+                {
+                    // Rull tilbake transaksjonen hvis det oppstår en feil
+                    await transaction.RollbackAsync();
+                    _logger.LogError($"Feil ved oppdatering av bruker: {ex.Message}");
+                    TempData["ErrorMessage"] = "En feil oppstod under oppdatering av brukeren. Vennligst prøv igjen.";
+                }
             }
-
-            AddErrors(result);
         }
+
+        // Gjenta visning hvis modellvalidering mislyktes
+        var allRoles = await _roleManager.Roles.Select(role => role.Name).ToListAsync();
+        model.AllRoles = allRoles;
 
         return View(model);
     }
+
+
+
+
 
     [HttpGet]
     public async Task<IActionResult> SlettBruker(string userId)
@@ -121,10 +165,13 @@ public class BrukerController : Controller
         if (result.Succeeded)
         {
             TempData["Message"] = "Brukeren er slettet vellykket!";
+            _logger.LogInformation($"Brukeren {user.UserName} ble slettet.");
+
             return RedirectToAction("VisAlleBrukere");
         }
 
         AddErrors(result);
+        _logger.LogError($"Feil ved sletting av bruker {user.UserName}");
 
         return View("SlettBruker", user);
     }

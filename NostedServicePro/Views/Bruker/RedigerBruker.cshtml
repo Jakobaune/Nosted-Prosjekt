@@ -1,37 +1,48 @@
 ﻿@model EditUserViewModel
-
 @{
-    ViewData["Title"] = "Rediger Bruker";
+    ViewData["Title"] = "Rediger bruker";
 }
 
-<h2>Rediger Bruker</h2>
+<h2>@ViewData["Title"]</h2>
 <hr />
 
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="RedigerBruker" method="post">
+        <form asp-action="RedigerBruker">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="UserId" />
 
             <div class="form-group">
-                <label asp-for="UserName"></label>
+                <label asp-for="UserName" class="control-label"></label>
                 <input asp-for="UserName" class="form-control" />
                 <span asp-validation-for="UserName" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label asp-for="Email"></label>
+                <label asp-for="Email" class="control-label"></label>
                 <input asp-for="Email" class="form-control" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label asp-for="SelectedRoles"></label>
-                <select asp-for="SelectedRoles" asp-items="@(new SelectList(ViewBag.AllRoles))" class="form-control" multiple></select>
+                <label asp-for="SelectedRoles" class="control-label">Velg roller</label>
+                <select asp-for="SelectedRoles" asp-items="new SelectList(Model.AllRoles)" class="form-control" multiple></select>
                 <span asp-validation-for="SelectedRoles" class="text-danger"></span>
             </div>
 
-            <button type="submit" class="btn btn-primary">Oppdater Bruker</button>
-            <a asp-action="VisAlleBrukere" class="btn btn-secondary">Tilbake til Liste</a>
+            <div class="form-group">
+                <input type="submit" value="Oppdater" class="btn btn-primary" />
+            </div>
         </form>
     </div>
 </div>
+
+<div>
+    <a asp-action="VisAlleBrukere">Tilbake til alle brukere</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
