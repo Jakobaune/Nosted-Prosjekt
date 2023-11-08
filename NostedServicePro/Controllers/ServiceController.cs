@@ -57,8 +57,10 @@ public class ServiceController : Controller
             Console.WriteLine($"Exception: {ex}");
         }
 
+        // Endre retur til ServiceOversikt
         return RedirectToAction(nameof(ServiceOversikt));
     }
+
 
 
     // Viser arkiv med filtrering og sortering
