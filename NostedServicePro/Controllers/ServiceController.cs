@@ -31,6 +31,35 @@ public class ServiceController : Controller
         return View(serviceordreListe);
     }
 
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public IActionResult RegistrerMottatt(int id)
+    {
+        var serviceOrdre = _dbContext.service.FirstOrDefault(s => s.OrdreID == id);
+
+        if (serviceOrdre == null)
+        {
+            return NotFound();
+        }
+
+        // Oppdater ProduktmottattDato til dagens dato
+        serviceOrdre.ProduktmottattDato = DateTime.Now;
+
+        try
+        {
+            _dbContext.SaveChanges();
+
+            TempData["Message"] = $"Mottak registrert for serviceordre #{id}!";
+        }
+        catch (Exception ex)
+        {
+            TempData["Error"] = $"Feil ved registrering av mottak: {ex.Message}";
+            Console.WriteLine($"Exception: {ex}");
+        }
+
+        return RedirectToAction(nameof(ServiceOversikt));
+    }
+
 
     // Viser arkiv med filtrering og sortering
     public IActionResult Arkiv(string search, string sortOrder)

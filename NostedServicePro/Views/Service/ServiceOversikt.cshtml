@@ -21,8 +21,15 @@
 
                     <!-- Knapp for å starte sjekkliste, koblet til "RegistrerSjekkliste" i "Service"-kontrolleren -->
                     <a class="btn btn-primary" asp-controller="Service" asp-action="RegistrerSjekkliste" asp-route-ordreID="@serviceordre.OrdreID">Start sjekkliste</a>
+
+                    <!-- Legg til knapp for å registrere mottatt -->
+                    <form asp-controller="Service" asp-action="RegistrerMottatt" method="post">
+                        <input type="hidden" name="id" value="@serviceordre.OrdreID" />
+                        <button type="submit" class="btn btn-success">Registrer mottatt</button>
+                    </form>
                 </div>
             </div>
         </div>
     }
+
 </div>
