@@ -179,18 +179,24 @@ public class ServiceController : Controller
                 // Hent eksisterende serviceordre fra databasen
                 var existingOrdre = _dbContext.service
                     .FirstOrDefault(ordre => ordre.OrdreID == model.OrdreID);
-                existingOrdre.Registreringsdato = DateTime.Now; //Dato med klokkeslett sendes inn basert på enheten de blir sendt inn fra
 
                 if (existingOrdre != null)
                 {
-                    // Oppdater sjekkpunktene og andre felter
+                    // Lagre ProduktmottattDato før du oppdaterer modellen
+                    DateTime? produktmottattDato = existingOrdre.ProduktmottattDato;
+
+                    // Oppdater sjekkpunktene og andre felter, ekskluder ProduktmottattDato
+                    model.ProduktmottattDato = produktmottattDato;
                     _dbContext.Entry(existingOrdre).CurrentValues.SetValues(model);
 
                     // Marker sjekklisten som fullført hvis "Fullfør Sjekkliste" ble trykket
                     if (completeChecklist)
                     {
                         existingOrdre.ErSjekklisteFullført = true;
+                        TempData["Message"] = $"Sjekkliste fullført for serviceordre #{model.OrdreID}!";
                     }
+
+                    existingOrdre.Registreringsdato = DateTime.Now;
 
                     _dbContext.SaveChanges();
 
@@ -200,11 +206,14 @@ public class ServiceController : Controller
         }
         catch (Exception ex)
         {
+            TempData["Error"] = $"Feil ved lagring av sjekkliste: {ex.Message}";
             Console.WriteLine($"Feil ved lagring av sjekkliste: {ex.Message}");
         }
 
         return View(model);
     }
+
+
 
 
     // Viser redigeringsskjema for en serviceordre
