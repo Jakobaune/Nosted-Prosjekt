@@ -2,18 +2,28 @@
 
 #### Gruppe 16 Nøsted
 
-- Ordne så Service/Details ser good ut! Skrift går over hverandre osv.
-- Slette serviceordre, er rar under responsive!
-
-- Alt I body ikke så nærme header, mere padding!
-
-- Brukere er fucked.
+- Overordnet
+-     Fikse padding, body er for nærme header
 
 
-- Manage your account, må bli ordnet. Legge til views og ta bort de unødvendige punktene, som tofaktorautentitesring osv.
+- Serviceordre
+-     Legge til felt for brukerID
+-     Design
 
-- Ordne hele sjekklista. Finne mal?
+- Sjekkliste
+-     Legge til felt for brukerID
+-     Ordna mal, må ha nytt design
+-     Bekreftelsesmelding når sjekklisten blir lagret, og fullført
+-     Fikse design ved sletting, er rar
 
-Trenger en tempdata når: sjekkliste blir lagret, sjekkliste fullført, bruker laget. Ama fikk ikke til. 
 
-Teste!!
+- Brukere
+-     Må fikse redigeringsfunksjon
+-     Må fikke slette funksjon
+-     Fikse detaljeside
+-     Bekreftelsesmelding på sletting, lagring og endring
+
+- Ordne lag nytt passord side
+
+- Opprette tester
+-   Xunit / MsTest?
