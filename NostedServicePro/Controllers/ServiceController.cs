@@ -287,6 +287,7 @@ public class ServiceController : Controller
 
 
 
+
     // Behandler postforespørsel for å redigere en serviceordre
     [HttpPost]
     [ValidateAntiForgeryToken]
