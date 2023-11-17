@@ -62,28 +62,7 @@ namespace NostedServicePro
             app.UseAuthentication();
             app.UseAuthorization();
 
-            // Oppdatert ruteoppsett for LoginController og andre kontrollere
-            /*
-            app.MapControllerRoute(
-                name: "Bruker",
-                pattern: "bruker/{action=Registrering}/{id?}",
-                defaults: new { controller = "Bruker" });
 
-            app.MapControllerRoute(
-                name: "service",
-                pattern: "service/{action=Registrer}/{id?}",
-                defaults: new { controller = "Service" });
-
-            app.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
-
-            app.MapControllerRoute(
-              name: "Rolle",
-              pattern: "{controller=Role}/{action=Index}/{id?}");
-            app.MapRazorPages();
-
-            */
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Account}/{action=Login}/{id?}");
