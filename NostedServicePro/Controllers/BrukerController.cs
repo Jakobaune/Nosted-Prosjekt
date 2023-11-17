@@ -36,8 +36,10 @@ public class BrukerController : Controller
             brukerMedRollerList.Add(brukerMedRoller);
         }
 
-        return View(brukerMedRollerList);
+        var viewName = "VisAlleBrukere"; // Sett ViewName manuelt
+        return View(viewName, brukerMedRollerList);
     }
+
 
 
     [HttpGet]

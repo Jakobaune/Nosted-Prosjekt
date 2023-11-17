@@ -10,41 +10,44 @@ using Microsoft.AspNetCore.Mvc;
 using Moq;
 
 
-[TestFixture]
-public class ServiceControllerTests
+namespace NostedServiceProTest.Controllers
 {
-    private readonly ServiceController _controller;
-    private readonly ServiceProDbContex _dbContextMock;
 
-    public ServiceControllerTests()
+    [TestFixture]
+    public class ServiceControllerTests
     {
-        // Opprett en DbContextOptions for å konfigurere en in-memory database
-        var options = new DbContextOptionsBuilder<ServiceProDbContex>()
-            .UseInMemoryDatabase(databaseName: "ServiceProDbContexTest")
-            .EnableSensitiveDataLogging()
-            .Options;
+        private readonly ServiceController _controller;
+        private readonly ServiceProDbContex _dbContextMock;
 
-        // Opprett en ekte instans av ServiceProDbContex med in-memory database
-        _dbContextMock = new ServiceProDbContex(options);
-
-        // Opprett en mock av IHttpContextAccessor for å tilfredsstille kontrollerens krav
-        var httpContextAccessorMock = new Mock<IHttpContextAccessor>();
-
-        // Opprett en ServiceController med den ekte DbContext-instansen
-        _controller = new ServiceController(_dbContextMock)
+        public ServiceControllerTests()
         {
-            ControllerContext = new ControllerContext
-            {
-                HttpContext = httpContextAccessorMock.Object.HttpContext
-            }
-        };
-    }
+            // Opprett en DbContextOptions for å konfigurere en in-memory database
+            var options = new DbContextOptionsBuilder<ServiceProDbContex>()
+                .UseInMemoryDatabase(databaseName: "ServiceProDbContexTest")
+                .EnableSensitiveDataLogging()
+                .Options;
 
-    [SetUp]
-    public void Setup()
-    {
-        // Sett opp data som trengs for hver test her
-        var serviceData = new List<ServiceOrdre>
+            // Opprett en ekte instans av ServiceProDbContex med in-memory database
+            _dbContextMock = new ServiceProDbContex(options);
+
+            // Opprett en mock av IHttpContextAccessor for å tilfredsstille kontrollerens krav
+            var httpContextAccessorMock = new Mock<IHttpContextAccessor>();
+
+            // Opprett en ServiceController med den ekte DbContext-instansen
+            _controller = new ServiceController(_dbContextMock)
+            {
+                ControllerContext = new ControllerContext
+                {
+                    HttpContext = httpContextAccessorMock.Object.HttpContext
+                }
+            };
+        }
+
+        [SetUp]
+        public void Setup()
+        {
+            // Sett opp data som trengs for hver test her
+            var serviceData = new List<ServiceOrdre>
     {
         new ServiceOrdre
         {
@@ -72,201 +75,198 @@ public class ServiceControllerTests
             Kundenavn = "Kunde2",
             Kundeepost = "kunde2@example.com"
         },
-        // Legg til flere ServiceOrdre-objekter her etter behov...
     };
 
-        // Legg til testdata i in-memory databasen
-        _dbContextMock.service.AddRange(serviceData);
-        _dbContextMock.SaveChanges();
-    }
+            // Legg til testdata i in-memory databasen
+            _dbContextMock.service.AddRange(serviceData);
+            _dbContextMock.SaveChanges();
+        }
 
-    [Test]
-    public void StartSjekkliste_ShouldRedirectToRegistrerSjekklisteWithCorrectOrdreID()
-    {
-        try
+        [Test]
+        public void StartSjekkliste_ShouldRedirectToRegistrerSjekklisteWithCorrectOrdreID()
+        {
+            try
+            {
+                // Arrange
+                var ordreID = 42; // Velg en gyldig ordreID for testen
+                var controller = new ServiceController(_dbContextMock);
+
+                // Act
+                var result = controller.StartSjekkliste(ordreID) as RedirectToActionResult;
+
+                // Assert
+                Assert.IsNotNull(result);
+                Assert.AreEqual("RegistrerSjekkliste", result.ActionName);
+
+                // Sjekk om TempData er satt riktig (legg til midlertidig utskrift)
+                Console.WriteLine($"TempData count: {controller.TempData.Count}");
+                foreach (var key in controller.TempData.Keys)
+                {
+                    Console.WriteLine($"TempData key: {key}, value: {controller.TempData[key]}");
+                }
+
+                // Sjekk om TempData["OrdreID"] er riktig satt
+                Assert.IsTrue(controller.TempData.ContainsKey("OrdreID"));
+                Assert.AreEqual(ordreID, controller.TempData["OrdreID"]);
+            }
+            catch (NullReferenceException ex)
+            {
+                // Skriv ut informasjon om unntaket (kan kommenteres ut etter feilsøking)
+                Console.WriteLine($"Caught exception: {ex}");
+                Assert.Ignore("Ignoring NullReferenceException for now.");
+            }
+        }
+
+        [Test]
+        public void Edit_ShouldReturnViewWithModel()
         {
             // Arrange
-            var ordreID = 42; // Velg en gyldig ordreID for testen
-            var controller = new ServiceController(_dbContextMock);
+            int ordreId = 2;
 
             // Act
-            var result = controller.StartSjekkliste(ordreID) as RedirectToActionResult;
+            var result = _controller.Edit(ordreId);
 
             // Assert
             Assert.IsNotNull(result);
-            Assert.AreEqual("RegistrerSjekkliste", result.ActionName);
+            Assert.IsInstanceOf<ViewResult>(result);
 
-            // Sjekk om TempData er satt riktig (legg til midlertidig utskrift)
-            Console.WriteLine($"TempData count: {controller.TempData.Count}");
-            foreach (var key in controller.TempData.Keys)
+            var viewResult = (ViewResult)result;
+            Assert.IsNull(viewResult.ViewName); // Sjekk at riktig view returneres
+            Assert.IsNotNull(viewResult.Model); // Sjekk at modellen er til stede
+            Assert.IsInstanceOf<ServiceOrdre>(viewResult.Model); // Sjekk at modellen er av riktig type
+        }
+
+        [Test]
+        public void RegistrerSjekkliste_ShouldReturnViewWithModel()
+        {
+            // Arrange
+            int ordreId = 1;
+
+            // Act
+            var result = _controller.RegistrerSjekkliste(ordreId);
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOf<ViewResult>(result);
+
+            var viewResult = (ViewResult)result;
+            Assert.IsNull(viewResult.ViewName); // Sjekk at riktig view returneres
+            Assert.IsNotNull(viewResult.Model); // Sjekk at modellen er til stede
+            Assert.IsAssignableFrom<ServiceOrdre>(viewResult.Model); // Sjekk at modellen er av riktig type
+        }
+
+
+        [Test]
+        public void Arkiv_ShouldReturnViewWithModel()
+        {
+            // Act
+            var result = _controller.Arkiv(search: null, sortOrder: null);
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOf<ViewResult>(result);
+
+            var viewResult = (ViewResult)result;
+            Assert.IsNull(viewResult.ViewName); // Sjekk at riktig view returneres
+            Assert.IsNotNull(viewResult.Model); // Sjekk at modellen er til stede
+            Assert.IsAssignableFrom<List<ServiceOrdre>>(viewResult.Model); // Sjekk at modellen er av riktig type
+        }
+
+        [Test]
+        public void Print_ShouldReturnViewWithModel()
+        {
+            // Arrange
+            int ordreId = 1;
+
+            // Act
+            var result = _controller.Print(ordreId);
+
+            // Assert
+            Assert.IsNotNull(result);
+
+            if (result is ViewResult viewResult)
             {
-                Console.WriteLine($"TempData key: {key}, value: {controller.TempData[key]}");
+                Assert.IsNull(viewResult.ViewName); // Sjekk at riktig view returneres
+                Assert.IsNotNull(viewResult.Model); // Sjekk at modellen er til stede
+                Assert.IsInstanceOf<ServiceOrdre>(viewResult.Model); // Sjekk at modellen er av riktig type
             }
-
-            // Sjekk om TempData["OrdreID"] er riktig satt
-            Assert.IsTrue(controller.TempData.ContainsKey("OrdreID"));
-            Assert.AreEqual(ordreID, controller.TempData["OrdreID"]);
+            else if (result is NotFoundResult)
+            {
+                Assert.Fail("Serviceordre not found. Make sure ordreId is valid.");
+            }
+            else
+            {
+                Assert.Fail($"Unexpected result type: {result.GetType()}");
+            }
         }
-        catch (NullReferenceException ex)
+
+
+        [Test]
+        public void Delete_ShouldReturnViewWithModel()
         {
-            // Skriv ut informasjon om unntaket (kan kommenteres ut etter feilsøking)
-            Console.WriteLine($"Caught exception: {ex}");
-            Assert.Ignore("Ignoring NullReferenceException for now.");
+            // Arrange
+            int ordreId = 1;
+
+            // Act
+            var result = _controller.Delete(ordreId);
+
+            // Assert
+            Assert.IsNotNull(result);
+
+            if (result is ViewResult viewResult)
+            {
+                Assert.IsNull(viewResult.ViewName); // Sjekk at riktig view returneres
+                Assert.IsNotNull(viewResult.Model); // Sjekk at modellen er til stede
+                Assert.IsInstanceOf<ServiceOrdre>(viewResult.Model); // Sjekk at modellen er av riktig type
+            }
+            else if (result is NotFoundResult)
+            {
+                Assert.Fail("Serviceordre not found. Make sure ordreId is valid.");
+            }
+            else
+            {
+                Assert.Fail($"Unexpected result type: {result.GetType()}");
+            }
         }
-    }
-
-    [Test]
-    public void Edit_ShouldReturnViewWithModel()
-    {
-        // Arrange
-        int ordreId = 2; // Endre dette til en eksisterende OrdreID i testdatabasen
-
-        // Act
-        var result = _controller.Edit(ordreId);
-
-        // Assert
-        Assert.IsNotNull(result);
-        Assert.IsInstanceOf<ViewResult>(result);
-
-        var viewResult = (ViewResult)result;
-        Assert.IsNull(viewResult.ViewName); // Sjekk at riktig view returneres
-        Assert.IsNotNull(viewResult.Model); // Sjekk at modellen er til stede
-        Assert.IsInstanceOf<ServiceOrdre>(viewResult.Model); // Sjekk at modellen er av riktig type
-    }
-
-    [Test]
-    public void RegistrerSjekkliste_ShouldReturnViewWithModel()
-    {
-        // Arrange
-        int ordreId = 1; // Endre dette til en eksisterende OrdreID i Moq-databasen
-
-        // Act
-        var result = _controller.RegistrerSjekkliste(ordreId);
-
-        // Assert
-        Assert.IsNotNull(result);
-        Assert.IsInstanceOf<ViewResult>(result);
-
-        var viewResult = (ViewResult)result;
-        Assert.IsNull(viewResult.ViewName); // Sjekk at riktig view returneres
-        Assert.IsNotNull(viewResult.Model); // Sjekk at modellen er til stede
-        Assert.IsAssignableFrom<ServiceOrdre>(viewResult.Model); // Sjekk at modellen er av riktig type
-    }
 
 
-    [Test]
-    public void Arkiv_ShouldReturnViewWithModel()
-    {
-        // Act
-        var result = _controller.Arkiv(search: null, sortOrder: null);
-
-        // Assert
-        Assert.IsNotNull(result);
-        Assert.IsInstanceOf<ViewResult>(result);
-
-        var viewResult = (ViewResult)result;
-        Assert.IsNull(viewResult.ViewName); // Sjekk at riktig view returneres
-        Assert.IsNotNull(viewResult.Model); // Sjekk at modellen er til stede
-        Assert.IsAssignableFrom<List<ServiceOrdre>>(viewResult.Model); // Sjekk at modellen er av riktig type
-    }
-
-    [Test]
-    public void Print_ShouldReturnViewWithModel()
-    {
-        // Arrange
-        int ordreId = 1; // Endre dette til en eksisterende OrdreID i Moq-databasen
-
-        // Act
-        var result = _controller.Print(ordreId);
-
-        // Assert
-        Assert.IsNotNull(result);
-
-        if (result is ViewResult viewResult)
+        [Test]
+        public void ServiceOversikt_ShouldReturnView()
         {
+            // Act
+            var result = _controller.ServiceOversikt();
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOf<ViewResult>(result);
+        }
+
+        [Test]
+        public void ServiceDetails_ShouldReturnView()
+        {
+            // Act
+            var result = _controller.Details(1);
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOf<ViewResult>(result);
+
+            var viewResult = (ViewResult)result;
             Assert.IsNull(viewResult.ViewName); // Sjekk at riktig view returneres
             Assert.IsNotNull(viewResult.Model); // Sjekk at modellen er til stede
-            Assert.IsInstanceOf<ServiceOrdre>(viewResult.Model); // Sjekk at modellen er av riktig type
+
+            var model = (ServiceOrdre)viewResult.Model;
         }
-        else if (result is NotFoundResult)
+
+        [Test]
+        public void Registrer_ShouldReturnView()
         {
-            Assert.Fail("Serviceordre not found. Make sure ordreId is valid.");
-        }
-        else
-        {
-            Assert.Fail($"Unexpected result type: {result.GetType()}");
+            // Act
+            var result = _controller.Registrer();
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOf<ViewResult>(result);
         }
     }
-
-
-    [Test]
-    public void Delete_ShouldReturnViewWithModel()
-    {
-        // Arrange
-        int ordreId = 1; // Endre dette til en eksisterende OrdreID i Moq-databasen
-
-        // Act
-        var result = _controller.Delete(ordreId);
-
-        // Assert
-        Assert.IsNotNull(result);
-
-        if (result is ViewResult viewResult)
-        {
-            Assert.IsNull(viewResult.ViewName); // Sjekk at riktig view returneres
-            Assert.IsNotNull(viewResult.Model); // Sjekk at modellen er til stede
-            Assert.IsInstanceOf<ServiceOrdre>(viewResult.Model); // Sjekk at modellen er av riktig type
-        }
-        else if (result is NotFoundResult)
-        {
-            Assert.Fail("Serviceordre not found. Make sure ordreId is valid.");
-        }
-        else
-        {
-            Assert.Fail($"Unexpected result type: {result.GetType()}");
-        }
-    }
-
-
-    [Test]
-    public void ServiceOversikt_ShouldReturnView()
-    {
-        // Act
-        var result = _controller.ServiceOversikt();
-
-        // Assert
-        Assert.IsNotNull(result);
-        Assert.IsInstanceOf<ViewResult>(result);
-    }
-
-    [Test]
-    public void ServiceDetails_ShouldReturnView()
-    {
-        // Act
-        var result = _controller.Details(1); // Du kan endre 1 til en eksisterende OrdreID i databasen for testing
-
-        // Assert
-        Assert.IsNotNull(result);
-        Assert.IsInstanceOf<ViewResult>(result);
-
-        var viewResult = (ViewResult)result;
-        Assert.IsNull(viewResult.ViewName); // Sjekk at riktig view returneres
-        Assert.IsNotNull(viewResult.Model); // Sjekk at modellen er til stede
-
-        var model = (ServiceOrdre)viewResult.Model;
-        // Legg til flere sjekker etter behov basert på egenskaper i ServiceOrdre-modellen
-    }
-
-    [Test]
-    public void Registrer_ShouldReturnView()
-    {
-        // Act
-        var result = _controller.Registrer();
-
-        // Assert
-        Assert.IsNotNull(result);
-        Assert.IsInstanceOf<ViewResult>(result);
-    }
-
-
 }
