@@ -8,11 +8,9 @@ namespace NostedServicePro.Data
 {
     public class ServiceProDbContex : IdentityDbContext<IdentityUser>
     {
-        public ServiceProDbContex(DbContextOptions<ServiceProDbContex> options)
-            : base(options)
+        public ServiceProDbContex(DbContextOptions<ServiceProDbContex> options) : base(options)
         {
         }
-        public DbSet<Bruker> Brukere { get; set; }
         public DbSet<ServiceOrdre> service { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

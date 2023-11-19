@@ -1,7 +1,6 @@
 ﻿using NostedServicePro.Data;
 using NostedServicePro.Models;
 using Microsoft.AspNetCore.Mvc;
-using NostedServicePro.Models;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Authorization;
 

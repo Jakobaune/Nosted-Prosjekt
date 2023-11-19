@@ -1,139 +1,200 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using NostedServicePro.Models;
-using NostedServicePro.Models.Account;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 [Authorize(Roles = "Admin")]
 public class BrukerController : Controller
 {
     private readonly UserManager<IdentityUser> _userManager;
+    private readonly ILogger<BrukerController> _logger;
+    private readonly RoleManager<IdentityRole> _roleManager;
 
-    public BrukerController(UserManager<IdentityUser> userManager)
+
+    public BrukerController(UserManager<IdentityUser> userManager, ILogger<BrukerController> logger, RoleManager<IdentityRole> roleManager)
     {
         _userManager = userManager;
+        _logger = logger;
+        _roleManager = roleManager;
     }
 
     public async Task<IActionResult> VisAlleBrukere()
     {
-        var brukere = _userManager.Users.ToList();
-        var brukerMedRollerList = new List<BrukerMedRollerViewModel>();
-
-        foreach (var bruker in brukere)
+        try
         {
-            var roller = await _userManager.GetRolesAsync(bruker);
-            var brukerMedRoller = new BrukerMedRollerViewModel
+            var brukere = _userManager.Users.ToList();
+            var brukerMedRollerList = new List<BrukerMedRollerViewModel>();
+
+            foreach (var bruker in brukere)
             {
-                UserId = bruker.Id,
-                UserName = bruker.UserName,
-                Email = bruker.Email,
-                Roller = roller.ToList()
-            };
+                var roller = await _userManager.GetRolesAsync(bruker);
+                var brukerMedRoller = new BrukerMedRollerViewModel
+                {
+                    UserId = bruker.Id,
+                    UserName = bruker.UserName,
+                    Email = bruker.Email,
+                    Roller = roller.ToList()
+                };
 
-            brukerMedRollerList.Add(brukerMedRoller);
+                brukerMedRollerList.Add(brukerMedRoller);
+            }
+
+            var viewName = "VisAlleBrukere"; // Setter ViewName manuelt
+            return View(viewName, brukerMedRollerList);
         }
-
-        return View(brukerMedRollerList);
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Feil under VisAlleBrukere-metoden.");
+            throw;
+        }
     }
-
 
     [HttpGet]
     public async Task<IActionResult> RedigerBruker(string userId)
     {
-        var user = await _userManager.FindByIdAsync(userId);
-
-        if (user == null)
+        if (string.IsNullOrEmpty(userId))
         {
             return NotFound();
         }
 
-        var userRoles = await _userManager.GetRolesAsync(user);
-        var model = new EditUserViewModel { UserId = userId, UserName = user.UserName, Email = user.Email, CurrentRoles = userRoles.ToList() };
+        var bruker = await _userManager.FindByIdAsync(userId);
 
-        return View(model);
+        if (bruker == null)
+        {
+            return NotFound();
+        }
+
+        var roller = await _userManager.GetRolesAsync(bruker);
+        var alleRoller = await _roleManager.Roles.Select(r => r.Name).ToListAsync();
+
+        var brukerMedRoller = new BrukerMedRollerViewModel
+        {
+            UserId = bruker.Id,
+            UserName = bruker.UserName,
+            Email = bruker.Email,
+            Roller = roller.ToList(),
+            AlleRoller = alleRoller
+        };
+
+        return View(brukerMedRoller);
     }
+
 
     [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> RedigerBruker(EditUserViewModel model)
+    public async Task<IActionResult> LagreRedigering(BrukerMedRollerViewModel model)
     {
-        if (ModelState.IsValid)
+        var bruker = await _userManager.FindByIdAsync(model.UserId);
+
+        if (bruker == null)
         {
-            var user = await _userManager.FindByIdAsync(model.UserId);
-
-            if (user == null)
-            {
-                return NotFound();
-            }
-
-            user.UserName = model.UserName;
-            user.Email = model.Email;
-
-            var result = await _userManager.UpdateAsync(user);
-
-            if (result.Succeeded)
-            {
-                // Fjern eksisterende roller og legg til de nye basert på brukerens valg
-                var existingRoles = await _userManager.GetRolesAsync(user);
-                await _userManager.RemoveFromRolesAsync(user, existingRoles);
-                await _userManager.AddToRolesAsync(user, model.SelectedRoles);
-
-                TempData["Message"] = "Brukeren er oppdatert vellykket!";
-
-                return RedirectToAction("VisAlleBrukere");
-            }
-
-            AddErrors(result);
+            return NotFound();
         }
 
-        return View(model);
+        // Logg nåværende roller før oppdatering
+        var nåværendeRollerFør = await _userManager.GetRolesAsync(bruker);
+        _logger.LogInformation($"Nåværende roller før oppdatering: {string.Join(", ", nåværendeRollerFør)}");
+
+        // Oppdater roller
+        foreach (var rolle in model.Roller)
+        {
+            if (!await IsUserInRoleAsync(bruker, rolle))
+            {
+                await _userManager.AddToRoleAsync(bruker, rolle);
+            }
+        }
+
+        var nåværendeRollerEtter = await _userManager.GetRolesAsync(bruker);
+        _logger.LogInformation($"Nåværende roller etter oppdatering: {string.Join(", ", nåværendeRollerEtter)}");
+
+        // Fjern roller som er fjernet i brukerens visning
+        var fjernedeRoller = nåværendeRollerFør.Except(model.Roller);
+
+        foreach (var rolle in fjernedeRoller)
+        {
+            await _userManager.RemoveFromRoleAsync(bruker, rolle);
+        }
+
+        // Logg nåværende roller etter fjerning
+        var nåværendeRollerEtterFjerning = await _userManager.GetRolesAsync(bruker);
+        _logger.LogInformation($"Nåværende roller etter fjerning: {string.Join(", ", nåværendeRollerEtterFjerning)}");
+
+        // Oppdater brukerinformasjon
+        bruker.UserName = model.UserName;
+        bruker.Email = model.Email;
+
+        // Lagre endringer i databasen
+        var result = await _userManager.UpdateAsync(bruker);
+
+        if (!result.Succeeded)
+        {
+            _logger.LogError($"Feil ved oppdatering av bruker: {string.Join(", ", result.Errors)}");
+            return View("LagreRedigering"); // Vis feilsiden eller håndter feilen på en annen måte
+        }
+
+        // Logg suksess
+        _logger.LogInformation("Brukeroppdatering vellykket!");
+
+        // Endre returverdien til å omdirigere til "VisAlleBrukere"
+        return RedirectToAction("VisAlleBrukere");
     }
 
-    [HttpGet]
+
+
+    private async Task<bool> IsUserInRoleAsync(IdentityUser user, string role)
+    {
+        return await _userManager.IsInRoleAsync(user, role);
+    }
+
     public async Task<IActionResult> SlettBruker(string userId)
     {
-        var user = await _userManager.FindByIdAsync(userId);
-
-        if (user == null)
+        if (string.IsNullOrEmpty(userId))
         {
             return NotFound();
         }
 
-        return View(user);
+        var bruker = await _userManager.FindByIdAsync(userId);
+        if (bruker == null)
+        {
+            return NotFound();
+        }
+
+        var brukerMedRollerViewModel = new BrukerMedRollerViewModel
+        {
+            UserId = bruker.Id,
+            UserName = bruker.UserName,
+            Email = bruker.Email,
+            Roller = await _userManager.GetRolesAsync(bruker)
+        };
+
+        return View(brukerMedRollerViewModel);
     }
 
-    [HttpPost, ActionName("SlettBruker")]
-    [ValidateAntiForgeryToken]
+
+    [HttpPost]
     public async Task<IActionResult> BekreftSlettBruker(string userId)
     {
-        var user = await _userManager.FindByIdAsync(userId);
-
-        if (user == null)
+        if (string.IsNullOrEmpty(userId))
         {
             return NotFound();
         }
 
-        var result = await _userManager.DeleteAsync(user);
+        var bruker = await _userManager.FindByIdAsync(userId);
+        if (bruker == null)
+        {
+            return NotFound();
+        }
 
+        var result = await _userManager.DeleteAsync(bruker);
         if (result.Succeeded)
         {
             TempData["Message"] = "Brukeren er slettet vellykket!";
             return RedirectToAction("VisAlleBrukere");
         }
 
-        AddErrors(result);
-
-        return View("SlettBruker", user);
+        TempData["ErrorMessage"] = "Feil ved sletting av bruker.";
+        return RedirectToAction("VisAlleBrukere");
     }
 
-    private void AddErrors(IdentityResult result)
-    {
-        foreach (var error in result.Errors)
-        {
-            ModelState.AddModelError(string.Empty, error.Description);
-        }
-    }
+
 }

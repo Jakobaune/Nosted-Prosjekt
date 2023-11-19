@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Loginnosted.Views.Login
+namespace NostedServicePro.Views.Bruker
 {
-    public class IndexModel : PageModel
+    public class SlettBrukerModel : PageModel
     {
         public void OnGet()
         {

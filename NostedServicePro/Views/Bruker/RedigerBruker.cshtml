@@ -1,4 +1,4 @@
-﻿@model EditUserViewModel
+﻿@model BrukerMedRollerViewModel
 
 @{
     ViewData["Title"] = "Rediger Bruker";
@@ -7,31 +7,32 @@
 <h2>Rediger Bruker</h2>
 <hr />
 
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="RedigerBruker" method="post">
-            <input type="hidden" asp-for="UserId" />
+<form asp-action="LagreRedigering" method="post">
+    <!-- Legg til skjult felt for UserId -->
+    <input type="hidden" asp-for="UserId" />
 
-            <div class="form-group">
-                <label asp-for="UserName"></label>
-                <input asp-for="UserName" class="form-control" />
-                <span asp-validation-for="UserName" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="Email"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="SelectedRoles"></label>
-                <select asp-for="SelectedRoles" asp-items="@(new SelectList(ViewBag.AllRoles))" class="form-control" multiple></select>
-                <span asp-validation-for="SelectedRoles" class="text-danger"></span>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Oppdater Bruker</button>
-            <a asp-action="VisAlleBrukere" class="btn btn-secondary">Tilbake til Liste</a>
-        </form>
+    <div class="form-group">
+        <label asp-for="UserName">Brukernavn:</label>
+        <input asp-for="UserName" class="form-control" />
     </div>
-</div>
+    <div class="form-group">
+        <label asp-for="Email">E-postadresse:</label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Rolle:</label>
+        <div>
+            @foreach (var availableRole in Model.AlleRoller)
+            {
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="Roller" value="@availableRole"
+                    @(Model.Roller.Contains(availableRole) ? "checked" : "") />
+                    <label class="form-check-label">@availableRole</label>
+                </div>
+            }
+        </div>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Lagre endringer</button>
+</form>
