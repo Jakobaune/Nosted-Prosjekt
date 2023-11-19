@@ -1,13 +1,41 @@
-﻿
-
-@model ServiceOrdre
+﻿@model ServiceOrdre
+@{
+    Func<string, string, string, string, string, string, string> GenerateChecklistItem = (labelFor, name, prefix, onclick, value, section) => $@"
+        <div class=""form-group"">
+            <div class=""row"">
+                <div class=""col-12 control-label"">
+                    <label asp-for=""{labelFor}"" class=""control-label bold-label"">{labelFor}</label>
+                    <div class=""checkbox-group"">
+                        <div class=""form-check form-check-inline"">
+                            <label class=""custom-radio-button"" for=""{prefix}OK"">
+                                <input type=""radio"" class=""form-check-input"" id=""{prefix}OK"" name=""{name}"" value=""OK"" onclick=""{onclick}('OK')"">
+                                OK
+                            </label>
+                        </div>
+                        <div class=""form-check form-check-inline"">
+                            <input type=""radio"" class=""form-check-input"" id=""{prefix}BorSkiftes"" name=""{name}"" value=""Bør Skiftes"" onclick=""{onclick}('Bør Skiftes')"">
+                            <label class=""form-check-label"" for=""{prefix}BorSkiftes"">Bør skiftes</label>
+                        </div>
+                        <div class=""form-check form-check-inline"">
+                            <input type=""radio"" class=""form-check-input"" id=""{prefix}Defekt"" name=""{name}"" value=""Defekt"" onclick=""{onclick}('Defekt')"">
+                            <label class=""form-check-label"" for=""{prefix}Defekt"">Defekt</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input type=""hidden"" asp-for=""{labelFor}"" />
+            <span asp-validation-for=""{labelFor}"" class=""text-danger""></span>
+        </div>
+        {(section == "Hydraulisk" ? "<hr />" : "")}";
+}
 
 @{
     ViewData["Title"] = "Sjekking";
 }
 <link rel="stylesheet" href="~/css/RegistrerSjekkliste.css" />
-<!-- Overskrift og tittel for sjekklistesiden -->
+<script src="~/js/RegistrerSjekkliste.js"></script>
 
+<!-- Overskrift og tittel for sjekklistesiden -->
 @if (!string.IsNullOrEmpty(TempData["Message"]?.ToString()))
 {
     <div class="alert alert-success" role="alert">
@@ -42,459 +70,40 @@
             <input type="hidden" asp-for="OrdreID" />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-            <!-- Dropdowns for ulike sjekkliste-elementer med tilhørende valg -->
+            <!-- Anvendelsen av funksjonen for den mekaniske delen -->
             <h5 class="section-header">Mekanisk</h5>
             <hr />
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-12 control-label">
-                        <label asp-for="ClutchLameller" class="control-label bold-label">Sjekk clutch lameller for slitasje</label>
-                        <div class="checkbox-group">
-                            <div class="form-check form-check-inline">
-                                <label class="custom-radio-button" for="clutchOK">
-                                    <input type="radio" class="form-check-input" id="clutchOK" name="ClutchLameller" value="OK" onclick="setClutchStatus('OK')">
-                                    OK
-                                </label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="clutchBorSkiftes" name="ClutchLameller" value="Bør Skiftes" onclick="setClutchStatus('Bør Skiftes')">
-                                <label class="form-check-label" for="clutchBorSkiftes">Bør skiftes</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="clutchDefekt" name="ClutchLameller" value="Defekt" onclick="setClutchStatus('Defekt')">
-                                <label class="form-check-label" for="clutchDefekt">Defekt</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <input type="hidden" asp-for="ClutchLameller" />
-                <span asp-validation-for="ClutchLameller" class="text-danger"></span>
-            </div>
-            <hr />
 
-            <!-- Add a div for the second form's checkboxes and give it a class -->
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-12 control-label">
-                        <label asp-for="Bremser" class="control-label bold-label">Sjekk bremser. Bånd/Pal</label>
-                        <div class="checkbox-group">
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="bremserOK" name="Bremser" value="OK" onclick="setBremserStatus('OK')">
-                                <label class="form-check-label" for="bremserOK">OK</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="bremserBorSkiftes" name="Bremser" value="Bør Skiftes" onclick="setBremserStatus('Bør Skiftes')">
-                                <label class="form-check-label" for="bremserBorSkiftes">Bør skiftes</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="bremserDefekt" name="Bremser" value="Defekt" onclick="setBremserStatus('Defekt')">
-                                <label class="form-check-label" for="bremserDefekt">Defekt</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <input type="hidden" asp-for="Bremser" />
-                <span asp-validation-for="Bremser" class="text-danger"></span>
-            </div>
+            @Html.Raw(GenerateChecklistItem("ClutchLameller", "ClutchLameller", "clutch", "setClutchStatus", "OK", "Mekanisk"))
+            @Html.Raw(GenerateChecklistItem("Bremser", "Bremser", "bremser", "setBremserStatus", "OK", "Mekanisk"))
+            @Html.Raw(GenerateChecklistItem("LagerTrommel", "LagerTrommel", "lagerTrommel", "setLagerTrommel", "OK", "Mekanisk"))
+            @Html.Raw(GenerateChecklistItem("PTOOpplagring", "PTOOpplagring", "ptoOpplagring", "setPTOOpplagring", "OK", "Mekanisk"))
+            @Html.Raw(GenerateChecklistItem("Kjedestrammer", "Kjedestrammer", "kjedestrammer", "setKjedestrammer", "OK", "Mekanisk"))
+            @Html.Raw(GenerateChecklistItem("Wire", "Wire", "wire", "setWire", "OK", "Mekanisk"))
+            @Html.Raw(GenerateChecklistItem("PlnlonLager", "PlnlonLager", "pinionLager", "setPinionLager", "OK", "Mekanisk"))
+            @Html.Raw(GenerateChecklistItem("KilleKjedehjul", "KilleKjedehjul", "kileKjedehjul", "setKilleKjedehjul", "OK", "Mekanisk"))
 
-            <hr />
-
-
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-12 control-label">
-                        <label asp-for="LagerTrommel" class="control-label bold-label">Sjekk lager for trommel</label>
-                        <div class="checkbox-group">
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="lagerTrommelOK" name="LagerTrommel" value="OK" onclick="setLagerTrommel('OK')">
-                                <label class="form-check-label" for="lagerTrommelOK">OK</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="lagerTrommelBorSkiftes" name="LagerTrommel" value="Bør Skiftes" onclick="setLagerTrommel('Bør Skiftes')">
-                                <label class="form-check-label" for="lagerTrommelBorSkiftes">Bør skiftes</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="lagerTrommelDefekt" name="LagerTrommel" value="Defekt" onclick="setLagerTrommel('Defekt')">
-                                <label class="form-check-label" for="lagerTrommelDefekt">Defekt</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <input type="hidden" asp-for="LagerTrommel" />
-                <span asp-validation-for="LagerTrommel" class="text-danger"></span>
-            </div>
-            <hr />
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-12 control-label">
-                        <label asp-for="PTOOpplagring" class="control-label bold-label">Sjekk PTO og opplagring</label>
-                        <div class="checkbox-group">
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="ptoOpplagringOK" name="PTOOpplagring" value="OK" onclick="setPTOOpplagring('OK')">
-                                <label class="form-check-label" for="ptoOpplagringOK">OK</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="ptoOpplagringBorSkiftes" name="PTOOpplagring" value="Bør Skiftes" onclick="setPTOOpplagring('Bør Skiftes')">
-                                <label class="form-check-label" for="ptoOpplagringBorSkiftes">Bør skiftes</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="ptoOpplagringDefekt" name="PTOOpplagring" value="Defekt" onclick="setPTOOpplagring('Defekt')">
-                                <label class="form-check-label" for="ptoOpplagringDefekt">Defekt</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <input type="hidden" asp-for="PTOOpplagring" />
-                <span asp-validation-for="PTOOpplagring" class="text-danger"></span>
-            </div>
-            <hr />
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-12 control-label">
-                        <label asp-for="Kjedestrammer" class="control-label bold-label">Sjekk kjedestrammer</label>
-                        <div class="checkbox-group">
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="kjedestrammerOK" name="Kjedestrammer" value="OK" onclick="setKjedestrammer('OK')">
-                                <label class="form-check-label" for="kjedestrammerOK">OK</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="kjedestrammerBorSkiftes" name="Kjedestrammer" value="Bør Skiftes" onclick="setKjedestrammer('Bør Skiftes')">
-                                <label class="form-check-label" for="kjedestrammerBorSkiftes">Bør skiftes</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="kjedestrammerDefekt" name="Kjedestrammer" value="Defekt" onclick="setKjedestrammer('Defekt')">
-                                <label class="form-check-label" for="kjedestrammerDefekt">Defekt</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <input type="hidden" asp-for="Kjedestrammer" />
-                <span asp-validation-for="Kjedestrammer" class="text-danger"></span>
-            </div>
-            <hr />
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-12 control-label">
-                        <label asp-for="Wire" class="control-label bold-label">Sjekk wire</label>
-                        <div class="checkbox-group">
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="wireOK" name="Wire" value="OK" onclick="setWire('OK')">
-                                <label class="form-check-label" for="wireOK">OK</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="wireBorSkiftes" name="Wire" value="Bør Skiftes" onclick="setWire('Bør Skiftes')">
-                                <label class="form-check-label" for="wireBorSkiftes">Bør skiftes</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="wireDefekt" name="Wire" value="Defekt" onclick="setWire('Defekt')">
-                                <label class="form-check-label" for="wireDefekt">Defekt</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <input type="hidden" asp-for="Wire" />
-                <span asp-validation-for="Wire" class="text-danger"></span>
-            </div>
-            <hr />
-
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-12 control-label">
-                        <label asp-for="PlnlonLager" class="control-label bold-label">Sjekk pinion lager</label>
-                        <div class="checkbox-group">
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="pinionLagerOK" name="PlnlonLager" value="OK" onclick="setPinionLager('OK')">
-                                <label class="form-check-label" for="pinionLagerOK">OK</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="pinionLagerBorSkiftes" name="PlnlonLager" value="Bør Skiftes" onclick="setPinionLager('Bør Skiftes')">
-                                <label class="form-check-label" for="pinionLagerBorSkiftes">Bør skiftes</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="pinionLagerDefekt" name="PlnlonLager" value="Defekt" onclick="setPinionLager('Defekt')">
-                                <label class="form-check-label" for="pinionLagerDefekt">Defekt</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <input type="hidden" asp-for="PlnlonLager" />
-                <span asp-validation-for="PlnlonLager" class="text-danger"></span>
-            </div>
-            <hr />
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-12 control-label">
-                        <label asp-for="KilleKjedehjul" class="control-label bold-label">Sjekk kile på kjedehjul</label>
-                        <div class="checkbox-group">
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="kileKjedehjulOK" name="KilleKjedehjul" value="OK" onclick="setKilleKjedehjul('OK')">
-                                <label class="form-check-label" for="kileKjedehjulOK">OK</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="kileKjedehjulBorSkiftes" name="KilleKjedehjul" value="Bør Skiftes" onclick="setKilleKjedehjul('Bør Skiftes')">
-                                <label class="form-check-label" for="kileKjedehjulBorSkiftes">Bør skiftes</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="kileKjedehjulDefekt" name="KilleKjedehjul" value="Defekt" onclick="setKilleKjedehjul('Defekt')">
-                                <label class="form-check-label" for="kileKjedehjulDefekt">Defekt</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <input type="hidden" asp-for="KilleKjedehjul" />
-                <span asp-validation-for="KilleKjedehjul" class="text-danger"></span>
-            </div>
-
+            <!-- Anvendelsen av funksjonen for den hydrauliske delen -->
             <h5 class="section-header">Hydraulisk</h5>
             <hr />
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-12 control-label">
-                        <label asp-for="HydraulikkSylinderLekkasje" class="control-label bold-label">Sjekk hydraulikk sylinder for lekkasje</label>
-                        <div class="checkbox-group">
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="hydraulikkSylinderOK" name="HydraulikkSylinderLekkasje" value="OK" onclick="setHydraulikkSylinder('OK')">
-                                <label class="form-check-label" for="hydraulikkSylinderOK">OK</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="hydraulikkSylinderBorSkiftes" name="HydraulikkSylinderLekkasje" value="Bør Skiftes" onclick="setHydraulikkSylinder('Bør Skiftes')">
-                                <label class="form-check-label" for="hydraulikkSylinderBorSkiftes">Bør skiftes</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="hydraulikkSylinderDefekt" name="HydraulikkSylinderLekkasje" value="Defekt" onclick="setHydraulikkSylinder('Defekt')">
-                                <label class="form-check-label" for="hydraulikkSylinderDefekt">Defekt</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <input type="hidden" asp-for="HydraulikkSylinderLekkasje" />
-                <span asp-validation-for="HydraulikkSylinderLekkasje" class="text-danger"></span>
-            </div>
-            <hr />
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-12 control-label">
-                        <label asp-for="SlangerSkaderLekkasje" class="control-label bold-label">Sjekk slanger for skader og lekkasje</label>
-                        <div class="checkbox-group">
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="slangerSkaderOK" name="SlangerSkaderLekkasje" value="OK" onclick="setSlangerSkader('OK')">
-                                <label class="form-check-label" for="slangerSkaderOK">OK</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="slangerSkaderBorSkiftes" name="SlangerSkaderLekkasje" value="Bør Skiftes" onclick="setSlangerSkader('Bør Skiftes')">
-                                <label class="form-check-label" for="slangerSkaderBorSkiftes">Bør skiftes</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="slangerSkaderDefekt" name="SlangerSkaderLekkasje" value="Defekt" onclick="setSlangerSkader('Defekt')">
-                                <label class="form-check-label" for="slangerSkaderDefekt">Defekt</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <input type="hidden" asp-for="SlangerSkaderLekkasje" />
-                <span asp-validation-for="SlangerSkaderLekkasje" class="text-danger"></span>
-            </div>
-            <hr />
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-12 control-label">
-                        <label asp-for="TestHydraulikkblokk" class="control-label bold-label">Test hydraulikkblokk i testbenk</label>
-                        <div class="checkbox-group">
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="testHydraulikkblokkOK" name="TestHydraulikkblokk" value="OK" onclick="setTestHydraulikkblokk('OK')">
-                                <label class="form-check-label" for="testHydraulikkblokkOK">OK</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="testHydraulikkblokkBorSkiftes" name="TestHydraulikkblokk" value="Bør Skiftes" onclick="setTestHydraulikkblokk('Bør Skiftes')">
-                                <label class="form-check-label" for="testHydraulikkblokkBorSkiftes">Bør skiftes</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="testHydraulikkblokkDefekt" name="TestHydraulikkblokk" value="Defekt" onclick="setTestHydraulikkblokk('Defekt')">
-                                <label class="form-check-label" for="testHydraulikkblokkDefekt">Defekt</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <input type="hidden" asp-for="TestHydraulikkblokk" />
-                <span asp-validation-for="TestHydraulikkblokk" class="text-danger"></span>
-            </div>
-            <hr />
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-12 control-label">
-                        <label asp-for="SkiftOljeTank" class="control-label bold-label">Skift olje i tank</label>
-                        <div class="checkbox-group">
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="skiftOljeTankOK" name="SkiftOljeTank" value="OK" onclick="setSkiftOljeTank('OK')">
-                                <label class="form-check-label" for="skiftOljeTankOK">OK</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="skiftOljeTankBorSkiftes" name="SkiftOljeTank" value="Bør Skiftes" onclick="setSkiftOljeTank('Bør Skiftes')">
-                                <label class="form-check-label" for="skiftOljeTankBorSkiftes">Bør skiftes</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="skiftOljeTankDefekt" name="SkiftOljeTank" value="Defekt" onclick="setSkiftOljeTank('Defekt')">
-                                <label class="form-check-label" for="skiftOljeTankDefekt">Defekt</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <input type="hidden" asp-for="SkiftOljeTank" />
-                <span asp-validation-for="SkiftOljeTank" class="text-danger"></span>
-            </div>
-            <hr />
 
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-12 control-label">
-                        <label asp-for="SkiftOljeGirboks" class="control-label bold-label">Skift olje på girboks</label>
-                        <div class="checkbox-group">
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="skiftOljeGirboksOK" name="SkiftOljeGirboks" value="OK" onclick="setSkiftOljeGirboks('OK')">
-                                <label class="form-check-label" for="skiftOljeGirboksOK">OK</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="skiftOljeGirboksBorSkiftes" name="SkiftOljeGirboks" value="Bør Skiftes" onclick="setSkiftOljeGirboks('Bør Skiftes')">
-                                <label class="form-check-label" for="skiftOljeGirboksBorSkiftes">Bør skiftes</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="skiftOljeGirboksDefekt" name="SkiftOljeGirboks" value="Defekt" onclick="setSkiftOljeGirboks('Defekt')">
-                                <label class="form-check-label" for="skiftOljeGirboksDefekt">Defekt</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <input type="hidden" asp-for="SkiftOljeGirboks" />
-                <span asp-validation-for="SkiftOljeGirboks" class="text-danger"></span>
-            </div>
-            <hr />
+            @Html.Raw(GenerateChecklistItem("HydraulikkSylinderLekkasje", "HydraulikkSylinderLekkasje", "hydraulikkSylinder", "setHydraulikkSylinder", "OK", "Hydraulisk"))
+            @Html.Raw(GenerateChecklistItem("SlangerSkaderLekkasje", "SlangerSkaderLekkasje", "slangerSkader", "setSlangerSkader", "OK", "Hydraulisk"))
+            @Html.Raw(GenerateChecklistItem("TestHydraulikkblokk", "TestHydraulikkblokk", "testHydraulikkblokk", "setTestHydraulikkblokk", "OK", "Hydraulisk"))
+            @Html.Raw(GenerateChecklistItem("SkiftOljeTank", "SkiftOljeTank", "skiftOljeTank", "setSkiftOljeTank", "OK", "Hydraulisk"))
+            @Html.Raw(GenerateChecklistItem("SkiftOljeGirboks", "SkiftOljeGirboks", "skiftOljeGirboks", "setSkiftOljeGirboks", "OK", "Hydraulisk"))
+            @Html.Raw(GenerateChecklistItem("RingsyllingerSkiftTelnlnger", "RingsyllingerSkiftTelnlnger", "ringsyllinger", "setRingsyllinger", "OK", "Hydraulisk"))
+            @Html.Raw(GenerateChecklistItem("BremsesylingerSkiftTelninger", "BremsesylingerSkiftTelninger", "bremsesylinger", "setBremsesylinger", "OK", "Hydraulisk"))
 
-
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-12 control-label">
-                        <label asp-for="RingsyllingerSkiftTelnlnger" class="control-label bold-label">Sjekk Ringsylinder åpne og skift tetninger</label>
-                        <div class="checkbox-group">
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="ringsyllingerOK" name="RingsyllingerSkiftTelnlnger" value="OK" onclick="setRingsyllinger('OK')">
-                                <label class="form-check-label" for="ringsyllingerOK">OK</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="ringsyllingerBorSkiftes" name="RingsyllingerSkiftTelnlnger" value="Bør Skiftes" onclick="setRingsyllinger('Bør Skiftes')">
-                                <label class="form-check-label" for="ringsyllingerBorSkiftes">Bør skiftes</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="ringsyllingerDefekt" name="RingsyllingerSkiftTelnlnger" value="Defekt" onclick="setRingsyllinger('Defekt')">
-                                <label class="form-check-label" for="ringsyllingerDefekt">Defekt</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <input type="hidden" asp-for="RingsyllingerSkiftTelnlnger" />
-                <span asp-validation-for="RingsyllingerSkiftTelnlnger" class="text-danger"></span>
-            </div>
-            <hr />
-
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-12 control-label">
-                        <label asp-for="BremsesylingerSkiftTelninger" class="control-label bold-label">Sjekk Bingsylinder åpne og skift tetninger</label>
-                        <div class="checkbox-group">
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="bremsesylingerOK" name="BremsesylingerSkiftTelninger" value="OK" onclick="setBremsesylinger('OK')">
-                                <label class="form-check-label" for="bremsesylingerOK">OK</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="bremsesylingerBorSkiftes" name="BremsesylingerSkiftTelninger" value="Bør Skiftes" onclick="setBremsesylinger('Bør Skiftes')">
-                                <label class="form-check-label" for="bremsesylingerBorSkiftes">Bør skiftes</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="bremsesylingerDefekt" name="BremsesylingerSkiftTelninger" value="Defekt" onclick="setBremsesylinger('Defekt')">
-                                <label class="form-check-label" for="bremsesylingerDefekt">Defekt</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <input type="hidden" asp-for="BremsesylingerSkiftTelninger" />
-                <span asp-validation-for="BremsesylingerSkiftTelninger" class="text-danger"></span>
-            </div>
-
+            <!-- Anvendelsen av funksjonen for den elektriske delen -->
             <h5 class="section-header">Elektro</h5>
             <hr />
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-12 control-label">
-                        <label asp-for="LedningsnettVinsj" class="control-label bold-label">Sjekk ledningsnett på vinsj</label>
-                        <div class="checkbox-group">
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="ledningsnettVinsjOK" name="LedningsnettVinsj" value="OK" onclick="setLedningsnettVinsj('OK')">
-                                <label class="form-check-label" for="ledningsnettVinsjOK">OK</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="ledningsnettVinsjBorSkiftes" name="LedningsnettVinsj" value="Bør Skiftes" onclick="setLedningsnettVinsj('Bør Skiftes')">
-                                <label class="form-check-label" for="ledningsnettVinsjBorSkiftes">Bør skiftes</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="ledningsnettVinsjDefekt" name="LedningsnettVinsj" value="Defekt" onclick="setLedningsnettVinsj('Defekt')">
-                                <label class="form-check-label" for="ledningsnettVinsjDefekt">Defekt</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <input type="hidden" asp-for="LedningsnettVinsj" />
-                <span asp-validation-for="LedningsnettVinsj" class="text-danger"></span>
-            </div>
-            <hr />
 
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-12 control-label">
-                        <label asp-for="SjekkTestRadio" class="control-label bold-label">Sjekk og test radio</label>
-                        <div class="checkbox-group">
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="sjekkTestRadioOK" name="SjekkTestRadio" value="OK">
-                                <label class="form-check-label" for="sjekkTestRadioOK">OK</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="sjekkTestRadioBorSkiftes" name="SjekkTestRadio" value="Bør Skiftes">
-                                <label class="form-check-label" for="sjekkTestRadioBorSkiftes">Bør skiftes</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="sjekkTestRadioDefekt" name="SjekkTestRadio" value="Defekt">
-                                <label class="form-check-label" for="sjekkTestRadioDefekt">Defekt</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <input type="hidden" asp-for="SjekkTestRadio" />
-            </div>
-            <hr />
+            @Html.Raw(GenerateChecklistItem("LedningsnettVinsj", "LedningsnettVinsj", "ledningsnettVinsj", "setLedningsnettVinsj", "OK", "Elektro"))
+            @Html.Raw(GenerateChecklistItem("SjekkTestRadio", "SjekkTestRadio", "sjekkTestRadio", null, "OK", "Elektro"))
+            @Html.Raw(GenerateChecklistItem("SjekkTestKnappekasse", "SjekkTestKnappekasse", "sjekkTestKnappekasse", "setSjekkTestKnappekasse", "OK", "Elektro"))
 
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-12 control-label">
-                        <label asp-for="SjekkTestKnappekasse" class="control-label bold-label">Sjekk og test knappekasse</label>
-                        <div class="checkbox-group">
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="sjekkTestKnappekasseOK" name="SjekkTestKnappekasse" value="OK" onclick="setSjekkTestKnappekasse('OK')">
-                                <label class="form-check-label" for="sjekkTestKnappekasseOK">OK</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="sjekkTestKnappekasseBorSkiftes" name="SjekkTestKnappekasse" value="Bør Skiftes" onclick="setSjekkTestKnappekasse('Bør Skiftes')">
-                                <label class="form-check-label" for="sjekkTestKnappekasseBorSkiftes">Bør skiftes</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="sjekkTestKnappekasseDefekt" name="SjekkTestKnappekasse" value="Defekt" onclick="setSjekkTestKnappekasse('Defekt')">
-                                <label class="form-check-label" for="sjekkTestKnappekasseDefekt">Defekt</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <input type="hidden" asp-for="SjekkTestKnappekasse" />
-                <span asp-validation-for="SjekkTestKnappekasse" class="text-danger"></span>
-            </div>
-
-
+            <!-- Anvendelsen av funksjonen for funksjonstesting -->
             <h5 class="section-header">Funksjonstesting</h5>
             <hr />
             <div class="col-1">
@@ -510,10 +119,7 @@
                 <label asp-for="TestVinsjAlleFunksjoner" class="control-label">Test vinsj og kjør alle funksjoner</label>
                 <div class="col-3">
                     <input asp-for="TestVinsjAlleFunksjoner" class="form-control" />
-
                     <span asp-validation-for="TestVinsjAlleFunksjoner" class="text-danger"></span>
-
-                    <span asp-validation-for="SjekkTestRadio" class="text-danger"></span>
                 </div>
             </div>
 

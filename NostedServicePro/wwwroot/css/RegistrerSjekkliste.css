@@ -1,66 +1,32 @@
-﻿.section-header {
-    margin-top: 20px; /* Adjust the value as needed */
+﻿h2 {
+    font-size: 50px;
 }
 
-.checkbox-group {
-    margin-left: 25%;
-    margin-right: 25%;
-    display: flex;
-    justify-content: space-between;
-    font-size: 30px;
-    margin-top: 10px;
-}
-
-.form-check {
-    flex-direction: row;
-    align-items: center;
-    display: inline-block;
-}
-
-.large-checkbox .form-check-input {
-    width: 30px; /* Adjust the width as needed */
-    height: 30px; /* Adjust the height as needed */
+.section-header {
+    font-size: 35px;
 }
 
 .control-label {
-    font-size: 30px;
-    text-align: center;
-}
-
-.bold-label {
-    font-weight: bold;
-}
-
-.label-with-line {
+    font-size: 25px;
     display: flex;
-    align-items: center;
+    justify-content: space-between;
 }
 
-.label-line {
-    flex-grow: 1;
-    border: none;
-    border-top: 1px solid #000; /* Customize the line color and style as needed */
-    margin-left: 10px; /* Adjust the margin to control the extra width */
+.checkbox-group {
+    display: flex;
+    justify-content: space-between;
 }
 
-.custom-radio-button {
-    display: inline-block;
-    cursor: pointer;
-    padding: 10px 20px;
-    background-color: #12181f;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    user-select: none;
-    color: #9cb7c2;
+/* Øk størrelsen på radioknappene */
+.form-check-input {
+    transform: scale(1.5);
+    margin-right: 14px; /* Legg til ønsket mellomrom mellom radioknappene */
 }
 
-    /* Style for the selected custom radio button */
-    .custom-radio-button input[type="radio"]:checked + label {
-        background-color: #e16f07; /* Change the background color when selected */
-        color: #12181f; /* Change the text color when selected */
-    }
-
-    /* Hide the actual radio input */
-    .custom-radio-button input[type="radio"] {
-        display: none;
-    }
+/* Juster mellomrommet mellom radioknappene og etikettene */
+.form-check-inline {
+    display: flex;
+    align-items: center; /* Sentrer vertikalt */
+    margin-right: 150px; /* Legg til ønsket mellomrom mellom radioknappene og etikettene */
+    margin-bottom: 50px; /* Legg til ønsket mellomrom mellom hvert punkt i høyden */
+}
