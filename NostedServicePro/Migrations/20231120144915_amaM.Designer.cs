@@ -11,8 +11,8 @@ using NostedServicePro.Data;
 namespace NostedServicePro.Migrations
 {
     [DbContext(typeof(ServiceProDbContex))]
-    [Migration("20231105185409_initialcreate")]
-    partial class initialcreate
+    [Migration("20231120144915_amaM")]
+    partial class amaM
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,33 +21,6 @@ namespace NostedServicePro.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
-
-            modelBuilder.Entity("Bruker", b =>
-                {
-                    b.Property<int>("BrukerId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("BrukerNavn")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Epostadresse")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Passord")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Rolle")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.HasKey("BrukerId");
-
-                    b.ToTable("Brukere");
-                });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
@@ -323,10 +296,14 @@ namespace NostedServicePro.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<DateTime>("ProduktmottattDato")
+                    b.Property<DateTime?>("ProduktmottattDato")
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Produkttypevinsj")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("RegistreringFullførtAv")
                         .IsRequired()
                         .HasColumnType("longtext");
 
@@ -342,6 +319,9 @@ namespace NostedServicePro.Migrations
 
                     b.Property<string>("ServiceType")
                         .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("SjekkListeFullførtAv")
                         .HasColumnType("longtext");
 
                     b.Property<string>("SjekkTestKnappekasse")

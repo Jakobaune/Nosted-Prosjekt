@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace NostedServicePro.Migrations
 {
     /// <inheritdoc />
-    public partial class amadeus : Migration
+    public partial class amaM : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -70,27 +70,6 @@ namespace NostedServicePro.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Brukere",
-                columns: table => new
-                {
-                    BrukerId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    BrukerNavn = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    Epostadresse = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    Rolle = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    Passord = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4")
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Brukere", x => x.BrukerId);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
                 name: "service",
                 columns: table => new
                 {
@@ -119,6 +98,8 @@ namespace NostedServicePro.Migrations
                     AvtaltleveringsDato = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     Avtaltferdigstillingsdato = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     ProduktmottattDato = table.Column<DateTime>(type: "datetime(6)", nullable: true),
+                    RegistreringFullførtAv = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     ClutchLameller = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Bremser = table.Column<string>(type: "longtext", nullable: true)
@@ -165,6 +146,8 @@ namespace NostedServicePro.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Arbeidstimer = table.Column<double>(type: "double", nullable: true),
                     Kommentar = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    SjekkListeFullførtAv = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     ErSjekklisteFullført = table.Column<bool>(type: "tinyint(1)", nullable: false)
                 },
@@ -356,9 +339,6 @@ namespace NostedServicePro.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
-
-            migrationBuilder.DropTable(
-                name: "Brukere");
 
             migrationBuilder.DropTable(
                 name: "service");

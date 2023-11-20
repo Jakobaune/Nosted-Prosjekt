@@ -1,80 +1,90 @@
+
+
+
+
+// DENNE BRUKES IKKE!!!!!!
+
+
+
+
+
 function setBremserStatus(status) {
     // Finn det relevante HTML-elementet for Bremser
     var bremserElement = document.getElementById('bremserStatus');
 
-    // Oppdater grensesnittet basert på valgt status
+    // Oppdater grensesnittet basert pï¿½ valgt status
     switch (status) {
         case 'OK':
             bremserElement.innerHTML = 'Bremser er i god stand.';
             break;
-        case 'Bør Skiftes':
-            bremserElement.innerHTML = 'Bremser bør skiftes ut.';
+        case 'Bï¿½r Skiftes':
+            bremserElement.innerHTML = 'Bremser bï¿½r skiftes ut.';
             break;
         case 'Defekt':
             bremserElement.innerHTML = 'Bremser er defekte.';
             break;
         default:
-            // Håndter andre tilfeller hvis nødvendig
+            // Hï¿½ndter andre tilfeller hvis nï¿½dvendig
             break;
     }
 }
 
 // Legg til dette i din RegistrerSjekkliste.js-fil
 
-// Gjør noe med verdien 'status' for LagerTrommel
+// Gjï¿½r noe med verdien 'status' for LagerTrommel
 function setLagerTrommel(status) {
     // Finn det relevante HTML-elementet for LagerTrommel
     var lagerTrommelElement = document.getElementById('lagerTrommelStatus');
 
-    // Oppdater grensesnittet basert på valgt status
+    // Oppdater grensesnittet basert pï¿½ valgt status
     switch (status) {
         case 'OK':
             lagerTrommelElement.innerHTML = 'LagerTrommel er i god stand.';
             break;
-        case 'Bør Skiftes':
-            lagerTrommelElement.innerHTML = 'LagerTrommel bør skiftes ut.';
+        case 'Bï¿½r Skiftes':
+            lagerTrommelElement.innerHTML = 'LagerTrommel bï¿½r skiftes ut.';
             break;
         case 'Defekt':
             lagerTrommelElement.innerHTML = 'LagerTrommel er defekt.';
             break;
         default:
-            // Håndter andre tilfeller hvis nødvendig
+            // Hï¿½ndter andre tilfeller hvis nï¿½dvendig
             break;
     }
 }
 
 
-// Gjør noe med verdien 'status' for PTOOpplagring
+// Gjï¿½r noe med verdien 'status' for PTOOpplagring
 function setPTOOpplagring(status) {
     // Finn det relevante HTML-elementet for PTOOpplagring
     var ptoOpplagringElement = document.getElementById('ptoOpplagringStatus');
 
-    // Oppdater grensesnittet basert på valgt status
+    // Oppdater grensesnittet basert pï¿½ valgt status
     switch (status) {
         case 'OK':
             ptoOpplagringElement.innerHTML = 'PTOOpplagring er i god stand.';
             break;
-        case 'Bør Skiftes':
-            ptoOpplagringElement.innerHTML = 'PTOOpplagring bør skiftes ut.';
+        case 'Bï¿½r Skiftes':
+            ptoOpplagringElement.innerHTML = 'PTOOpplagring bï¿½r skiftes ut.';
             break;
         case 'Defekt':
             ptoOpplagringElement.innerHTML = 'PTOOpplagring er defekt.';
             break;
         default:
-            // Håndter andre tilfeller hvis nødvendig
+            // Hï¿½ndter andre tilfeller hvis nï¿½dvendig
             break;
     }
 }
 
-// Gjør noe med verdien 'status' for Kjedestrammer
+// Gjï¿½r noe med verdien 'status' for Kjedestrammer
 function setKjedestrammer(status) {
     var kjedestrammerElement = document.getElementById('kjedestrammerStatus');
     switch (status) {
         case 'OK':
             kjedestrammerElement.innerHTML = 'Kjedestrammer er i god stand.';
             break;
-        case 'Bør Skiftes':
-            kjedestrammerElement.innerHTML = 'Kjedestrammer bør skiftes ut.';
+        case 'Bï¿½r Skiftes':
+            kjedestrammerElement.innerHTML = 'Kjedestrammer bï¿½r skiftes ut.';
             break;
         case 'Defekt':
             kjedestrammerElement.innerHTML = 'Kjedestrammer er defekt.';
@@ -84,15 +94,15 @@ function setKjedestrammer(status) {
     }
 }
 
-// Gjør noe med verdien 'status' for Wire
+// Gjï¿½r noe med verdien 'status' for Wire
 function setWire(status) {
     var wireElement = document.getElementById('wireStatus');
     switch (status) {
         case 'OK':
             wireElement.innerHTML = 'Wire er i god stand.';
             break;
-        case 'Bør Skiftes':
-            wireElement.innerHTML = 'Wire bør skiftes ut.';
+        case 'Bï¿½r Skiftes':
+            wireElement.innerHTML = 'Wire bï¿½r skiftes ut.';
             break;
         case 'Defekt':
             wireElement.innerHTML = 'Wire er defekt.';
@@ -102,15 +112,15 @@ function setWire(status) {
     }
 }
 
-// Gjør noe med verdien 'status' for PlnlonLager
+// Gjï¿½r noe med verdien 'status' for PlnlonLager
 function setPinionLager(status) {
     var pinionLagerElement = document.getElementById('pinionLagerStatus');
     switch (status) {
         case 'OK':
             pinionLagerElement.innerHTML = 'PlnlonLager er i god stand.';
             break;
-        case 'Bør Skiftes':
-            pinionLagerElement.innerHTML = 'PlnlonLager bør skiftes ut.';
+        case 'Bï¿½r Skiftes':
+            pinionLagerElement.innerHTML = 'PlnlonLager bï¿½r skiftes ut.';
             break;
         case 'Defekt':
             pinionLagerElement.innerHTML = 'PlnlonLager er defekt.';
@@ -120,15 +130,15 @@ function setPinionLager(status) {
     }
 }
 
-// Gjør noe med verdien 'status' for KilleKjedehjul
+// Gjï¿½r noe med verdien 'status' for KilleKjedehjul
 function setKilleKjedehjul(status) {
     var killeKjedehjulElement = document.getElementById('killeKjedehjulStatus');
     switch (status) {
         case 'OK':
             killeKjedehjulElement.innerHTML = 'KilleKjedehjul er i god stand.';
             break;
-        case 'Bør Skiftes':
-            killeKjedehjulElement.innerHTML = 'KilleKjedehjul bør skiftes ut.';
+        case 'Bï¿½r Skiftes':
+            killeKjedehjulElement.innerHTML = 'KilleKjedehjul bï¿½r skiftes ut.';
             break;
         case 'Defekt':
             killeKjedehjulElement.innerHTML = 'KilleKjedehjul er defekt.';
@@ -138,15 +148,15 @@ function setKilleKjedehjul(status) {
     }
 }
 
-// Gjør noe med verdien 'status' for HydraulikkSylinderLekkasje
+// Gjï¿½r noe med verdien 'status' for HydraulikkSylinderLekkasje
 function setHydraulikkSylinder(status) {
     var hydraulikkSylinderElement = document.getElementById('hydraulikkSylinderStatus');
     switch (status) {
         case 'OK':
             hydraulikkSylinderElement.innerHTML = 'HydraulikkSylinder er i god stand.';
             break;
-        case 'Bør Skiftes':
-            hydraulikkSylinderElement.innerHTML = 'HydraulikkSylinder bør skiftes ut.';
+        case 'Bï¿½r Skiftes':
+            hydraulikkSylinderElement.innerHTML = 'HydraulikkSylinder bï¿½r skiftes ut.';
             break;
         case 'Defekt':
             hydraulikkSylinderElement.innerHTML = 'HydraulikkSylinder er defekt.';
@@ -156,15 +166,15 @@ function setHydraulikkSylinder(status) {
     }
 }
 
-// Gjør noe med verdien 'status' for SlangerSkaderLekkasje
+// Gjï¿½r noe med verdien 'status' for SlangerSkaderLekkasje
 function setSlangerSkader(status) {
     var slangerSkaderElement = document.getElementById('slangerSkaderStatus');
     switch (status) {
         case 'OK':
             slangerSkaderElement.innerHTML = 'SlangerSkader er i god stand.';
             break;
-        case 'Bør Skiftes':
-            slangerSkaderElement.innerHTML = 'SlangerSkader bør skiftes ut.';
+        case 'Bï¿½r Skiftes':
+            slangerSkaderElement.innerHTML = 'SlangerSkader bï¿½r skiftes ut.';
             break;
         case 'Defekt':
             slangerSkaderElement.innerHTML = 'SlangerSkader er defekt.';
@@ -174,15 +184,15 @@ function setSlangerSkader(status) {
     }
 }
 
-// Gjør noe med verdien 'status' for TestHydraulikkblokk
+// Gjï¿½r noe med verdien 'status' for TestHydraulikkblokk
 function setTestHydraulikkblokk(status) {
     var testHydraulikkblokkElement = document.getElementById('testHydraulikkblokkStatus');
     switch (status) {
         case 'OK':
             testHydraulikkblokkElement.innerHTML = 'TestHydraulikkblokk er i god stand.';
             break;
-        case 'Bør Skiftes':
-            testHydraulikkblokkElement.innerHTML = 'TestHydraulikkblokk bør skiftes ut.';
+        case 'Bï¿½r Skiftes':
+            testHydraulikkblokkElement.innerHTML = 'TestHydraulikkblokk bï¿½r skiftes ut.';
             break;
         case 'Defekt':
             testHydraulikkblokkElement.innerHTML = 'TestHydraulikkblokk er defekt.';
@@ -192,15 +202,15 @@ function setTestHydraulikkblokk(status) {
     }
 }
 
-// Gjør noe med verdien 'status' for SkiftOljeTank
+// Gjï¿½r noe med verdien 'status' for SkiftOljeTank
 function setSkiftOljeTank(status) {
     var skiftOljeTankElement = document.getElementById('skiftOljeTankStatus');
     switch (status) {
         case 'OK':
             skiftOljeTankElement.innerHTML = 'SkiftOljeTank er i god stand.';
             break;
-        case 'Bør Skiftes':
-            skiftOljeTankElement.innerHTML = 'SkiftOljeTank bør skiftes ut.';
+        case 'Bï¿½r Skiftes':
+            skiftOljeTankElement.innerHTML = 'SkiftOljeTank bï¿½r skiftes ut.';
             break;
         case 'Defekt':
             skiftOljeTankElement.innerHTML = 'SkiftOljeTank er defekt.';
@@ -210,15 +220,15 @@ function setSkiftOljeTank(status) {
     }
 }
 
-// Gjør noe med verdien 'status' for SkiftOljeGirboks
+// Gjï¿½r noe med verdien 'status' for SkiftOljeGirboks
 function setSkiftOljeGirboks(status) {
     var skiftOljeGirboksElement = document.getElementById('skiftOljeGirboksStatus');
     switch (status) {
         case 'OK':
             skiftOljeGirboksElement.innerHTML = 'SkiftOljeGirboks er i god stand.';
             break;
-        case 'Bør Skiftes':
-            skiftOljeGirboksElement.innerHTML = 'SkiftOljeGirboks bør skiftes ut.';
+        case 'Bï¿½r Skiftes':
+            skiftOljeGirboksElement.innerHTML = 'SkiftOljeGirboks bï¿½r skiftes ut.';
             break;
         case 'Defekt':
             skiftOljeGirboksElement.innerHTML = 'SkiftOljeGirboks er defekt.';
@@ -228,15 +238,15 @@ function setSkiftOljeGirboks(status) {
     }
 }
 
-// Gjør noe med verdien 'status' for RingsyllingerSkiftTelnlnger
+// Gjï¿½r noe med verdien 'status' for RingsyllingerSkiftTelnlnger
 function setRingsyllinger(status) {
     var ringsyllingerElement = document.getElementById('ringsyllingerStatus');
     switch (status) {
         case 'OK':
             ringsyllingerElement.innerHTML = 'RingsyllingerSkiftTelnlnger er i god stand.';
             break;
-        case 'Bør Skiftes':
-            ringsyllingerElement.innerHTML = 'RingsyllingerSkiftTelnlnger bør skiftes ut.';
+        case 'Bï¿½r Skiftes':
+            ringsyllingerElement.innerHTML = 'RingsyllingerSkiftTelnlnger bï¿½r skiftes ut.';
             break;
         case 'Defekt':
             ringsyllingerElement.innerHTML = 'RingsyllingerSkiftTelnlnger er defekt.';
@@ -246,15 +256,15 @@ function setRingsyllinger(status) {
     }
 }
 
-// Gjør noe med verdien 'status' for BremsesylingerSkiftTelninger
+// Gjï¿½r noe med verdien 'status' for BremsesylingerSkiftTelninger
 function setBremsesylinger(status) {
     var bremsesylingerElement = document.getElementById('bremsesylingerStatus');
     switch (status) {
         case 'OK':
             bremsesylingerElement.innerHTML = 'BremsesylingerSkiftTelninger er i god stand.';
             break;
-        case 'Bør Skiftes':
-            bremsesylingerElement.innerHTML = 'BremsesylingerSkiftTelninger bør skiftes ut.';
+        case 'Bï¿½r Skiftes':
+            bremsesylingerElement.innerHTML = 'BremsesylingerSkiftTelninger bï¿½r skiftes ut.';
             break;
         case 'Defekt':
             bremsesylingerElement.innerHTML = 'BremsesylingerSkiftTelninger er defekt.';
@@ -264,15 +274,15 @@ function setBremsesylinger(status) {
     }
 }
 
-// Gjør noe med verdien 'status' for LedningsnettVinsj
+// Gjï¿½r noe med verdien 'status' for LedningsnettVinsj
 function setLedningsnettVinsj(status) {
     var ledningsnettVinsjElement = document.getElementById('ledningsnettVinsjStatus');
     switch (status) {
         case 'OK':
             ledningsnettVinsjElement.innerHTML = 'LedningsnettVinsj er i god stand.';
             break;
-        case 'Bør Skiftes':
-            ledningsnettVinsjElement.innerHTML = 'LedningsnettVinsj bør skiftes ut.';
+        case 'Bï¿½r Skiftes':
+            ledningsnettVinsjElement.innerHTML = 'LedningsnettVinsj bï¿½r skiftes ut.';
             break;
         case 'Defekt':
             ledningsnettVinsjElement.innerHTML = 'LedningsnettVinsj er defekt.';
@@ -282,15 +292,15 @@ function setLedningsnettVinsj(status) {
     }
 }
 
-// Gjør noe med verdien 'status' for SjekkTestRadio
+// Gjï¿½r noe med verdien 'status' for SjekkTestRadio
 function setSjekkTestRadio(status) {
     var sjekkTestRadioElement = document.getElementById('sjekkTestRadioStatus');
     switch (status) {
         case 'OK':
             sjekkTestRadioElement.innerHTML = 'SjekkTestRadio er i god stand.';
             break;
-        case 'Bør Skiftes':
-            sjekkTestRadioElement.innerHTML = 'SjekkTestRadio bør skiftes ut.';
+        case 'Bï¿½r Skiftes':
+            sjekkTestRadioElement.innerHTML = 'SjekkTestRadio bï¿½r skiftes ut.';
             break;
         case 'Defekt':
             sjekkTestRadioElement.innerHTML = 'SjekkTestRadio er defekt.';
@@ -300,15 +310,15 @@ function setSjekkTestRadio(status) {
     }
 }
 
-// Gjør noe med verdien 'status' for SjekkTestKnappekasse
+// Gjï¿½r noe med verdien 'status' for SjekkTestKnappekasse
 function setSjekkTestKnappekasse(status) {
     var sjekkTestKnappekasseElement = document.getElementById('sjekkTestKnappekasseStatus');
     switch (status) {
         case 'OK':
             sjekkTestKnappekasseElement.innerHTML = 'SjekkTestKnappekasse er i god stand.';
             break;
-        case 'Bør Skiftes':
-            sjekkTestKnappekasseElement.innerHTML = 'SjekkTestKnappekasse bør skiftes ut.';
+        case 'Bï¿½r Skiftes':
+            sjekkTestKnappekasseElement.innerHTML = 'SjekkTestKnappekasse bï¿½r skiftes ut.';
             break;
         case 'Defekt':
             sjekkTestKnappekasseElement.innerHTML = 'SjekkTestKnappekasse er defekt.';
@@ -318,15 +328,15 @@ function setSjekkTestKnappekasse(status) {
     }
 }
 
-// Gjør noe med verdien 'status' for XXBar
+// Gjï¿½r noe med verdien 'status' for XXBar
 function setXXBarStatus(status) {
     var xxBarElement = document.getElementById('xxBarStatus');
     switch (status) {
         case 'OK':
             xxBarElement.innerHTML = 'XXBar er i god stand.';
             break;
-        case 'Bør Skiftes':
-            xxBarElement.innerHTML = 'XXBar bør skiftes ut.';
+        case 'Bï¿½r Skiftes':
+            xxBarElement.innerHTML = 'XXBar bï¿½r skiftes ut.';
             break;
         case 'Defekt':
             xxBarElement.innerHTML = 'XXBar er defekt.';
@@ -336,15 +346,15 @@ function setXXBarStatus(status) {
     }
 }
 
-// Gjør noe med verdien 'status' for TestVinsjAlleFunksjoner
+// Gjï¿½r noe med verdien 'status' for TestVinsjAlleFunksjoner
 function setTestVinsjAlleFunksjoner(status) {
     var testVinsjAlleFunksjonerElement = document.getElementById('testVinsjAlleFunksjonerStatus');
     switch (status) {
         case 'OK':
             testVinsjAlleFunksjonerElement.innerHTML = 'TestVinsjAlleFunksjoner er i god stand.';
             break;
-        case 'Bør Skiftes':
-            testVinsjAlleFunksjonerElement.innerHTML = 'TestVinsjAlleFunksjoner bør skiftes ut.';
+        case 'Bï¿½r Skiftes':
+            testVinsjAlleFunksjonerElement.innerHTML = 'TestVinsjAlleFunksjoner bï¿½r skiftes ut.';
             break;
         case 'Defekt':
             testVinsjAlleFunksjonerElement.innerHTML = 'TestVinsjAlleFunksjoner er defekt.';
@@ -354,15 +364,15 @@ function setTestVinsjAlleFunksjoner(status) {
     }
 }
 
-// Gjør noe med verdien 'status' for TrekkraftKn
+// Gjï¿½r noe med verdien 'status' for TrekkraftKn
 function setTrekkraftKn(status) {
     var trekkraftKnElement = document.getElementById('trekkraftKnStatus');
     switch (status) {
         case 'OK':
             trekkraftKnElement.innerHTML = 'TrekkraftKn er i god stand.';
             break;
-        case 'Bør Skiftes':
-            trekkraftKnElement.innerHTML = 'TrekkraftKn bør skiftes ut.';
+        case 'Bï¿½r Skiftes':
+            trekkraftKnElement.innerHTML = 'TrekkraftKn bï¿½r skiftes ut.';
             break;
         case 'Defekt':
             trekkraftKnElement.innerHTML = 'TrekkraftKn er defekt.';
@@ -372,15 +382,15 @@ function setTrekkraftKn(status) {
     }
 }
 
-// Gjør noe med verdien 'status' for BremsekraftKn
+// Gjï¿½r noe med verdien 'status' for BremsekraftKn
 function setBremsekraftKn(status) {
     var bremsekraftKnElement = document.getElementById('bremsekraftKnStatus');
     switch (status) {
         case 'OK':
             bremsekraftKnElement.innerHTML = 'BremsekraftKn er i god stand.';
             break;
-        case 'Bør Skiftes':
-            bremsekraftKnElement.innerHTML = 'BremsekraftKn bør skiftes ut.';
+        case 'Bï¿½r Skiftes':
+            bremsekraftKnElement.innerHTML = 'BremsekraftKn bï¿½r skiftes ut.';
             break;
         case 'Defekt':
             bremsekraftKnElement.innerHTML = 'BremsekraftKn er defekt.';
@@ -390,15 +400,15 @@ function setBremsekraftKn(status) {
     }
 }
 
-// Gjør noe med verdien 'status' for Arbeidstimer
+// Gjï¿½r noe med verdien 'status' for Arbeidstimer
 function setArbeidstimer(status) {
     var arbeidstimerElement = document.getElementById('arbeidstimerStatus');
     switch (status) {
         case 'OK':
             arbeidstimerElement.innerHTML = 'Arbeidstimer er i god stand.';
             break;
-        case 'Bør Skiftes':
-            arbeidstimerElement.innerHTML = 'Arbeidstimer bør skiftes ut.';
+        case 'Bï¿½r Skiftes':
+            arbeidstimerElement.innerHTML = 'Arbeidstimer bï¿½r skiftes ut.';
             break;
         case 'Defekt':
             arbeidstimerElement.innerHTML = 'Arbeidstimer er defekt.';

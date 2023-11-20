@@ -23,11 +23,11 @@
 {
     @Html.AntiForgeryToken()
 
-<div class="form-group">
-    <strong><label asp-for="Kundenavn">Navn på kunden:</label></strong>
-    <input asp-for="Kundenavn" class="form-control" />
-    @Html.ValidationMessageFor(model => model.Kundenavn, "", new { @class = "text-danger" })
-</div>
+    <div class="form-group">
+        <strong><label asp-for="Kundenavn">Navn på kunden:</label></strong>
+        <input asp-for="Kundenavn" class="form-control" />
+        @Html.ValidationMessageFor(model => model.Kundenavn, "", new { @class = "text-danger" })
+    </div>
 
     <div class="form-group">
         <strong><label asp-for="Kundeepost">E-post:</label></strong>
@@ -103,10 +103,16 @@
         @Html.ValidationMessageFor(model => model.Avtaltferdigstillingsdato, "", new { @class = "text-danger" })
     </div>
 
+    <div class="form-group">
+        <strong><label asp-for="RegistreringFullførtAv">Service regsitrert av: (skann kodebrikke)</label></strong>
+        <input asp-for="RegistreringFullførtAv" class="form-control" />
+        @Html.ValidationMessageFor(model => model.RegistreringFullførtAv, "", new { @class = "text-danger" })
+    </div>
+
     <br />
 
     <div>
-        <p><em>Husk å endre "Produktmottat Dato" senere!</em></p>
+        <p><em>Husk å registrere "Produktmottat" senere!</em></p>
     </div>
 
     <!-- Knapp for å sende skjemaet og lagre en ny serviceordre -->

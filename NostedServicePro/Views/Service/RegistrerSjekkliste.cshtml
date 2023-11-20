@@ -3,17 +3,12 @@
 @{
     ViewData["Title"] = "Sjekking";
 }
-<style>
-    .section-header {
-        margin-top: 20px; /* Adjust the value as needed */
-    }
 
-    .form-group-button {
-        margin-top: 20px;
-    }
-</style>
+<link rel="stylesheet" href="~/css/RegistrerSjekkliste.css" asp-append-version="true" />
+
 <!-- Overskrift og tittel for sjekklistesiden -->
-<h4>Sjekkliste</h4>
+<h3>Sjekkliste</h3>
+<h4>@Html.DisplayNameFor(model => model.OrdreID) #<em>@Html.DisplayFor(model => model.OrdreID)</em></h4>
 <hr />
 <!-- HTML-skjema for å registrere sjekkliste, sender data til "RegistrerSjekkliste" i "Service" -kontrolleren -->
 <div class="row">
@@ -36,7 +31,8 @@
             @Html.HiddenFor(model => model.ServiceType)
             @Html.HiddenFor(model => model.AvtaltleveringsDato)
             @Html.HiddenFor(model => model.Avtaltferdigstillingsdato)
-            
+            @Html.HiddenFor(model => model.RegistreringFullførtAv)
+
             <input type="hidden" asp-for="OrdreID" />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
@@ -255,6 +251,12 @@
                 <label asp-for="Kommentar" class="control-label">Kommentar fra Mekaniker</label>
                 <input asp-for="Kommentar" class="form-control" />
                 <span asp-validation-for="Kommentar" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="SjekkListeFullførtAv" class="control-label">Sjekkliste fullført av: (skann kodebrikke)</label>
+                <input asp-for="SjekkListeFullførtAv" class="form-control" />
+                <span asp-validation-for="SjekkListeFullførtAv" class="text-danger"></span>
             </div>
 
             <!-- Knapp for å sende skjemaet og lagre sjekklisten -->

@@ -1,32 +1,7 @@
-﻿h2 {
-    font-size: 50px;
+﻿.section-header {
+    margin-top: 20px; /* Adjust the value as needed */
 }
 
-.section-header {
-    font-size: 35px;
-}
-
-.control-label {
-    font-size: 25px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.checkbox-group {
-    display: flex;
-    justify-content: space-between;
-}
-
-/* Øk størrelsen på radioknappene */
-.form-check-input {
-    transform: scale(1.5);
-    margin-right: 14px; /* Legg til ønsket mellomrom mellom radioknappene */
-}
-
-/* Juster mellomrommet mellom radioknappene og etikettene */
-.form-check-inline {
-    display: flex;
-    align-items: center; /* Sentrer vertikalt */
-    margin-right: 150px; /* Legg til ønsket mellomrom mellom radioknappene og etikettene */
-    margin-bottom: 50px; /* Legg til ønsket mellomrom mellom hvert punkt i høyden */
+.form-group-button {
+    margin-top: 20px;
 }

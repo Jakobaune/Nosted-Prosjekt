@@ -55,6 +55,9 @@
     <Content Remove="wwwroot\css\PrintPage.css" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="Migrations\" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="wwwroot\css\Bilder\LOGO.jpg" />
     <None Include="wwwroot\css\RegistrerSjekkliste.css" />
     <None Include="wwwroot\css\PrintPage.css" />
@@ -62,5 +65,6 @@
   <ItemGroup>
     <Folder Include="Data\NewFolder\" />
     <Folder Include="wwwroot\css\Bilder\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
 </Project>
