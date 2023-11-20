@@ -134,6 +134,7 @@ public class BrukerController : Controller
 
         // Logg suksess
         _logger.LogInformation("Brukeroppdatering vellykket!");
+        TempData["Message"] = "Brukeren er endret!";
 
         // Endre returverdien til å omdirigere til "VisAlleBrukere"
         return RedirectToAction("VisAlleBrukere");
