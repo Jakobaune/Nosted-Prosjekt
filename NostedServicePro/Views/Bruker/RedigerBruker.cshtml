@@ -3,6 +3,17 @@
 @{
     ViewData["Title"] = "Rediger Bruker";
 }
+<!-- Meldinger fra TempData -->
+@{
+    var message = TempData["Message"] as string;
+}
+<!-- Vis suksessmelding hvis tilgjengelig -->
+@if (!string.IsNullOrEmpty(message))
+{
+    <div class="alert alert-success" role="alert">
+        @message
+    </div>
+}
 
 <h2>Rediger Bruker</h2>
 <hr />
@@ -26,7 +37,7 @@
             {
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="Roller" value="@availableRole"
-                    @(Model.Roller.Contains(availableRole) ? "checked" : "") />
+                           @(Model.Roller.Contains(availableRole) ? "checked" : "") />
                     <label class="form-check-label">@availableRole</label>
                 </div>
             }
@@ -35,4 +46,5 @@
 
 
     <button type="submit" class="btn btn-primary">Lagre endringer</button>
+    <a asp-action="VisAlleBrukere" asp-controller="Bruker">Tilbake</a>
 </form>

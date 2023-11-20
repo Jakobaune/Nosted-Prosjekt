@@ -39,44 +39,46 @@
                     Hjem
                 </a>
             </li>
-
-            <li class="nav-item">
-                <a class="nav-link btn" style="color: #A1B6C1" asp-action="Registrer" asp-controller="Service">
-                    <i class="fa-solid fa-pen-to-square fa-lg" style="color: #A1B6C1" width="50px"></i>
-                    <br />
-                    Opprett Service
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link btn" style="color: #A1B6C1" asp-action="ServiceOversikt" asp-controller="Service">
-                    <i class="fa-solid fa-list fa-lg" style="color: #A1B6C1" width="50px"></i>
-                    <br />
-                    Aktive ordre
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link btn" style="color: #A1B6C1" asp-action="Arkiv" asp-controller="Service">
-                    <i class="fa-solid fa-clock fa-lg" style="color: #A1B6C1" width="50px"></i>
-                    <br />
-                    Servicehistorikk
-                </a>
-            </li>
-
-            <!-- kun admin har tilgang til denne siden -->
             @if (User.IsInRole("Admin"))
-            {
+                {
                 <li class="nav-item">
-                    <a class="nav-link btn" style="color: #A1B6C1" asp-action="VisAlleBrukere" asp-controller="Bruker">
-                        <i class="fa-solid fa-user fa-lg" style="color: #A1B6C1" width="50px"></i>
+                    <a class="nav-link btn" style="color: #A1B6C1" asp-action="Registrer" asp-controller="Service">
+                        <i class="fa-solid fa-pen-to-square fa-lg" style="color: #A1B6C1" width="50px"></i>
                         <br />
-                        Brukere
+                        Opprett Service
                     </a>
                 </li>
-            }
+                }
 
-        </ul>
+                <li class="nav-item">
+                    <a class="nav-link btn" style="color: #A1B6C1" asp-action="ServiceOversikt" asp-controller="Service">
+                        <i class="fa-solid fa-list fa-lg" style="color: #A1B6C1" width="50px"></i>
+                        <br />
+                        Aktive ordre
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link btn" style="color: #A1B6C1" asp-action="Arkiv" asp-controller="Service">
+                        <i class="fa-solid fa-clock fa-lg" style="color: #A1B6C1" width="50px"></i>
+                        <br />
+                        Servicehistorikk
+                    </a>
+                </li>
+
+                <!-- kun admin har tilgang til denne siden -->
+                @if (User.IsInRole("Admin"))
+                {
+                    <li class="nav-item">
+                        <a class="nav-link btn" style="color: #A1B6C1" asp-action="VisAlleBrukere" asp-controller="Bruker">
+                            <i class="fa-solid fa-user fa-lg" style="color: #A1B6C1" width="50px"></i>
+                            <br />
+                            Brukere
+                        </a>
+                    </li>
+                }
+
+            </ul>
 
         <button id="menu-toggle" class="btn hamburgermeny" data-bs-target="#navbarNav">
             <i class="fas fa-bars custom-icon"></i>
@@ -85,8 +87,13 @@
         <!-- Mobil meny -->
         <div id="menu-hover" class="menu-hover">
             <a class="hei" asp-action="Index" asp-controller="Home">Hjem</a>
-            <a class="hei" asp-action="Registrer" asp-controller="Service">Opprett Service</a>
+
+            @if (User.IsInRole("Admin"))
+            {
+                <a class="hei" asp-action="Registrer" asp-controller="Service">Opprett Service</a>
+            }
             <a class="hei" asp-action="ServiceOversikt" asp-controller="Service">Aktive ordre</a>
+
             <a class="hei" asp-action="Arkiv" asp-controller="Service">Servicehistorikk</a>
 
             <!-- kun admin har tilgang til denne siden -->
@@ -94,6 +101,7 @@
             {
                 <a class="hei" asp-action="VisAlleBrukere" asp-controller="Bruker">Brukere</a>
             }
+
 
             <!-- Endre denne linjen til å gå til Account/ResetPassword -->
             <a class="fa-solid fa-user" href="/Account/ResetPassword" title="Reset Password">  @User.Identity?.Name</a>
