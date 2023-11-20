@@ -3,27 +3,18 @@
 #### Gruppe 16 Nøsted
 
 - Overordnet
+- INPUT MÅ VÆRE PÅ SJEKKLISTE, kan ikke FULLFØRE UTEN!
 -     Fikse padding, body er for nærme header
+-     Fikse service/edit. at datoer ikke er blanke, men har inputen fra registrering siden.
+-     Egne css og JS filer overalt
+-     kommentere alt!
+-     Dokumentasjon, ta underveis av gjennomgang?
 
-
-- Serviceordre
--     Legge til felt for brukerID
--     Design
 
 - Sjekkliste
--     Legge til felt for brukerID
 -     Ordna mal, må ha nytt design
--     Bekreftelsesmelding når sjekklisten blir lagret, og fullført
 -     Fikse design ved sletting, er rar
 
-
-- Brukere
--     Må fikse redigeringsfunksjon
--     Må fikke slette funksjon
--     Fikse detaljeside
--     Bekreftelsesmelding på sletting, lagring og endring
-
-- Ordne lag nytt passord side
 
 - Opprette tester
 -   Xunit / MsTest?
