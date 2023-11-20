@@ -3,7 +3,7 @@
 #### Gruppe 16 Nøsted
 
 - Overordnet
-- INPUT MÅ VÆRE PÅ SJEKKLISTE, kan ikke FULLFØRE UTEN!
+-     Ordne slik at all input må være utfylt for på fullføre en sjekkliste.
 -     Fikse padding, body er for nærme header
 -     Fikse service/edit. at datoer ikke er blanke, men har inputen fra registrering siden.
 -     Egne css og JS filer overalt
