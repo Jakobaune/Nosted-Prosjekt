@@ -1,8 +1,7 @@
 ﻿@model List<ServiceOrdre>
 
 <!-- Modellen for denne visningen er en liste av ServiceOrdre-objekter -->
-<h2>Aktive Ordre:</h2>
-<hr />
+
 @if (TempData.ContainsKey("Message"))
 {
     <div class="alert alert-success" role="alert">
@@ -15,6 +14,9 @@
         @TempData["Error"]
     </div>
 }
+
+<h2>Aktive Ordre:</h2>
+<hr />
 
 <!-- En rad som inneholder kort for hver serviceordre som ikke har fullført sjekklisten -->
 <div class="row">
