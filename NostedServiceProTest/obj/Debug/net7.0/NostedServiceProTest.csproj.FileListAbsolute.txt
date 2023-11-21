@@ -1,6 +1,0 @@
-/Users/jakobaune/Documents/Nosted-Prosjekt/NostedServiceProTest/bin/Debug/net7.0/CoverletSourceRootsMapping
-/Users/jakobaune/Documents/Nosted-Prosjekt/NostedServiceProTest/obj/Debug/net7.0/NostedServiceProTest.csproj.AssemblyReference.cache
-/Users/jakobaune/Documents/Nosted-Prosjekt/NostedServiceProTest/obj/Debug/net7.0/NostedServiceProTest.GeneratedMSBuildEditorConfig.editorconfig
-/Users/jakobaune/Documents/Nosted-Prosjekt/NostedServiceProTest/obj/Debug/net7.0/NostedServiceProTest.AssemblyInfoInputs.cache
-/Users/jakobaune/Documents/Nosted-Prosjekt/NostedServiceProTest/obj/Debug/net7.0/NostedServiceProTest.AssemblyInfo.cs
-/Users/jakobaune/Documents/Nosted-Prosjekt/NostedServiceProTest/obj/Debug/net7.0/NostedServiceProTest.csproj.CoreCompileInputs.cache
