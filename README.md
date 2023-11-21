@@ -1,21 +1,25 @@
-# Nosted-Projekt
+# Nosted Service Pro
 
-#### Gruppe 16 Nøsted
+Velkommen til Nosted Service Pro-prosjektet! Dette systemet er utviklet for å håndtere serviceordrer og relatert funksjonalitet.
 
-- Overordnet
--     basically gjort, ikke 100%
--     Fikse padding, body er for nærme header. (ikke viktig)
--     Fikse service/edit. at datoer ikke er blanke, men har inputen fra registrering siden, Ikke gjort drit i
-  
-  
--     kommentere alt! endre fra norsk til engelsk også!
--     Dokumentasjon, ta underveis av gjennomgang? SIU
+## Dokumentasjon
 
+For detaljert dokumentasjon om koden og prosjektet, vennligst sjekk vår [Wiki](https://github.com/Jakobaune/Nosted-Prosjekt/wiki).
 
-- Sjekkliste
--     Ordne mal, må ha nytt design
--     Fikse design ved sletting, er rar
+## Funksjoner
 
+- Administrasjon av serviceordrer
+- Bruker- og rollestyring
+- Historikk og arkivering av serviceordrer
+- ...
 
-- Opprette tester
--   Xunit / MsTest?
+## Installasjon
+
+1. Klon repoet: `git clone https://github.com/Jakobaune/Nosted-Prosjekt.git`
+2. Naviger til prosjektmappen: `cd Nosted-Prosjekt`
+3. Åpne løsningen i din foretrukne IDE
+4. Bygg og kjør prosjektet
+
+## Problemer og Feil
+
+Hvis du oppdager noen problemer eller feil, vennligst rapporter dem i [Issue Tracker](https://github.com/Jakobaune/Nosted-Prosjekt/issues).
