@@ -1,10 +1,7 @@
 ﻿@model List<ServiceOrdre>
 
-
-
 <!-- Modellen for denne visningen er en liste av ServiceOrdre-objekter -->
-<h2>Aktive Ordre:</h2>
-<hr />
+
 @if (TempData.ContainsKey("Message"))
 {
     <div class="alert alert-success" role="alert">
@@ -18,11 +15,14 @@
     </div>
 }
 
+<h2>Aktive Ordre:</h2>
+<hr />
+
 <!-- En rad som inneholder kort for hver serviceordre som ikke har fullført sjekklisten -->
 <div class="row">
     <!-- Loop gjennom hver serviceordre i modellen som ikke har fullført sjekklisten -->
     @foreach (var serviceordre in Model.Where(s => !s.ErSjekklisteFullført))
-    {
+        {
         <div class="col-md-4">
             <!-- Kort for hver serviceordre -->
             <div class="card mb-3">
@@ -31,7 +31,7 @@
                     <p><strong>Ordre ID: @serviceordre.OrdreID</strong></p>
                     <p>Kundenavn:<em> @serviceordre.Kundenavn </em></p>
                     <p>E-post:<em> @serviceordre.Kundeepost </em></p>
-                    <p>Telefonnummer:<em> @serviceordre.Kundetlf </em></p>
+                    <p>Mottatt:<em> @serviceordre.ProduktmottattDato </em></p>
 
                     <!-- Knappene inni separate div-elementer for side-by-side display med mellomrom -->
                     <div class="d-flex justify-content-between">
@@ -41,12 +41,19 @@
                         </div>
 
                         <!-- Legg til knapp for å registrere mottatt -->
-                        <div>
-                            <form asp-controller="Service" asp-action="RegistrerMottatt" method="post">
-                                <input type="hidden" name="id" value="@serviceordre.OrdreID" />
-                                <button type="submit" class="btn btn-primary">Registrer mottatt</button>
-                            </form>
-                        </div>
+                        @{
+                            bool hideButton = serviceordre.ProduktmottattDato != null; // Adjust the condition based on the actual confirmation logic
+                        }
+
+                        @if (!hideButton)
+                        {
+                            <div>
+                                <form id="mottattForm-@serviceordre.OrdreID" asp-controller="Service" asp-action="RegistrerMottatt" method="post">
+                                    <input type="hidden" name="id" value="@serviceordre.OrdreID" />
+                                    <button type="submit" class="btn btn-primary" id="mottattButton-@serviceordre.OrdreID">Registrer mottatt</button>
+                                </form>
+                            </div>
+                        }
                     </div>
                 </div>
             </div>

@@ -6,29 +6,6 @@
 
 <link rel="stylesheet" href="~/css/PrintPage.css" />
 
-<style>
-    @@media print {
-        #fiksaheader {
-            display: none !important;
-        }
-
-        .hidden-logo {
-            display: block !important;
-            /* Add any styling for the logo, e.g., width, height, margin, etc. */
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-        }
-    }
-    .hidden-logo {
-        display: none; /*Gjem logoen*/
-    }
-
-    
-</style>
-
 <body>
     <div class="hidden-logo">
         <img src="~/css/Bilder/LOGO.jpg" alt="Print Logo" height="50px" class="mb-2" style="margin-top: 20px;">
@@ -97,7 +74,6 @@
                     <th>Signatur</th>
                     <td colspan="3" style="font-style: italic;">signature</td>
                 </tr>
-                <!-- Add similar rows for other attributes -->
             </tbody>
         </table>
     </div>
@@ -105,9 +81,12 @@
     </div>
     <br />
     <button class="btn btn-primary" id="print">Skriv ut/lagre serviceskjema</button>
+    <a id="print" asp-action="Arkiv">Tilbake til historikk</a>
 
+    <!-- Veldig lite script, tenker den blir i filen her. -->
     <script>const printBtn = document.getElementById('print');
         printBtn.addEventListener('click', function () {
             print();
         })</script>
+
 </body>

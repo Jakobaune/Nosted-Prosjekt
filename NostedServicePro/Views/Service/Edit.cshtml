@@ -3,12 +3,18 @@
 @{
     ViewData["Title"] = "Edit";
 }
+<!-- en alert for godkjent endring av serviceordre-->
+@if (!string.IsNullOrEmpty(TempData["Message"]?.ToString()))
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["Message"]
+    </div>
+}
 <!-- Overskrift for redigeringssiden -->
-
 <h2>Rediger Serviceordre</h2>
+<h4>@Html.DisplayNameFor(model => model.OrdreID) #<em>@Html.DisplayFor(model => model.OrdreID)</em></h4>
 
 
-<!-- Underskrift for ServiceOrdre-seksjon -->
 <hr />
 <!-- Oppretter et HTML-skjema for redigering med en kolonne for input-feltene -->
 <div class="row">
@@ -81,7 +87,7 @@
             </div>
             <div class="form-group">
                 <strong><label asp-for="Avtaltferdigstillingsdato" class="control-label">Avtalt Ferdigstiltdato:</label></strong>
-                <input asp-for="Avtaltferdigstillingsdato" class="form-control text-muted" />
+                <input asp-for="Avtaltferdigstillingsdato" class="form-control text-muted"/>
                 <span asp-validation-for="Avtaltferdigstillingsdato" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -89,15 +95,28 @@
                 <input asp-for="ProduktmottattDato" class="form-control text-muted" />
                 <span asp-validation-for="ProduktmottattDato" class="text-danger"></span>
             </div>
-            <br />
-            <!-- Knapp for å lagre endringer -->
-            <div class="form-group">
-                <input type="submit" value="Lagre endringer" class="btn btn-primary" />
-                <a asp-action="Arkiv">Tilbake til historikk</a>
+            <hr />
 
-            </div>
-        }
-    </div>
+            @if (User.IsInRole("Admin"))
+                {
+                <div class="form-group">
+                    <strong><label asp-for="RegistreringFullførtAv" class="control-label">Registrert av:</label></strong>
+                    <input asp-for="RegistreringFullførtAv" class="form-control text-muted" />
+                    <span asp-validation-for="RegistreringFullførtAv" class="text-danger"></span>
+                </div>
+                }
+
+                <br />
+
+                <!-- Knapp for å lagre endringer -->
+
+                <div class="form-group">
+                    <input type="submit" value="Lagre endringer" class="btn btn-primary" />
+                    <a asp-action="Arkiv">Tilbake til historikk</a>
+
+                </div>
+            }
+        </div>
 </div>
 <!-- Inkluderer scripts for validering -->
 @section Scripts {

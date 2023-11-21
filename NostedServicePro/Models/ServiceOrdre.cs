@@ -55,6 +55,9 @@ public class ServiceOrdre
     [FutureDate(ErrorMessage = "Produktmottatt dato kan ikke være tidligere enn dagens dato.")]
     public DateTime? ProduktmottattDato { get; set; }
 
+    [Required(ErrorMessage = "Registrert av?")]
+    public String RegistreringFullførtAv { get; set; }
+
     //Sjekkliste under
 
     public String? ClutchLameller { get; set; }
@@ -83,5 +86,81 @@ public class ServiceOrdre
     public Double? Arbeidstimer { get; set; }
 
     public String? Kommentar { get; set; }
+    public String? SjekkListeFullførtAv { get; set; }
     public bool ErSjekklisteFullført { get; set; }
 }
+
+/*
+    [Required(ErrorMessage = "Må gjøres for å fullføre!")]
+    public String? ClutchLameller { get; set; }
+
+    [Required(ErrorMessage = "Må gjøres for å fullføre!")]
+    public String? Bremser { get; set; }
+
+    [Required(ErrorMessage = "Må gjøres for å fullføre!")]
+    public String? LagerTrommel { get; set; }
+
+    [Required(ErrorMessage = "Må gjøres for å fullføre!")]
+    public String? PTOOpplagring { get; set; }
+
+    [Required(ErrorMessage = "Må gjøres for å fullføre!")]
+    public String? Kjedestrammer { get; set; }
+
+    [Required(ErrorMessage = "Må gjøres for å fullføre!")]
+    public String? Wire { get; set; }
+
+    [Required(ErrorMessage = "Må gjøres for å fullføre!")]
+    public String? PlnlonLager { get; set; }
+
+    [Required(ErrorMessage = "Må gjøres for å fullføre!")]
+    public String? KilleKjedehjul { get; set; }
+
+    [Required(ErrorMessage = "Må gjøres for å fullføre!")]
+    public String? HydraulikkSylinderLekkasje { get; set; }
+
+    [Required(ErrorMessage = "Må gjøres for å fullføre!")]
+    public String? SlangerSkaderLekkasje { get; set; }
+
+    [Required(ErrorMessage = "Må gjøres for å fullføre!")]
+    public String? TestHydraulikkblokk { get; set; }
+
+    [Required(ErrorMessage = "Må gjøres for å fullføre!")]
+    public String? SkiftOljeTank { get; set; }
+
+    [Required(ErrorMessage = "Må gjøres for å fullføre!")]
+    public String? SkiftOljeGirboks { get; set; }
+
+    [Required(ErrorMessage = "Må gjøres for å fullføre!")]
+    public String? RingsyllingerSkiftTelnlnger { get; set; }
+
+    [Required(ErrorMessage = "Må gjøres for å fullføre!")]
+    public String? BremsesylingerSkiftTelninger { get; set; }
+
+    [Required(ErrorMessage = "Må gjøres for å fullføre!")]
+    public String? LedningsnettVinsj { get; set; }
+
+    [Required(ErrorMessage = "Må gjøres for å fullføre!")]
+    public String? SjekkTestRadio { get; set; }
+
+    [Required(ErrorMessage = "Må gjøres for å fullføre!")]
+    public String? SjekkTestKnappekasse { get; set; }
+
+    [Required(ErrorMessage = "Må gjøres for å fullføre!")]
+    public String? XXBar { get; set; }
+
+    [Required(ErrorMessage = "Må gjøres for å fullføre!")]
+    public String? TestVinsjAlleFunksjoner { get; set; }
+
+    [Required(ErrorMessage = "Må gjøres for å fullføre!")]
+    public String? TrekkraftKn { get; set; }
+
+    [Required(ErrorMessage = "Må gjøres for å fullføre!")]
+    public String? BremsekraftKn { get; set; }
+
+    [Required(ErrorMessage = "Må gjøres for å fullføre!")]
+    public Double? Arbeidstimer { get; set; }
+
+    public String? Kommentar { get; set; }
+    public String? SjekkListeFullførtAv { get; set; }
+    public bool ErSjekklisteFullført { get; set; }
+*/

@@ -301,7 +301,7 @@ public class ServiceController : Controller
                 _dbContext.SaveChanges();
 
                 TempData["Message"] = $"Serviceordre #{model.OrdreID} endret vellykket!";
-                return RedirectToAction(nameof(Arkiv));
+                return RedirectToAction("Arkiv");
             }
             catch (DbUpdateConcurrencyException)
             {

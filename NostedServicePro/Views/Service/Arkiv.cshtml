@@ -6,29 +6,8 @@
 <!-- Inkludering av nødvendige JavaScript-biblioteker -->
 @section scripts {
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI/t1H1aWVegQZH75Z5l/4sC9U8U5bEuRVHfRJGQ=" crossorigin="anonymous"></script>
+    <script src="~/js/Arkiv.js" asp-append-version="true"></script>
 
-    <!-- JavaScript-skript for håndtering av sortering -->
-    <script>
-        $(document).ready(function () {
-            $("th.sortable").on("click", function () {
-                var sortOrder = $(this).data("sort-order");
-                sortOrder = sortOrder === "asc" ? "desc" : "asc";
-                var sortBy = $(this).data("sort-by");
-                window.location.href = "?sortOrder=" + sortOrder + "&sortField=" + sortBy;
-            });
-
-            // Fjern indikatorpiler fra alle kolonner
-            $("th.sortable").each(function () {
-                $(this).find(".sort-indicator").remove();
-            });
-
-            // Legg til indikatorpil basert på gjeldende sortering
-            var sortOrder = "@ViewData["IdSortParm"]";
-            var sortBy = "OrdreID"; // Sett standard kolonne for sortering
-            var arrow = sortOrder === "asc" ? "<i class='fas fa-caret-up'></i>" : sortOrder === "desc" ? "<i class='fas fa-caret-down'></i>" : "";
-            $("th.sortable[data-sort-by='" + sortBy + "']").append("<span class='sort-indicator'>" + arrow + "</span>");
-        });
-    </script>
 }
 
 
@@ -48,13 +27,13 @@
 <hr />
 
 <!-- Lenke for å opprette ny serviceordre -->
-    <a asp-action="Registrer" style="font-weight: bold; border: 1px solid #e16f07; border-radius: 5px; padding: 5px 10px; text-decoration: none; ">Lag ny serviceordre</a>
+<a asp-action="Registrer" style="font-weight: bold; border: 1px solid #e16f07; border-radius: 5px; padding: 5px 10px; text-decoration: none; ">Lag ny serviceordre</a>
 
 
 <!-- Søkefelt -->
 <form asp-action="Arkiv" asp-controller="Service" method="get">
     <div class="form-group">
-      
+
         <label for="searchInput"></label>
         <input type="text" class="form-control" id="searchInput" name="search" placeholder="Søk etter navn, ID, epost eller serienummer" value="@ViewData["SearchTerm"]">
 
