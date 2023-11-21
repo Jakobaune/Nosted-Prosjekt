@@ -7,7 +7,7 @@ public class FutureDateAttribute : ValidationAttribute
     {
         if (value is DateTime date)
         {
-            if (date < DateTime.Now)
+            if (date <= DateTime.Now)
             {
                 return new ValidationResult("Datoen kan ikke være tidligere enn dagens dato.");
             }
