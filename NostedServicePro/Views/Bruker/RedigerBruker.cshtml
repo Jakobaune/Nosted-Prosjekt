@@ -16,19 +16,19 @@
 }
 
 <h2>Rediger Bruker</h2>
-<hr />
+<hr/>
 
 <form asp-action="LagreRedigering" method="post">
     <!-- Legg til skjult felt for UserId -->
-    <input type="hidden" asp-for="UserId" />
+    <input type="hidden" asp-for="UserId"/>
 
     <div class="form-group">
         <label asp-for="UserName">Brukernavn:</label>
-        <input asp-for="UserName" class="form-control" />
+        <input asp-for="UserName" class="form-control"/>
     </div>
     <div class="form-group">
         <label asp-for="Email">E-postadresse:</label>
-        <input asp-for="Email" class="form-control" />
+        <input asp-for="Email" class="form-control"/>
     </div>
     <div class="form-group">
         <label>Rolle:</label>
@@ -37,7 +37,7 @@
             {
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="Roller" value="@availableRole"
-                           @(Model.Roller.Contains(availableRole) ? "checked" : "") />
+                           @(Model.Roller.Contains(availableRole) ? "checked" : "")/>
                     <label class="form-check-label">@availableRole</label>
                 </div>
             }

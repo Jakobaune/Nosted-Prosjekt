@@ -10,16 +10,16 @@
     justify-content: space-between;
 }
 
-    .form-group .control-label {
-        flex: 1;
-        margin-right: 20px;
-    }
+.form-group .control-label {
+    flex: 1;
+    margin-right: 20px;
+}
 
-    .form-group .radio-options {
-        flex: 1;
-        display: flex;
-        justify-content: flex-end;
-    }
+.form-group .radio-options {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
 
 .radio-options label {
     display: block;
@@ -34,30 +34,30 @@
     border-radius: 5px;
 }
 
-    .radio-options label:hover {
-        border: 1px solid #e16f07
-    }
+.radio-options label:hover {
+    border: 1px solid #e16f07
+}
 
 
 .radio-options input[type="radio"] {
     display: none; /* Hide the radio button itself */
 }
 
-    .radio-options input[type="radio"]:checked + label {
-        color: white;
-    }
+.radio-options input[type="radio"]:checked + label {
+    color: white;
+}
 
-    .radio-options input[type="radio"][value="OK"]:checked + label {
-        background-color: #3bcd32;
-    }
+.radio-options input[type="radio"][value="OK"]:checked + label {
+    background-color: #3bcd32;
+}
 
-    .radio-options input[type="radio"][value="Bør Skiftes"]:checked + label {
-        background-color: #e16f07;
-    }
+.radio-options input[type="radio"][value="Bør Skiftes"]:checked + label {
+    background-color: #e16f07;
+}
 
-    .radio-options input[type="radio"][value="Defekt"]:checked + label {
-        background-color: #d42b35;
-    }
+.radio-options input[type="radio"][value="Defekt"]:checked + label {
+    background-color: #d42b35;
+}
 
 @media (max-width: 768px) {
     .form-group {

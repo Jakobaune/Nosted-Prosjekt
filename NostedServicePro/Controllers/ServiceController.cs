@@ -1,13 +1,8 @@
-﻿using NostedServicePro.Data;
-using NostedServicePro.Models;
+﻿using System.Linq.Expressions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Diagnostics;
-using System.Linq;
-using System.Linq.Expressions;
-
+using NostedServicePro.Data;
 
 [Authorize]
 public class ServiceController : Controller
@@ -19,11 +14,13 @@ public class ServiceController : Controller
     {
         _dbContext = dbContext;
     }
+
     public IActionResult StartSjekkliste(int ordreID)
     {
         TempData["OrdreID"] = ordreID;
         return RedirectToAction("RegistrerSjekkliste");
     }
+
     public IActionResult ServiceOversikt()
     {
         var serviceordreListe = _dbContext.service.ToList();
@@ -37,10 +34,7 @@ public class ServiceController : Controller
     {
         var serviceOrdre = _dbContext.service.FirstOrDefault(s => s.OrdreID == id);
 
-        if (serviceOrdre == null)
-        {
-            return NotFound();
-        }
+        if (serviceOrdre == null) return NotFound();
 
         // Oppdater ProduktmottattDato til dagens dato
         serviceOrdre.ProduktmottattDato = DateTime.Now;
@@ -62,11 +56,10 @@ public class ServiceController : Controller
     }
 
 
-
     // Viser arkiv med filtrering og sortering
     public IActionResult Arkiv(string search, string sortOrder)
     {
-        ViewData["SearchTerm"] = search;  // Lagre søkeordet i ViewData
+        ViewData["SearchTerm"] = search; // Lagre søkeordet i ViewData
         ViewData["IdSortParm"] = string.IsNullOrEmpty(sortOrder) ? "id_desc" : "";
         ViewData["NameSortParm"] = sortOrder == "name" ? "name_desc" : "name";
         ViewData["EmailSortParm"] = sortOrder == "email" ? "email_desc" : "email";
@@ -76,14 +69,12 @@ public class ServiceController : Controller
 
         // Filtrering basert på søk
         if (!string.IsNullOrEmpty(search))
-        {
             arkivData = arkivData.Where(item =>
                 item.Kundenavn.Contains(search) ||
                 item.OrdreID.ToString().Contains(search) ||
                 item.Kundeepost.Contains(search) ||
                 item.Kundetlf.Contains(search)
             );
-        }
 
         // Sortering
         switch (sortOrder)
@@ -168,7 +159,7 @@ public class ServiceController : Controller
     [ValidateAntiForgeryToken]
     public IActionResult RegistrerSjekkliste(ServiceOrdre model, string action)
     {
-        bool completeChecklist = (action == "Fullfør sjekkliste");
+        var completeChecklist = action == "Fullfør sjekkliste";
 
         try
         {
@@ -183,7 +174,7 @@ public class ServiceController : Controller
                 if (existingOrdre != null)
                 {
                     // Lagre ProduktmottattDato før du oppdaterer modellen
-                    DateTime? produktmottattDato = existingOrdre.ProduktmottattDato;
+                    var produktmottattDato = existingOrdre.ProduktmottattDato;
 
                     // Oppdater sjekkpunktene og andre felter, ekskluder ProduktmottattDato
                     model.ProduktmottattDato = produktmottattDato;
@@ -218,16 +209,11 @@ public class ServiceController : Controller
     }
 
 
-
-
     // Viser redigeringsskjema for en serviceordre
     public IActionResult Edit(int id)
     {
         var serviceOrdre = _dbContext.service.Find(id); //Henter frem fra DB
-        if (serviceOrdre == null)
-        {
-            return NotFound();
-        }
+        if (serviceOrdre == null) return NotFound();
         return View(serviceOrdre); //Viser edit siden
     }
 
@@ -236,10 +222,7 @@ public class ServiceController : Controller
     {
         var serviceOrdre = _dbContext.service.FirstOrDefault(s => s.OrdreID == id);
 
-        if (serviceOrdre == null)
-        {
-            return NotFound();
-        }
+        if (serviceOrdre == null) return NotFound();
 
         return View(serviceOrdre);
     }
@@ -248,10 +231,7 @@ public class ServiceController : Controller
     public IActionResult Delete(int id)
     {
         var serviceOrdre = _dbContext.service.Find(id);
-        if (serviceOrdre == null)
-        {
-            return NotFound();
-        }
+        if (serviceOrdre == null) return NotFound();
         return View(serviceOrdre);
     }
 
@@ -259,10 +239,7 @@ public class ServiceController : Controller
     {
         var serviceOrdre = _dbContext.service.FirstOrDefault(s => s.OrdreID == id);
 
-        if (serviceOrdre == null)
-        {
-            return NotFound();
-        }
+        if (serviceOrdre == null) return NotFound();
 
         return View(serviceOrdre);
     }
@@ -274,7 +251,8 @@ public class ServiceController : Controller
     {
         if (ModelState.IsValid)
         {
-            serviceOrdre.Registreringsdato = DateTime.Now; //Dato med klokkeslett sendes inn basert på enheten de blir sendt inn fra
+            serviceOrdre.Registreringsdato =
+                DateTime.Now; //Dato med klokkeslett sendes inn basert på enheten de blir sendt inn fra
             _dbContext.Add(serviceOrdre);
             _dbContext.SaveChanges(); //Lagrer endringene
 
@@ -286,15 +264,12 @@ public class ServiceController : Controller
     }
 
 
-
-
     // Behandler postforespørsel for å redigere en serviceordre
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult Edit(ServiceOrdre model)
     {
         if (ModelState.IsValid)
-        {
             try
             {
                 _dbContext.Entry(model).State = EntityState.Modified;
@@ -306,15 +281,10 @@ public class ServiceController : Controller
             catch (DbUpdateConcurrencyException)
             {
                 if (!_dbContext.service.Any(e => e.OrdreID == model.OrdreID))
-                {
                     return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                throw;
             }
-        }
+
         return View(model);
     }
 
@@ -325,10 +295,7 @@ public class ServiceController : Controller
     public IActionResult Delete(int id, bool confirm)
     {
         var serviceOrdre = _dbContext.service.Find(id);
-        if (serviceOrdre == null)
-        {
-            return NotFound();
-        }
+        if (serviceOrdre == null) return NotFound();
         try
         {
             _dbContext.service.Remove(serviceOrdre);

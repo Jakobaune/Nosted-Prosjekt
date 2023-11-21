@@ -1,5 +1,4 @@
-﻿
-document.getElementById('completeChecklist').addEventListener('click', function (event) {
+﻿document.getElementById('completeChecklist').addEventListener('click', function (event) {
     var allRadioGroupsChecked = true;
     var allTextInputFilled = true;
 
