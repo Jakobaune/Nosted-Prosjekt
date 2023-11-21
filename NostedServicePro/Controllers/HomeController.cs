@@ -1,8 +1,8 @@
-﻿using NostedServicePro.Data;
-using NostedServicePro.Models;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using NostedServicePro.Data;
+using NostedServicePro.Models;
 using System.Diagnostics;
-using Microsoft.AspNetCore.Authorization;
 
 [Authorize]
 public class HomeController : Controller

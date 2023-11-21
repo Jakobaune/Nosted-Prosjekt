@@ -1,14 +1,7 @@
-using NostedServicePro;
-using NostedServicePro.Data;
 using Microsoft.AspNetCore;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using MySql.Data.MySqlClient;
-using System;
+using NostedServicePro.Data;
 
 namespace NostedServicePro
 {
@@ -74,7 +67,7 @@ namespace NostedServicePro
                 .UseStartup<Startup>()
                 .Build();
 
-            
+
             //Oppretter rollene Admin og Mekaniker ved start
             using (var scope = app.Services.CreateScope())
             {
@@ -102,18 +95,18 @@ namespace NostedServicePro
                 string email = "admin@admin.no";
                 string password = "Admin123!";
 
-                if(await userManager.FindByEmailAsync(email) == null)
+                if (await userManager.FindByEmailAsync(email) == null)
                 {
                     var user = new IdentityUser();
                     user.UserName = UserName;
                     user.Email = email;
 
-                    await userManager.CreateAsync(user,password);
+                    await userManager.CreateAsync(user, password);
 
                     await userManager.AddToRoleAsync(user, "Admin");
                 }
 
-    
+
             }
 
             // Kj�r webapplikasjonen

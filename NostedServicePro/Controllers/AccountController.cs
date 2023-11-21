@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using System.Security.Claims;
 using NostedServicePro.Models.Account;
 
 
@@ -185,7 +183,7 @@ namespace NostedServicePro.Controllers
                 return Redirect(returnUrl);
             }
             else
-            {    
+            {
                 return RedirectToAction(nameof(HomeController.Index), "Home");
             }
         }

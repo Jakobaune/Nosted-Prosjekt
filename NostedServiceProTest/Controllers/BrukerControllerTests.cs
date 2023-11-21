@@ -1,15 +1,10 @@
-﻿using NUnit.Framework;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Moq;
-using NostedServicePro.Controllers;
 using NostedServicePro.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using NUnit.Framework;
 
 namespace NostedServiceProTest.Controllers
 {

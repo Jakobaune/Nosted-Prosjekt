@@ -1,13 +1,9 @@
-﻿using NUnit.Framework;
-using Microsoft.EntityFrameworkCore;
-using NostedServicePro.Controllers;
-using NostedServicePro.Data;
-using NostedServicePro.Models;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
-using Microsoft.AspNetCore.Mvc.Controllers;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Moq;
+using NostedServicePro.Data;
+using NUnit.Framework;
 
 
 namespace NostedServiceProTest.Controllers

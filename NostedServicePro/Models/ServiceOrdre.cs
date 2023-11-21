@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 public class ServiceOrdre
 {
@@ -13,7 +12,7 @@ public class ServiceOrdre
     [RegularExpression(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$")]
     public string Kundeepost { get; set; }
 
-    
+
     public string Kundetlf { get; set; }
 
     [Required(ErrorMessage = "Produkttypevinsj er obligatorisk.")]

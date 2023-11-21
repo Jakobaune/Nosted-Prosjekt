@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Builder;
-
-namespace NostedServicePro
+﻿namespace NostedServicePro
 {
     public class Startup
     {

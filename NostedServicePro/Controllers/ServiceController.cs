@@ -1,11 +1,7 @@
-﻿using NostedServicePro.Data;
-using NostedServicePro.Models;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Diagnostics;
-using System.Linq;
+using NostedServicePro.Data;
 using System.Linq.Expressions;
 
 
