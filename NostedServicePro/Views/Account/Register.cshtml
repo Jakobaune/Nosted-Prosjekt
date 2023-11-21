@@ -4,54 +4,67 @@
     ViewData["Title"] = "Register";
 }
 
+<!-- Registreringsskjema for nye nøsted-brukere -->
 <form asp-controller="Account" asp-action="Register" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal" role="form">
     <h4>Lag en ny nøsted-bruker.</h4>
-    <hr/>
+    <hr />
+
+    <!-- Valideringsoppsummering for modellen, vises som rød tekst ved valideringsfeil -->
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <!-- Input-felt for brukernavn -->
     <div class="form-group">
         <label asp-for="UserName" class="col-md-2 control-label">Brukernavn:</label>
         <div class="col-md-10">
-            <input asp-for="UserName" class="form-control"/>
-            <span asp-validation-for="UserName" class="text-dagnger"></span>
+            <input asp-for="UserName" class="form-control" />
+            <span asp-validation-for="UserName" class="text-danger"></span>
         </div>
     </div>
 
-
+    <!-- Input-felt for e-postadresse -->
     <div class="form-group">
         <label asp-for="Email" class="col-md-2 control-label">E-mail:</label>
         <div class="col-md-10">
-            <input asp-for="Email" class="form-control"/>
+            <input asp-for="Email" class="form-control" />
             <span asp-validation-for="Email" class="text-danger"></span>
         </div>
     </div>
+
+    <!-- Input-felt for passord -->
     <div class="form-group">
         <label asp-for="Password" class="col-md-2 control-label">Passord</label>
         <div class="col-md-10">
-            <input asp-for="Password" class="form-control"/>
+            <input asp-for="Password" class="form-control" />
             <span asp-validation-for="Password" class="text-danger"></span>
         </div>
     </div>
+
+    <!-- Input-felt for bekreftelse av passord -->
     <div class="form-group">
         <label asp-for="ConfirmPassword" class="col-md-2 control-label">Gjenta Passord</label>
         <div class="col-md-10">
-            <input asp-for="ConfirmPassword" class="form-control"/>
+            <input asp-for="ConfirmPassword" class="form-control" />
             <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
         </div>
     </div>
+
+    <!-- Radio-buttons for å velge brukerrolle -->
     <div class="form-group">
         <label asp-for="SelectedRole" class="col-md-2 control-label">Select Role</label>
         <div class="col-md-10">
             <label class="radio-inline">
-                <input type="radio" asp-for="SelectedRole" value="Mekaniker"/> Mekaniker
+                <input type="radio" asp-for="SelectedRole" value="Mekaniker" /> Mekaniker
             </label>
             <label class="radio-inline">
-                <input type="radio" asp-for="SelectedRole" value="Admin"/> Admin
+                <input type="radio" asp-for="SelectedRole" value="Admin" /> Admin
             </label>
             <span asp-validation-for="SelectedRole" class="text-danger"></span>
         </div>
     </div>
 
-    <br/>
+    <br />
+
+    <!-- Knapper for å sende inn skjemaet og gå tilbake -->
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <button type="submit" class="btn btn-primary">Registrer</button>
@@ -60,6 +73,9 @@
     </div>
 </form>
 
+<!-- Inkludering av scripts for validering -->
 @section Scripts {
-    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

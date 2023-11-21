@@ -11,7 +11,6 @@ public class ServiceOrdre
     [RegularExpression(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$")]
     public string Kundeepost { get; set; }
 
-    
     [Required(ErrorMessage = "Telefonnummer er obligatorisk.")]
     public string Kundetlf { get; set; }
 

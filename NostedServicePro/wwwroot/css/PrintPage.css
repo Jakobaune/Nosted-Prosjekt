@@ -1,40 +1,45 @@
-﻿.hidden-logo {
+﻿/* Skjuler elementet med klassen .hidden-logo */
+.hidden-logo {
     display: none;
 }
 
-/* Table formatting */
-
+/* Styling for containeren som inneholder tabellen */
 .table-container {
     display: flex;
     justify-content: center;
 }
 
+/* Generell styling for tabellen */
 table {
     margin-top: 10px;
-    width: 21cm; /* Set the table width to match A4 paper width (210mm) */
+    width: 21cm;
     border-collapse: collapse;
-    page-break-after: auto; /* Force a page break after the table for printing */
+    page-break-after: auto;
 }
 
+/* Styling for tabellceller og overskrifter */
 table, th, td {
     border: 1px solid #000;
 }
 
+/* Styling for padding, tekstjustering og bredde av tabellceller og overskrifter */
 th, td {
     padding: 8px;
     text-align: left;
-    width: 25%; /* Set each column to 25% width for equal distribution */
+    width: 25%;
 }
 
+/* Styling for overskrifter */
 th {
     background-color: #f2f2f2;
 }
 
-/* Remove the right border of the last cell in each row */
+/* Fjerner høyre grense for siste kolonne i en rad */
 tr td:last-child {
     border-right: none;
 }
 
+/* Styling for spesifikke celleklasser */
 .text-cell {
     height: 80px;
     vertical-align: top;
@@ -44,19 +49,19 @@ tr td:last-child {
     text-align: right;
 }
 
-/* Print CSS rules */
-
+/* Media query for utskriftsstil */
 @media print {
-    /* Hide header and display logo */
+    /* Skjuler visse elementer ved utskrift */
     #fiksaheader {
         display: none !important;
     }
 
+    /* Viser elementet med klassen .hidden-logo ved utskrift */
     .hidden-logo {
         display: block !important;
     }
 
-    /* Set page margins to zero */
+    /* Tilpasser kroppen og siden for utskrift */
     body {
         margin: 0;
         padding: 0;
@@ -66,11 +71,12 @@ tr td:last-child {
         margin: 0;
     }
 
-    /* Hide other elements */
+    /* Skjuler footer-elementet ved utskrift */
     footer {
         display: none;
     }
 
+    /* Skjuler elementene med ID-ene #print og #printoverskrift ved utskrift */
     #print {
         display: none;
     }

@@ -129,6 +129,7 @@ public class ServiceController : Controller
 
 
     // Viser skjemaet for å registrere en ny serviceordre
+    [Authorize(Roles = "Admin")]
     [HttpGet]
     public IActionResult Registrer()
     {
@@ -228,6 +229,7 @@ public class ServiceController : Controller
     }
 
     // Viser slettingsskjema for en serviceordre
+    [Authorize(Roles = "Admin")]
     public IActionResult Delete(int id)
     {
         var serviceOrdre = _dbContext.service.Find(id);
@@ -245,6 +247,7 @@ public class ServiceController : Controller
     }
 
     // Behandler postforespørsel for å registrere en ny serviceordre
+    [Authorize(Roles = "Admin")]
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult Registrer(ServiceOrdre serviceOrdre)
@@ -285,11 +288,13 @@ public class ServiceController : Controller
                 throw;
             }
 
+
         return View(model);
     }
 
 
     // Behandler postforespørsel for å slette en serviceordre
+    [Authorize(Roles = "Admin")]
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult Delete(int id, bool confirm)

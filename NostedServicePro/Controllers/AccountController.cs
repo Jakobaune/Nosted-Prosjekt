@@ -47,7 +47,7 @@ public class AccountController : Controller
                     await _signInManager.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, false);
                 if (result.Succeeded)
                 {
-                    _logger?.LogInformation(1, "User logged in.");
+                    _logger?.LogInformation(1, "Bruker logget inn.");
 
                     if (returnUrl != null) return RedirectToLocal(returnUrl);
 
@@ -63,7 +63,7 @@ public class AccountController : Controller
                 }
                 else
                 {
-                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    ModelState.AddModelError(string.Empty, "Ugyldig login forsøk.");
                     return View(model);
                 }
             }
@@ -128,7 +128,7 @@ public class AccountController : Controller
     public async Task<IActionResult> LogOff()
     {
         await _signInManager.SignOutAsync();
-        _logger.LogInformation(4, "User logged out.");
+        _logger.LogInformation(4, "Bruker logget ut.");
         return RedirectToAction(nameof(HomeController.Index), "Home");
     }
 

@@ -31,6 +31,5 @@ public class Startup
                 "connect-src 'self' ");
             await next();
         });
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
     }
 }
