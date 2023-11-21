@@ -60,7 +60,8 @@ namespace NostedServiceProTest.Controllers
             Serienummervinsj = "Serienummervinsj 1",
             ServiceType = "ServiceType 1",
             Kundenavn = "Kunde1",
-            Kundeepost = "kunde1@example.com"
+            Kundeepost = "kunde1@example.com",
+            RegistreringFullførtAv = "Bruker1" // Legg til denne egenskapen
         },
         new ServiceOrdre
         {
@@ -73,7 +74,8 @@ namespace NostedServiceProTest.Controllers
             Serienummervinsj = "Serienummervinsj 2",
             ServiceType = "ServiceType 2",
             Kundenavn = "Kunde2",
-            Kundeepost = "kunde2@example.com"
+            Kundeepost = "kunde2@example.com",
+            RegistreringFullførtAv = "Bruker2" // Legg til denne egenskapen
         },
     };
 
@@ -81,6 +83,7 @@ namespace NostedServiceProTest.Controllers
             _dbContextMock.service.AddRange(serviceData);
             _dbContextMock.SaveChanges();
         }
+
 
         [Test]
         public void StartSjekkliste_ShouldRedirectToRegistrerSjekklisteWithCorrectOrdreID()

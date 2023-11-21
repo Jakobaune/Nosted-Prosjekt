@@ -10847,33 +10847,33 @@
     ]
   },
   "packageFolders": {
-    "/Users/amadeushovden/.nuget/packages/": {}
+    "C:\\Users\\mathi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/amadeushovden/Documents/Nosted-Prosjekt/NostedServiceProTest/NostedServiceProTest.csproj",
+      "projectUniqueName": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Nosted-Prosjekt\\NostedServiceProTest\\NostedServiceProTest.csproj",
       "projectName": "NostedServiceProTest",
-      "projectPath": "/Users/amadeushovden/Documents/Nosted-Prosjekt/NostedServiceProTest/NostedServiceProTest.csproj",
-      "packagesPath": "/Users/amadeushovden/.nuget/packages/",
-      "outputPath": "/Users/amadeushovden/Documents/Nosted-Prosjekt/NostedServiceProTest/obj/",
+      "projectPath": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Nosted-Prosjekt\\NostedServiceProTest\\NostedServiceProTest.csproj",
+      "packagesPath": "C:\\Users\\mathi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Nosted-Prosjekt\\NostedServiceProTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/amadeushovden/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\mathi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "/usr/local/share/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/Users/amadeushovden/Documents/Nosted-Prosjekt/NostedServicePro/NostedServicePro.csproj": {
-              "projectPath": "/Users/amadeushovden/Documents/Nosted-Prosjekt/NostedServicePro/NostedServicePro.csproj"
+            "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Nosted-Prosjekt\\NostedServicePro\\NostedServicePro.csproj": {
+              "projectPath": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Nosted-Prosjekt\\NostedServicePro\\NostedServicePro.csproj"
             }
           }
         }
@@ -10941,7 +10941,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.400/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   },
