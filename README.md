@@ -8,17 +8,18 @@ For detaljert dokumentasjon om koden og prosjektet, vennligst sjekk vår [Wiki](
 
 ## Funksjoner
 
-- Administrasjon av serviceordrer
+- Administrasjon av serviceordrer med tilhørende sjekklister
 - Bruker- og rollestyring
 - Historikk og arkivering av serviceordrer
-- ...
+- 
 
 ## Installasjon
 
 1. Klon repoet: `git clone https://github.com/Jakobaune/Nosted-Prosjekt.git`
 2. Naviger til prosjektmappen: `cd Nosted-Prosjekt`
 3. Åpne løsningen i din foretrukne IDE
-4. Bygg og kjør prosjektet
+4. Skriv inn dotnet ef database update i din konsoll
+5. Bygg og kjør programmet
 
 ## Problemer og Feil
 
