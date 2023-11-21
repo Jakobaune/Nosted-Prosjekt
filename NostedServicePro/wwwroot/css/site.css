@@ -1,4 +1,4 @@
-/*Standar css for at siden skal være responsive, hovedsakelig headeren*/
+/*Standard css for at siden skal være responsive, hovedsakelig headeren*/
 
 @media (max-width: 1200px) {
 
@@ -124,7 +124,7 @@ footer {
     position: fixed;
     bottom: -90px; /* Start utenfor synlighet */
     width: 100%;
-    transition: bottom 0.3s; /* Legg til en overgang for jevn animasjon */
+    transition: bottom 0.3s; /* Overgang for jevn animasjon */
 }
 
 
@@ -146,7 +146,7 @@ footer {
 }
 
 .nav-link.btn:hover {
-    background-color: #E06F06; /* Change background color on hover */
+    background-color: #E06F06; /* Bakgrunnsfarge med hover */
 }
 
 .menu-hover {
@@ -206,7 +206,6 @@ footer {
     box-shadow: 2px 2px 5px 5px #E06F06;
 }
 
-/* Sett opp kolonnene for mindre skjermer (mobilvisning) */
 
 
 /*css t
@@ -226,10 +225,10 @@ footer {
 
 /* alle nav-links holder samme stil, med nøsted farger*/
 .nav-link {
-    color: #E06F06; /* Set your desired orange color here */
+    color: #E06F06; 
 }
 
 /* Optional: Change link color on hover */
 .nav-link:hover {
-    color: #A1B6C1; /* Set a darker shade of orange for hover effect */
+    color: #A1B6C1; 
 }

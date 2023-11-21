@@ -3,11 +3,13 @@
 @{
     ViewData["Title"] = "Print";
 }
+<!-- Hidden logo for print view -->
 
 <link rel="stylesheet" href="~/css/PrintPage.css"/>
 
 <body>
 <div class="hidden-logo">
+        <!-- Logo bilde -->
     <img src="~/css/Bilder/LOGO.jpg" alt="Print Logo" height="50px" class="mb-2" style="margin-top: 20px;">
 </div>
 <div id="printoverskrift" style="margin-top: 20px;">
@@ -15,6 +17,7 @@
 </div>
 <div class="table-container">
     <table>
+            <!-- Table header for Service Order details -->
         <thead>
         <tr>
             <th colspan="2">Serviceskjema #@Html.DisplayFor(model => model.OrdreID)</th>
@@ -83,8 +86,9 @@
 <button class="btn btn-primary" id="print">Skriv ut/lagre serviceskjema</button>
 <a id="print" asp-action="Arkiv">Tilbake til historikk</a>
 
-<!-- Veldig lite script, tenker den blir i filen her. -->
-<script>const printBtn = document.getElementById('print');
+    <!-- Script for handling print functionality -->
+    <script>
+        const printBtn = document.getElementById('print');
         printBtn.addEventListener('click', function () {
             print();
         })</script>

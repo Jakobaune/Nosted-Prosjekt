@@ -28,7 +28,7 @@ public class Program
         // Legg til st�tte for kontrollere med visninger
         builder.Services.AddControllersWithViews();
 
-        // Legg til st�tte for sesjoner med en timeout p� 30 minutter
+        // Legg til st�tte for sesjoner med en timeout på 30 minutter
         builder.Services.AddSession(options =>
         {
             options.IdleTimeout = TimeSpan.FromMinutes(30);
@@ -39,7 +39,7 @@ public class Program
         // Bygg webapplikasjonen
         var app = builder.Build();
 
-        // Konfigurer HTTP-foresp�rselspipelinen
+        // Konfigurer HTTP-forespørselspipelinen
         if (!app.Environment.IsDevelopment())
         {
             app.UseExceptionHandler("/Home/Error");
@@ -60,7 +60,7 @@ public class Program
             "{controller=Account}/{action=Login}/{id?}");
         app.MapRazorPages();
 
-        // Opprett Kestrel-server med tilpasset konfigurasjon    for � fjerne Server-headeren
+        // Opprett Kestrel-server med tilpasset konfigurasjon for å fjerne Server-headeren
         WebHost.CreateDefaultBuilder(args)
             .ConfigureKestrel(c => c.AddServerHeader = false)
             .UseStartup<Startup>()
@@ -104,7 +104,7 @@ public class Program
             }
         }
 
-        // Kj�r webapplikasjonen
+        // Kjør webapplikasjonen
         app.Run();
     }
 }

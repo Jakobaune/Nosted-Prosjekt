@@ -23,10 +23,10 @@
 
 .radio-options label {
     display: block;
-    margin-right: 10px; /* Spacing between each radio button */
-    width: 150px; /* Width of rectangle */
-    height: 50px; /* Height of rectangle */
-    line-height: 50px; /* To center text vertically */
+    margin-right: 10px; /* Mellomrom mellom hver knapp */
+    width: 150px; /* Bredde på rektangel */
+    height: 50px; /* Høtyde på rektangel rectangle */
+    line-height: 50px; 
     text-align: center;
     border: 1px solid #ccc;
     cursor: pointer;
@@ -40,7 +40,7 @@
 
 
 .radio-options input[type="radio"] {
-    display: none; /* Hide the radio button itself */
+    display: none; 
 }
 
 .radio-options input[type="radio"]:checked + label {

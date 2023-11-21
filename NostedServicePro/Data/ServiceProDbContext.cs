@@ -2,18 +2,23 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace NostedServicePro.Data;
-
-public class ServiceProDbContex : IdentityDbContext<IdentityUser>
+namespace NostedServicePro.Data
 {
-    public ServiceProDbContex(DbContextOptions<ServiceProDbContex> options) : base(options)
+    // Databasekontekst som utvider IdentityDbContext for brukeradministrasjon
+    public class ServiceProDbContex : IdentityDbContext<IdentityUser>
     {
-    }
+        // Konstruktør som tar imot DbContextOptions og sender dem videre til basisklassen
+        public ServiceProDbContex(DbContextOptions<ServiceProDbContex> options) : base(options)
+        {
+        }
 
-    public DbSet<ServiceOrdre> service { get; set; }
+        // DbSet for ServiceOrdre-entiteten som representerer serviceordre i databasen
+        public DbSet<ServiceOrdre> service { get; set; }
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        base.OnModelCreating(modelBuilder);
+        // Metode som kan brukes til å tilpasse konfigurasjonen av modellene i databasen
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

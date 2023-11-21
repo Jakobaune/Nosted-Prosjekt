@@ -123,16 +123,16 @@
             </div>
             <hr/>
 
-            @if (User.IsInRole("Admin"))
-            {
+            <!--Dette feltet kan ikke endres, bare leses-->
                 <div class="form-group">
                     <strong>
                         <label asp-for="RegistreringFullførtAv" class="control-label">Registrert av:</label>
                     </strong>
-                    <input asp-for="RegistreringFullførtAv" class="form-control text-muted"/>
+                    <input asp-for="RegistreringFullførtAv" class="form-control text-muted" readonly />
                     <span asp-validation-for="RegistreringFullførtAv" class="text-danger"></span>
                 </div>
-            }
+            
+
 
             <br/>
 

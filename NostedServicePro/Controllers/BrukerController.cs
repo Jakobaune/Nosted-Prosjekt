@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NostedServicePro.Models;
 
+// Kontroller for brukeradministrasjon som krever administratorrolle for tilgang
 [Authorize(Roles = "Admin")]
 public class BrukerController : Controller
 {
@@ -11,7 +12,7 @@ public class BrukerController : Controller
     private readonly RoleManager<IdentityRole> _roleManager;
     private readonly UserManager<IdentityUser> _userManager;
 
-
+    // Konstruktør som injiserer nødvendige tjenester og avhengigheter
     public BrukerController(UserManager<IdentityUser> userManager, ILogger<BrukerController> logger,
         RoleManager<IdentityRole> roleManager)
     {
@@ -20,6 +21,7 @@ public class BrukerController : Controller
         _roleManager = roleManager;
     }
 
+    // Aksjonsmetode for å vise alle brukere
     public async Task<IActionResult> VisAlleBrukere()
     {
         try
@@ -51,6 +53,7 @@ public class BrukerController : Controller
         }
     }
 
+    // Aksjonsmetode for å vise redigeringsvisning for en bruker
     [HttpGet]
     public async Task<IActionResult> RedigerBruker(string userId)
     {
@@ -75,7 +78,7 @@ public class BrukerController : Controller
         return View(brukerMedRoller);
     }
 
-
+    // Aksjonsmetode for å lagre endringer i en bruker
     [HttpPost]
     public async Task<IActionResult> LagreRedigering(BrukerMedRollerViewModel model)
     {
@@ -125,12 +128,13 @@ public class BrukerController : Controller
         return RedirectToAction("VisAlleBrukere");
     }
 
-
+    // Privat metode for å sjekke om en bruker har en bestemt rolle
     private async Task<bool> IsUserInRoleAsync(IdentityUser user, string role)
     {
         return await _userManager.IsInRoleAsync(user, role);
     }
 
+    // Aksjonsmetode for å vise slettevisning for en bruker
     public async Task<IActionResult> SlettBruker(string userId)
     {
         if (string.IsNullOrEmpty(userId)) return NotFound();
@@ -149,7 +153,7 @@ public class BrukerController : Controller
         return View(brukerMedRollerViewModel);
     }
 
-
+    // Aksjonsmetode for å bekrefte sletting av en bruker
     [HttpPost]
     public async Task<IActionResult> BekreftSlettBruker(string userId)
     {

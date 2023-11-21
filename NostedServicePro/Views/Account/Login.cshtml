@@ -6,12 +6,16 @@
 <!DOCTYPE html>
 <html lang="nb">
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- Metatagger for dokumentet -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] Nøsted Service Pro</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
-    <link rel="stylesheet" href="~/NostedServicePro.styles.css" asp-append-version="true"/>
+
+    <!-- Lenker til CSS-stiler, inkludert Bootstrap og egendefinerte stiler -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/NostedServicePro.styles.css" asp-append-version="true" />
+
     @{
         ViewData["Title"] = "Logg in";
         Layout = null;
@@ -21,47 +25,51 @@
 
 <body id="loginBody">
 
-<div class="login">
+    <div class="login">
 
-    <section>
-        <form asp-controller="Account" asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal" role="form">
+        <section>
+            <!-- Loginskjema -->
+            <form asp-controller="Account" asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal" role="form">
 
+                <!-- Logo og tittel -->
+                <img src="~/css/Bilder/LOGO.jpg" alt="Logo" height="50px">
+                <span style="font-size: 25px; color:#A1B6C1">Service Pro</span>
+                <hr />
 
-            <img src="~/css/Bilder/LOGO.jpg" alt="Logo" height="50px">
-            <span style="font-size: 25px; color:#A1B6C1">Service Pro</span>
+                <!-- Valideringsoppsummering for modellen, vises som rød tekst ved valideringsfeil -->
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-            <hr/>
-
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-            <div class="form-group">
-                <label asp-for="UserName" class="control-label">Brukernavn</label>
-                <div>
-                    <input asp-for="UserName" class="form-control"/>
-                    <span asp-validation-for="UserName" class="text-danger"></span>
+                <!-- Input-felt for brukernavn -->
+                <div class="form-group">
+                    <label asp-for="UserName" class="control-label">Brukernavn</label>
+                    <div>
+                        <input asp-for="UserName" class="form-control" />
+                        <span asp-validation-for="UserName" class="text-danger"></span>
+                    </div>
                 </div>
-            </div>
 
-            <br/>
+                <br />
 
-            <div class="form-group">
-                <label asp-for="Password" class="control-label">Passord</label>
-                <div>
-                    <input asp-for="Password" class="form-control"/>
-                    <span asp-validation-for="Password" class="text-danger"></span>
+                <!-- Input-felt for passord -->
+                <div class="form-group">
+                    <label asp-for="Password" class="control-label">Passord</label>
+                    <div>
+                        <input asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
                 </div>
-            </div>
 
-            <br/>
+                <br />
 
-            <div class="form-group">
-                <div>
-                    <button type="submit" class="btn btn-primary">Logg inn</button>
+                <!-- Knapp for å sende inn loginskjemaet -->
+                <div class="form-group">
+                    <div>
+                        <button type="submit" class="btn btn-primary">Logg inn</button>
+                    </div>
                 </div>
-            </div>
 
-        </form>
-    </section>
-</div>
+            </form>
+        </section>
+    </div>
 </body>
 </html>

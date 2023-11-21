@@ -1,8 +1,12 @@
-namespace NostedServicePro.Models;
-
-public class ErrorViewModel
+namespace NostedServicePro.Models
 {
-    public string? RequestId { get; set; }
+    // Modellklasse for feilvisning
+    public class ErrorViewModel
+    {
+        // Forespørsels-ID knyttet til feilen
+        public string? RequestId { get; set; }
 
-    public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+        // Egenskap som returnerer true hvis RequestId ikke er null eller tom
+        public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+    }
 }

@@ -2,37 +2,43 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
-namespace NostedServicePro.Models;
-
-public class VisAlleBrukereModel : PageModel
+namespace NostedServicePro.Models
 {
-    private readonly UserManager<IdentityUser> _userManager;
-
-    public VisAlleBrukereModel(UserManager<IdentityUser> userManager)
+    public class VisAlleBrukereModel : PageModel
     {
-        _userManager = userManager;
-    }
+        private readonly UserManager<IdentityUser> _userManager;
 
-    public List<BrukerMedRoller> BrukereMedRoller { get; set; }
-
-    public string Title { get; set; } = "VisAlleBrukere"; // Setter en standard tittel
-
-    public async Task OnGetAsync()
-    {
-        // Hent alle brukere
-        var brukere = await _userManager.Users.ToListAsync();
-
-        // Hent roller for hver bruker
-        BrukereMedRoller = brukere.Select(user => new BrukerMedRoller
+        // Konstruktør som injiserer UserManager for å håndtere brukeroperasjoner
+        public VisAlleBrukereModel(UserManager<IdentityUser> userManager)
         {
-            Bruker = user,
-            Roller = _userManager.GetRolesAsync(user).Result.ToList()
-        }).ToList();
-    }
-}
+            _userManager = userManager;
+        }
 
-public class BrukerMedRoller
-{
-    public IdentityUser Bruker { get; set; }
-    public List<string> Roller { get; set; }
+        // Liste som inneholder brukere med tilhørende roller
+        public List<BrukerMedRoller> BrukereMedRoller { get; set; }
+
+        // Standard tittel for siden
+        public string Title { get; set; } = "VisAlleBrukere";
+
+        // Metode som kalles når GET-forespørselen utføres på siden
+        public async Task OnGetAsync()
+        {
+            // Hent alle brukere fra databasen
+            var brukere = await _userManager.Users.ToListAsync();
+
+            // Opprett en liste av BrukerMedRoller ved å hente roller for hver bruker
+            BrukereMedRoller = brukere.Select(user => new BrukerMedRoller
+            {
+                Bruker = user,
+                Roller = _userManager.GetRolesAsync(user).Result.ToList()
+            }).ToList();
+        }
+    }
+
+    // Modellklasse som representerer en bruker med tilhørende roller
+    public class BrukerMedRoller
+    {
+        public IdentityUser Bruker { get; set; }
+        public List<string> Roller { get; set; }
+    }
 }
