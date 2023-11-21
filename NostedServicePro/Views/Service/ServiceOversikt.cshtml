@@ -16,18 +16,20 @@
 }
 
 <h2>Aktive Ordre:</h2>
-<hr />
+<hr/>
 <!-- En rad som inneholder kort for hver serviceordre som ikke har fullført sjekklisten -->
 <div class="row">
     <!-- Loop gjennom hver serviceordre i modellen som ikke har fullført sjekklisten -->
     @foreach (var serviceordre in Model.Where(s => !s.ErSjekklisteFullført))
-        {
+    {
         <div class="col-md-4">
             <!-- Kort for hver serviceordre -->
             <div class="card mb-3">
                 <div class="card-body">
                     <!-- Visningsdetaljer for serviceordren -->
-                    <p><strong>Ordre ID: @serviceordre.OrdreID</strong></p>
+                    <p>
+                        <strong>Ordre ID: @serviceordre.OrdreID</strong>
+                    </p>
                     <p>Kundenavn:<em> @serviceordre.Kundenavn </em></p>
                     <p>E-post:<em> @serviceordre.Kundeepost </em></p>
                     <p>Mottatt:<em> @serviceordre.ProduktmottattDato </em></p>
@@ -41,14 +43,14 @@
 
                         <!-- Legg til knapp for å registrere mottatt -->
                         @{
-                            bool hideButton = serviceordre.ProduktmottattDato != null; // Adjust the condition based on the actual confirmation logic
+                            var hideButton = serviceordre.ProduktmottattDato != null; // Adjust the condition based on the actual confirmation logic
                         }
 
                         @if (!hideButton)
                         {
                             <div>
                                 <form id="mottattForm-@serviceordre.OrdreID" asp-controller="Service" asp-action="RegistrerMottatt" method="post">
-                                    <input type="hidden" name="id" value="@serviceordre.OrdreID" />
+                                    <input type="hidden" name="id" value="@serviceordre.OrdreID"/>
                                     <button type="submit" class="btn btn-primary" id="mottattButton-@serviceordre.OrdreID">Registrer mottatt</button>
                                 </form>
                             </div>

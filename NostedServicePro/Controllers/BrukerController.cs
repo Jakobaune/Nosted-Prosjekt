@@ -7,12 +7,13 @@ using NostedServicePro.Models;
 [Authorize(Roles = "Admin")]
 public class BrukerController : Controller
 {
-    private readonly UserManager<IdentityUser> _userManager;
     private readonly ILogger<BrukerController> _logger;
     private readonly RoleManager<IdentityRole> _roleManager;
+    private readonly UserManager<IdentityUser> _userManager;
 
 
-    public BrukerController(UserManager<IdentityUser> userManager, ILogger<BrukerController> logger, RoleManager<IdentityRole> roleManager)
+    public BrukerController(UserManager<IdentityUser> userManager, ILogger<BrukerController> logger,
+        RoleManager<IdentityRole> roleManager)
     {
         _userManager = userManager;
         _logger = logger;
@@ -53,17 +54,11 @@ public class BrukerController : Controller
     [HttpGet]
     public async Task<IActionResult> RedigerBruker(string userId)
     {
-        if (string.IsNullOrEmpty(userId))
-        {
-            return NotFound();
-        }
+        if (string.IsNullOrEmpty(userId)) return NotFound();
 
         var bruker = await _userManager.FindByIdAsync(userId);
 
-        if (bruker == null)
-        {
-            return NotFound();
-        }
+        if (bruker == null) return NotFound();
 
         var roller = await _userManager.GetRolesAsync(bruker);
         var alleRoller = await _roleManager.Roles.Select(r => r.Name).ToListAsync();
@@ -86,10 +81,7 @@ public class BrukerController : Controller
     {
         var bruker = await _userManager.FindByIdAsync(model.UserId);
 
-        if (bruker == null)
-        {
-            return NotFound();
-        }
+        if (bruker == null) return NotFound();
 
         // Logg nåværende roller før oppdatering
         var nåværendeRollerFør = await _userManager.GetRolesAsync(bruker);
@@ -97,12 +89,8 @@ public class BrukerController : Controller
 
         // Oppdater roller
         foreach (var rolle in model.Roller)
-        {
             if (!await IsUserInRoleAsync(bruker, rolle))
-            {
                 await _userManager.AddToRoleAsync(bruker, rolle);
-            }
-        }
 
         var nåværendeRollerEtter = await _userManager.GetRolesAsync(bruker);
         _logger.LogInformation($"Nåværende roller etter oppdatering: {string.Join(", ", nåværendeRollerEtter)}");
@@ -110,10 +98,7 @@ public class BrukerController : Controller
         // Fjern roller som er fjernet i brukerens visning
         var fjernedeRoller = nåværendeRollerFør.Except(model.Roller);
 
-        foreach (var rolle in fjernedeRoller)
-        {
-            await _userManager.RemoveFromRoleAsync(bruker, rolle);
-        }
+        foreach (var rolle in fjernedeRoller) await _userManager.RemoveFromRoleAsync(bruker, rolle);
 
         // Logg nåværende roller etter fjerning
         var nåværendeRollerEtterFjerning = await _userManager.GetRolesAsync(bruker);
@@ -129,7 +114,7 @@ public class BrukerController : Controller
         if (!result.Succeeded)
         {
             _logger.LogError($"Feil ved oppdatering av bruker: {string.Join(", ", result.Errors)}");
-            return View("LagreRedigering"); // Vis feilsiden eller håndter feilen på en annen måte
+            return View("RedigerBruker"); // Vis feilsiden eller håndter feilen på en annen måte
         }
 
         // Logg suksess
@@ -141,7 +126,6 @@ public class BrukerController : Controller
     }
 
 
-
     private async Task<bool> IsUserInRoleAsync(IdentityUser user, string role)
     {
         return await _userManager.IsInRoleAsync(user, role);
@@ -149,16 +133,10 @@ public class BrukerController : Controller
 
     public async Task<IActionResult> SlettBruker(string userId)
     {
-        if (string.IsNullOrEmpty(userId))
-        {
-            return NotFound();
-        }
+        if (string.IsNullOrEmpty(userId)) return NotFound();
 
         var bruker = await _userManager.FindByIdAsync(userId);
-        if (bruker == null)
-        {
-            return NotFound();
-        }
+        if (bruker == null) return NotFound();
 
         var brukerMedRollerViewModel = new BrukerMedRollerViewModel
         {
@@ -175,16 +153,10 @@ public class BrukerController : Controller
     [HttpPost]
     public async Task<IActionResult> BekreftSlettBruker(string userId)
     {
-        if (string.IsNullOrEmpty(userId))
-        {
-            return NotFound();
-        }
+        if (string.IsNullOrEmpty(userId)) return NotFound();
 
         var bruker = await _userManager.FindByIdAsync(userId);
-        if (bruker == null)
-        {
-            return NotFound();
-        }
+        if (bruker == null) return NotFound();
 
         var result = await _userManager.DeleteAsync(bruker);
         if (result.Succeeded)
@@ -196,6 +168,4 @@ public class BrukerController : Controller
         TempData["ErrorMessage"] = "Feil ved sletting av bruker.";
         return RedirectToAction("VisAlleBrukere");
     }
-
-
 }

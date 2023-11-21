@@ -10847,33 +10847,32 @@
     ]
   },
   "packageFolders": {
-    "/Users/amadeushovden/.nuget/packages/": {}
+    "/Users/jakobaune/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/amadeushovden/Documents/Nosted-Prosjekt/NostedServiceProTest/NostedServiceProTest.csproj",
+      "projectUniqueName": "/Users/jakobaune/Documents/Nosted-Prosjekt/NostedServiceProTest/NostedServiceProTest.csproj",
       "projectName": "NostedServiceProTest",
-      "projectPath": "/Users/amadeushovden/Documents/Nosted-Prosjekt/NostedServiceProTest/NostedServiceProTest.csproj",
-      "packagesPath": "/Users/amadeushovden/.nuget/packages/",
-      "outputPath": "/Users/amadeushovden/Documents/Nosted-Prosjekt/NostedServiceProTest/obj/",
+      "projectPath": "/Users/jakobaune/Documents/Nosted-Prosjekt/NostedServiceProTest/NostedServiceProTest.csproj",
+      "packagesPath": "/Users/jakobaune/.nuget/packages/",
+      "outputPath": "/Users/jakobaune/Documents/Nosted-Prosjekt/NostedServiceProTest/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/amadeushovden/.nuget/NuGet/NuGet.Config"
+        "/Users/jakobaune/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "/usr/local/share/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/Users/amadeushovden/Documents/Nosted-Prosjekt/NostedServicePro/NostedServicePro.csproj": {
-              "projectPath": "/Users/amadeushovden/Documents/Nosted-Prosjekt/NostedServicePro/NostedServicePro.csproj"
+            "/Users/jakobaune/Documents/Nosted-Prosjekt/NostedServicePro/NostedServicePro.csproj": {
+              "projectPath": "/Users/jakobaune/Documents/Nosted-Prosjekt/NostedServicePro/NostedServicePro.csproj"
             }
           }
         }

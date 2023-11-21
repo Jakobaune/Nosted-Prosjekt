@@ -1,8 +1,8 @@
-﻿using NostedServicePro.Data;
-using NostedServicePro.Models;
-using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using NostedServicePro.Data;
+using NostedServicePro.Models;
 
 [Authorize]
 public class HomeController : Controller
@@ -15,16 +15,18 @@ public class HomeController : Controller
         _dbContext = dbContext;
         _logger = logger;
     }
+
     public IActionResult Index()
     {
         try
         {
-            var uferdigeServiceOrdre = _dbContext.service.Where(ordre => !ordre.ErSjekklisteFullført).ToList(); //omgjør data i DB til liste for de elementene som er == 0
+            var uferdigeServiceOrdre =
+                _dbContext.service.Where(ordre => !ordre.ErSjekklisteFullført)
+                    .ToList(); //omgjør data i DB til liste for de elementene som er == 0
             return View(uferdigeServiceOrdre);
         }
         catch (Exception ex)
         {
-
             return View("Error"); // Vis feilsiden
         }
     }

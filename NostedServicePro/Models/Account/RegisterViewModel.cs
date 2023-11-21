@@ -7,7 +7,6 @@ namespace NostedServicePro.Models.Account;
 
 public class RegisterViewModel
 {
-
     [Required]
     [Display(Name = "UserName")]
     public string UserName { get; set; }
@@ -28,7 +27,5 @@ public class RegisterViewModel
     [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
     public string ConfirmPassword { get; set; }
 
-    [Required]
-    [Display(Name = "Role")]
-    public string SelectedRole { get; set; }
+    [Required] [Display(Name = "Role")] public string SelectedRole { get; set; }
 }

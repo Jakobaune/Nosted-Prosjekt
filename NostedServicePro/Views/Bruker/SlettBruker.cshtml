@@ -3,7 +3,7 @@
 <h2>Bekreft sletting av bruker</h2>
 <p>Er du sikker på at du vil slette brukeren <strong>@Model.UserName</strong>?</p>
 <form asp-action="BekreftSlettBruker" method="post">
-    <input type="hidden" asp-for="UserId" />
+    <input type="hidden" asp-for="UserId"/>
     <button type="submit" class="btn btn-danger">Ja, slett brukeren</button>
     <a asp-action="VisAlleBrukere">Avbryt</a>
 </form>

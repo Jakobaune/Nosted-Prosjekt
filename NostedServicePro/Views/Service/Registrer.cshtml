@@ -14,8 +14,10 @@
 <!-- Overskrift og informasjon for registreringssiden -->
 <div>
     <h2>Opprett Ny Serviceordre</h2>
-    <hr />
-    <p><em>Fyll ut info om kunden</em></p>
+    <hr/>
+    <p>
+        <em>Fyll ut info om kunden</em>
+    </p>
 </div>
 
 <!-- HTML-skjema for registrering, sender data til "Registrer" i "Service" -kontrolleren -->
@@ -24,62 +26,87 @@
     @Html.AntiForgeryToken()
 
     <div class="form-group">
-        <strong><label asp-for="Kundenavn">Navn på kunden:</label></strong>
-        <input asp-for="Kundenavn" class="form-control" />
+        <strong>
+            <label asp-for="Kundenavn">Navn på kunden:</label>
+        </strong>
+        <input asp-for="Kundenavn" class="form-control"/>
         @Html.ValidationMessageFor(model => model.Kundenavn, "", new { @class = "text-danger" })
     </div>
 
     <div class="form-group">
-        <strong><label asp-for="Kundeepost">E-post:</label></strong>
-        <input asp-for="Kundeepost" class="form-control" />
+        <strong>
+            <label asp-for="Kundeepost">E-post:</label>
+        </strong>
+        <input asp-for="Kundeepost" class="form-control"/>
         @Html.ValidationMessageFor(model => model.Kundeepost, "", new { @class = "text-danger" })
     </div>
 
     <div class="form-group">
-        <strong><label asp-for="Kundetlf">Tlf-nummer:</label></strong>
-        <input asp-for="Kundetlf" class="form-control" />
+        <strong>
+            <label asp-for="Kundetlf">Tlf-nummer:</label>
+        </strong>
+        <input asp-for="Kundetlf" class="form-control"/>
+        @Html.ValidationMessageFor(model => model.Kundetlf, "", new { @class = "text-danger" })
     </div>
 
 
     <div class="form-group">
-        <strong><label asp-for="Produkttypevinsj">Vinsj-Type:</label></strong>
-        <input asp-for="Produkttypevinsj" class="form-control" />
+        <strong>
+            <label asp-for="Produkttypevinsj">Vinsj-Type:</label>
+        </strong>
+        <input asp-for="Produkttypevinsj" class="form-control"/>
         @Html.ValidationMessageFor(model => model.Produkttypevinsj, "", new { @class = "text-danger" })
     </div>
 
     <div class="form-group">
-        <strong><label asp-for="ÅrsmodellVinsj">Årsmodell:</label></strong>
+        <strong>
+            <label asp-for="ÅrsmodellVinsj">Årsmodell:</label>
+        </strong>
         <select asp-for="ÅrsmodellVinsj" class="form-control">
-            @for (int year = DateTime.Now.Year; year >= 1950; year--)
+            @for (var year = DateTime.Now.Year; year >= 1950; year--)
             {
                 <option value="@year">@year</option>
             }
         </select>
+        @Html.ValidationMessageFor(model => model.ÅrsmodellVinsj, "", new { @class = "text-danger" })
     </div>
 
     <div class="form-group">
-        <strong><label asp-for="Serienummervinsj">Serienummer:</label></strong>
-        <input asp-for="Serienummervinsj" class="form-control" />
+        <strong>
+            <label asp-for="Serienummervinsj">Serienummer:</label>
+        </strong>
+        <input asp-for="Serienummervinsj" class="form-control"/>
+        @Html.ValidationMessageFor(model => model.Serienummervinsj, "", new { @class = "text-danger" })
     </div>
 
     <div class="form-group">
-        <strong><label asp-for="AvtaltKommentar">Spesifikke avtaler med kunden:</label></strong>
+        <strong>
+            <label asp-for="AvtaltKommentar">Spesifikke avtaler med kunden:</label>
+        </strong>
         <textarea asp-for="AvtaltKommentar" class="form-control"></textarea>
+        @Html.ValidationMessageFor(model => model.AvtaltKommentar, "", new { @class = "text-danger" })
     </div>
 
     <div class="form-group">
-        <strong><label asp-for="InternKommentar">Internkommentar:</label></strong>
+        <strong>
+            <label asp-for="InternKommentar">Internkommentar:</label>
+        </strong>
         <textarea asp-for="InternKommentar" class="form-control"></textarea>
+        @Html.ValidationMessageFor(model => model.InternKommentar, "", new { @class = "text-danger" })
     </div>
 
     <div class="form-group">
-        <strong><label asp-for="Problembeskrivelse">Problembeskrivelse:</label></strong>
+        <strong>
+            <label asp-for="Problembeskrivelse">Problembeskrivelse:</label>
+        </strong>
         <textarea asp-for="Problembeskrivelse" class="form-control"></textarea>
         @Html.ValidationMessageFor(model => model.Problembeskrivelse, "", new { @class = "text-danger" })
     </div>
 
     <div class="form-group">
-        <strong><label asp-for="ServiceType">Type service:</label></strong>
+        <strong>
+            <label asp-for="ServiceType">Type service:</label>
+        </strong>
         <select asp-for="ServiceType" class="form-control">
             <option value="1 års service">1 års service</option>
             <option value="3 års service">3 års service</option>
@@ -92,30 +119,37 @@
     </div>
 
     <div class="form-group">
-        <strong><label asp-for="AvtaltleveringsDato">Når skal vinsjen leveres til service?</label></strong>
-        <input asp-for="AvtaltleveringsDato" type="date" class="form-control" />
+        <strong>
+            <label asp-for="AvtaltleveringsDato">Når skal vinsjen leveres til service?</label>
+        </strong>
+        <input asp-for="AvtaltleveringsDato" type="date" class="form-control"/>
         @Html.ValidationMessageFor(model => model.AvtaltleveringsDato, "", new { @class = "text-danger" })
     </div>
 
     <div class="form-group">
-        <strong><label asp-for="Avtaltferdigstillingsdato">Når skal vinsjen være ferdig?</label></strong>
-        <input asp-for="Avtaltferdigstillingsdato" type="date" class="form-control" />
+        <strong>
+            <label asp-for="Avtaltferdigstillingsdato">Når skal vinsjen være ferdig?</label>
+        </strong>
+        <input asp-for="Avtaltferdigstillingsdato" type="date" class="form-control"/>
         @Html.ValidationMessageFor(model => model.Avtaltferdigstillingsdato, "", new { @class = "text-danger" })
     </div>
 
     <div class="form-group">
-        <strong><label asp-for="RegistreringFullførtAv">Service regsitrert av: (skann kodebrikke)</label></strong>
-        <input asp-for="RegistreringFullførtAv" class="form-control" />
+        <strong>
+            <label asp-for="RegistreringFullførtAv">Service regsitrert av: (skann kodebrikke)</label>
+        </strong>
+        <input asp-for="RegistreringFullførtAv" class="form-control"/>
         @Html.ValidationMessageFor(model => model.RegistreringFullførtAv, "", new { @class = "text-danger" })
     </div>
 
-    <br />
+    <br/>
 
     <div>
-        <p><em>Husk å registrere "Produktmottat" senere!</em></p>
+        <p>
+            <em>Husk å registrere "Produktmottat" senere!</em>
+        </p>
     </div>
 
     <!-- Knapp for å sende skjemaet og lagre en ny serviceordre -->
     <button type="submit" class="btn btn-primary">Lag serviceordre</button>
 }
-

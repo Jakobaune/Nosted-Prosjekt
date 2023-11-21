@@ -1,6 +1,4 @@
-﻿@using Microsoft.AspNetCore.Identity
-
-@model List<BrukerMedRollerViewModel>
+﻿@model List<BrukerMedRollerViewModel>
 
 @{
     ViewData["Title"] = "VisAlleBrukere";
@@ -18,44 +16,43 @@
     </div>
 }
 <h2>Brukere</h2>
-<hr />
+<hr/>
 
 <a asp-action="Register" asp-controller="Account" style="font-weight: bold; border: 1px solid #e16f07; border-radius: 5px; padding: 5px 10px; text-decoration: none;">Registrer ny bruker</a>
-<hr />
+<hr/>
 
 
 <div class="table-responsive">
     <table class="table">
         <thead>
-            <tr>
-                <th class="sortable" data-sort-by="UserName" data-sort-order="@ViewData["BNSortParm"]">
-                    <a asp-route-sortOrder="@ViewData["BNSortParm"]">BrukerNavn</a>
-                </th>
+        <tr>
+            <th class="sortable" data-sort-by="UserName" data-sort-order="@ViewData["BNSortParm"]">
+                <a asp-route-sortOrder="@ViewData["BNSortParm"]">BrukerNavn</a>
+            </th>
 
-                <th class="sortable" data-sort-by="Email" data-sort-order="@ViewData["EPSortParm"]">
-                    <a asp-route-sortOrder="@ViewData["EPSortParm"]">Epostadresse</a>
-                </th>
+            <th class="sortable" data-sort-by="Email" data-sort-order="@ViewData["EPSortParm"]">
+                <a asp-route-sortOrder="@ViewData["EPSortParm"]">Epostadresse</a>
+            </th>
 
-                <th class="sortable" data-sort-by="Roller" data-sort-order="@ViewData["RLSortParm"]">
-                    <a asp-route-sortOrder="@ViewData["EPSortParm"]">Roller</a>
-                </th>
-                <th></th>
-            </tr>
+            <th class="sortable" data-sort-by="Roller" data-sort-order="@ViewData["RLSortParm"]">
+                <a asp-route-sortOrder="@ViewData["EPSortParm"]">Roller</a>
+            </th>
+            <th></th>
+        </tr>
         </thead>
         <tbody>
-            @foreach (var bruker in Model)
-            {
-
-                <tr>
-                    <td>@bruker.UserName</td>
-                    <td>@bruker.Email</td>
-                    <td>@string.Join(", ", bruker.Roller)</td>
-                    <td>
-                        <a asp-action="RedigerBruker" asp-route-userId="@bruker.UserId">Rediger |</a>
-                        <a asp-action="SlettBruker" asp-route-userId="@bruker.UserId"> Slett</a>
-                    </td>
-                </tr>
-            }
+        @foreach (var bruker in Model)
+        {
+            <tr>
+                <td>@bruker.UserName</td>
+                <td>@bruker.Email</td>
+                <td>@string.Join(", ", bruker.Roller)</td>
+                <td>
+                    <a asp-action="RedigerBruker" asp-route-userId="@bruker.UserId">Rediger |</a>
+                    <a asp-action="SlettBruker" asp-route-userId="@bruker.UserId"> Slett</a>
+                </td>
+            </tr>
+        }
         </tbody>
     </table>
 </div>

@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 public class EditUserViewModel
 {
@@ -14,9 +13,7 @@ public class EditUserViewModel
     [Display(Name = "E-postadresse")]
     public string Email { get; set; }
 
-    [Display(Name = "Nåværende roller")]
-    public List<string> CurrentRoles { get; set; }
+    [Display(Name = "Nåværende roller")] public List<string> CurrentRoles { get; set; }
 
-    [Display(Name = "Velg roller")]
-    public List<string> SelectedRoles { get; set; }
+    [Display(Name = "Velg roller")] public List<string> SelectedRoles { get; set; }
 }

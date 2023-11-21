@@ -1,12 +1,10 @@
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace NostedServicePro.Views.Bruker
+namespace NostedServicePro.Views.Bruker;
+
+public class SlettBrukerModel : PageModel
 {
-    public class SlettBrukerModel : PageModel
+    public void OnGet()
     {
-        public void OnGet()
-        {
-        }
     }
 }

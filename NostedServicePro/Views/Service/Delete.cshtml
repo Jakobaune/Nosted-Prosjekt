@@ -9,7 +9,8 @@
     <div class="alert alert-success" role="alert">
         @TempData["Message"]
     </div>
-} else if (!string.IsNullOrEmpty(TempData["Error"]?.ToString()))
+}
+else if (!string.IsNullOrEmpty(TempData["Error"]?.ToString()))
 {
     <div class="alert alert-danger" role="alert">
         @TempData["Error"]
@@ -20,7 +21,7 @@
 <!-- Overskrift for slettingssiden -->
 
 <h3>Er du sikker på du vil slette denne serviceordren?</h3>
-<hr />
+<hr/>
 <h4>@Html.DisplayNameFor(model => model.OrdreID) #<em>@Html.DisplayFor(model => model.OrdreID)</em></h4>
 <!-- Visning av serviceordre-detaljer -->
 <div>
@@ -113,13 +114,13 @@
     </dl>
     <!-- Slettingsskjema -->
     <form method="post" asp-controller="Service" asp-action="Delete">
-        <input type="hidden" asp-for="OrdreID" />
+        <input type="hidden" asp-for="OrdreID"/>
         <!-- Bekreftelsescheckbox -->
         <label>
-            <input type="checkbox" name="confirm" required /> Bekreft sletting
+            <input type="checkbox" name="confirm" required/> Bekreft sletting
         </label>
-                <!-- Slett-knapp og tilbake-knapp -->
-        <input type="submit" value="Slett" class="btn btn-danger" /> |
+        <!-- Slett-knapp og tilbake-knapp -->
+        <input type="submit" value="Slett" class="btn btn-danger"/> |
         <a asp-action="Arkiv">Tilbake til historikk</a>
     </form>
 
