@@ -11,7 +11,6 @@ For detaljert dokumentasjon om koden og prosjektet, vennligst sjekk vår [Wiki](
 - Administrasjon av serviceordrer med tilhørende sjekklister
 - Bruker- og rollestyring
 - Historikk og arkivering av serviceordrer
-- 
 
 ## Installasjon
 
