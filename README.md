@@ -3,11 +3,10 @@
 #### Gruppe 16 Nøsted
 
 - Overordnet
--     Ordne slik at all input må være utfylt for å fullføre en sjekkliste, men lagring kan skje utenom!
+-     basically gjort, ikke 100%
 -     Fikse padding, body er for nærme header. (ikke viktig)
--     Fikse service/edit. at datoer ikke er blanke, men har inputen fra registrering siden.
+-     Fikse service/edit. at datoer ikke er blanke, men har inputen fra registrering siden, Ikke gjort drit i
   
--     Egne css og JS filer overalt (ordna av Ama, utenom et par <script> siden det var så lite og ikke nødvendig, med mer kode der senere heller.
   
 -     kommentere alt! endre fra norsk til engelsk også!
 -     Dokumentasjon, ta underveis av gjennomgang? SIU
