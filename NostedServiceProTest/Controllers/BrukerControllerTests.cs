@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -6,85 +6,83 @@ using Moq;
 using NostedServicePro.Models;
 using NUnit.Framework;
 
-namespace NostedServiceProTest.Controllers;
-
-public class CustomUserManager : UserManager<IdentityUser>
+namespace NostedServiceProTest.Controllers
 {
-    public CustomUserManager(IUserStore<IdentityUser> store,
-        IOptions<IdentityOptions> optionsAccessor,
-        IPasswordHasher<IdentityUser> passwordHasher,
-        IEnumerable<IUserValidator<IdentityUser>> userValidators,
-        IEnumerable<IPasswordValidator<IdentityUser>> passwordValidators,
-        ILookupNormalizer keyNormalizer,
-        IdentityErrorDescriber errors,
-        IServiceProvider services,
-        ILogger<UserManager<IdentityUser>> logger)
-        : base(store, optionsAccessor, passwordHasher, userValidators, passwordValidators, keyNormalizer, errors,
-            services, logger)
+    [TestFixture]
+    public class BrukerControllerTests
     {
-    }
+        private Mock<ILogger<BrukerController>> loggerMock;
+        private Mock<UserManager<IdentityUser>> userManagerMock;
+        private Mock<RoleManager<IdentityRole>> roleManagerMock;
 
-    public new IUserStore<IdentityUser> Store => base.Store;
-}
-
-[TestFixture]
-public class BrukerControllerTests
-{
-    [Test]
-    public async Task VisAlleBrukere_ShouldReturnViewWithBrugerMedRollerList()
-    {
-        // Arrange
-        var brukere = new List<IdentityUser>
+        [SetUp]
+        public void Setup()
         {
-            new() { Id = "1", UserName = "user1", Email = "user1@example.com" },
-            new() { Id = "2", UserName = "user2", Email = "user2@example.com" }
-        };
+            loggerMock = new Mock<ILogger<BrukerController>>();
+            userManagerMock = new Mock<UserManager<IdentityUser>>(
+                new Mock<IUserStore<IdentityUser>>().Object,
+                new Mock<IOptions<IdentityOptions>>().Object,
+                new Mock<IPasswordHasher<IdentityUser>>().Object,
+                new IUserValidator<IdentityUser>[0],
+                new IPasswordValidator<IdentityUser>[0],
+                new Mock<ILookupNormalizer>().Object,
+                new Mock<IdentityErrorDescriber>().Object,
+                new Mock<IServiceProvider>().Object,
+                new Mock<ILogger<UserManager<IdentityUser>>>().Object);
 
-        var rollerForUser1 = new List<string> { "Role1", "Role2" };
-        var rollerForUser2 = new List<string> { "Role3", "Role4" };
+            roleManagerMock = new Mock<RoleManager<IdentityRole>>(
+                new Mock<IRoleStore<IdentityRole>>().Object,
+                new IRoleValidator<IdentityRole>[0],
+                new Mock<ILookupNormalizer>().Object,
+                new Mock<IdentityErrorDescriber>().Object,
+                new Mock<ILogger<RoleManager<IdentityRole>>>().Object);
+        }
 
-        var userManagerMock = new Mock<CustomUserManager>(
-            new Mock<IUserStore<IdentityUser>>().Object,
-            new Mock<IOptions<IdentityOptions>>().Object,
-            new Mock<IPasswordHasher<IdentityUser>>().Object,
-            new IUserValidator<IdentityUser>[0],
-            new IPasswordValidator<IdentityUser>[0],
-            new Mock<ILookupNormalizer>().Object,
-            new Mock<IdentityErrorDescriber>().Object,
-            new Mock<IServiceProvider>().Object,
-            new Mock<ILogger<UserManager<IdentityUser>>>().Object);
+        [Test]
+        public async Task VisAlleBrukere_ShouldReturnViewWithBrugerMedRollerList()
+        {
+            // Arrange
+            var brukere = new List<IdentityUser>
+            {
+                new IdentityUser { Id = "1", UserName = "user1", Email = "user1@example.com" },
+                new IdentityUser { Id = "2", UserName = "user2", Email = "user2@example.com" }
+            };
 
-        userManagerMock.Setup(m => m.Users).Returns(brukere.AsQueryable());
+            var rollerForUser1 = new List<string> { "Role1", "Role2" };
+            var rollerForUser2 = new List<string> { "Role3", "Role4" };
 
-        userManagerMock.Setup(m => m.GetRolesAsync(It.Is<IdentityUser>(u => u.Id == "1")))
-            .ReturnsAsync(rollerForUser1);
+            userManagerMock.Setup(m => m.Users).Returns(brukere.AsQueryable());
 
-        userManagerMock.Setup(m => m.GetRolesAsync(It.Is<IdentityUser>(u => u.Id == "2")))
-            .ReturnsAsync(rollerForUser2);
+            userManagerMock.Setup(m => m.GetRolesAsync(It.Is<IdentityUser>(u => u.Id == "1")))
+                           .ReturnsAsync(rollerForUser1);
 
-        var brukerController = new BrukerController(userManagerMock.Object);
+            userManagerMock.Setup(m => m.GetRolesAsync(It.Is<IdentityUser>(u => u.Id == "2")))
+                           .ReturnsAsync(rollerForUser2);
 
-        // Act
-        var result = await brukerController.VisAlleBrukere();
+            var brukerController = new BrukerController(userManagerMock.Object, loggerMock.Object, roleManagerMock.Object);
 
-        // Assert
-        Assert.IsTrue(result is ViewResult);
+            // Act
+            var result = await brukerController.VisAlleBrukere();
 
-        var viewResult = result as ViewResult;
-        Assert.IsInstanceOf<List<BrukerMedRollerViewModel>>(viewResult.Model);
+            // Assert
+            Assert.IsTrue(result is ViewResult);
 
-        var model = viewResult.Model as List<BrukerMedRollerViewModel>;
-        Assert.AreEqual(2, model.Count);
+            var viewResult = result as ViewResult;
+            Assert.IsInstanceOf<List<BrukerMedRollerViewModel>>(viewResult.Model);
 
-        // Add additional assertions based on your expected model values
-        Assert.AreEqual("1", model[0].UserId);
-        Assert.AreEqual("user1", model[0].UserName);
-        Assert.AreEqual("user1@example.com", model[0].Email);
-        Assert.AreEqual(rollerForUser1, model[0].Roller);
+            var model = viewResult.Model as List<BrukerMedRollerViewModel>;
+            Assert.AreEqual(2, model.Count);
 
-        Assert.AreEqual("2", model[1].UserId);
-        Assert.AreEqual("user2", model[1].UserName);
-        Assert.AreEqual("user2@example.com", model[1].Email);
-        Assert.AreEqual(rollerForUser2, model[1].Roller);
+            // Add additional assertions based on your expected model values
+            Assert.AreEqual("1", model[0].UserId);
+            Assert.AreEqual("user1", model[0].UserName);
+            Assert.AreEqual("user1@example.com", model[0].Email);
+            Assert.AreEqual(rollerForUser1, model[0].Roller);
+
+            Assert.AreEqual("2", model[1].UserId);
+            Assert.AreEqual("user2", model[1].UserName);
+            Assert.AreEqual("user2@example.com", model[1].Email);
+            Assert.AreEqual(rollerForUser2, model[1].Roller);
+        }
     }
 }
