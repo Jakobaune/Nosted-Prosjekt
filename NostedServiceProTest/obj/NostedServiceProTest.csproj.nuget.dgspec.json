@@ -1,117 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Nosted-Prosjekt\\NostedServiceProTest\\NostedServiceProTest.csproj": {}
+    "/Users/bjornarhatlingskaden/Documents/Dokumenter – Bjørnar sin MacBook Air/UIA/IS-202/Projects/Nosted-Prosjekt/NostedServiceProTest/NostedServiceProTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Nosted-Prosjekt\\NostedServiceProTest\\NostedServiceProTest.csproj": {
+    "/Users/bjornarhatlingskaden/Documents/Dokumenter – Bjørnar sin MacBook Air/UIA/IS-202/Projects/Nosted-Prosjekt/NostedServicePro/NostedServicePro.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Nosted-Prosjekt\\NostedServiceProTest\\NostedServiceProTest.csproj",
-        "projectName": "NostedServiceProTest",
-        "projectPath": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Nosted-Prosjekt\\NostedServiceProTest\\NostedServiceProTest.csproj",
-        "packagesPath": "C:\\Users\\mathi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Nosted-Prosjekt\\NostedServiceProTest\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\mathi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net7.0"
-        ],
-        "sources": {
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
-            "projectReferences": {
-              "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Nosted-Prosjekt\\NostedServicePro\\NostedServicePro.csproj": {
-                "projectPath": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Nosted-Prosjekt\\NostedServicePro\\NostedServicePro.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
-          "dependencies": {
-            "Microsoft.AspNetCore.Mvc.Testing": {
-              "target": "Package",
-              "version": "[2.1.3, )"
-            },
-            "Microsoft.EntityFrameworkCore.InMemory": {
-              "target": "Package",
-              "version": "[7.0.0, )"
-            },
-            "Microsoft.Extensions.Logging.Abstractions": {
-              "target": "Package",
-              "version": "[8.0.0, )"
-            },
-            "Microsoft.NET.Test.Sdk": {
-              "target": "Package",
-              "version": "[17.6.0, )"
-            },
-            "Moq": {
-              "target": "Package",
-              "version": "[4.20.69, )"
-            },
-            "NUnit": {
-              "target": "Package",
-              "version": "[3.14.0, )"
-            },
-            "NUnit.Analyzers": {
-              "target": "Package",
-              "version": "[3.6.1, )"
-            },
-            "NUnit3TestAdapter": {
-              "target": "Package",
-              "version": "[4.4.2, )"
-            },
-            "coverlet.collector": {
-              "target": "Package",
-              "version": "[3.2.0, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Nosted-Prosjekt\\NostedServicePro\\NostedServicePro.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Nosted-Prosjekt\\NostedServicePro\\NostedServicePro.csproj",
+        "projectUniqueName": "/Users/bjornarhatlingskaden/Documents/Dokumenter – Bjørnar sin MacBook Air/UIA/IS-202/Projects/Nosted-Prosjekt/NostedServicePro/NostedServicePro.csproj",
         "projectName": "NostedServicePro",
-        "projectPath": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Nosted-Prosjekt\\NostedServicePro\\NostedServicePro.csproj",
-        "packagesPath": "C:\\Users\\mathi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Nosted-Prosjekt\\NostedServicePro\\obj\\",
+        "projectPath": "/Users/bjornarhatlingskaden/Documents/Dokumenter – Bjørnar sin MacBook Air/UIA/IS-202/Projects/Nosted-Prosjekt/NostedServicePro/NostedServicePro.csproj",
+        "packagesPath": "/Users/bjornarhatlingskaden/.nuget/packages/",
+        "outputPath": "/Users/bjornarhatlingskaden/Documents/Dokumenter – Bjørnar sin MacBook Air/UIA/IS-202/Projects/Nosted-Prosjekt/NostedServicePro/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mathi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/bjornarhatlingskaden/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -215,7 +118,102 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.400/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/bjornarhatlingskaden/Documents/Dokumenter – Bjørnar sin MacBook Air/UIA/IS-202/Projects/Nosted-Prosjekt/NostedServiceProTest/NostedServiceProTest.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/bjornarhatlingskaden/Documents/Dokumenter – Bjørnar sin MacBook Air/UIA/IS-202/Projects/Nosted-Prosjekt/NostedServiceProTest/NostedServiceProTest.csproj",
+        "projectName": "NostedServiceProTest",
+        "projectPath": "/Users/bjornarhatlingskaden/Documents/Dokumenter – Bjørnar sin MacBook Air/UIA/IS-202/Projects/Nosted-Prosjekt/NostedServiceProTest/NostedServiceProTest.csproj",
+        "packagesPath": "/Users/bjornarhatlingskaden/.nuget/packages/",
+        "outputPath": "/Users/bjornarhatlingskaden/Documents/Dokumenter – Bjørnar sin MacBook Air/UIA/IS-202/Projects/Nosted-Prosjekt/NostedServiceProTest/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/bjornarhatlingskaden/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/bjornarhatlingskaden/Documents/Dokumenter – Bjørnar sin MacBook Air/UIA/IS-202/Projects/Nosted-Prosjekt/NostedServicePro/NostedServicePro.csproj": {
+                "projectPath": "/Users/bjornarhatlingskaden/Documents/Dokumenter – Bjørnar sin MacBook Air/UIA/IS-202/Projects/Nosted-Prosjekt/NostedServicePro/NostedServicePro.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.Testing": {
+              "target": "Package",
+              "version": "[2.1.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.6.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.69, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.14.0, )"
+            },
+            "NUnit.Analyzers": {
+              "target": "Package",
+              "version": "[3.6.1, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[4.4.2, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.400/RuntimeIdentifierGraph.json"
         }
       }
     }

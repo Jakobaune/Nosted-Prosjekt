@@ -10847,20 +10847,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mathi\\.nuget\\packages\\": {}
+    "/Users/bjornarhatlingskaden/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Nosted-Prosjekt\\NostedServiceProTest\\NostedServiceProTest.csproj",
+      "projectUniqueName": "/Users/bjornarhatlingskaden/Documents/Dokumenter – Bjørnar sin MacBook Air/UIA/IS-202/Projects/Nosted-Prosjekt/NostedServiceProTest/NostedServiceProTest.csproj",
       "projectName": "NostedServiceProTest",
-      "projectPath": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Nosted-Prosjekt\\NostedServiceProTest\\NostedServiceProTest.csproj",
-      "packagesPath": "C:\\Users\\mathi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Nosted-Prosjekt\\NostedServiceProTest\\obj\\",
+      "projectPath": "/Users/bjornarhatlingskaden/Documents/Dokumenter – Bjørnar sin MacBook Air/UIA/IS-202/Projects/Nosted-Prosjekt/NostedServiceProTest/NostedServiceProTest.csproj",
+      "packagesPath": "/Users/bjornarhatlingskaden/.nuget/packages/",
+      "outputPath": "/Users/bjornarhatlingskaden/Documents/Dokumenter – Bjørnar sin MacBook Air/UIA/IS-202/Projects/Nosted-Prosjekt/NostedServiceProTest/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\mathi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/bjornarhatlingskaden/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -10872,8 +10871,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Nosted-Prosjekt\\NostedServicePro\\NostedServicePro.csproj": {
-              "projectPath": "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Nosted-Prosjekt\\NostedServicePro\\NostedServicePro.csproj"
+            "/Users/bjornarhatlingskaden/Documents/Dokumenter – Bjørnar sin MacBook Air/UIA/IS-202/Projects/Nosted-Prosjekt/NostedServicePro/NostedServicePro.csproj": {
+              "projectPath": "/Users/bjornarhatlingskaden/Documents/Dokumenter – Bjørnar sin MacBook Air/UIA/IS-202/Projects/Nosted-Prosjekt/NostedServicePro/NostedServicePro.csproj"
             }
           }
         }
@@ -10941,7 +10940,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.400/RuntimeIdentifierGraph.json"
       }
     }
   },

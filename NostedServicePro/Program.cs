@@ -14,7 +14,7 @@ public class Program
 
         //  tilkoblingsstrengen
         var connectionString =
-            "Server=10.228.1.84;Database=nosteddb;User=root;Password=nosted123;Port=3306;SslMode=none;";
+            "Server=host.docker.internal;Database=nosteddb;User=root;Password=nosted123;Port=3306;SslMode=none;";
 
         // Legg til DbContext med MySQL-databasekontekst
         builder.Services.AddDbContext<ServiceProDbContex>(options =>
