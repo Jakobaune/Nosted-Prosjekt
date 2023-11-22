@@ -4,8 +4,9 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using NostedServicePro.Models.Account;
 
-namespace NostedServicePro.Controllers;
 
+namespace NostedServicePro.Controllers;
+[Authorize]
 public class AccountController : Controller
 {
     private readonly IEmailSender _emailSender;
@@ -134,7 +135,7 @@ public class AccountController : Controller
 
 
     [HttpGet]
-    [AllowAnonymous]
+    [Authorize]
     public IActionResult ResetPassword()
     {
         return View();
@@ -142,7 +143,6 @@ public class AccountController : Controller
 
     // POST: /Account/ResetPassword
     [HttpPost]
-    [AllowAnonymous]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> ResetPassword(ResetPasswordViewModel model)
     {
@@ -165,7 +165,6 @@ public class AccountController : Controller
 
     // GET: /Account/ResetPasswordConfirmation
     [HttpGet]
-    [AllowAnonymous]
     public IActionResult ResetPasswordConfirmation()
     {
         return View();

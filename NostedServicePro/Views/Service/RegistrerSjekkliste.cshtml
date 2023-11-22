@@ -15,7 +15,7 @@
 <div class="col-md-10">
 @using (Html.BeginForm("RegistrerSjekkliste", "Service", FormMethod.Post))
 {
-    @Html.AntiForgeryToken()
+    @Html.AntiForgeryToken() 
 
     <!-- Skjulte felt for å overføre serviceordreinformasjon -->
     @Html.HiddenFor(model => model.Kundenavn)

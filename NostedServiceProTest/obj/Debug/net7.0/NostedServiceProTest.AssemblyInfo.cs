@@ -11,7 +11,7 @@
 using System;
 using System.Reflection;
 
-[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("NostedServicePro", "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Nosted-Prosjekt\\NostedServicePro", "NostedServicePro.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("NostedServicePro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "C:\\Users\\mathi\\OneDrive\\Skrivebord\\NostedAS\\Nosted-Prosjekt\\NostedServicePro", "NostedServicePro.csproj", "0")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("NostedServiceProTest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
