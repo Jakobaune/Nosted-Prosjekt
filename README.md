@@ -25,8 +25,8 @@ For detaljert dokumentasjon om koden og prosjektet, vennligst sjekk vår [Wiki](
 11. For å kjøre applikasjon skriv inn følgende i terminal: `docker container run --rm -it -d --name nostedservicepro --publish 80:80 webapp`
 
 #### Brukernavn og passord
-Brukernavn: Admin
-Passord: Admin123!
+- Brukernavn: Admin
+- Passord: Admin123!
 
 
 ## Problemer og Feil
