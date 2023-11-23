@@ -192,8 +192,6 @@ public class ServiceController : Controller
                         TempData["Message"] = $"Sjekkliste lagret for serviceordre #{model.OrdreID}!";
                     }
 
-                    existingOrdre.Registreringsdato = DateTime.Now;
-
                     _dbContext.SaveChanges();
 
                     return RedirectToAction("Arkiv");
