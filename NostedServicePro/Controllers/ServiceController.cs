@@ -15,11 +15,6 @@ public class ServiceController : Controller
         _dbContext = dbContext;
     }
 
-    public IActionResult StartSjekkliste(int ordreID)
-    {
-        TempData["OrdreID"] = ordreID;
-        return RedirectToAction("RegistrerSjekkliste");
-    }
 
     public IActionResult ServiceOversikt()
     {
