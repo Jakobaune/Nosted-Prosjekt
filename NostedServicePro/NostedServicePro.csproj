@@ -6,6 +6,7 @@
         <UserSecretsId>9f22cd30-012d-495a-9440-745b8a415a63</UserSecretsId>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
         <DockerfileContext>.</DockerfileContext>
+        <DockerComposeProjectPath>docker-compose.dcproj</DockerComposeProjectPath>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
