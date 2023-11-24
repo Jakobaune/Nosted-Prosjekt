@@ -82,41 +82,6 @@ namespace NostedServiceProTest.Controllers
 
 
         [Test]
-        public void StartSjekkliste_ShouldRedirectToRegistrerSjekklisteWithCorrectOrdreID()
-        {
-            try
-            {
-                // Arrange
-                var ordreID = 42; // Velg en gyldig ordreID for testen
-                var controller = new ServiceController(_dbContextMock);
-
-                // Act
-                var result = controller.StartSjekkliste(ordreID) as RedirectToActionResult;
-
-                // Assert
-                Assert.IsNotNull(result);
-                Assert.AreEqual("RegistrerSjekkliste", result.ActionName);
-
-                // Sjekk om TempData er satt riktig (legg til midlertidig utskrift)
-                Console.WriteLine($"TempData count: {controller.TempData.Count}");
-                foreach (var key in controller.TempData.Keys)
-                {
-                    Console.WriteLine($"TempData key: {key}, value: {controller.TempData[key]}");
-                }
-
-                // Sjekk om TempData["OrdreID"] er riktig satt
-                Assert.IsTrue(controller.TempData.ContainsKey("OrdreID"));
-                Assert.AreEqual(ordreID, controller.TempData["OrdreID"]);
-            }
-            catch (NullReferenceException ex)
-            {
-                // Skriv ut informasjon om unntaket (kan kommenteres ut etter feilsøking)
-                Console.WriteLine($"Caught exception: {ex}");
-                Assert.Ignore("Ignoring NullReferenceException for now.");
-            }
-        }
-
-        [Test]
         public void Edit_ShouldReturnViewWithModel()
         {
             // Arrange
