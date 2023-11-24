@@ -122,7 +122,14 @@
                 <span asp-validation-for="ProduktmottattDato" class="text-danger"></span>
             </div>
             <hr/>
-
+            <!--Dette feltet kan ikke endres, bare leses-->
+            <div class="form-group"> 
+                <strong>
+                    <label asp-for="Registreringsdato" class="control-label">Registreringsdato:</label>
+                </strong>
+                <input asp-for="Registreringsdato" class="form-control text-muted" readonly />
+                <span asp-validation-for="Registreringsdato" class="text-danger"></span>
+            </div>
             <!--Dette feltet kan ikke endres, bare leses-->
                 <div class="form-group">
                     <strong>
