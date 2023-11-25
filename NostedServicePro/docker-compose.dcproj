@@ -3,7 +3,7 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
-    <ProjectGuid>{24B69335-3FB0-4F57-ABFC-4498997B1B01}</ProjectGuid>
+    <ProjectGuid>{FFFB1A64-BC60-46D0-B35D-1C4857475547}</ProjectGuid>
     <DockerLaunchBrowser>True</DockerLaunchBrowser>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}</DockerServiceUrl>
     <DockerServiceName>nostedservicepro</DockerServiceName>

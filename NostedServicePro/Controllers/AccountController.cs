@@ -61,6 +61,7 @@ public class AccountController : Controller
                     //Psudokode for å håndtere låste brukere 
                     //_logger?.LogWarning(2, "User account locked out.");
                     //return View("Lockout");
+                  
                 }
                 else
                 {

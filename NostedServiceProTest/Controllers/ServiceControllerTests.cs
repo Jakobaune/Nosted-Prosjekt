@@ -100,6 +100,11 @@ namespace NostedServiceProTest.Controllers
             Assert.IsInstanceOf<ServiceOrdre>(viewResult.Model); // Sjekk at modellen er av riktig type
         }
 
+
+
+
+
+
         [Test]
         public void RegistrerSjekkliste_ShouldReturnViewWithModel()
         {
@@ -118,6 +123,12 @@ namespace NostedServiceProTest.Controllers
             Assert.IsNotNull(viewResult.Model); // Sjekk at modellen er til stede
             Assert.IsAssignableFrom<ServiceOrdre>(viewResult.Model); // Sjekk at modellen er av riktig type
         }
+
+
+
+
+
+
 
 
         [Test]

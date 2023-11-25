@@ -169,11 +169,8 @@ public class ServiceController : Controller
 
                 if (existingOrdre != null)
                 {
-                    // Lagre ProduktmottattDato før du oppdaterer modellen
-                    var produktmottattDato = existingOrdre.ProduktmottattDato;
 
-                    // Oppdater sjekkpunktene og andre felter, ekskluder ProduktmottattDato
-                    model.ProduktmottattDato = produktmottattDato;
+                    // Oppdater sjekkpunktene og andre felter.
                     _dbContext.Entry(existingOrdre).CurrentValues.SetValues(model);
 
                     // Marker sjekklisten som fullført hvis "Fullfør Sjekkliste" ble trykket
@@ -230,6 +227,7 @@ public class ServiceController : Controller
         return View(serviceOrdre);
     }
 
+    //print
     public IActionResult Print(int id)
     {
         var serviceOrdre = _dbContext.service.FirstOrDefault(s => s.OrdreID == id);
