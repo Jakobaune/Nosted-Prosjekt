@@ -137,7 +137,7 @@ public class AccountController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> ResetPassword(ResetPasswordViewModel model)
     {
-        if (!ModelState.IsValid)
+        if (ModelState.IsValid)
         {
             var user = await _userManager.FindByNameAsync(User.Identity.Name); // Hent brukeren som er logget inn
             if (user == null)
@@ -148,9 +148,6 @@ public class AccountController : Controller
             if (result.Succeeded)
                 // Passordet ble endret vellykket
                 return RedirectToAction(nameof(ResetPasswordConfirmation), "Account");
-
-            AddErrors(result);
-            return View();
         }
         return View(model);
     }
