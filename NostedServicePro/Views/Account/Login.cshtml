@@ -29,7 +29,8 @@
 
         <section>
             <!-- Loginskjema -->
-            <form asp-controller="Account" asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal" role="form">
+            <form asp-controller="Account" asp-action="Login" method="post" class="form-horizontal" role="form">
+                @Html.AntiForgeryToken()
 
                 <!-- Logo og tittel -->
                 <img src="~/css/Bilder/LOGO.jpg" alt="Logo" height="50px">

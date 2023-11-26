@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using NostedServicePro.Models.Account;
 
@@ -9,26 +8,22 @@ namespace NostedServicePro.Controllers;
 [Authorize]
 public class AccountController : Controller
 {
-    private readonly IEmailSender _emailSender;
     private readonly ILogger _logger;
     private readonly SignInManager<IdentityUser> _signInManager;
     private readonly UserManager<IdentityUser> _userManager;
 
-    public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager,
-        IEmailSender emailSender, ILoggerFactory loggerFactory)
+    public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, ILoggerFactory loggerFactory)
     {
         _userManager = userManager;
         _signInManager = signInManager;
-        _emailSender = emailSender;
         _logger = loggerFactory.CreateLogger<AccountController>();
     }
 
     // GET: /Account/Login
     [HttpGet]
     [AllowAnonymous]
-    public IActionResult Login(string returnUrl = null)
+    public IActionResult Login()
     {
-        ViewData["ReturnUrl"] = returnUrl;
         return View();
     }
 
@@ -38,7 +33,6 @@ public class AccountController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null)
     {
-        ViewData["ReturnUrl"] = returnUrl;
 
         try
         {
@@ -50,15 +44,13 @@ public class AccountController : Controller
                 {
                     _logger?.LogInformation(1, "Bruker logget inn.");
 
-                    if (returnUrl != null) return RedirectToLocal(returnUrl);
-
-                    // If returnUrl is null, redirect to a default location
+           
                     return RedirectToAction(nameof(HomeController.Index), "Home");
                 }
 
                 if (result.IsLockedOut)
                 {
-                    //Psudokode for å håndtere låste brukere 
+                    //kode for å håndtere låste brukere 
                     //_logger?.LogWarning(2, "User account locked out.");
                     //return View("Lockout");
                   
@@ -85,9 +77,8 @@ public class AccountController : Controller
 
     [HttpGet]
     [Authorize(Roles = "Admin")]
-    public IActionResult Register(string returnUrl = null)
+    public IActionResult Register()
     {
-        ViewData["ReturnUrl"] = returnUrl;
         return View();
     }
 
@@ -96,9 +87,8 @@ public class AccountController : Controller
     [HttpPost]
     [Authorize(Roles = "Admin")]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Register(RegisterViewModel model, string returnUrl = null)
+    public async Task<IActionResult> Register(RegisterViewModel model)
     {
-        ViewData["ReturnUrl"] = returnUrl;
         if (ModelState.IsValid)
         {
             var user = new IdentityUser
@@ -131,7 +121,7 @@ public class AccountController : Controller
     {
         await _signInManager.SignOutAsync();
         _logger.LogInformation(4, "Bruker logget ut.");
-        return RedirectToAction(nameof(HomeController.Index), "Home");
+        return RedirectToAction();
     }
 
 
@@ -147,20 +137,19 @@ public class AccountController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> ResetPassword(ResetPasswordViewModel model)
     {
-        if (!ModelState.IsValid) return View(model);
+        if (ModelState.IsValid)
+        {
+            var user = await _userManager.FindByNameAsync(User.Identity.Name); // Hent brukeren som er logget inn
+            if (user == null)
+                // Noe gikk galt, håndter feil her
+                return RedirectToAction(nameof(ResetPasswordConfirmation), "Account");
 
-        var user = await _userManager.FindByNameAsync(User.Identity.Name); // Hent brukeren som er logget inn
-        if (user == null)
-            // Noe gikk galt, håndter feil her
-            return RedirectToAction(nameof(ResetPasswordConfirmation), "Account");
-
-        var result = await _userManager.ChangePasswordAsync(user, model.OldPassword, model.NewPassword);
-        if (result.Succeeded)
-            // Passordet ble endret vellykket
-            return RedirectToAction(nameof(ResetPasswordConfirmation), "Account");
-
-        AddErrors(result);
-        return View();
+            var result = await _userManager.ChangePasswordAsync(user, model.OldPassword, model.NewPassword);
+            if (result.Succeeded)
+                // Passordet ble endret vellykket
+                return RedirectToAction(nameof(ResetPasswordConfirmation), "Account");
+        }
+        return View(model);
     }
 
 
@@ -171,20 +160,9 @@ public class AccountController : Controller
         return View();
     }
 
-    private IActionResult RedirectToLocal(string returnUrl)
-    {
-        if (Url.IsLocalUrl(returnUrl))
-            return Redirect(returnUrl);
-        return RedirectToAction(nameof(HomeController.Index), "Home");
-    }
-
     private void AddErrors(IdentityResult result)
     {
         foreach (var error in result.Errors) ModelState.AddModelError(string.Empty, error.Description);
     }
 
-    private Task<IdentityUser> GetCurrentUserAsync()
-    {
-        return _userManager.GetUserAsync(HttpContext.User);
-    }
 }
