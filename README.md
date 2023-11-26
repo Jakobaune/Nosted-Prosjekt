@@ -22,9 +22,10 @@ For detaljert dokumentasjon om koden og prosjektet, vennligst sjekk vår [Wiki](
 9. Åpne filen `Program.cs` endre linje 17 til følgende: ` "Server=127.0.0.1;Database=nosteddb;User=root;Password=nosted123;Port=3306;SslMode=none;";`
 10. Navgiger til din repo mappe `cd Nosted-Prosjekt` deretter `cd NostedServicePro`
 11. Skriv inn `dotnet ef database update` i din terminal
+12. Endre deretter `Program.cs` linje 17 til følgende: `"Server=host.docker.internal;Database=nosteddb;User=root;Password=nosted123;Port=3306;SslMode=none;"; `
 
-12. For å bygge applikasjonen skriv følgende i terminal: `dotnet build -t:nostedservicepro . `
-13. Deretter legger du til docker support og kjørerprogrammet med docker i din IDE
+13. For å bygge applikasjonen skriv følgende i terminal: `dotnet build -t:nostedservicepro . `
+14. Deretter legger du til docker support og kjørerprogrammet med docker i din IDE
 
 #### Brukernavn og passord
 - Brukernavn: Admin
