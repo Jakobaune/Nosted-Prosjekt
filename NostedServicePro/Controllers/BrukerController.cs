@@ -135,6 +135,7 @@ public class BrukerController : Controller
     }
 
     // Aksjonsmetode for å vise slettevisning for en bruker
+    [HttpGet]
     public async Task<IActionResult> SlettBruker(string userId)
     {
         if (string.IsNullOrEmpty(userId)) return NotFound();
