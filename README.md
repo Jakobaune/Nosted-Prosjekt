@@ -14,15 +14,17 @@ For detaljert dokumentasjon om koden og prosjektet, vennligst sjekk vår [Wiki](
 
 ## Installasjon
 
-1. Klon repoet: `git clone https://github.com/Jakobaune/Nosted-Prosjekt.git`
-2. Naviger til prosjektmappen: `cd Nosted-Prosjekt`
+1. Klon repoet: `git clone https://github.com/Jakobaune/Nosted-Prosjekt.git` til en egen mappe
+2. Naviger til prosjektmappen: `cd dittmappenavn`
 3. skriv følgende i terminal: `docker pull mariadb`.
-4. Skriv følgende i terminal: `docker run --name nosted-mariadb -p 127.0.0.1:3306:3306/tcp -v/RUTETILDINREPOMAPPE:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=nosted123 -d mariadb:latest`.
+4. Skriv følgende i terminal: `docker run --name nosted-mariadb -p 127.0.0.1:3306:3306/tcp -v /RUTETILDINRMAPPE:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=nosted123 -d mariadb:latest`.
 8. Åpne løsningen i din foretrukne IDE
-9. Skriv inn `dotnet ef database update` i din terminal
+9. Åpne filen `Program.cs` endre linje 17 til følgende: ` "Server=127.0.0.1;Database=nosteddb;User=root;Password=nosted123;Port=3306;SslMode=none;";`
+10. Navgiger til din repo mappe `cd Nosted-Prosjekt` deretter `cd NostedServicePro`
+11. Skriv inn `dotnet ef database update` i din terminal
 
-10. For å bygge applikasjonen skriv følgende i terminal: `dotnet build -t nostedservicepro . `
-11. For å kjøre applikasjon skriv inn følgende i terminal: `docker container run --rm -it -d --name nostedservicepro --publish 80:80 webapp`
+12. For å bygge applikasjonen skriv følgende i terminal: `dotnet build -t:nostedservicepro . `
+13. Deretter legger du til docker support og kjørerprogrammet med docker i din IDE
 
 #### Brukernavn og passord
 - Brukernavn: Admin
